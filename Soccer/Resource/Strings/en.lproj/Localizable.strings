@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  Soccer
+
+  Created by Андрей Чернышев on 01.02.2023.
+  
+*/
+
+// MARK: General
+"Cancel" = "Cancel";
+"Continue" = "Continue";
+"Next" = "Next";
+
+// MARK: ImagePicker
+"ImagePicker.TakePhoto" = "Take a photo";
+"ImagePicker.CameraRoll" = "Camera roll";
+"ImagePicker.PhotoLibrary" = "Photo library";
+
+// MARK: TryAgain
+"TryAgain.Title" = "The app failed to perform a request";
+"TryAgain.SubTitle" = "If there’s a connection issue on your side try one more time. If the connection is fine and the error keeps on repeating please get in touch with the support";
+"TryAgain.Button" = "Try again";
+"TryAgain.Contact" = "Contact the support";
+
+// MARK: Splash
+"Splash.Text" = "Wicca Spells";
+"Splash.Bottom" = "The sky above me. Earth below\nme. Fire within me.";
+
+// MARK: Paygate
+"Paygate.Title" = "Unlock it all!";
+"Paygate.Cell1" = "Complete collection of spells";
+"Paygate.Cell2" = "Lunar calendar";
+"Paygate.Cell3" = "Magical Herbs & Glossary";
+"Paygate.Cell4" = "Podcasts & Books";
+"Paygate.Info" = "Secured by the App Store. Cancel anytime.";
+"Paygate.TermsOfUse" = "Terms of Use";
+"Paygate.PrivacyPolicy" = "Privacy Policy";
+"Paygate.RestorePurchases" = "Restore Purchase";
+"Paygate.Failed" = "Failed to make purchase";
+"Paygate.Monthly.Name1" = "7 days for free";
+"Paygate.Monthly.Name2" = "Quick prep";
+"Paygate.Monthly.Bottom1" = "After 7-day trial";
+"Paygate.Monthly.Bottom2" = "Trial is over";
+"Paygate.Lifetime.Name" = "Lifetime";
+"Paygate.Lifetime.PriceDescription" = "\nIn terms of  1  year";
+"Paygate.Lifetime.BottomDescription" = "once";
+"Paygate.Discount" = "SAVE %i%%";
+"Paygate.Price.Period" = "month";
+
+// MARK: Onboarding
+"Onboarding.Preloader.Text1" = "Analyzing your preferences...";
+"Onboarding.Preloader.Text2" = "Identifying your skill level...";
+"Onboarding.Preloader.Text3" = "Creating personalized\nworkouts...";
+"Onboarding.Preloader.Text4" = "Setting up training program...";
+
+// MARK: Main
+"Main.Home" = "Home";
+"Main.Train" = "Train";
+"Main.Profile" = "Profile";
