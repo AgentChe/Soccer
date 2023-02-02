@@ -8,33 +8,26 @@
 import Foundation
 
 struct OCombineData {
-    let gender: Int
     let skillLevel: Int
+    let weekSchedule: WeekSchedule
 }
 
 final class OnboardingCombineData {
-    private var gender: Gender?
     private var skillLevel: SkillLevel?
+    private var weekSchedule: WeekSchedule?
     
     func combineData() -> OCombineData? {
         guard
-            let gender = gender?.code,
-            let skillLevel = skillLevel?.code
+            let skillLevel = skillLevel?.code,
+            let weekSchedule = weekSchedule
         else {
             return nil
         }
 
         return OCombineData(
-            gender: gender,
-            skillLevel: skillLevel
+            skillLevel: skillLevel,
+            weekSchedule: weekSchedule
         )
-    }
-}
-
-// MARK: OGenderViewDelegate
-extension OnboardingCombineData: OGenderViewDelegate {
-    func genderViewDidSelect(gender: Gender) {
-        self.gender = gender
     }
 }
 
@@ -42,5 +35,12 @@ extension OnboardingCombineData: OGenderViewDelegate {
 extension OnboardingCombineData: OSkillLevelViewDelegate {
     func skillLevelViewDidSelect(skillLevel: SkillLevel) {
         self.skillLevel = skillLevel
+    }
+}
+
+// MARK: ODaysOfWeekViewDelegate
+extension OnboardingCombineData: ODaysOfWeekViewDelegate {
+    func daysOfWeekViewDidSelect(weekSchedule: WeekSchedule) {
+        self.weekSchedule = weekSchedule
     }
 }

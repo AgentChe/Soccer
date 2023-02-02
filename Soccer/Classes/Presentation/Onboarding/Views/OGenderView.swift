@@ -54,6 +54,17 @@ private extension OGenderView {
     }
     
     @objc
+    func nextTapped() {
+        guard let gender = [maleButton, femaleButton].first(where: { $0.marked })?.gender else {
+            return
+        }
+        
+        delegates.forEach { $0.weak?.genderViewDidSelect(gender: gender) }
+        
+        onNext()
+    }
+    
+    @objc
     func tapped(sender: UIButton) {
         guard let genderButton = sender as? OGenderButton else {
             return
@@ -138,7 +149,7 @@ private extension OGenderView {
         view.backgroundColor = Appearance.primary
         view.layer.cornerRadius = 8.scale
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
+        view.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

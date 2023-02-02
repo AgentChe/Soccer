@@ -135,6 +135,14 @@
 		DEBC2B0F298BCC04002C84E3 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */; };
 		DEBC2B11298BCC5E002C84E3 /* OSkillLevelScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B10298BCC5E002C84E3 /* OSkillLevelScoreView.swift */; };
 		DEBC2B13298BCF15002C84E3 /* OSkillLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B12298BCF15002C84E3 /* OSkillLevelView.swift */; };
+		DEBC2B15298BEFE2002C84E3 /* OGoalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B14298BEFE2002C84E3 /* OGoalButton.swift */; };
+		DEBC2B19298BF483002C84E3 /* OGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B18298BF483002C84E3 /* OGoalsView.swift */; };
+		DEBC2B1D298BF9C0002C84E3 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B1C298BF9C0002C84E3 /* DayOfWeek.swift */; };
+		DEBC2B1F298BFACD002C84E3 /* ODayOfWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B1E298BFACD002C84E3 /* ODayOfWeekButton.swift */; };
+		DEBC2B21298BFF77002C84E3 /* WeekSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B20298BFF77002C84E3 /* WeekSchedule.swift */; };
+		DEBC2B23298C02E1002C84E3 /* ODaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B22298C02E1002C84E3 /* ODaysOfWeekView.swift */; };
+		DEBC2B25298C0A2A002C84E3 /* OWhereTrainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B24298C0A2A002C84E3 /* OWhereTrainButton.swift */; };
+		DEBC2B27298C0BAF002C84E3 /* OWhereTrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B26298C0BAF002C84E3 /* OWhereTrainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -259,6 +267,14 @@
 		DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DEBC2B10298BCC5E002C84E3 /* OSkillLevelScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSkillLevelScoreView.swift; sourceTree = "<group>"; };
 		DEBC2B12298BCF15002C84E3 /* OSkillLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSkillLevelView.swift; sourceTree = "<group>"; };
+		DEBC2B14298BEFE2002C84E3 /* OGoalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGoalButton.swift; sourceTree = "<group>"; };
+		DEBC2B18298BF483002C84E3 /* OGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGoalsView.swift; sourceTree = "<group>"; };
+		DEBC2B1C298BF9C0002C84E3 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
+		DEBC2B1E298BFACD002C84E3 /* ODayOfWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODayOfWeekButton.swift; sourceTree = "<group>"; };
+		DEBC2B20298BFF77002C84E3 /* WeekSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSchedule.swift; sourceTree = "<group>"; };
+		DEBC2B22298C02E1002C84E3 /* ODaysOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODaysOfWeekView.swift; sourceTree = "<group>"; };
+		DEBC2B24298C0A2A002C84E3 /* OWhereTrainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWhereTrainButton.swift; sourceTree = "<group>"; };
+		DEBC2B26298C0BAF002C84E3 /* OWhereTrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWhereTrainView.swift; sourceTree = "<group>"; };
 		F9DEDA9CBDA7E38E73CDA277 /* Pods-Soccer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soccer.release.xcconfig"; path = "Target Support Files/Pods-Soccer/Pods-Soccer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -552,6 +568,8 @@
 				DEACE5BB298A93880096FF15 /* Gender.swift */,
 				DEACE5C5298AA01C0096FF15 /* Role.swift */,
 				DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */,
+				DEBC2B1C298BF9C0002C84E3 /* DayOfWeek.swift */,
+				DEBC2B20298BFF77002C84E3 /* WeekSchedule.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -716,6 +734,9 @@
 				DEACE5C1298A9C8E0096FF15 /* OAgeView.swift */,
 				DEACE5C7298AA35A0096FF15 /* ORoleView.swift */,
 				DEBC2B12298BCF15002C84E3 /* OSkillLevelView.swift */,
+				DEBC2B18298BF483002C84E3 /* OGoalsView.swift */,
+				DEBC2B22298C02E1002C84E3 /* ODaysOfWeekView.swift */,
+				DEBC2B26298C0BAF002C84E3 /* OWhereTrainView.swift */,
 				DEA8FE44298A7AE000868C0E /* OPreloaderView.swift */,
 			);
 			path = Views;
@@ -729,6 +750,9 @@
 				DEACE5BF298A9C4A0096FF15 /* OAgeButton.swift */,
 				DEACE5C3298AA0020096FF15 /* ORoleButton.swift */,
 				DEBC2B10298BCC5E002C84E3 /* OSkillLevelScoreView.swift */,
+				DEBC2B14298BEFE2002C84E3 /* OGoalButton.swift */,
+				DEBC2B1E298BFACD002C84E3 /* ODayOfWeekButton.swift */,
+				DEBC2B24298C0A2A002C84E3 /* OWhereTrainButton.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -937,6 +961,7 @@
 				DEA8FEA6298A7AE000868C0E /* PaygateViewController.swift in Sources */,
 				DEA8FE99298A7AE000868C0E /* SplashViewController.swift in Sources */,
 				DEA8FE73298A7AE000868C0E /* TapAreaButton.swift in Sources */,
+				DEBC2B21298BFF77002C84E3 /* WeekSchedule.swift in Sources */,
 				DEA8FE64298A7AE000868C0E /* ScreenSize.swift in Sources */,
 				DEA8FE85298A7AE000868C0E /* Paygate.swift in Sources */,
 				DEA8FE58298A7AE000868C0E /* UIColor+Extension.swift in Sources */,
@@ -955,6 +980,7 @@
 				DEA8FE9D298A7AE000868C0E /* SplashView.swift in Sources */,
 				DEA8FEBE298A7AE000868C0E /* OCombineData.swift in Sources */,
 				DEA8FE61298A7AE000868C0E /* Scalable.swift in Sources */,
+				DEBC2B27298C0BAF002C84E3 /* OWhereTrainView.swift in Sources */,
 				DEA8FEE1298A7AE000868C0E /* OnboardingViewModel.swift in Sources */,
 				DEA8FEA3298A7AE000868C0E /* PaygateViewControllerDelegate.swift in Sources */,
 				DEA8FE81298A7AE000868C0E /* BranchManager.swift in Sources */,
@@ -963,7 +989,9 @@
 				DEA8FE5F298A7AE000868C0E /* APIRequestBody.swift in Sources */,
 				DEA8FE69298A7AE000868C0E /* NetworkError.swift in Sources */,
 				DEA8FE7A298A7AE000868C0E /* AppDelegate.swift in Sources */,
+				DEBC2B23298C02E1002C84E3 /* ODaysOfWeekView.swift in Sources */,
 				DEA8FE60298A7AE000868C0E /* RestAPITransport.swift in Sources */,
+				DEBC2B25298C0A2A002C84E3 /* OWhereTrainButton.swift in Sources */,
 				DEA8FF08298A873F00868C0E /* OCircleProgressView.swift in Sources */,
 				DEA8FE9A298A7AE000868C0E /* SplashActivity.swift in Sources */,
 				DEA8FE56298A7AE000868C0E /* UIApplication+Extension.swift in Sources */,
@@ -974,15 +1002,18 @@
 				DEACE5C8298AA35A0096FF15 /* ORoleView.swift in Sources */,
 				DEA8FE89298A7AE000868C0E /* ProfileManager.swift in Sources */,
 				DEA8FE83298A7AE000868C0E /* FirebaseManager.swift in Sources */,
+				DEBC2B19298BF483002C84E3 /* OGoalsView.swift in Sources */,
 				DEA8FE7D298A7AE000868C0E /* PushNotificationsModel.swift in Sources */,
 				DEA8FE5B298A7AE000868C0E /* String+Extension.swift in Sources */,
 				DEA8FEA4298A7AE000868C0E /* PaygateInteractor.swift in Sources */,
 				DEA8FE75298A7AE000868C0E /* PaddingTextField.swift in Sources */,
 				DEA8FE9F298A7AE000868C0E /* PaygateViewModel.swift in Sources */,
 				DEA8FE68298A7AE000868C0E /* SignError.swift in Sources */,
+				DEBC2B1D298BF9C0002C84E3 /* DayOfWeek.swift in Sources */,
 				DEA8FE63298A7AE000868C0E /* TextAttributes.swift in Sources */,
 				DEA8FE94298A7AE000868C0E /* IAPProduct.swift in Sources */,
 				DEA8FE96298A7AE000868C0E /* IAPErrorHelper.swift in Sources */,
+				DEBC2B1F298BFACD002C84E3 /* ODayOfWeekButton.swift in Sources */,
 				DEA8FE76298A7AE000868C0E /* PaddingLabel.swift in Sources */,
 				DEA8FE91298A7AE000868C0E /* PurchaseValidationObserver.swift in Sources */,
 				DEACE5BC298A93880096FF15 /* Gender.swift in Sources */,
@@ -1032,6 +1063,7 @@
 				DEA8FE97298A7AE000868C0E /* Session.swift in Sources */,
 				DEA8FE98298A7AE000868C0E /* SessionManager.swift in Sources */,
 				DEA8FE78298A7AE000868C0E /* GradientView.swift in Sources */,
+				DEBC2B15298BEFE2002C84E3 /* OGoalButton.swift in Sources */,
 				DEA8FE5D298A7AE000868C0E /* GlobalDefinitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
