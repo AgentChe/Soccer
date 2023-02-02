@@ -9,16 +9,22 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome, preloader
+        case welcome, gender, age, role, skillLevel, preloader
     }
     
     var didFinish: (() -> Void)?
     
+    private lazy var genderView = OGenderView(step: .gender)
+    private lazy var skillLevelView = OSkillLevelView(step: .skillLevel)
     private lazy var preloaderView = OPreloaderView(step: .preloader, combineData: combineData)
 
     private lazy var contentViews: [OSlideView] = {
         [
             OWelcomeView(step: .welcome),
+            genderView,
+            OAgeView(step: .age),
+            ORoleView(step: .role),
+            skillLevelView,
             preloaderView
         ]
     }()
@@ -85,6 +91,8 @@ private extension OnboardingView {
                 }
             }
         
+        genderView.add(delegate: combineData)
+        skillLevelView.mainDelegate = combineData
         preloaderView.vc = vc
     }
     

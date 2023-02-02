@@ -8,59 +8,39 @@
 import Foundation
 
 struct OCombineData {
-//    let bornDate: String
-//    let name: String
-//    let goals: [Int]
-//    let interests: [Int]
+    let gender: Int
+    let skillLevel: Int
 }
 
 final class OnboardingCombineData {
-//    private var bornDate: Date?
-//    private var name: String?
-//    private var goals: [Goal]?
-//    private var interests: [Interest]?
+    private var gender: Gender?
+    private var skillLevel: SkillLevel?
     
     func combineData() -> OCombineData? {
-//        guard
-//            let bornDate = bornDate,
-//            let name = name,
-//            let goals = goals,
-//            let interests = interests
-//        else {
-//            return nil
-//        }
-//
-//        let bornDateFormatter = DateFormatter()
-//        bornDateFormatter.dateFormat = "yyyy-MM-dd"
+        guard
+            let gender = gender?.code,
+            let skillLevel = skillLevel?.code
+        else {
+            return nil
+        }
 
-        return OCombineData()
+        return OCombineData(
+            gender: gender,
+            skillLevel: skillLevel
+        )
     }
 }
 
-//// MARK: OBornViewDelegate
-//extension OnboardingCombineData: OBornViewDelegate {
-//    func bornViewDidSelected(date: Date) {
-//        self.bornDate = date
-//    }
-//}
-//
-//// MARK: ONameViewDelegate
-//extension OnboardingCombineData: ONameViewDelegate {
-//    func nameViewDidSelected(name: String) {
-//        self.name = name
-//    }
-//}
-//
-//// MARK: OGoalsViewDelegate
-//extension OnboardingCombineData: OGoalsViewDelegate {
-//    func goalsViewDidSelected(goals: [Goal]) {
-//        self.goals = goals
-//    }
-//}
-//
-//// MARK: OInterestsViewDelegate
-//extension OnboardingCombineData: OInterestsViewDelegate {
-//    func interestsViewDidSelected(interests: [Interest]) {
-//        self.interests = interests
-//    }
-//}
+// MARK: OGenderViewDelegate
+extension OnboardingCombineData: OGenderViewDelegate {
+    func genderViewDidSelect(gender: Gender) {
+        self.gender = gender
+    }
+}
+
+// MARK: OSkillLevelViewDelegate
+extension OnboardingCombineData: OSkillLevelViewDelegate {
+    func skillLevelViewDidSelect(skillLevel: SkillLevel) {
+        self.skillLevel = skillLevel
+    }
+}

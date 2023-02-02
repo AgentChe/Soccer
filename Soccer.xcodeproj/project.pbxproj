@@ -124,6 +124,17 @@
 		DEA8FF13298A89D200868C0E /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FF0E298A89D200868C0E /* TabItemView.swift */; };
 		DEA8FF14298A89D200868C0E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FF0F298A89D200868C0E /* TabView.swift */; };
 		DEA8FF15298A89D200868C0E /* MainViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FF10298A89D200868C0E /* MainViewCoordinator.swift */; };
+		DEACE5BA298A93490096FF15 /* OGenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5B9298A93490096FF15 /* OGenderButton.swift */; };
+		DEACE5BC298A93880096FF15 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5BB298A93880096FF15 /* Gender.swift */; };
+		DEACE5BE298A97FA0096FF15 /* OGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5BD298A97FA0096FF15 /* OGenderView.swift */; };
+		DEACE5C0298A9C4A0096FF15 /* OAgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5BF298A9C4A0096FF15 /* OAgeButton.swift */; };
+		DEACE5C2298A9C8E0096FF15 /* OAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5C1298A9C8E0096FF15 /* OAgeView.swift */; };
+		DEACE5C4298AA0020096FF15 /* ORoleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5C3298AA0020096FF15 /* ORoleButton.swift */; };
+		DEACE5C6298AA01C0096FF15 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5C5298AA01C0096FF15 /* Role.swift */; };
+		DEACE5C8298AA35A0096FF15 /* ORoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5C7298AA35A0096FF15 /* ORoleView.swift */; };
+		DEBC2B0F298BCC04002C84E3 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */; };
+		DEBC2B11298BCC5E002C84E3 /* OSkillLevelScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B10298BCC5E002C84E3 /* OSkillLevelScoreView.swift */; };
+		DEBC2B13298BCF15002C84E3 /* OSkillLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B12298BCF15002C84E3 /* OSkillLevelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +248,17 @@
 		DEA8FF0E298A89D200868C0E /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		DEA8FF0F298A89D200868C0E /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		DEA8FF10298A89D200868C0E /* MainViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewCoordinator.swift; sourceTree = "<group>"; };
+		DEACE5B9298A93490096FF15 /* OGenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGenderButton.swift; sourceTree = "<group>"; };
+		DEACE5BB298A93880096FF15 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		DEACE5BD298A97FA0096FF15 /* OGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGenderView.swift; sourceTree = "<group>"; };
+		DEACE5BF298A9C4A0096FF15 /* OAgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAgeButton.swift; sourceTree = "<group>"; };
+		DEACE5C1298A9C8E0096FF15 /* OAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAgeView.swift; sourceTree = "<group>"; };
+		DEACE5C3298AA0020096FF15 /* ORoleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORoleButton.swift; sourceTree = "<group>"; };
+		DEACE5C5298AA01C0096FF15 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		DEACE5C7298AA35A0096FF15 /* ORoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORoleView.swift; sourceTree = "<group>"; };
+		DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
+		DEBC2B10298BCC5E002C84E3 /* OSkillLevelScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSkillLevelScoreView.swift; sourceTree = "<group>"; };
+		DEBC2B12298BCF15002C84E3 /* OSkillLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSkillLevelView.swift; sourceTree = "<group>"; };
 		F9DEDA9CBDA7E38E73CDA277 /* Pods-Soccer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soccer.release.xcconfig"; path = "Target Support Files/Pods-Soccer/Pods-Soccer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -527,6 +549,9 @@
 		DEA8FDD9298A7AE000868C0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DEACE5BB298A93880096FF15 /* Gender.swift */,
+				DEACE5C5298AA01C0096FF15 /* Role.swift */,
+				DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -687,6 +712,10 @@
 				DEA8FE2C298A7AE000868C0E /* Atoms */,
 				DEA8FE45298A7AE000868C0E /* OSlideView.swift */,
 				DEA8FE43298A7AE000868C0E /* OWelcomeView.swift */,
+				DEACE5BD298A97FA0096FF15 /* OGenderView.swift */,
+				DEACE5C1298A9C8E0096FF15 /* OAgeView.swift */,
+				DEACE5C7298AA35A0096FF15 /* ORoleView.swift */,
+				DEBC2B12298BCF15002C84E3 /* OSkillLevelView.swift */,
 				DEA8FE44298A7AE000868C0E /* OPreloaderView.swift */,
 			);
 			path = Views;
@@ -696,6 +725,10 @@
 			isa = PBXGroup;
 			children = (
 				DEA8FF07298A873F00868C0E /* OCircleProgressView.swift */,
+				DEACE5B9298A93490096FF15 /* OGenderButton.swift */,
+				DEACE5BF298A9C4A0096FF15 /* OAgeButton.swift */,
+				DEACE5C3298AA0020096FF15 /* ORoleButton.swift */,
+				DEBC2B10298BCC5E002C84E3 /* OSkillLevelScoreView.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -910,8 +943,10 @@
 				DEA8FE9C298A7AE000868C0E /* SplashViewModel.swift in Sources */,
 				DEA8FE59298A7AE000868C0E /* Collection+Extension.swift in Sources */,
 				DEA8FE7B298A7AE000868C0E /* PushNotificationsManager.swift in Sources */,
+				DEACE5C0298A9C4A0096FF15 /* OAgeButton.swift in Sources */,
 				DEA8FE66298A7AE000868C0E /* XOREncryption.swift in Sources */,
 				DEA8FE65298A7AE000868C0E /* ObservableRetrySingle.swift in Sources */,
+				DEACE5BE298A97FA0096FF15 /* OGenderView.swift in Sources */,
 				DEA8FE6B298A7AE000868C0E /* Weak.swift in Sources */,
 				DEA8FE5E298A7AE000868C0E /* DefaultRequestWrapper.swift in Sources */,
 				DEA8FE95298A7AE000868C0E /* IAPError.swift in Sources */,
@@ -932,8 +967,11 @@
 				DEA8FF08298A873F00868C0E /* OCircleProgressView.swift in Sources */,
 				DEA8FE9A298A7AE000868C0E /* SplashActivity.swift in Sources */,
 				DEA8FE56298A7AE000868C0E /* UIApplication+Extension.swift in Sources */,
+				DEACE5C2298A9C8E0096FF15 /* OAgeView.swift in Sources */,
 				DEA8FE71298A7AE000868C0E /* NavigationControllerSettings.swift in Sources */,
 				DEA8FED2298A7AE000868C0E /* OWelcomeView.swift in Sources */,
+				DEBC2B11298BCC5E002C84E3 /* OSkillLevelScoreView.swift in Sources */,
+				DEACE5C8298AA35A0096FF15 /* ORoleView.swift in Sources */,
 				DEA8FE89298A7AE000868C0E /* ProfileManager.swift in Sources */,
 				DEA8FE83298A7AE000868C0E /* FirebaseManager.swift in Sources */,
 				DEA8FE7D298A7AE000868C0E /* PushNotificationsModel.swift in Sources */,
@@ -947,9 +985,11 @@
 				DEA8FE96298A7AE000868C0E /* IAPErrorHelper.swift in Sources */,
 				DEA8FE76298A7AE000868C0E /* PaddingLabel.swift in Sources */,
 				DEA8FE91298A7AE000868C0E /* PurchaseValidationObserver.swift in Sources */,
+				DEACE5BC298A93880096FF15 /* Gender.swift in Sources */,
 				DEA8FE7F298A7AE000868C0E /* Appearance.swift in Sources */,
 				DEA8FE57298A7AE000868C0E /* UIDevice+Extension.swift in Sources */,
 				DEA8FE62298A7AE000868C0E /* NumberLaunches.swift in Sources */,
+				DEACE5C6298AA01C0096FF15 /* Role.swift in Sources */,
 				DEA8FE5C298A7AE000868C0E /* UIViewRxExtension.swift in Sources */,
 				DEA8FF15298A89D200868C0E /* MainViewCoordinator.swift in Sources */,
 				DEA8FE80298A7AE000868C0E /* AppsFlyerManager.swift in Sources */,
@@ -960,11 +1000,14 @@
 				DEA8FEA8298A7AE000868C0E /* PaygateInfoCell.swift in Sources */,
 				DEA8FE6C298A7AE000868C0E /* RequestReview.swift in Sources */,
 				DEA8FE8E298A7AE000868C0E /* SyncTokensRequest.swift in Sources */,
+				DEACE5C4298AA0020096FF15 /* ORoleButton.swift in Sources */,
 				DEA8FE90298A7AE000868C0E /* IAPManager.swift in Sources */,
 				DEA8FF14298A89D200868C0E /* TabView.swift in Sources */,
 				DEA8FF12298A89D200868C0E /* MainView.swift in Sources */,
+				DEBC2B0F298BCC04002C84E3 /* SkillLevel.swift in Sources */,
 				DEA8FEE0298A7AE000868C0E /* OnboardingView.swift in Sources */,
 				DEA8FE93298A7AE000868C0E /* IAPActionResult.swift in Sources */,
+				DEACE5BA298A93490096FF15 /* OGenderButton.swift in Sources */,
 				DEA8FE6E298A7AE000868C0E /* RxActivityIndicator.swift in Sources */,
 				DEA8FE77298A7AE000868C0E /* CircleView.swift in Sources */,
 				DEA8FE79298A7AE000868C0E /* CircleProgressView.swift in Sources */,
@@ -977,6 +1020,7 @@
 				DEA8FEBF298A7AE000868C0E /* OnboardingViewController.swift in Sources */,
 				DEA8FEA7298A7AE000868C0E /* PaygateProductButton.swift in Sources */,
 				DEA8FEBB298A7AE000868C0E /* TryAgainViewController.swift in Sources */,
+				DEBC2B13298BCF15002C84E3 /* OSkillLevelView.swift in Sources */,
 				DEA8FE74298A7AE000868C0E /* Spinner.swift in Sources */,
 				DEA8FED4298A7AE000868C0E /* OSlideView.swift in Sources */,
 				DEA8FE67298A7AE000868C0E /* Fonts.swift in Sources */,

@@ -48,6 +48,26 @@
 "Paygate.Price.Period" = "month";
 
 // MARK: Onboarding
+"Onboarding.Welcome.Title" = "WELCOME TO\nSOCCER";
+"Onboarding.Welcome.SubTitle" = "Soccer training app";
+"Onboarding.Welcome.Button" = "Start now";
+"Onboarding.Gender.Title" = "What is your gender?";
+"Onboarding.Gender.Male" = "Male";
+"Onboarding.Gender.Female" = "Female";
+"Onboarding.Age.Title" = "What is your age?";
+"Onboarding.Age.1" = "18-24";
+"Onboarding.Age.2" = "25-34";
+"Onboarding.Age.3" = "35-44";
+"Onboarding.Age.4" = "45-60";
+"Onboarding.Age.5" = "60+";
+"Onboarding.Role.Title" = "What is your role?";
+"Onboarding.Role.Player" = "Player";
+"Onboarding.Role.Coach" = "Coach";
+"Onboarding.Role.Amateur" = "Amateur";
+"Onboarding.SkillLevel.Title" = "Define your skill level";
+"Onboarding.SkillLevel.Beginner" = "Beginner";
+"Onboarding.SkillLevel.Intermediate" = "Intermediate";
+"Onboarding.SkillLevel.Advanced" = "Advanced";
 "Onboarding.Preloader.Text1" = "Analyzing your preferences...";
 "Onboarding.Preloader.Text2" = "Identifying your skill level...";
 "Onboarding.Preloader.Text3" = "Creating personalized\nworkouts...";
