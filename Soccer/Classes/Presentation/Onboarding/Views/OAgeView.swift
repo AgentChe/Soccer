@@ -73,7 +73,7 @@ private extension OAgeView {
             age1Button.widthAnchor.constraint(equalToConstant: 343.scale),
             age1Button.heightAnchor.constraint(equalToConstant: 80.scale),
             age1Button.centerXAnchor.constraint(equalTo: centerXAnchor),
-            age1Button.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30.scale)
+            age1Button.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 30.scale : 16.scale)
         ])
         
         NSLayoutConstraint.activate([

@@ -37,6 +37,10 @@ final class OnboardingViewController: UIViewController {
             self.goToNext(at: step)
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 }
 
 // MARK: Make

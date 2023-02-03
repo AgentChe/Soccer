@@ -106,6 +106,10 @@ final class PaygateViewController: UIViewController {
         
         mainView.lifetimeButton.isChecked = true
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 }
 
 // MARK: Make

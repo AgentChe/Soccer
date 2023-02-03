@@ -80,7 +80,7 @@ private extension OPositionView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             skipButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            skipButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 70.scale : 70.scale)
+            skipButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 70.scale : 52.scale)
         ])
         
         NSLayoutConstraint.activate([

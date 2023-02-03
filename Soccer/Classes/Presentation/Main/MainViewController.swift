@@ -44,6 +44,10 @@ final class MainViewController: UIViewController {
         requestReviewIfNeeded()
         addActionsToTabs()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 }
 
 // MARK: Make

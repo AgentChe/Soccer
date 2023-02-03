@@ -80,28 +80,28 @@ private extension OWorkoutTypeView {
             cell2Button.widthAnchor.constraint(equalToConstant: 343.scale),
             cell2Button.heightAnchor.constraint(equalToConstant: 80.scale),
             cell2Button.centerXAnchor.constraint(equalTo: centerXAnchor),
-            cell2Button.topAnchor.constraint(equalTo: cell1Button.bottomAnchor, constant: 16.scale)
+            cell2Button.topAnchor.constraint(equalTo: cell1Button.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale)
         ])
         
         NSLayoutConstraint.activate([
             cell3Button.widthAnchor.constraint(equalToConstant: 343.scale),
             cell3Button.heightAnchor.constraint(equalToConstant: 80.scale),
             cell3Button.centerXAnchor.constraint(equalTo: centerXAnchor),
-            cell3Button.topAnchor.constraint(equalTo: cell2Button.bottomAnchor, constant: 16.scale)
+            cell3Button.topAnchor.constraint(equalTo: cell2Button.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale)
         ])
         
         NSLayoutConstraint.activate([
             cell4Button.widthAnchor.constraint(equalToConstant: 343.scale),
             cell4Button.heightAnchor.constraint(equalToConstant: 80.scale),
             cell4Button.centerXAnchor.constraint(equalTo: centerXAnchor),
-            cell4Button.topAnchor.constraint(equalTo: cell3Button.bottomAnchor, constant: 16.scale)
+            cell4Button.topAnchor.constraint(equalTo: cell3Button.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale)
         ])
         
         NSLayoutConstraint.activate([
             cell5Button.widthAnchor.constraint(equalToConstant: 343.scale),
             cell5Button.heightAnchor.constraint(equalToConstant: 80.scale),
             cell5Button.centerXAnchor.constraint(equalTo: centerXAnchor),
-            cell5Button.topAnchor.constraint(equalTo: cell4Button.bottomAnchor, constant: 16.scale)
+            cell5Button.topAnchor.constraint(equalTo: cell4Button.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale)
         ])
         
         NSLayoutConstraint.activate([
