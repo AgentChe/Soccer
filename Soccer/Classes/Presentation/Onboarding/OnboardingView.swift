@@ -103,6 +103,7 @@ private extension OnboardingView {
         
         genderView.add(delegate: focusZoneView)
         skillLevelView.mainDelegate = combineData
+        daysOfWeekView.mainDelegate = combineData
         drillsView.mainDelegate = combineData
         focusZoneView.mainDelegate = combineData
         preloaderView.vc = vc

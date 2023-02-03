@@ -107,11 +107,15 @@ private extension SplashViewModel {
             let drills = contentManager
                 .obtainDrills(forceUpdate: true)
                 .mapToVoid()
+            let profile = profileManager
+                .obtainProfile(forceUpdate: true)
+                .mapToVoid()
             
             return Single
                 .zip([
                     paygate,
-                    drills
+                    drills,
+                    profile
                 ])
                 .mapToVoid()
         }

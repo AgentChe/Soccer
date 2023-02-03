@@ -8,10 +8,10 @@
 import Foundation
 
 struct OCombineData {
-    let skillLevel: Int
+    let skillLevel: SkillLevel
     let weekSchedule: WeekSchedule
     let drills: [Int]
-    let focusZones: [Int]
+    let focusZones: [FocusZone]
 }
 
 final class OnboardingCombineData {
@@ -22,7 +22,7 @@ final class OnboardingCombineData {
     
     func combineData() -> OCombineData? {
         guard
-            let skillLevel = skillLevel?.code,
+            let skillLevel = skillLevel,
             let weekSchedule = weekSchedule,
             let drills = drills,
             let focusZones = focusZones
@@ -34,7 +34,7 @@ final class OnboardingCombineData {
             skillLevel: skillLevel,
             weekSchedule: weekSchedule,
             drills: drills.map { $0.id },
-            focusZones: focusZones.map { $0.code }
+            focusZones: focusZones
         )
     }
 }

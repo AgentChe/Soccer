@@ -7,3 +7,36 @@
         "name": "Passing"
     }
 ]
+
+/api/users/set
+->
+{
+    "skill_level": 0 // 0 - beginner, 1 - intermediate, 2 - advanced
+    "week_schedule": {
+        "su": true
+        "mo": false
+        "tu": true
+        "we": true
+        "th": true
+        "fr": false
+        "sa": true
+    },
+    "drills": [0, 1, 2],
+    "focus_zones": [0, 1] // 0 - arms, 1 - chest, 2 - core, 3 - glutes, 4 - legs
+}
+
+/api/users/show
+<- {
+    "skill_level": 0 // 0 - beginner, 1 - intermediate, 2 - advanced
+    "week_schedule": {
+        "su": true
+        "mo": false
+        "tu": true
+        "we": true
+        "th": true
+        "fr": false
+        "sa": true
+    },
+    "drills": [0, 1, 2],
+    "focus_zones": [0, 1] // 0 - arms, 1 - chest, 2 - core, 3 - glutes, 4 - legs
+}

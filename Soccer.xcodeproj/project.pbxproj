@@ -158,6 +158,10 @@
 		DEBC2B47298D09D2002C84E3 /* FocusZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B46298D09D2002C84E3 /* FocusZone.swift */; };
 		DEBC2B49298D0BD7002C84E3 /* OFocusZoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B48298D0BD7002C84E3 /* OFocusZoneButton.swift */; };
 		DEBC2B4B298D1022002C84E3 /* OFocusZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B4A298D1022002C84E3 /* OFocusZoneView.swift */; };
+		DEBC2B4D298D1B93002C84E3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B4C298D1B93002C84E3 /* Profile.swift */; };
+		DEBC2B50298D1C88002C84E3 /* GetProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B4F298D1C88002C84E3 /* GetProfileResponse.swift */; };
+		DEBC2B53298D1DB6002C84E3 /* GetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B52298D1DB6002C84E3 /* GetProfileRequest.swift */; };
+		DEBC2B55298D254B002C84E3 /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B54298D254B002C84E3 /* ProfileMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -305,6 +309,10 @@
 		DEBC2B46298D09D2002C84E3 /* FocusZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusZone.swift; sourceTree = "<group>"; };
 		DEBC2B48298D0BD7002C84E3 /* OFocusZoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFocusZoneButton.swift; sourceTree = "<group>"; };
 		DEBC2B4A298D1022002C84E3 /* OFocusZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFocusZoneView.swift; sourceTree = "<group>"; };
+		DEBC2B4C298D1B93002C84E3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		DEBC2B4F298D1C88002C84E3 /* GetProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileResponse.swift; sourceTree = "<group>"; };
+		DEBC2B52298D1DB6002C84E3 /* GetProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileRequest.swift; sourceTree = "<group>"; };
+		DEBC2B54298D254B002C84E3 /* ProfileMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediator.swift; sourceTree = "<group>"; };
 		F9DEDA9CBDA7E38E73CDA277 /* Pods-Soccer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soccer.release.xcconfig"; path = "Target Support Files/Pods-Soccer/Pods-Soccer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -590,6 +598,7 @@
 				DEA8FDDD298A7AE000868C0E /* Request */,
 				DEA8FDD9298A7AE000868C0E /* Model */,
 				DEA8FDD8298A7AE000868C0E /* ProfileManager.swift */,
+				DEBC2B54298D254B002C84E3 /* ProfileMediator.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -603,6 +612,7 @@
 				DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */,
 				DEBC2B1C298BF9C0002C84E3 /* DayOfWeek.swift */,
 				DEBC2B20298BFF77002C84E3 /* WeekSchedule.swift */,
+				DEBC2B4C298D1B93002C84E3 /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -610,6 +620,7 @@
 		DEA8FDDD298A7AE000868C0E /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DEBC2B4E298D1C77002C84E3 /* GetProfile */,
 				DEA8FDDE298A7AE000868C0E /* LoginRequest.swift */,
 				DEA8FDDF298A7AE000868C0E /* SyncTokensRequest.swift */,
 				DEA8FDE0298A7AE000868C0E /* SetRequest.swift */,
@@ -903,6 +914,15 @@
 			path = Drills;
 			sourceTree = "<group>";
 		};
+		DEBC2B4E298D1C77002C84E3 /* GetProfile */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC2B52298D1DB6002C84E3 /* GetProfileRequest.swift */,
+				DEBC2B4F298D1C88002C84E3 /* GetProfileResponse.swift */,
+			);
+			path = GetProfile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1047,6 +1067,7 @@
 				DEA8FE82298A7AE000868C0E /* AmplitudeManager.swift in Sources */,
 				DEA8FEA5298A7AE000868C0E /* PaygateView.swift in Sources */,
 				DEA8FEA6298A7AE000868C0E /* PaygateViewController.swift in Sources */,
+				DEBC2B4D298D1B93002C84E3 /* Profile.swift in Sources */,
 				DEA8FE99298A7AE000868C0E /* SplashViewController.swift in Sources */,
 				DEBC2B3B298C139A002C84E3 /* ODrillsTableCell.swift in Sources */,
 				DEA8FE73298A7AE000868C0E /* TapAreaButton.swift in Sources */,
@@ -1089,6 +1110,7 @@
 				DEBC2B25298C0A2A002C84E3 /* OWhereTrainButton.swift in Sources */,
 				DEA8FF08298A873F00868C0E /* OCircleProgressView.swift in Sources */,
 				DEA8FE9A298A7AE000868C0E /* SplashActivity.swift in Sources */,
+				DEBC2B53298D1DB6002C84E3 /* GetProfileRequest.swift in Sources */,
 				DEA8FE56298A7AE000868C0E /* UIApplication+Extension.swift in Sources */,
 				DEACE5C2298A9C8E0096FF15 /* OAgeView.swift in Sources */,
 				DEA8FE71298A7AE000868C0E /* NavigationControllerSettings.swift in Sources */,
@@ -1132,6 +1154,7 @@
 				DEA8FE90298A7AE000868C0E /* IAPManager.swift in Sources */,
 				DEBC2B3D298C154D002C84E3 /* ODrillsTableElement.swift in Sources */,
 				DEBC2B4B298D1022002C84E3 /* OFocusZoneView.swift in Sources */,
+				DEBC2B55298D254B002C84E3 /* ProfileMediator.swift in Sources */,
 				DEA8FF14298A89D200868C0E /* TabView.swift in Sources */,
 				DEA8FF12298A89D200868C0E /* MainView.swift in Sources */,
 				DEBC2B0F298BCC04002C84E3 /* SkillLevel.swift in Sources */,
@@ -1152,6 +1175,7 @@
 				DEA8FEBB298A7AE000868C0E /* TryAgainViewController.swift in Sources */,
 				DEBC2B13298BCF15002C84E3 /* OSkillLevelView.swift in Sources */,
 				DEA8FE74298A7AE000868C0E /* Spinner.swift in Sources */,
+				DEBC2B50298D1C88002C84E3 /* GetProfileResponse.swift in Sources */,
 				DEA8FED4298A7AE000868C0E /* OSlideView.swift in Sources */,
 				DEA8FE67298A7AE000868C0E /* Fonts.swift in Sources */,
 				DEBC2B3F298C1793002C84E3 /* ODrillsView.swift in Sources */,
