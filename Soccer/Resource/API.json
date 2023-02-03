@@ -1,0 +1,9 @@
+/api/drills
+
+<-
+[
+    {
+        "id": 1,
+        "name": "Passing"
+    }
+]

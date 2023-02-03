@@ -65,7 +65,7 @@ private extension OAgeView {
 private extension OAgeView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 140.scale : 140.scale),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 120.scale : 52.scale),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
@@ -132,7 +132,7 @@ private extension OAgeView {
     
     func makeAgeButton(age: String) -> OAgeButton {
         let view = OAgeButton(age: age)
-        view.backgroundColor = Appearance.white.withAlphaComponent(0.1)
+        view.backgroundColor = Appearance.black
         view.layer.cornerRadius = 10.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(ageTapped(sender:)), for: .touchUpInside)

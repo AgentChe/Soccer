@@ -68,7 +68,7 @@ private extension OSkillLevelView {
 private extension OSkillLevelView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 140.scale : 140.scale),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 120.scale : 52.scale),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         

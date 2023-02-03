@@ -143,6 +143,21 @@
 		DEBC2B23298C02E1002C84E3 /* ODaysOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B22298C02E1002C84E3 /* ODaysOfWeekView.swift */; };
 		DEBC2B25298C0A2A002C84E3 /* OWhereTrainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B24298C0A2A002C84E3 /* OWhereTrainButton.swift */; };
 		DEBC2B27298C0BAF002C84E3 /* OWhereTrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B26298C0BAF002C84E3 /* OWhereTrainView.swift */; };
+		DEBC2B2A298C10DD002C84E3 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = DEBC2B29298C10DD002C84E3 /* API.json */; };
+		DEBC2B2E298C113E002C84E3 /* Drill.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B2D298C113E002C84E3 /* Drill.swift */; };
+		DEBC2B32298C1165002C84E3 /* GetDrillsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B31298C1165002C84E3 /* GetDrillsRequest.swift */; };
+		DEBC2B34298C116B002C84E3 /* GetDrillsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B33298C116B002C84E3 /* GetDrillsResponse.swift */; };
+		DEBC2B36298C11FA002C84E3 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B35298C11FA002C84E3 /* ContentManager.swift */; };
+		DEBC2B39298C1394002C84E3 /* ODrillsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B38298C1394002C84E3 /* ODrillsTableView.swift */; };
+		DEBC2B3B298C139A002C84E3 /* ODrillsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B3A298C139A002C84E3 /* ODrillsTableCell.swift */; };
+		DEBC2B3D298C154D002C84E3 /* ODrillsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B3C298C154D002C84E3 /* ODrillsTableElement.swift */; };
+		DEBC2B3F298C1793002C84E3 /* ODrillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B3E298C1793002C84E3 /* ODrillsView.swift */; };
+		DEBC2B41298CFC83002C84E3 /* OPositionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B40298CFC83002C84E3 /* OPositionButton.swift */; };
+		DEBC2B43298CFD2B002C84E3 /* OPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B42298CFD2B002C84E3 /* OPositionView.swift */; };
+		DEBC2B45298D048E002C84E3 /* OWorkoutTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B44298D048E002C84E3 /* OWorkoutTypeView.swift */; };
+		DEBC2B47298D09D2002C84E3 /* FocusZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B46298D09D2002C84E3 /* FocusZone.swift */; };
+		DEBC2B49298D0BD7002C84E3 /* OFocusZoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B48298D0BD7002C84E3 /* OFocusZoneButton.swift */; };
+		DEBC2B4B298D1022002C84E3 /* OFocusZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B4A298D1022002C84E3 /* OFocusZoneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -275,6 +290,21 @@
 		DEBC2B22298C02E1002C84E3 /* ODaysOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODaysOfWeekView.swift; sourceTree = "<group>"; };
 		DEBC2B24298C0A2A002C84E3 /* OWhereTrainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWhereTrainButton.swift; sourceTree = "<group>"; };
 		DEBC2B26298C0BAF002C84E3 /* OWhereTrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWhereTrainView.swift; sourceTree = "<group>"; };
+		DEBC2B29298C10DD002C84E3 /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
+		DEBC2B2D298C113E002C84E3 /* Drill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drill.swift; sourceTree = "<group>"; };
+		DEBC2B31298C1165002C84E3 /* GetDrillsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDrillsRequest.swift; sourceTree = "<group>"; };
+		DEBC2B33298C116B002C84E3 /* GetDrillsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDrillsResponse.swift; sourceTree = "<group>"; };
+		DEBC2B35298C11FA002C84E3 /* ContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
+		DEBC2B38298C1394002C84E3 /* ODrillsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODrillsTableView.swift; sourceTree = "<group>"; };
+		DEBC2B3A298C139A002C84E3 /* ODrillsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODrillsTableCell.swift; sourceTree = "<group>"; };
+		DEBC2B3C298C154D002C84E3 /* ODrillsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODrillsTableElement.swift; sourceTree = "<group>"; };
+		DEBC2B3E298C1793002C84E3 /* ODrillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODrillsView.swift; sourceTree = "<group>"; };
+		DEBC2B40298CFC83002C84E3 /* OPositionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPositionButton.swift; sourceTree = "<group>"; };
+		DEBC2B42298CFD2B002C84E3 /* OPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPositionView.swift; sourceTree = "<group>"; };
+		DEBC2B44298D048E002C84E3 /* OWorkoutTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWorkoutTypeView.swift; sourceTree = "<group>"; };
+		DEBC2B46298D09D2002C84E3 /* FocusZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusZone.swift; sourceTree = "<group>"; };
+		DEBC2B48298D0BD7002C84E3 /* OFocusZoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFocusZoneButton.swift; sourceTree = "<group>"; };
+		DEBC2B4A298D1022002C84E3 /* OFocusZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFocusZoneView.swift; sourceTree = "<group>"; };
 		F9DEDA9CBDA7E38E73CDA277 /* Pods-Soccer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soccer.release.xcconfig"; path = "Target Support Files/Pods-Soccer/Pods-Soccer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -343,6 +373,7 @@
 				DEA8FD7D298A794400868C0E /* GoogleService-Info.plist */,
 				DE77646C298A5F5F00908BD3 /* LaunchScreen.storyboard */,
 				DE77646A298A5F5F00908BD3 /* Assets.xcassets */,
+				DEBC2B29298C10DD002C84E3 /* API.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -509,6 +540,7 @@
 		DEA8FDCE298A7AE000868C0E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DEBC2B2B298C1115002C84E3 /* Content */,
 				DEA8FDCF298A7AE000868C0E /* Paygate */,
 				DEA8FDD7298A7AE000868C0E /* Profile */,
 				DEA8FDE1298A7AE000868C0E /* Purchase */,
@@ -565,6 +597,7 @@
 		DEA8FDD9298A7AE000868C0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DEBC2B46298D09D2002C84E3 /* FocusZone.swift */,
 				DEACE5BB298A93880096FF15 /* Gender.swift */,
 				DEACE5C5298AA01C0096FF15 /* Role.swift */,
 				DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */,
@@ -737,6 +770,10 @@
 				DEBC2B18298BF483002C84E3 /* OGoalsView.swift */,
 				DEBC2B22298C02E1002C84E3 /* ODaysOfWeekView.swift */,
 				DEBC2B26298C0BAF002C84E3 /* OWhereTrainView.swift */,
+				DEBC2B3E298C1793002C84E3 /* ODrillsView.swift */,
+				DEBC2B42298CFD2B002C84E3 /* OPositionView.swift */,
+				DEBC2B44298D048E002C84E3 /* OWorkoutTypeView.swift */,
+				DEBC2B4A298D1022002C84E3 /* OFocusZoneView.swift */,
 				DEA8FE44298A7AE000868C0E /* OPreloaderView.swift */,
 			);
 			path = Views;
@@ -745,6 +782,7 @@
 		DEA8FE2C298A7AE000868C0E /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				DEBC2B37298C1389002C84E3 /* Drills */,
 				DEA8FF07298A873F00868C0E /* OCircleProgressView.swift */,
 				DEACE5B9298A93490096FF15 /* OGenderButton.swift */,
 				DEACE5BF298A9C4A0096FF15 /* OAgeButton.swift */,
@@ -753,6 +791,8 @@
 				DEBC2B14298BEFE2002C84E3 /* OGoalButton.swift */,
 				DEBC2B1E298BFACD002C84E3 /* ODayOfWeekButton.swift */,
 				DEBC2B24298C0A2A002C84E3 /* OWhereTrainButton.swift */,
+				DEBC2B40298CFC83002C84E3 /* OPositionButton.swift */,
+				DEBC2B48298D0BD7002C84E3 /* OFocusZoneButton.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -816,6 +856,51 @@
 				DEA8FF0F298A89D200868C0E /* TabView.swift */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		DEBC2B2B298C1115002C84E3 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC2B2F298C1154002C84E3 /* Request */,
+				DEBC2B2C298C1119002C84E3 /* Models */,
+				DEBC2B35298C11FA002C84E3 /* ContentManager.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		DEBC2B2C298C1119002C84E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC2B2D298C113E002C84E3 /* Drill.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DEBC2B2F298C1154002C84E3 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC2B30298C115B002C84E3 /* GetDrills */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DEBC2B30298C115B002C84E3 /* GetDrills */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC2B31298C1165002C84E3 /* GetDrillsRequest.swift */,
+				DEBC2B33298C116B002C84E3 /* GetDrillsResponse.swift */,
+			);
+			path = GetDrills;
+			sourceTree = "<group>";
+		};
+		DEBC2B37298C1389002C84E3 /* Drills */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC2B38298C1394002C84E3 /* ODrillsTableView.swift */,
+				DEBC2B3A298C139A002C84E3 /* ODrillsTableCell.swift */,
+				DEBC2B3C298C154D002C84E3 /* ODrillsTableElement.swift */,
+			);
+			path = Drills;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -887,6 +972,7 @@
 				DEA8FEED298A7B4600868C0E /* Inter-SemiBold.ttf in Resources */,
 				DEA8FEF7298A7B6700868C0E /* PlusJakartaSans-Bold.ttf in Resources */,
 				DEA8FEEA298A7B4600868C0E /* Inter-Bold.ttf in Resources */,
+				DEBC2B2A298C10DD002C84E3 /* API.json in Resources */,
 				DEA8FEF4298A7B6700868C0E /* PlusJakartaSans-Medium.ttf in Resources */,
 				DEA8FEE9298A7B4600868C0E /* Inter-Medium.ttf in Resources */,
 				DEA8FEEC298A7B4600868C0E /* Inter-Black.ttf in Resources */,
@@ -948,8 +1034,10 @@
 				DEA8FEFA298A7CD800868C0E /* PlusJakartaSans-SemiBold.ttf in Sources */,
 				DEA8FEFB298A7CD800868C0E /* PlusJakartaSans-Regular.ttf in Sources */,
 				DEA8FEFC298A7CD800868C0E /* PlusJakartaSans-Bold.ttf in Sources */,
+				DEBC2B43298CFD2B002C84E3 /* OPositionView.swift in Sources */,
 				DEA8FEFD298A7CD800868C0E /* PlusJakartaSans-ExtraBold.ttf in Sources */,
 				DEA8FEFE298A7CD800868C0E /* Inter-Medium.ttf in Sources */,
+				DEBC2B36298C11FA002C84E3 /* ContentManager.swift in Sources */,
 				DEA8FEFF298A7CD800868C0E /* Inter-Bold.ttf in Sources */,
 				DEA8FF04298A83AF00868C0E /* Toast.swift in Sources */,
 				DEA8FF00298A7CD800868C0E /* Inter-Regular.ttf in Sources */,
@@ -960,16 +1048,21 @@
 				DEA8FEA5298A7AE000868C0E /* PaygateView.swift in Sources */,
 				DEA8FEA6298A7AE000868C0E /* PaygateViewController.swift in Sources */,
 				DEA8FE99298A7AE000868C0E /* SplashViewController.swift in Sources */,
+				DEBC2B3B298C139A002C84E3 /* ODrillsTableCell.swift in Sources */,
 				DEA8FE73298A7AE000868C0E /* TapAreaButton.swift in Sources */,
 				DEBC2B21298BFF77002C84E3 /* WeekSchedule.swift in Sources */,
+				DEBC2B39298C1394002C84E3 /* ODrillsTableView.swift in Sources */,
 				DEA8FE64298A7AE000868C0E /* ScreenSize.swift in Sources */,
 				DEA8FE85298A7AE000868C0E /* Paygate.swift in Sources */,
 				DEA8FE58298A7AE000868C0E /* UIColor+Extension.swift in Sources */,
+				DEBC2B2E298C113E002C84E3 /* Drill.swift in Sources */,
 				DEA8FE9C298A7AE000868C0E /* SplashViewModel.swift in Sources */,
 				DEA8FE59298A7AE000868C0E /* Collection+Extension.swift in Sources */,
 				DEA8FE7B298A7AE000868C0E /* PushNotificationsManager.swift in Sources */,
 				DEACE5C0298A9C4A0096FF15 /* OAgeButton.swift in Sources */,
 				DEA8FE66298A7AE000868C0E /* XOREncryption.swift in Sources */,
+				DEBC2B32298C1165002C84E3 /* GetDrillsRequest.swift in Sources */,
+				DEBC2B45298D048E002C84E3 /* OWorkoutTypeView.swift in Sources */,
 				DEA8FE65298A7AE000868C0E /* ObservableRetrySingle.swift in Sources */,
 				DEACE5BE298A97FA0096FF15 /* OGenderView.swift in Sources */,
 				DEA8FE6B298A7AE000868C0E /* Weak.swift in Sources */,
@@ -989,6 +1082,8 @@
 				DEA8FE5F298A7AE000868C0E /* APIRequestBody.swift in Sources */,
 				DEA8FE69298A7AE000868C0E /* NetworkError.swift in Sources */,
 				DEA8FE7A298A7AE000868C0E /* AppDelegate.swift in Sources */,
+				DEBC2B34298C116B002C84E3 /* GetDrillsResponse.swift in Sources */,
+				DEBC2B47298D09D2002C84E3 /* FocusZone.swift in Sources */,
 				DEBC2B23298C02E1002C84E3 /* ODaysOfWeekView.swift in Sources */,
 				DEA8FE60298A7AE000868C0E /* RestAPITransport.swift in Sources */,
 				DEBC2B25298C0A2A002C84E3 /* OWhereTrainButton.swift in Sources */,
@@ -1012,6 +1107,7 @@
 				DEBC2B1D298BF9C0002C84E3 /* DayOfWeek.swift in Sources */,
 				DEA8FE63298A7AE000868C0E /* TextAttributes.swift in Sources */,
 				DEA8FE94298A7AE000868C0E /* IAPProduct.swift in Sources */,
+				DEBC2B41298CFC83002C84E3 /* OPositionButton.swift in Sources */,
 				DEA8FE96298A7AE000868C0E /* IAPErrorHelper.swift in Sources */,
 				DEBC2B1F298BFACD002C84E3 /* ODayOfWeekButton.swift in Sources */,
 				DEA8FE76298A7AE000868C0E /* PaddingLabel.swift in Sources */,
@@ -1022,6 +1118,7 @@
 				DEA8FE62298A7AE000868C0E /* NumberLaunches.swift in Sources */,
 				DEACE5C6298AA01C0096FF15 /* Role.swift in Sources */,
 				DEA8FE5C298A7AE000868C0E /* UIViewRxExtension.swift in Sources */,
+				DEBC2B49298D0BD7002C84E3 /* OFocusZoneButton.swift in Sources */,
 				DEA8FF15298A89D200868C0E /* MainViewCoordinator.swift in Sources */,
 				DEA8FE80298A7AE000868C0E /* AppsFlyerManager.swift in Sources */,
 				DEA8FE72298A7AE000868C0E /* NavigationController.swift in Sources */,
@@ -1033,6 +1130,8 @@
 				DEA8FE8E298A7AE000868C0E /* SyncTokensRequest.swift in Sources */,
 				DEACE5C4298AA0020096FF15 /* ORoleButton.swift in Sources */,
 				DEA8FE90298A7AE000868C0E /* IAPManager.swift in Sources */,
+				DEBC2B3D298C154D002C84E3 /* ODrillsTableElement.swift in Sources */,
+				DEBC2B4B298D1022002C84E3 /* OFocusZoneView.swift in Sources */,
 				DEA8FF14298A89D200868C0E /* TabView.swift in Sources */,
 				DEA8FF12298A89D200868C0E /* MainView.swift in Sources */,
 				DEBC2B0F298BCC04002C84E3 /* SkillLevel.swift in Sources */,
@@ -1055,6 +1154,7 @@
 				DEA8FE74298A7AE000868C0E /* Spinner.swift in Sources */,
 				DEA8FED4298A7AE000868C0E /* OSlideView.swift in Sources */,
 				DEA8FE67298A7AE000868C0E /* Fonts.swift in Sources */,
+				DEBC2B3F298C1793002C84E3 /* ODrillsView.swift in Sources */,
 				DEA8FE7E298A7AE000868C0E /* SceneDelegate.swift in Sources */,
 				DEA8FF11298A89D200868C0E /* MainViewController.swift in Sources */,
 				DEA8FF13298A89D200868C0E /* TabItemView.swift in Sources */,
