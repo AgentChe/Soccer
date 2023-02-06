@@ -1,5 +1,4 @@
 /api/drills
-
 <-
 [
     {
@@ -26,7 +25,8 @@
 }
 
 /api/users/show
-<- {
+<-
+{
     "skill_level": 0 // 0 - beginner, 1 - intermediate, 2 - advanced
     "week_schedule": {
         "su": true
@@ -39,4 +39,45 @@
     },
     "drills": [0, 1, 2],
     "focus_zones": [0, 1] // 0 - arms, 1 - chest, 2 - core, 3 - glutes, 4 - legs
+}
+
+/api/home
+<-
+{
+    "daily": {
+        "drill": {
+            "id": 1,
+            "name": "Pass and Move",
+            "skill_level": 0,
+            "image": "https://soccer.com/image",
+            "drill_id": 1,
+            "paid": true
+        },
+        "workout": {
+            "id": 1,
+            "name": "Dynamic Balance",
+            "skill_level": 0,
+            "image": "https://soccer.com/image",
+            "focus_zones": [0, 1]
+            "paid": true
+        }
+    },
+    "try_drills": [
+        "drill": {
+            "id": 1,
+            "name": "Pass and Move",
+            "skill_level": 0,
+            "image": "https://soccer.com/image",
+            "drill_id": 1,
+            "paid": true
+        }
+    ],
+    "workouts": [
+        "id": 1,
+        "name": "Dynamic Balance",
+        "skill_level": 0,
+        "image": "https://soccer.com/image",
+        "focus_zones": [0, 1]
+        "paid": true
+    ]
 }

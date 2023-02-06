@@ -1,0 +1,43 @@
+{
+    "_code": 200,
+    "_data": {
+        "daily": {
+            "drill": {
+                "id": 1,
+                "name": "Pass and Move",
+                "skill_level": 0,
+                "image": "https://soccer.com/image",
+                "drill_id": 1,
+                "paid": true
+            },
+            "workout": {
+                "id": 1,
+                "name": "Dynamic Balance",
+                "skill_level": 0,
+                "image": "https://soccer.com/image",
+                "focus_zones": [0, 1],
+                "paid": true
+            }
+        },
+        "try_drills": [
+            {
+                "id": 1,
+                "name": "Pass and Move",
+                "skill_level": 0,
+                "image": "https://soccer.com/image",
+                "drill_id": 1,
+                "paid": true
+            }
+        ],
+        "workouts": [
+            {
+                "id": 1,
+                "name": "Dynamic Balance",
+                "skill_level": 0,
+                "image": "https://soccer.com/image",
+                "focus_zones": [0, 1],
+                "paid": true
+            }
+        ]
+    }
+}

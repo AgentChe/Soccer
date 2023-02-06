@@ -9,8 +9,10 @@ import RxSwift
 
 protocol ContentManagerProtocol {
     func obtainDrills(forceUpdate: Bool) -> Single<[Drill]>
+    func obtainHomeKit() -> Single<HomeKit?>
 }
 
+// TODO: удалить Mocks folder
 final class ContentManager {
     enum Constants {
         static let drillsKey = "content_manager_drills"
@@ -25,29 +27,42 @@ final class ContentManager {
 extension ContentManager {
     // TODO
     func obtainDrills(forceUpdate: Bool) -> Single<[Drill]> {
-        .deferred {
-            .just([
-                .init(id: 1, name: "Passing"),
-                .init(id: 2, name: "Passing"),
-                .init(id: 3, name: "Passing"),
-                .init(id: 4, name: "Passing"),
-                .init(id: 5, name: "Passing"),
-                .init(id: 6, name: "Passing"),
-                .init(id: 7, name: "Passing"),
-                .init(id: 8, name: "Passing"),
-                .init(id: 9, name: "Passing"),
-                .init(id: 10, name: "Passing"),
-                .init(id: 11, name: "Passing"),
-                .init(id: 12, name: "Passing"),
-                .init(id: 13, name: "Passing"),
-                .init(id: 14, name: "Passing"),
-                .init(id: 15, name: "Passing"),
-                .init(id: 16, name: "Passing"),
-                .init(id: 17, name: "Passing"),
-                .init(id: 18, name: "Passing")
-            ])
+        Single<[Drill]>.create { event in
+            let url = Bundle.main.url(forResource: "Drills", withExtension: "json")!
+            let data = try! Data(contentsOf: url)
+            let result = try! JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            
+            let drills = GetDrillsResponse.map(from: result)
+            event(.success(drills))
+            
+            return Disposables.create()
         }
+        
 //        forceUpdate ? loadDrills() : cachedDrills()
+    }
+    
+    // TODO
+    func obtainHomeKit() -> Single<HomeKit?> {
+        Single<HomeKit?>.create { event in
+            let url = Bundle.main.url(forResource: "HomeKit", withExtension: "json")!
+            let data = try! Data(contentsOf: url)
+            let result = try! JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            
+            let homeKit = GetHomeKitResponse.map(from: result)
+            event(.success(homeKit))
+            
+            return Disposables.create()
+        }
+        
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = GetHomeKitRequest(userToken: userToken)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { GetHomeKitResponse.map(from: $0) }
     }
 }
 

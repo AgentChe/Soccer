@@ -1,0 +1,45 @@
+{
+    "_code": 200,
+    "_data": [
+        {
+            "id": 1,
+            "name": "Passing"
+        },
+        {
+            "id": 2,
+            "name": "Shooting"
+        },
+        {
+            "id": 3,
+            "name": "Dribbling"
+        },
+        {
+            "id": 4,
+            "name": "Defending"
+        },
+        {
+            "id": 5,
+            "name": "Goalkeeper"
+        },
+        {
+            "id": 6,
+            "name": "Attacking"
+        },
+        {
+            "id": 7,
+            "name": "Crossing"
+        },
+        {
+            "id": 8,
+            "name": "Heading"
+        },
+        {
+            "id": 9,
+            "name": "Ball control"
+        },
+        {
+            "id": 10,
+            "name": "Other"
+        }
+    ]
+}
