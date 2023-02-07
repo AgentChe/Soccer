@@ -10,7 +10,7 @@ import Kingfisher
 
 final class DailyPicksCollectionCell: UICollectionViewCell {
     lazy var pictureView = makeImageView()
-    lazy var gradientView = makeGradientView()
+    lazy var shadowView = makeShadowView()
     lazy var typeLabel = makeTypeLabel()
     lazy var nameLabel = makeNameLabel()
     lazy var tag1Label = makeTagLabel()
@@ -97,10 +97,10 @@ private extension DailyPicksCollectionCell {
         ])
         
         NSLayoutConstraint.activate([
-            gradientView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            gradientView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            gradientView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            gradientView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            shadowView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            shadowView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            shadowView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            shadowView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -142,7 +142,7 @@ private extension DailyPicksCollectionCell {
         return view
     }
     
-    func makeGradientView() -> UIView {
+    func makeShadowView() -> UIView {
         let view = UIView()
         view.backgroundColor = UIColor(integralRed: 9, green: 9, blue: 9, alpha: 0.5)
         view.translatesAutoresizingMaskIntoConstraints = false

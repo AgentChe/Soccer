@@ -50,6 +50,37 @@ private extension HomeViewModel {
                     .drills(drills)
                 ])
                 
+                if !homeKit.tryDrills.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(43.scale),
+                        .tryDrillsTitle("Home.TryDrills".localized),
+                        .offset(19.scale)
+                    ])
+                    
+                    homeKit.tryDrills.enumerated().forEach { index, drillTraining in
+                        guard let drill = drills.first(where: { drillTraining.id == $0.id }) else {
+                            return
+                        }
+                        
+                        if index != 0 {
+                            result.append(.offset(16.scale))
+                        }
+                        
+                        let element = HomeDrillTrainingElement(drillTraining: drillTraining,
+                                                               drill: drill)
+                        result.append(.drillTraining(element))
+                    }
+                }
+                
+                if !homeKit.workouts.isEmpty {
+                    result.append(contentsOf: [
+                        .offset(43.scale),
+                        .tryDrillsTitle("Home.ImproveYourFitness".localized),
+                        .offset(19.scale),
+                        .workouts(homeKit.workouts)
+                    ])
+                }
+                
                 return result
             }
     }

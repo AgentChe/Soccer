@@ -51,8 +51,8 @@ private extension HomeView {
 private extension HomeView {
     func makeTableView() -> HomeTableView {
         let view = HomeTableView()
-        view.contentInset = UIEdgeInsets(top: 58.scale, left: 0, bottom: 24.scale, right: 0)
-        view.setContentOffset(CGPoint(x: 0, y: 58.scale), animated: false)
+        view.contentInset = UIEdgeInsets(top: ScreenSize.isIphoneXFamily ? 58.scale : 30.scale, left: 0, bottom: 24.scale, right: 0)
+        view.setContentOffset(CGPoint(x: 0, y: ScreenSize.isIphoneXFamily ? -58.scale : -30.scale), animated: false)
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never

@@ -13,7 +13,9 @@ enum HomeTableElement {
     case dailyPicks([DailyPicksElement])
     case drills([Drill])
     case tryDrillsTitle(String)
+    case drillTraining(HomeDrillTrainingElement)
     case workoutsTitle(String)
+    case workouts([WorkoutTrainingCover])
 }
 
 struct DailyPicksElement {
@@ -49,4 +51,9 @@ struct DailyPicksElement {
         tag2 = nil
         action = "Home.StartWorkout".localized
     }
+}
+
+struct HomeDrillTrainingElement {
+    let drillTraining: DrillTrainingCover
+    let drill: Drill
 }

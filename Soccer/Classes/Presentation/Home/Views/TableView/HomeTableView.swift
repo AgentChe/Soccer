@@ -81,6 +81,17 @@ extension HomeTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: SeeAllTableCell.self)) as! SeeAllTableCell
             cell.setup(element: element)
             return cell
+        case .drillTraining(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: HomeDrillCoverCell.self)) as! HomeDrillCoverCell
+            cell.setup(element: element)
+            return cell
+        case .workouts(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: HomeWorkoutsCell.self)) as! HomeWorkoutsCell
+            cell.collectionView.setup(elements: element)
+            cell.collectionView.didTap = { [weak self] workout in
+                self?.mainDelegate?.homeTableDidTap(workout: workout)
+            }
+            return cell
         }
     }
 }
@@ -101,6 +112,10 @@ extension HomeTableView: UITableViewDelegate {
             return HomeDrillsCollectionCell.size(for: drill).height * 2 + 16.scale
         case .tryDrillsTitle, .workoutsTitle:
             return 30.scale
+        case .drillTraining:
+            return 90.scale
+        case .workouts:
+            return 330.scale
         case .title:
             return UITableView.automaticDimension
         }
@@ -112,6 +127,8 @@ extension HomeTableView: UITableViewDelegate {
             mainDelegate?.homeTableDidTapTryDrills()
         case .workoutsTitle:
             mainDelegate?.homeTableDidTapWorkouts()
+        case .drillTraining(let element):
+            mainDelegate?.homeTableDidTap(drillTrainingCover: element.drillTraining)
         default:
             return
         }
@@ -126,6 +143,8 @@ private extension HomeTableView {
         register(DailyPicksTableCell.self, forCellReuseIdentifier: String(describing: DailyPicksTableCell.self))
         register(HomeDrillsCell.self, forCellReuseIdentifier: String(describing: HomeDrillsCell.self))
         register(SeeAllTableCell.self, forCellReuseIdentifier: String(describing: SeeAllTableCell.self))
+        register(HomeDrillCoverCell.self, forCellReuseIdentifier: String(describing: HomeDrillCoverCell.self))
+        register(HomeWorkoutsCell.self, forCellReuseIdentifier: String(describing: HomeWorkoutsCell.self))
         
         dataSource = self
         delegate = self

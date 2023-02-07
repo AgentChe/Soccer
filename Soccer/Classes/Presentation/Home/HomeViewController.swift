@@ -56,6 +56,10 @@ final class HomeViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
 }
 
 // MARK: Make
