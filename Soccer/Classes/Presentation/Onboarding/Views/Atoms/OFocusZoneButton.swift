@@ -40,21 +40,6 @@ private extension OFocusZoneButton {
         
         backgroundColor = marked ? Appearance.primary : Appearance.black
     }
-    
-    var text: String {
-        switch focusZone {
-        case .arms:
-            return "Onboarding.FocusZone.Arms".localized
-        case .chest:
-            return "Onboarding.FocusZone.Chest".localized
-        case .core:
-            return "Onboarding.FocusZone.Core".localized
-        case .glutes:
-            return "Onboarding.FocusZone.Glutes".localized
-        case .legs:
-            return "Onboarding.FocusZone.Legs".localized
-        }
-    }
 }
 
 // MARK: Make constraints
@@ -77,7 +62,7 @@ private extension OFocusZoneButton {
             .textAlignment(.center)
         
         let view = UILabel()
-        view.attributedText = text.attributed(with: attrs)
+        view.attributedText = focusZone.localizedTitle.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

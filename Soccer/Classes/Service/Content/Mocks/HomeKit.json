@@ -6,7 +6,7 @@
                 "id": 1,
                 "name": "Pass and Move",
                 "skill_level": 0,
-                "image": "https://soccer.com/image",
+                "image": "https://www.scisports.com/wp-content/uploads/2018/09/Fabregas-1280x853.jpg",
                 "drill_id": 1,
                 "paid": true
             },
@@ -14,7 +14,7 @@
                 "id": 1,
                 "name": "Dynamic Balance",
                 "skill_level": 0,
-                "image": "https://soccer.com/image",
+                "image": "https://media.self.com/photos/61bcd0e05aed92fc4251b026/4:3/w_2560%2Cc_limit/GettyImages-1213234926.jpeg",
                 "focus_zones": [0, 1],
                 "paid": true
             }

@@ -35,6 +35,26 @@ final class HomeViewController: UIViewController {
                 base.activity(activity)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.elements
+            .drive(Binder(mainView.tableView) { base, elements in
+                base.setup(elements: elements)
+            })
+            .disposed(by: disposeBag)
+        
+        mainView.tableView.mainDelegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }
 
@@ -47,10 +67,39 @@ extension HomeViewController {
     }
 }
 
+// MARK: HomeTableViewDelegate
+extension HomeViewController: HomeTableViewDelegate {
+    func homeTableDidTap(drillTrainingCover: DrillTrainingCover) {
+        // TODO
+        print("homeTableDidTap drillTrainingCover: \(drillTrainingCover.name)")
+    }
+    
+    func homeTableDidTap(workout: WorkoutTrainingCover) {
+        // TODO
+        print("homeTableDidTap workout: \(workout.name)")
+    }
+    
+    func homeTableDidTap(drill: Drill) {
+        // TODO
+        print("homeTableDidTap drill: \(drill.name)")
+    }
+    
+    func homeTableDidTapTryDrills() {
+        // TODO
+        print("homeTableDidTapTryDrills")
+    }
+    
+    func homeTableDidTapWorkouts() {
+        // TODO
+        print("homeTableDidTapWorkouts")
+    }
+}
+
 // MARK: Private
 private extension HomeViewController {
     func activity(_ activity: Bool) {
-        
+        mainView.tableView.isHidden = activity
+        activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
     }
     
     func open(error: Error) -> Observable<Void> {

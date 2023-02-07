@@ -42,4 +42,19 @@ extension FocusZone {
             return 4
         }
     }
+    
+    var localizedTitle: String {
+        switch self {
+        case .arms:
+            return "FocusZone.Arms".localized
+        case .chest:
+            return "FocusZone.Chest".localized
+        case .core:
+            return "FocusZone.Core".localized
+        case .glutes:
+            return "FocusZone.Glutes".localized
+        case .legs:
+            return "FocusZone.Legs".localized
+        }
+    }
 }

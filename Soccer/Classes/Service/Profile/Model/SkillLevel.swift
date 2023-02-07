@@ -34,4 +34,15 @@ extension SkillLevel {
             return 2
         }
     }
+    
+    var localizedTitle: String {
+        switch self {
+        case .beginner:
+            return "SkillLevel.Beginner".localized
+        case .intermediate:
+            return "SkillLevel.Intermediate".localized
+        case .advanced:
+            return "SkillLevel.Advanced".localized
+        }
+    }
 }

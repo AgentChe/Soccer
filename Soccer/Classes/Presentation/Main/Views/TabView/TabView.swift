@@ -12,9 +12,9 @@ final class TabView: UIView {
         case home, train, profile
     }
     
-    lazy var homeItem = makeItem(name: "Main.Home")
-    lazy var trainItem = makeItem(name: "Main.Train")
-    lazy var profileItem = makeItem(name: "Main.Profile")
+    lazy var homeItem = makeItem(code: "Main.Home")
+    lazy var trainItem = makeItem(code: "Main.Train")
+    lazy var profileItem = makeItem(code: "Main.Profile")
     
     var selectedTab = Tab.home {
         didSet {
@@ -84,18 +84,9 @@ private extension TabView {
 
 // MARK: Lazy initialization
 private extension TabView {
-    func makeItem(name: String) -> TabItemView {
-        let attrs = TextAttributes()
-            .font(Fonts.PlusJakartaSans.semiBold(size: 12.scale))
-            .textColor(Appearance.black)
-            .lineHeight(12.scale)
-            .letterSpacing(-0.17.scale)
-            .textAlignment(.center)
-        
-        let view = TabItemView()
+    func makeItem(code: String) -> TabItemView {
+        let view = TabItemView(code: code)
         view.backgroundColor = UIColor.clear
-        view.iconView.image = UIImage(named: name)
-        view.label.attributedText = name.localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

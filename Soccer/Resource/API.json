@@ -58,7 +58,7 @@
             "name": "Dynamic Balance",
             "skill_level": 0,
             "image": "https://soccer.com/image",
-            "focus_zones": [0, 1]
+            "focus_zones": [0, 1] // первым всегда идет главная фокус зона
             "paid": true
         }
     },
@@ -77,7 +77,7 @@
         "name": "Dynamic Balance",
         "skill_level": 0,
         "image": "https://soccer.com/image",
-        "focus_zones": [0, 1]
+        "focus_zones": [0, 1] // первым всегда идет главная фокус зона
         "paid": true
     ]
 }

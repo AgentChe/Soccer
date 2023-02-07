@@ -45,17 +45,6 @@ private extension OSkillLevelScoreView {
         
         label.isHidden = !target
     }
-    
-    var text: String {
-        switch level {
-        case .beginner:
-            return "Onboarding.SkillLevel.Beginner".localized
-        case .intermediate:
-            return "Onboarding.SkillLevel.Intermediate".localized
-        case .advanced:
-            return "Onboarding.SkillLevel.Advanced".localized
-        }
-    }
 }
 
 // MARK: Make constraints
@@ -93,7 +82,7 @@ private extension OSkillLevelScoreView {
             .textAlignment(.center)
         
         let view = UILabel()
-        view.attributedText = text.attributed(with: attrs)
+        view.attributedText = level.localizedTitle.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

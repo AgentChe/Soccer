@@ -174,6 +174,17 @@
 		DED89C822990DA3E00325104 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C812990DA3E00325104 /* HomeViewController.swift */; };
 		DED89C842990DA4300325104 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C832990DA4300325104 /* HomeViewModel.swift */; };
 		DED89C862990DA4800325104 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C852990DA4800325104 /* HomeView.swift */; };
+		DED89C8A2990E21900325104 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C892990E21900325104 /* HomeTableView.swift */; };
+		DED89C8C2990E22100325104 /* HomeTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C8B2990E22100325104 /* HomeTableElement.swift */; };
+		DED89C8F2990EDAD00325104 /* SeeAllTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C8E2990EDAD00325104 /* SeeAllTableCell.swift */; };
+		DED89C9129913D9A00325104 /* HomeTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9029913D9A00325104 /* HomeTitleCell.swift */; };
+		DED89C9429913F4700325104 /* DailyPicksTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9329913F4700325104 /* DailyPicksTableCell.swift */; };
+		DED89C9729913F6500325104 /* DailyPicksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9629913F6500325104 /* DailyPicksCollectionCell.swift */; };
+		DED89C992991476100325104 /* DailyPicksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C982991476100325104 /* DailyPicksCollectionView.swift */; };
+		DED89C9B2991557600325104 /* HomeDrillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9A2991557600325104 /* HomeDrillsCell.swift */; };
+		DED89C9F2991559700325104 /* HomeDrillsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9E2991559700325104 /* HomeDrillsCollectionCell.swift */; };
+		DED89CA1299155A300325104 /* HomeDrillsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CA0299155A300325104 /* HomeDrillsCollectionView.swift */; };
+		DED89CA52992464F00325104 /* HomeDrillsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CA42992464F00325104 /* HomeDrillsCollectionLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -337,6 +348,17 @@
 		DED89C812990DA3E00325104 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DED89C832990DA4300325104 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DED89C852990DA4800325104 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DED89C892990E21900325104 /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
+		DED89C8B2990E22100325104 /* HomeTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableElement.swift; sourceTree = "<group>"; };
+		DED89C8E2990EDAD00325104 /* SeeAllTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllTableCell.swift; sourceTree = "<group>"; };
+		DED89C9029913D9A00325104 /* HomeTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitleCell.swift; sourceTree = "<group>"; };
+		DED89C9329913F4700325104 /* DailyPicksTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPicksTableCell.swift; sourceTree = "<group>"; };
+		DED89C9629913F6500325104 /* DailyPicksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPicksCollectionCell.swift; sourceTree = "<group>"; };
+		DED89C982991476100325104 /* DailyPicksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPicksCollectionView.swift; sourceTree = "<group>"; };
+		DED89C9A2991557600325104 /* HomeDrillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillsCell.swift; sourceTree = "<group>"; };
+		DED89C9E2991559700325104 /* HomeDrillsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillsCollectionCell.swift; sourceTree = "<group>"; };
+		DED89CA0299155A300325104 /* HomeDrillsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillsCollectionView.swift; sourceTree = "<group>"; };
+		DED89CA42992464F00325104 /* HomeDrillsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillsCollectionLayout.swift; sourceTree = "<group>"; };
 		F9DEDA9CBDA7E38E73CDA277 /* Pods-Soccer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soccer.release.xcconfig"; path = "Target Support Files/Pods-Soccer/Pods-Soccer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -976,11 +998,78 @@
 		DED89C802990DA2E00325104 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DED89C872990E20400325104 /* Views */,
 				DED89C812990DA3E00325104 /* HomeViewController.swift */,
 				DED89C832990DA4300325104 /* HomeViewModel.swift */,
 				DED89C852990DA4800325104 /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		DED89C872990E20400325104 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DED89C882990E20F00325104 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DED89C882990E20F00325104 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DED89C8D2990E7F100325104 /* Cells */,
+				DED89C892990E21900325104 /* HomeTableView.swift */,
+				DED89C8B2990E22100325104 /* HomeTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DED89C8D2990E7F100325104 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DED89C9C2991557D00325104 /* Drills */,
+				DED89C9229913F3C00325104 /* DailyPicks */,
+				DED89C9029913D9A00325104 /* HomeTitleCell.swift */,
+				DED89C8E2990EDAD00325104 /* SeeAllTableCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DED89C9229913F3C00325104 /* DailyPicks */ = {
+			isa = PBXGroup;
+			children = (
+				DED89C9529913F5900325104 /* Collection */,
+				DED89C9329913F4700325104 /* DailyPicksTableCell.swift */,
+			);
+			path = DailyPicks;
+			sourceTree = "<group>";
+		};
+		DED89C9529913F5900325104 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				DED89C9629913F6500325104 /* DailyPicksCollectionCell.swift */,
+				DED89C982991476100325104 /* DailyPicksCollectionView.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		DED89C9C2991557D00325104 /* Drills */ = {
+			isa = PBXGroup;
+			children = (
+				DED89C9D2991558C00325104 /* Collection */,
+				DED89C9A2991557600325104 /* HomeDrillsCell.swift */,
+			);
+			path = Drills;
+			sourceTree = "<group>";
+		};
+		DED89C9D2991558C00325104 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				DED89C9E2991559700325104 /* HomeDrillsCollectionCell.swift */,
+				DED89CA0299155A300325104 /* HomeDrillsCollectionView.swift */,
+				DED89CA42992464F00325104 /* HomeDrillsCollectionLayout.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1126,6 +1215,8 @@
 				DEA8FF00298A7CD800868C0E /* Inter-Regular.ttf in Sources */,
 				DED89C7D2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift in Sources */,
 				DEA8FF01298A7CD800868C0E /* Inter-Black.ttf in Sources */,
+				DED89C9F2991559700325104 /* HomeDrillsCollectionCell.swift in Sources */,
+				DED89C8F2990EDAD00325104 /* SeeAllTableCell.swift in Sources */,
 				DEA8FF02298A7CD800868C0E /* Inter-SemiBold.ttf in Sources */,
 				DEA8FE86298A7AE000868C0E /* GetPaygateResponse.swift in Sources */,
 				DEA8FE82298A7AE000868C0E /* AmplitudeManager.swift in Sources */,
@@ -1145,8 +1236,10 @@
 				DEBC2B2E298C113E002C84E3 /* Drill.swift in Sources */,
 				DEA8FE9C298A7AE000868C0E /* SplashViewModel.swift in Sources */,
 				DEA8FE59298A7AE000868C0E /* Collection+Extension.swift in Sources */,
+				DED89C8C2990E22100325104 /* HomeTableElement.swift in Sources */,
 				DEA8FE7B298A7AE000868C0E /* PushNotificationsManager.swift in Sources */,
 				DEACE5C0298A9C4A0096FF15 /* OAgeButton.swift in Sources */,
+				DED89C9729913F6500325104 /* DailyPicksCollectionCell.swift in Sources */,
 				DEA8FE66298A7AE000868C0E /* XOREncryption.swift in Sources */,
 				DEBC2B32298C1165002C84E3 /* GetDrillsRequest.swift in Sources */,
 				DEBC2B45298D048E002C84E3 /* OWorkoutTypeView.swift in Sources */,
@@ -1155,6 +1248,7 @@
 				DEA8FE6B298A7AE000868C0E /* Weak.swift in Sources */,
 				DEA8FE5E298A7AE000868C0E /* DefaultRequestWrapper.swift in Sources */,
 				DEA8FE95298A7AE000868C0E /* IAPError.swift in Sources */,
+				DED89C9B2991557600325104 /* HomeDrillsCell.swift in Sources */,
 				DEA8FEBA298A7AE000868C0E /* TryAgainView.swift in Sources */,
 				DEA8FE5A298A7AE000868C0E /* ObservableAndSingle+Extension.swift in Sources */,
 				DEA8FE9D298A7AE000868C0E /* SplashView.swift in Sources */,
@@ -1163,6 +1257,7 @@
 				DEA8FE61298A7AE000868C0E /* Scalable.swift in Sources */,
 				DEBC2B27298C0BAF002C84E3 /* OWhereTrainView.swift in Sources */,
 				DEA8FEE1298A7AE000868C0E /* OnboardingViewModel.swift in Sources */,
+				DED89C9129913D9A00325104 /* HomeTitleCell.swift in Sources */,
 				DEA8FEA3298A7AE000868C0E /* PaygateViewControllerDelegate.swift in Sources */,
 				DEA8FE81298A7AE000868C0E /* BranchManager.swift in Sources */,
 				DEA8FE6A298A7AE000868C0E /* ContentError.swift in Sources */,
@@ -1178,6 +1273,7 @@
 				DEBC2B25298C0A2A002C84E3 /* OWhereTrainButton.swift in Sources */,
 				DEA8FF08298A873F00868C0E /* OCircleProgressView.swift in Sources */,
 				DEA8FE9A298A7AE000868C0E /* SplashActivity.swift in Sources */,
+				DED89C8A2990E21900325104 /* HomeTableView.swift in Sources */,
 				DEBC2B53298D1DB6002C84E3 /* GetProfileRequest.swift in Sources */,
 				DEA8FE56298A7AE000868C0E /* UIApplication+Extension.swift in Sources */,
 				DEACE5C2298A9C8E0096FF15 /* OAgeView.swift in Sources */,
@@ -1188,9 +1284,11 @@
 				DEA8FE89298A7AE000868C0E /* ProfileManager.swift in Sources */,
 				DEA8FE83298A7AE000868C0E /* FirebaseManager.swift in Sources */,
 				DEBC2B19298BF483002C84E3 /* OGoalsView.swift in Sources */,
+				DED89C9429913F4700325104 /* DailyPicksTableCell.swift in Sources */,
 				DEA8FE7D298A7AE000868C0E /* PushNotificationsModel.swift in Sources */,
 				DEA8FE5B298A7AE000868C0E /* String+Extension.swift in Sources */,
 				DEA8FEA4298A7AE000868C0E /* PaygateInteractor.swift in Sources */,
+				DED89C992991476100325104 /* DailyPicksCollectionView.swift in Sources */,
 				DEA8FE75298A7AE000868C0E /* PaddingTextField.swift in Sources */,
 				DEA8FE9F298A7AE000868C0E /* PaygateViewModel.swift in Sources */,
 				DEA8FE68298A7AE000868C0E /* SignError.swift in Sources */,
@@ -1215,6 +1313,7 @@
 				DEA8FE80298A7AE000868C0E /* AppsFlyerManager.swift in Sources */,
 				DEA8FE72298A7AE000868C0E /* NavigationController.swift in Sources */,
 				DEA8FEA1298A7AE000868C0E /* PaygatePrice.swift in Sources */,
+				DED89CA1299155A300325104 /* HomeDrillsCollectionView.swift in Sources */,
 				DEA8FE92298A7AE000868C0E /* ProductPrice.swift in Sources */,
 				DEA8FE88298A7AE000868C0E /* PaygateManager.swift in Sources */,
 				DEA8FEA8298A7AE000868C0E /* PaygateInfoCell.swift in Sources */,
@@ -1246,6 +1345,7 @@
 				DEA8FEA7298A7AE000868C0E /* PaygateProductButton.swift in Sources */,
 				DEA8FEBB298A7AE000868C0E /* TryAgainViewController.swift in Sources */,
 				DEBC2B13298BCF15002C84E3 /* OSkillLevelView.swift in Sources */,
+				DED89CA52992464F00325104 /* HomeDrillsCollectionLayout.swift in Sources */,
 				DEA8FE74298A7AE000868C0E /* Spinner.swift in Sources */,
 				DEBC2B50298D1C88002C84E3 /* GetProfileResponse.swift in Sources */,
 				DEA8FED4298A7AE000868C0E /* OSlideView.swift in Sources */,

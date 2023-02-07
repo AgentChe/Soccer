@@ -22,6 +22,18 @@
 "TryAgain.Button" = "Try again";
 "TryAgain.Contact" = "Contact the support";
 
+// MARK: FocusZone
+"FocusZone.Arms" = "Arms";
+"FocusZone.Chest" = "Chest";
+"FocusZone.Core" = "Core";
+"FocusZone.Glutes" = "Glutes";
+"FocusZone.Legs" = "Legs";
+
+// MARK: SkillLevel
+"SkillLevel.Beginner" = "Beginner";
+"SkillLevel.Intermediate" = "Intermediate";
+"SkillLevel.Advanced" = "Advanced";
+
 // MARK: Splash
 "Splash.Text" = "Wicca Spells";
 "Splash.Bottom" = "The sky above me. Earth below\nme. Fire within me.";
@@ -66,9 +78,6 @@
 "Onboarding.Role.Coach" = "Coach";
 "Onboarding.Role.Amateur" = "Amateur";
 "Onboarding.SkillLevel.Title" = "Define your skill level";
-"Onboarding.SkillLevel.Beginner" = "Beginner";
-"Onboarding.SkillLevel.Intermediate" = "Intermediate";
-"Onboarding.SkillLevel.Advanced" = "Advanced";
 "Onboarding.Goals.Title" = "What do you want to\nimprove?";
 "Onboarding.Goals.1" = "Speed and agility";
 "Onboarding.Goals.2" = "Ball control and dribbling\nskills";
@@ -104,11 +113,6 @@
 "Onboarding.WorkoutType.Cell4" = "Yoga (or other mind-body workouts)";
 "Onboarding.WorkoutType.Cell5" = "No particular preference";
 "Onboarding.FocusZone.Title" = "Which body part would\nyou like to improve?";
-"Onboarding.FocusZone.Arms" = "Arms";
-"Onboarding.FocusZone.Chest" = "Chest";
-"Onboarding.FocusZone.Core" = "Core";
-"Onboarding.FocusZone.Glutes" = "Glutes";
-"Onboarding.FocusZone.Legs" = "Legs";
 "Onboarding.Preloader.Text1" = "Analyzing your preferences...";
 "Onboarding.Preloader.Text2" = "Identifying your skill level...";
 "Onboarding.Preloader.Text3" = "Creating personalized\nworkouts...";
@@ -118,3 +122,13 @@
 "Main.Home" = "Home";
 "Main.Train" = "Train";
 "Main.Profile" = "Profile";
+
+// MARK: Home
+"Home.DailyPicks" = "Daily picks";
+"Home.Drill" = "Drill";
+"Home.Training" = "Training";
+"Home.SeeAll" = "See all";
+"Home.TryDrills" = "Try drills";
+"Home.ImproveYourFitness" = "Improve your fitness";
+"Home.StartTraining" = "Start training";
+"Home.StartWorkout" = "Start workout";
