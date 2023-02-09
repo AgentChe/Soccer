@@ -8,7 +8,9 @@
                 "skill_level": 0,
                 "image": "https://www.scisports.com/wp-content/uploads/2018/09/Fabregas-1280x853.jpg",
                 "drill_id": 1,
-                "paid": true
+                "paid": true,
+                "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+                "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle.\n\nThe objective for each team is to pass the ball to their teammates and try to score by shooting the ball into the goal. The neutral player can join in and play for either team.\n\nTo add an additional challenge, you can allow players to only pass the ball to the neutral player a certain number of times before they have to score."
             },
             "workout": {
                 "id": 1,
@@ -26,7 +28,9 @@
                 "skill_level": 0,
                 "image": "https://www.football-observatory.com/IMG/sites/b5wp/2018/263/en/images/wp263.jpg?crc=348633816",
                 "drill_id": 1,
-                "paid": true
+                "paid": true,
+                "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+                "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle.\n\nThe objective for each team is to pass the ball to their teammates and try to score by shooting the ball into the goal. The neutral player can join in and play for either team.\n\nTo add an additional challenge, you can allow players to only pass the ball to the neutral player a certain number of times before they have to score."
             },
             {
                 "id": 2,
@@ -34,7 +38,9 @@
                 "skill_level": 0,
                 "image": "https://i.ytimg.com/vi/69DfqeFcJ0E/maxresdefault.jpg",
                 "drill_id": 2,
-                "paid": true
+                "paid": true,
+                "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+                "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle.\n\nThe objective for each team is to pass the ball to their teammates and try to score by shooting the ball into the goal. The neutral player can join in and play for either team.\n\nTo add an additional challenge, you can allow players to only pass the ball to the neutral player a certain number of times before they have to score."
             },
             {
                 "id": 3,
@@ -42,7 +48,9 @@
                 "skill_level": 0,
                 "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Xabi_Alonso_Euro_2012_vs_France_02.jpg/220px-Xabi_Alonso_Euro_2012_vs_France_02.jpg",
                 "drill_id": 3,
-                "paid": true
+                "paid": true,
+                "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+                "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle.\n\nThe objective for each team is to pass the ball to their teammates and try to score by shooting the ball into the goal. The neutral player can join in and play for either team.\n\nTo add an additional challenge, you can allow players to only pass the ball to the neutral player a certain number of times before they have to score."
             }
         ],
         "workouts": [

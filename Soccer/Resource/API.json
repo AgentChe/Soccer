@@ -51,7 +51,9 @@
             "skill_level": 0,
             "image": "https://soccer.com/image",
             "drill_id": 1,
-            "paid": true
+            "paid": true,
+            "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+            "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle."
         },
         "workout": {
             "id": 1,
@@ -69,7 +71,9 @@
             "skill_level": 0,
             "image": "https://soccer.com/image",
             "drill_id": 1,
-            "paid": true
+            "paid": true,
+            "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+            "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle."
         }
     ],
     "workouts": [

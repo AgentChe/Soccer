@@ -14,7 +14,7 @@ final class GetHomeKitResponse {
             let data = json["_data"] as? [String: Any],
             let dailyJSON = data["daily"] as? [String: Any],
             let dailyDrillJSON = dailyJSON["drill"] as? [String: Any],
-            let dailyDrill = DrillTrainingCoverJSONMapper.map(from: dailyDrillJSON),
+            let dailyDrill = DrillTrainingJSONMapper.map(from: dailyDrillJSON),
             let dailyWorkoutJSON = dailyJSON["workout"] as? [String: Any],
             let dailyWorkout = WorkoutTrainingCoverJSONMapper.map(from: dailyWorkoutJSON)
         else {
@@ -22,7 +22,7 @@ final class GetHomeKitResponse {
         }
         
         let tryDrillsArray = data["try_drills"] as? [[String: Any]] ?? []
-        let tryDrills = tryDrillsArray.compactMap { DrillTrainingCoverJSONMapper.map(from: $0) }
+        let tryDrills = tryDrillsArray.compactMap { DrillTrainingJSONMapper.map(from: $0) }
         
         let workoutsArray = data["workouts"] as? [[String: Any]] ?? []
         let workouts = workoutsArray.compactMap { WorkoutTrainingCoverJSONMapper.map(from: $0) }

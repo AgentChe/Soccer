@@ -132,3 +132,7 @@
 "Home.ImproveYourFitness" = "Improve your fitness";
 "Home.StartTraining" = "Start training";
 "Home.StartWorkout" = "Start workout";
+
+// MARK: DrillTrainingInstruction
+"DrillTrainingInstruction.StartTraining" = "Start training";
+"DrillTrainingInstruction.Instruction" = "Instruction";

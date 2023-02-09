@@ -36,7 +36,7 @@ private extension HomeViewModel {
                 
                 var dailyPicks = [DailyPicksElement]()
                 if let drill = drills.first(where: { $0.id == homeKit.dailyDrill.drillId }) {
-                    dailyPicks.append(.init(drillTrainingCover: homeKit.dailyDrill, drill: drill))
+                    dailyPicks.append(.init(drillTraining: homeKit.dailyDrill, drill: drill))
                 }
                 dailyPicks.append(.init(workout: homeKit.dailyWorkout))
                 result.append(contentsOf: [

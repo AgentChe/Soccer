@@ -163,12 +163,12 @@
 		DEBC2B53298D1DB6002C84E3 /* GetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B52298D1DB6002C84E3 /* GetProfileRequest.swift */; };
 		DEBC2B55298D254B002C84E3 /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B54298D254B002C84E3 /* ProfileMediator.swift */; };
 		DED89C6E2990D1EB00325104 /* HomeKit.json in Resources */ = {isa = PBXBuildFile; fileRef = DED89C6D2990D1EB00325104 /* HomeKit.json */; };
-		DED89C702990D28B00325104 /* DrillTrainingCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C6F2990D28B00325104 /* DrillTrainingCover.swift */; };
+		DED89C702990D28B00325104 /* DrillTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C6F2990D28B00325104 /* DrillTraining.swift */; };
 		DED89C722990D38700325104 /* WorkoutTrainingCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C712990D38700325104 /* WorkoutTrainingCover.swift */; };
 		DED89C742990D3CF00325104 /* HomeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C732990D3CF00325104 /* HomeKit.swift */; };
 		DED89C772990D48700325104 /* GetHomeKitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C762990D48700325104 /* GetHomeKitRequest.swift */; };
 		DED89C792990D48D00325104 /* GetHomeKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C782990D48D00325104 /* GetHomeKitResponse.swift */; };
-		DED89C7B2990D62D00325104 /* DrillTrainingCoverJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C7A2990D62D00325104 /* DrillTrainingCoverJSONMapper.swift */; };
+		DED89C7B2990D62D00325104 /* DrillTrainingJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C7A2990D62D00325104 /* DrillTrainingJSONMapper.swift */; };
 		DED89C7D2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C7C2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift */; };
 		DED89C7F2990D81A00325104 /* Drills.json in Resources */ = {isa = PBXBuildFile; fileRef = DED89C7E2990D81A00325104 /* Drills.json */; };
 		DED89C822990DA3E00325104 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C812990DA3E00325104 /* HomeViewController.swift */; };
@@ -189,6 +189,15 @@
 		DED89CB1299287EA00325104 /* HomeWorkoutsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CB0299287EA00325104 /* HomeWorkoutsCell.swift */; };
 		DED89CB4299287FA00325104 /* HomeWorkoutsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CB3299287FA00325104 /* HomeWorkoutsCollectionCell.swift */; };
 		DED89CB62992880100325104 /* HomeWorkoutsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CB52992880100325104 /* HomeWorkoutsCollectionView.swift */; };
+		DED89CDE2994D71500325104 /* DrillTrainingInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CDD2994D71500325104 /* DrillTrainingInstructionViewController.swift */; };
+		DED89CE02994D71C00325104 /* DrillTrainingInstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CDF2994D71C00325104 /* DrillTrainingInstructionViewModel.swift */; };
+		DED89CE22994D72000325104 /* DailyTrainingInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CE12994D72000325104 /* DailyTrainingInstructionView.swift */; };
+		DED89CE62994DA8700325104 /* DTITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CE52994DA8600325104 /* DTITableView.swift */; };
+		DED89CE82994DA8E00325104 /* DTITableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CE72994DA8E00325104 /* DTITableElement.swift */; };
+		DED89CEB2994DC8400325104 /* DTIHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CEA2994DC8400325104 /* DTIHeaderCell.swift */; };
+		DED89CED2995209E00325104 /* DTIDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CEC2995209E00325104 /* DTIDescriptionCell.swift */; };
+		DED89CEF299522AF00325104 /* DTIButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CEE299522AF00325104 /* DTIButtonsCell.swift */; };
+		DED89CF129952EC700325104 /* DTIInstructionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CF029952EC700325104 /* DTIInstructionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -341,12 +350,12 @@
 		DEBC2B52298D1DB6002C84E3 /* GetProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileRequest.swift; sourceTree = "<group>"; };
 		DEBC2B54298D254B002C84E3 /* ProfileMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediator.swift; sourceTree = "<group>"; };
 		DED89C6D2990D1EB00325104 /* HomeKit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeKit.json; sourceTree = "<group>"; };
-		DED89C6F2990D28B00325104 /* DrillTrainingCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingCover.swift; sourceTree = "<group>"; };
+		DED89C6F2990D28B00325104 /* DrillTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTraining.swift; sourceTree = "<group>"; };
 		DED89C712990D38700325104 /* WorkoutTrainingCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingCover.swift; sourceTree = "<group>"; };
 		DED89C732990D3CF00325104 /* HomeKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKit.swift; sourceTree = "<group>"; };
 		DED89C762990D48700325104 /* GetHomeKitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHomeKitRequest.swift; sourceTree = "<group>"; };
 		DED89C782990D48D00325104 /* GetHomeKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHomeKitResponse.swift; sourceTree = "<group>"; };
-		DED89C7A2990D62D00325104 /* DrillTrainingCoverJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingCoverJSONMapper.swift; sourceTree = "<group>"; };
+		DED89C7A2990D62D00325104 /* DrillTrainingJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingJSONMapper.swift; sourceTree = "<group>"; };
 		DED89C7C2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingCoverJSONMapper.swift; sourceTree = "<group>"; };
 		DED89C7E2990D81A00325104 /* Drills.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Drills.json; sourceTree = "<group>"; };
 		DED89C812990DA3E00325104 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -367,6 +376,15 @@
 		DED89CB0299287EA00325104 /* HomeWorkoutsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkoutsCell.swift; sourceTree = "<group>"; };
 		DED89CB3299287FA00325104 /* HomeWorkoutsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkoutsCollectionCell.swift; sourceTree = "<group>"; };
 		DED89CB52992880100325104 /* HomeWorkoutsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkoutsCollectionView.swift; sourceTree = "<group>"; };
+		DED89CDD2994D71500325104 /* DrillTrainingInstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingInstructionViewController.swift; sourceTree = "<group>"; };
+		DED89CDF2994D71C00325104 /* DrillTrainingInstructionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingInstructionViewModel.swift; sourceTree = "<group>"; };
+		DED89CE12994D72000325104 /* DailyTrainingInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTrainingInstructionView.swift; sourceTree = "<group>"; };
+		DED89CE52994DA8600325104 /* DTITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTITableView.swift; sourceTree = "<group>"; };
+		DED89CE72994DA8E00325104 /* DTITableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTITableElement.swift; sourceTree = "<group>"; };
+		DED89CEA2994DC8400325104 /* DTIHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTIHeaderCell.swift; sourceTree = "<group>"; };
+		DED89CEC2995209E00325104 /* DTIDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTIDescriptionCell.swift; sourceTree = "<group>"; };
+		DED89CEE299522AF00325104 /* DTIButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTIButtonsCell.swift; sourceTree = "<group>"; };
+		DED89CF029952EC700325104 /* DTIInstructionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTIInstructionCell.swift; sourceTree = "<group>"; };
 		F9DEDA9CBDA7E38E73CDA277 /* Pods-Soccer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soccer.release.xcconfig"; path = "Target Support Files/Pods-Soccer/Pods-Soccer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -732,6 +750,7 @@
 		DEA8FDEF298A7AE000868C0E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DED89CDB2994D6EC00325104 /* DrillTraining */,
 				DED89C802990DA2E00325104 /* Home */,
 				DEA8FF09298A89D200868C0E /* Main */,
 				DEA8FDF0298A7AE000868C0E /* Splash */,
@@ -939,7 +958,7 @@
 			isa = PBXGroup;
 			children = (
 				DEBC2B2D298C113E002C84E3 /* Drill.swift */,
-				DED89C6F2990D28B00325104 /* DrillTrainingCover.swift */,
+				DED89C6F2990D28B00325104 /* DrillTraining.swift */,
 				DED89C712990D38700325104 /* WorkoutTrainingCover.swift */,
 				DED89C732990D3CF00325104 /* HomeKit.swift */,
 			);
@@ -951,7 +970,7 @@
 			children = (
 				DED89C752990D47C00325104 /* GetHomeKit */,
 				DEBC2B30298C115B002C84E3 /* GetDrills */,
-				DED89C7A2990D62D00325104 /* DrillTrainingCoverJSONMapper.swift */,
+				DED89C7A2990D62D00325104 /* DrillTrainingJSONMapper.swift */,
 				DED89C7C2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift */,
 			);
 			path = Request;
@@ -1100,6 +1119,54 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
+		DED89CDB2994D6EC00325104 /* DrillTraining */ = {
+			isa = PBXGroup;
+			children = (
+				DED89CDC2994D70000325104 /* Instruction */,
+			);
+			path = DrillTraining;
+			sourceTree = "<group>";
+		};
+		DED89CDC2994D70000325104 /* Instruction */ = {
+			isa = PBXGroup;
+			children = (
+				DED89CE32994DA6500325104 /* Views */,
+				DED89CDD2994D71500325104 /* DrillTrainingInstructionViewController.swift */,
+				DED89CDF2994D71C00325104 /* DrillTrainingInstructionViewModel.swift */,
+				DED89CE12994D72000325104 /* DailyTrainingInstructionView.swift */,
+			);
+			path = Instruction;
+			sourceTree = "<group>";
+		};
+		DED89CE32994DA6500325104 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DED89CE42994DA6E00325104 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DED89CE42994DA6E00325104 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DED89CE92994DA9100325104 /* Cells */,
+				DED89CE52994DA8600325104 /* DTITableView.swift */,
+				DED89CE72994DA8E00325104 /* DTITableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DED89CE92994DA9100325104 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DED89CEA2994DC8400325104 /* DTIHeaderCell.swift */,
+				DED89CEC2995209E00325104 /* DTIDescriptionCell.swift */,
+				DED89CEE299522AF00325104 /* DTIButtonsCell.swift */,
+				DED89CF029952EC700325104 /* DTIInstructionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1236,7 +1303,7 @@
 				DEBC2B43298CFD2B002C84E3 /* OPositionView.swift in Sources */,
 				DEA8FEFD298A7CD800868C0E /* PlusJakartaSans-ExtraBold.ttf in Sources */,
 				DEA8FEFE298A7CD800868C0E /* Inter-Medium.ttf in Sources */,
-				DED89C7B2990D62D00325104 /* DrillTrainingCoverJSONMapper.swift in Sources */,
+				DED89C7B2990D62D00325104 /* DrillTrainingJSONMapper.swift in Sources */,
 				DEBC2B36298C11FA002C84E3 /* ContentManager.swift in Sources */,
 				DEA8FEFF298A7CD800868C0E /* Inter-Bold.ttf in Sources */,
 				DEA8FF04298A83AF00868C0E /* Toast.swift in Sources */,
@@ -1244,6 +1311,7 @@
 				DED89C7D2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift in Sources */,
 				DEA8FF01298A7CD800868C0E /* Inter-Black.ttf in Sources */,
 				DED89C9F2991559700325104 /* HomeDrillsCollectionCell.swift in Sources */,
+				DED89CEB2994DC8400325104 /* DTIHeaderCell.swift in Sources */,
 				DED89C8F2990EDAD00325104 /* SeeAllTableCell.swift in Sources */,
 				DEA8FF02298A7CD800868C0E /* Inter-SemiBold.ttf in Sources */,
 				DEA8FE86298A7AE000868C0E /* GetPaygateResponse.swift in Sources */,
@@ -1254,7 +1322,7 @@
 				DEA8FE99298A7AE000868C0E /* SplashViewController.swift in Sources */,
 				DEBC2B3B298C139A002C84E3 /* ODrillsTableCell.swift in Sources */,
 				DEA8FE73298A7AE000868C0E /* TapAreaButton.swift in Sources */,
-				DED89C702990D28B00325104 /* DrillTrainingCover.swift in Sources */,
+				DED89C702990D28B00325104 /* DrillTraining.swift in Sources */,
 				DEBC2B21298BFF77002C84E3 /* WeekSchedule.swift in Sources */,
 				DED89C772990D48700325104 /* GetHomeKitRequest.swift in Sources */,
 				DEBC2B39298C1394002C84E3 /* ODrillsTableView.swift in Sources */,
@@ -1282,6 +1350,7 @@
 				DEA8FE5A298A7AE000868C0E /* ObservableAndSingle+Extension.swift in Sources */,
 				DEA8FE9D298A7AE000868C0E /* SplashView.swift in Sources */,
 				DEA8FEBE298A7AE000868C0E /* OCombineData.swift in Sources */,
+				DED89CE82994DA8E00325104 /* DTITableElement.swift in Sources */,
 				DED89C842990DA4300325104 /* HomeViewModel.swift in Sources */,
 				DEA8FE61298A7AE000868C0E /* Scalable.swift in Sources */,
 				DEBC2B27298C0BAF002C84E3 /* OWhereTrainView.swift in Sources */,
@@ -1322,6 +1391,7 @@
 				DED89C992991476100325104 /* DailyPicksCollectionView.swift in Sources */,
 				DEA8FE75298A7AE000868C0E /* PaddingTextField.swift in Sources */,
 				DEA8FE9F298A7AE000868C0E /* PaygateViewModel.swift in Sources */,
+				DED89CE02994D71C00325104 /* DrillTrainingInstructionViewModel.swift in Sources */,
 				DEA8FE68298A7AE000868C0E /* SignError.swift in Sources */,
 				DEBC2B1D298BF9C0002C84E3 /* DayOfWeek.swift in Sources */,
 				DEA8FE63298A7AE000868C0E /* TextAttributes.swift in Sources */,
@@ -1338,6 +1408,7 @@
 				DEA8FE7F298A7AE000868C0E /* Appearance.swift in Sources */,
 				DEA8FE57298A7AE000868C0E /* UIDevice+Extension.swift in Sources */,
 				DEA8FE62298A7AE000868C0E /* NumberLaunches.swift in Sources */,
+				DED89CF129952EC700325104 /* DTIInstructionCell.swift in Sources */,
 				DEACE5C6298AA01C0096FF15 /* Role.swift in Sources */,
 				DEA8FE5C298A7AE000868C0E /* UIViewRxExtension.swift in Sources */,
 				DEBC2B49298D0BD7002C84E3 /* OFocusZoneButton.swift in Sources */,
@@ -1351,6 +1422,7 @@
 				DEA8FEA8298A7AE000868C0E /* PaygateInfoCell.swift in Sources */,
 				DEA8FE6C298A7AE000868C0E /* RequestReview.swift in Sources */,
 				DED89C722990D38700325104 /* WorkoutTrainingCover.swift in Sources */,
+				DED89CED2995209E00325104 /* DTIDescriptionCell.swift in Sources */,
 				DEA8FE8E298A7AE000868C0E /* SyncTokensRequest.swift in Sources */,
 				DED89C862990DA4800325104 /* HomeView.swift in Sources */,
 				DEACE5C4298AA0020096FF15 /* ORoleButton.swift in Sources */,
@@ -1360,10 +1432,13 @@
 				DEBC2B55298D254B002C84E3 /* ProfileMediator.swift in Sources */,
 				DEA8FF14298A89D200868C0E /* TabView.swift in Sources */,
 				DEA8FF12298A89D200868C0E /* MainView.swift in Sources */,
+				DED89CEF299522AF00325104 /* DTIButtonsCell.swift in Sources */,
 				DEBC2B0F298BCC04002C84E3 /* SkillLevel.swift in Sources */,
 				DEA8FEE0298A7AE000868C0E /* OnboardingView.swift in Sources */,
+				DED89CDE2994D71500325104 /* DrillTrainingInstructionViewController.swift in Sources */,
 				DEA8FE93298A7AE000868C0E /* IAPActionResult.swift in Sources */,
 				DEACE5BA298A93490096FF15 /* OGenderButton.swift in Sources */,
+				DED89CE62994DA8700325104 /* DTITableView.swift in Sources */,
 				DEA8FE6E298A7AE000868C0E /* RxActivityIndicator.swift in Sources */,
 				DEA8FE77298A7AE000868C0E /* CircleView.swift in Sources */,
 				DEA8FE79298A7AE000868C0E /* CircleProgressView.swift in Sources */,
@@ -1391,6 +1466,7 @@
 				DEA8FE97298A7AE000868C0E /* Session.swift in Sources */,
 				DEA8FE98298A7AE000868C0E /* SessionManager.swift in Sources */,
 				DEA8FE78298A7AE000868C0E /* GradientView.swift in Sources */,
+				DED89CE22994D72000325104 /* DailyTrainingInstructionView.swift in Sources */,
 				DEBC2B15298BEFE2002C84E3 /* OGoalButton.swift in Sources */,
 				DEA8FE5D298A7AE000868C0E /* GlobalDefinitions.swift in Sources */,
 			);
