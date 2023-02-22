@@ -13,10 +13,12 @@ final class DrillTrainingInstructionViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private let viewModel: DrillTrainingInstructionViewModel
+    private lazy var viewModel = DrillTrainingInstructionViewModel(drillTraining: drillTraining)
+    
+    private let drillTraining: DrillTraining
     
     private init(drillTraining: DrillTraining) {
-        viewModel = DrillTrainingInstructionViewModel(drillTraining: drillTraining)
+        self.drillTraining = drillTraining
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -59,7 +61,7 @@ extension DrillTrainingInstructionViewController: DTITableDelegate {
     }
     
     func dtiTableDidTappedStartTraining() {
-        // TODO
-        print("dtiTableDidTappedStartTraining")
+        let vc = DrillTrainingViewController.make(drillTraining: drillTraining)
+        present(vc, animated: true)
     }
 }

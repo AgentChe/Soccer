@@ -21,6 +21,7 @@ final class DTIHeaderCell: UITableViewCell {
         .font(Fonts.Inter.bold(size: 24.scale))
         .lineHeight(28.8.scale)
         .textAlignment(.center)
+        .lineBreakMode(.byTruncatingTail)
     private lazy var tagAttrs = TextAttributes()
         .textColor(Appearance.white)
         .font(Fonts.Inter.semiBold(size: 12.scale))
@@ -85,17 +86,18 @@ private extension DTIHeaderCell {
         ])
         
         NSLayoutConstraint.activate([
-            nameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
             nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -54.scale)
         ])
         
         NSLayoutConstraint.activate([
-            tag1Label.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -16.scale),
+            tag1Label.trailingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -8.scale),
             tag1Label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15.scale)
         ])
         
         NSLayoutConstraint.activate([
-            tag2Label.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 16.scale),
+            tag2Label.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 8.scale),
             tag2Label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15.scale)
         ])
     }
@@ -106,6 +108,7 @@ private extension DTIHeaderCell {
     func makeImageView() -> UIImageView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view
