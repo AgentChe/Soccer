@@ -1,0 +1,55 @@
+{
+    "_code": 200,
+    "_data": [
+        {
+            "id": 1,
+            "name": "Pass and Move",
+            "skill_level": 0,
+            "image": "https://www.scisports.com/wp-content/uploads/2018/09/Fabregas-1280x853.jpg",
+            "drill_id": 1,
+            "paid": false,
+            "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+            "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle.\n\nThe objective for each team is to pass the ball to their teammates and try to score by shooting the ball into the goal. The neutral player can join in and play for either team.\n\nTo add an additional challenge, you can allow players to only pass the ball to the neutral player a certain number of times before they have to score."
+        },
+        {
+            "id": 2,
+            "name": "Pass and Move",
+            "skill_level": 1,
+            "image": "https://www.scisports.com/wp-content/uploads/2018/09/Fabregas-1280x853.jpg",
+            "drill_id": 1,
+            "paid": true,
+            "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+            "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle.\n\nThe objective for each team is to pass the ball to their teammates and try to score by shooting the ball into the goal. The neutral player can join in and play for either team.\n\nTo add an additional challenge, you can allow players to only pass the ball to the neutral player a certain number of times before they have to score."
+        },
+        {
+            "id": 3,
+            "name": "Pass and Move",
+            "skill_level": 2,
+            "image": "https://www.scisports.com/wp-content/uploads/2018/09/Fabregas-1280x853.jpg",
+            "drill_id": 1,
+            "paid": true,
+            "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+            "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle.\n\nThe objective for each team is to pass the ball to their teammates and try to score by shooting the ball into the goal. The neutral player can join in and play for either team.\n\nTo add an additional challenge, you can allow players to only pass the ball to the neutral player a certain number of times before they have to score."
+        },
+        {
+            "id": 4,
+            "name": "Pass and Move",
+            "skill_level": 0,
+            "image": "https://www.scisports.com/wp-content/uploads/2018/09/Fabregas-1280x853.jpg",
+            "drill_id": 1,
+            "paid": true,
+            "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+            "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle.\n\nThe objective for each team is to pass the ball to their teammates and try to score by shooting the ball into the goal. The neutral player can join in and play for either team.\n\nTo add an additional challenge, you can allow players to only pass the ball to the neutral player a certain number of times before they have to score."
+        },
+        {
+            "id": 5,
+            "name": "Pass and Move",
+            "skill_level": 0,
+            "image": "https://www.scisports.com/wp-content/uploads/2018/09/Fabregas-1280x853.jpg",
+            "drill_id": 1,
+            "paid": true,
+            "description": "This is a small-sided game that emphasizes passing and movement off the ball",
+            "instruction": "Set up a playing area with two teams of three players each, plus one additional neutral player. The teams should be positioned on opposite sides of the playing area, with the neutral player in the middle.\n\nThe objective for each team is to pass the ball to their teammates and try to score by shooting the ball into the goal. The neutral player can join in and play for either team.\n\nTo add an additional challenge, you can allow players to only pass the ball to the neutral player a certain number of times before they have to score."
+        }
+    ]
+}

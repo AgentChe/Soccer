@@ -10,6 +10,7 @@ import RxSwift
 protocol ContentManagerProtocol {
     func obtainDrills(forceUpdate: Bool) -> Single<[Drill]>
     func obtainHomeKit() -> Single<HomeKit?>
+    func obtainDrillTrainings(at drillId: Int) -> Single<[DrillTraining]>
 }
 
 // TODO: удалить Mocks folder
@@ -63,6 +64,31 @@ extension ContentManager {
 //        return defaultRequestWrapper
 //            .callServerApi(requestBody: request)
 //            .map { GetHomeKitResponse.map(from: $0) }
+    }
+    
+    // TODO
+    func obtainDrillTrainings(at drillId: Int) -> Single<[DrillTraining]> {
+        Single<[DrillTraining]>.create { event in
+            let url = Bundle.main.url(forResource: "DrillTrainings", withExtension: "json")!
+            let data = try! Data(contentsOf: url)
+            let result = try! JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            
+            let drillTrainings = GetDrillTrainingsResponse.map(from: result)
+            event(.success(drillTrainings))
+            
+            return Disposables.create()
+        }
+        
+//        guard let userToken = sessionManager.getSession()?.userToken else {
+//            return .error(SignError.tokenNotFound)
+//        }
+//
+//        let request = GetDrillTrainingsRequest(userToken: userToken,
+//                                               id: drillId)
+//
+//        return defaultRequestWrapper
+//            .callServerApi(requestBody: request)
+//            .map { GetDrillTrainingsResponse.map(from: $0) }
     }
 }
 
