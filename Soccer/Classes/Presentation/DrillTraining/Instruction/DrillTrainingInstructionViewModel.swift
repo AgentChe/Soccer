@@ -31,7 +31,7 @@ private extension DrillTrainingInstructionViewModel {
                 
                 let headerElement = DTIHeaderElement(image: drillTraining.image,
                                                      name: drillTraining.name,
-                                                     skillLevel: drillTraining.skillLevel.localizedTitle,
+                                                     skillLevel: "TODO", //drillTraining.skillLevel.localizedTitle, // TODO
                                                      drill: drills.first(where: { $0.id == drillTraining.drillId })?.name ?? "")
                 result.append(.header(headerElement))
                 

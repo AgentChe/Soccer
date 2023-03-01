@@ -37,7 +37,7 @@ struct DailyPicksElement {
         image = drillTraining.image
         type = "Home.Drill".localized
         name = drillTraining.name
-        tag1 = drillTraining.skillLevel.localizedTitle
+        tag1 = "TODO" // drillTraining.skillLevel.localizedTitle // TODO
         tag2 = drill.name
         action = "Home.StartTraining".localized
     }
@@ -47,7 +47,7 @@ struct DailyPicksElement {
         image = workout.image
         type = "Home.Training".localized
         name = workout.name
-        tag1 = workout.skillLevel.localizedTitle
+        tag1 = "TODO" // workout.skillLevel.localizedTitle // TODO
         tag2 = nil
         action = "Home.StartWorkout".localized
     }

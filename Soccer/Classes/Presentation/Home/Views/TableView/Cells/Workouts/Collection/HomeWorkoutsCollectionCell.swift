@@ -51,7 +51,7 @@ extension HomeWorkoutsCollectionCell {
         imageView.kf.setImage(with: element.image)
         
         nameLabel.attributedText = element.name.attributed(with: nameAttrs)
-        skillLevel.attributedText = element.skillLevel.localizedTitle.attributed(with: skillLevelAttrs)
+        skillLevel.attributedText = "TODO".attributed(with: skillLevelAttrs) //element.skillLevel.localizedTitle.attributed(with: skillLevelAttrs) // TODO
     }
 }
 

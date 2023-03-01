@@ -12,8 +12,7 @@ final class DrillTrainingJSONMapper {
         guard
             let id = json["id"] as? Int,
             let name = json["name"] as? String,
-            let skillLevelCode = json["skill_level"] as? Int,
-            let skillLevel = SkillLevel(code: skillLevelCode),
+            let skillLevelId = json["level_id"] as? Int, // TODO
             let imagePath = json["image"] as? String,
             let imageUrl = URL(string: imagePath),
             let drillId = json["drill_id"] as? Int,
@@ -26,7 +25,7 @@ final class DrillTrainingJSONMapper {
         
         return DrillTraining(id: id,
                              name: name,
-                             skillLevel: skillLevel,
+                             skillLevelId: skillLevelId,
                              image: imageUrl,
                              drillId: drillId,
                              paid: paid,

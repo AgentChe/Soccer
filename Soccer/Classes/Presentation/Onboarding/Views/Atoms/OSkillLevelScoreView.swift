@@ -51,8 +51,8 @@ private extension OSkillLevelScoreView {
 private extension OSkillLevelScoreView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            scoreView.widthAnchor.constraint(equalToConstant: 76.scale),
-            scoreView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            scoreView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scoreView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scoreView.topAnchor.constraint(equalTo: topAnchor),
             scoreView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -36.scale)
         ])
@@ -82,7 +82,7 @@ private extension OSkillLevelScoreView {
             .textAlignment(.center)
         
         let view = UILabel()
-        view.attributedText = level.localizedTitle.attributed(with: attrs)
+        view.attributedText = level.name.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

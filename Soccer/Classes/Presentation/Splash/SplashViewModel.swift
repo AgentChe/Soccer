@@ -25,6 +25,7 @@ final class SplashViewModel {
     private lazy var profileManager = ProfileManager()
     private lazy var paygateManager = PaygateManager()
     private lazy var contentManager = ContentManager()
+    private lazy var glossaryManager = GlossaryManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
 }
@@ -110,12 +111,16 @@ private extension SplashViewModel {
             let profile = profileManager
                 .obtainProfile(forceUpdate: true)
                 .mapToVoid()
+            let levels = glossaryManager
+                .obtainLevels(forceUpdate: true)
+                .mapToVoid()
             
             return Single
                 .zip([
                     paygate,
                     drills,
-                    profile
+                    profile,
+                    levels
                 ])
                 .mapToVoid()
         }

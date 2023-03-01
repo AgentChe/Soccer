@@ -29,11 +29,6 @@
 "FocusZone.Glutes" = "Glutes";
 "FocusZone.Legs" = "Legs";
 
-// MARK: SkillLevel
-"SkillLevel.Beginner" = "Beginner";
-"SkillLevel.Intermediate" = "Intermediate";
-"SkillLevel.Advanced" = "Advanced";
-
 // MARK: Splash
 "Splash.Text" = "Wicca Spells";
 "Splash.Bottom" = "The sky above me. Earth below\nme. Fire within me.";

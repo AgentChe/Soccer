@@ -63,7 +63,7 @@ private extension OPreloaderView {
         
         func source() -> Single<Void> {
             profileManager
-                .set(skillLevelId: data.skillLevel.code, // TODO
+                .set(skillLevelId: data.skillLevel.id,
                      weekSchedule: data.weekSchedule,
                      drillsIds: data.drills,
                      focusZonesIds: data.focusZones.map { $0.code }) // TODO

@@ -10,7 +10,7 @@ import Foundation
 struct DrillTraining: Codable, Hashable {
     let id: Int
     let name: String
-    let skillLevel: SkillLevel
+    let skillLevelId: Int // TODO
     let image: URL
     let drillId: Int
     let paid: Bool

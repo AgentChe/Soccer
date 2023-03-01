@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol OSkillLevelViewDelegate: AnyObject {
     func skillLevelViewDidSelect(skillLevel: SkillLevel)
@@ -15,18 +16,20 @@ final class OSkillLevelView: OSlideView {
     weak var mainDelegate: OSkillLevelViewDelegate?
     
     lazy var titleLabel = makeTitleLabel()
-    lazy var beginnerView = makeScoreView(level: .beginner)
-    lazy var intermediateView = makeScoreView(level: .intermediate)
-    lazy var advancedView = makeScoreView(level: .advanced)
     lazy var slider = makeSlider()
     lazy var continueButton = makeContinueButton()
+    
+    private lazy var levelViews = [OSkillLevelScoreView]()
+    
+    private lazy var glossaryManager = GlossaryManager()
+    
+    private lazy var disposeBag = DisposeBag()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
         
         makeConstraints()
         initialize()
-        update(sender: slider)
     }
     
     required init?(coder: NSCoder) {
@@ -38,6 +41,16 @@ final class OSkillLevelView: OSlideView {
 private extension OSkillLevelView {
     func initialize() {
         backgroundColor = Appearance.background
+        
+        glossaryManager
+            .obtainLevels(forceUpdate: false)
+            .asDriver(onErrorJustReturn: [])
+            .drive(Binder(self) { base, levels in
+                base.createLevelViews(at: levels)
+                base.slider.maximumValue = Float(levels.count)
+                base.update(sender: base.slider)
+            })
+            .disposed(by: disposeBag)
     }
     
     @objc
@@ -45,22 +58,55 @@ private extension OSkillLevelView {
         let value = round(sender.value)
         sender.value = value
         
-        beginnerView.marked = (value >= 1, value == 1)
-        intermediateView.marked = (value >= 2, value == 2)
-        advancedView.marked = (value >= 3, value == 3)
+        levelViews.enumerated().forEach { index, levelView in
+            let levelValue = Float(index + 1)
+            
+            levelView.marked = (value >= levelValue, value == levelValue)
+        }
     }
     
     @objc
     func nextTapped() {
-        let skillLevelCode = Int(self.slider.value) - 1
-        
-        guard let skillLevel = SkillLevel(code: skillLevelCode) else {
+        guard let level = levelViews.last(where: { $0.marked.1 })?.level else {
             return
         }
         
-        mainDelegate?.skillLevelViewDidSelect(skillLevel: skillLevel)
+        mainDelegate?.skillLevelViewDidSelect(skillLevel: level)
         
         onNext()
+    }
+    
+    func createLevelViews(at levels: [SkillLevel]) {
+        levelViews.forEach { $0.removeFromSuperview() }
+        levelViews = []
+        
+        let padding = 8.scale
+        let totalPadding = CGFloat(levels.count - 1) * padding
+        let totalWidth = UIScreen.main.bounds.width - 132.scale - totalPadding
+        
+        let levelWidth = totalWidth / CGFloat(levels.count)
+        
+        var x = 66.scale
+        var height = 121.scale
+        
+        levels.forEach { level in
+            let view = OSkillLevelScoreView(level: level)
+            view.layer.masksToBounds = false
+            view.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(view)
+            
+            NSLayoutConstraint.activate([
+                view.leadingAnchor.constraint(equalTo: leadingAnchor, constant: x),
+                view.widthAnchor.constraint(equalToConstant: levelWidth),
+                view.heightAnchor.constraint(equalToConstant: height),
+                view.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -29.scale)
+            ])
+            
+            x += levelWidth + padding
+            height += 35.scale
+            
+            levelViews.append(view)
+        }
     }
 }
 
@@ -70,27 +116,6 @@ private extension OSkillLevelView {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 120.scale : 52.scale),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            beginnerView.widthAnchor.constraint(equalToConstant: 76.scale),
-            beginnerView.heightAnchor.constraint(equalToConstant: 121.scale),
-            beginnerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 66.scale),
-            beginnerView.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -29.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            intermediateView.widthAnchor.constraint(equalToConstant: 76.scale),
-            intermediateView.heightAnchor.constraint(equalToConstant: 156.scale),
-            intermediateView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150.scale),
-            intermediateView.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -29.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            advancedView.widthAnchor.constraint(equalToConstant: 76.scale),
-            advancedView.heightAnchor.constraint(equalToConstant: 208.scale),
-            advancedView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 234.scale),
-            advancedView.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -29.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -138,7 +163,6 @@ private extension OSkillLevelView {
     func makeSlider() -> UISlider {
         let view = UISlider()
         view.minimumValue = 1
-        view.maximumValue = 3
         view.thumbTintColor = Appearance.secondary
         view.maximumTrackTintColor = Appearance.white.withAlphaComponent(0.1)
         view.minimumTrackTintColor = Appearance.secondary

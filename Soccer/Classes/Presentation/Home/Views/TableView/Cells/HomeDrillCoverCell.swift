@@ -60,7 +60,7 @@ extension HomeDrillCoverCell {
         
         drillTypeLabel.attributedText = element.drill.name.attributed(with: drillTypeAttrs)
         nameLabel.attributedText = element.drillTraining.name.attributed(with: nameAttrs)
-        skillLevelLabel.attributedText = element.drillTraining.skillLevel.localizedTitle.attributed(with: skillLevelAttrs)
+        skillLevelLabel.attributedText = "TODO".attributed(with: skillLevelAttrs) // element.drillTraining.skillLevel.localizedTitle.attributed(with: skillLevelAttrs) // TODO
     }
 }
 

@@ -10,7 +10,7 @@ import Foundation
 struct WorkoutTrainingCover: Codable, Hashable {
     let id: Int
     let name: String
-    let skillLevel: SkillLevel
+    let skillLevelId: Int // TODO
     let image: URL
     let focusZones: [FocusZone]
     let paid: Bool

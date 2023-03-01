@@ -132,7 +132,6 @@
 		DEACE5C4298AA0020096FF15 /* ORoleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5C3298AA0020096FF15 /* ORoleButton.swift */; };
 		DEACE5C6298AA01C0096FF15 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5C5298AA01C0096FF15 /* Role.swift */; };
 		DEACE5C8298AA35A0096FF15 /* ORoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEACE5C7298AA35A0096FF15 /* ORoleView.swift */; };
-		DEBC2B0F298BCC04002C84E3 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */; };
 		DEBC2B11298BCC5E002C84E3 /* OSkillLevelScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B10298BCC5E002C84E3 /* OSkillLevelScoreView.swift */; };
 		DEBC2B13298BCF15002C84E3 /* OSkillLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B12298BCF15002C84E3 /* OSkillLevelView.swift */; };
 		DEBC2B15298BEFE2002C84E3 /* OGoalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B14298BEFE2002C84E3 /* OGoalButton.swift */; };
@@ -180,6 +179,11 @@
 		DEC9007629A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007529A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift */; };
 		DEC9007929A64974001B24A3 /* DrillTrainingQuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007829A64974001B24A3 /* DrillTrainingQuitViewController.swift */; };
 		DEC9007B29A64979001B24A3 /* DrillTrainingQuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007A29A64979001B24A3 /* DrillTrainingQuitView.swift */; };
+		DED00C1629AF523000661F03 /* GlossaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* GlossaryManager.swift */; };
+		DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1729AF52C800661F03 /* SkillLevel.swift */; };
+		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
+		DED00C1D29AF530000661F03 /* GetSkillLevelsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1C29AF530000661F03 /* GetSkillLevelsResponse.swift */; };
+		DED00C2029AF5EC200661F03 /* SkillLevels.json in Resources */ = {isa = PBXBuildFile; fileRef = DED00C1F29AF5EC200661F03 /* SkillLevels.json */; };
 		DED89C6E2990D1EB00325104 /* HomeKit.json in Resources */ = {isa = PBXBuildFile; fileRef = DED89C6D2990D1EB00325104 /* HomeKit.json */; };
 		DED89C702990D28B00325104 /* DrillTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C6F2990D28B00325104 /* DrillTraining.swift */; };
 		DED89C722990D38700325104 /* WorkoutTrainingCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C712990D38700325104 /* WorkoutTrainingCover.swift */; };
@@ -337,7 +341,6 @@
 		DEACE5C3298AA0020096FF15 /* ORoleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORoleButton.swift; sourceTree = "<group>"; };
 		DEACE5C5298AA01C0096FF15 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		DEACE5C7298AA35A0096FF15 /* ORoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORoleView.swift; sourceTree = "<group>"; };
-		DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DEBC2B10298BCC5E002C84E3 /* OSkillLevelScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSkillLevelScoreView.swift; sourceTree = "<group>"; };
 		DEBC2B12298BCF15002C84E3 /* OSkillLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSkillLevelView.swift; sourceTree = "<group>"; };
 		DEBC2B14298BEFE2002C84E3 /* OGoalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGoalButton.swift; sourceTree = "<group>"; };
@@ -385,6 +388,11 @@
 		DEC9007529A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingPlayPauseButton.swift; sourceTree = "<group>"; };
 		DEC9007829A64974001B24A3 /* DrillTrainingQuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingQuitViewController.swift; sourceTree = "<group>"; };
 		DEC9007A29A64979001B24A3 /* DrillTrainingQuitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingQuitView.swift; sourceTree = "<group>"; };
+		DED00C1529AF523000661F03 /* GlossaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryManager.swift; sourceTree = "<group>"; };
+		DED00C1729AF52C800661F03 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
+		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
+		DED00C1C29AF530000661F03 /* GetSkillLevelsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsResponse.swift; sourceTree = "<group>"; };
+		DED00C1F29AF5EC200661F03 /* SkillLevels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SkillLevels.json; sourceTree = "<group>"; };
 		DED89C6D2990D1EB00325104 /* HomeKit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeKit.json; sourceTree = "<group>"; };
 		DED89C6F2990D28B00325104 /* DrillTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTraining.swift; sourceTree = "<group>"; };
 		DED89C712990D38700325104 /* WorkoutTrainingCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingCover.swift; sourceTree = "<group>"; };
@@ -655,6 +663,7 @@
 		DEA8FDCE298A7AE000868C0E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DED00C1229AF521900661F03 /* Glossary */,
 				DEBC2B2B298C1115002C84E3 /* Content */,
 				DEA8FDCF298A7AE000868C0E /* Paygate */,
 				DEA8FDD7298A7AE000868C0E /* Profile */,
@@ -716,7 +725,6 @@
 				DEBC2B46298D09D2002C84E3 /* FocusZone.swift */,
 				DEACE5BB298A93880096FF15 /* Gender.swift */,
 				DEACE5C5298AA01C0096FF15 /* Role.swift */,
-				DEBC2B0E298BCC04002C84E3 /* SkillLevel.swift */,
 				DEBC2B1C298BF9C0002C84E3 /* DayOfWeek.swift */,
 				DEBC2B20298BFF77002C84E3 /* WeekSchedule.swift */,
 				DEBC2B4C298D1B93002C84E3 /* Profile.swift */,
@@ -1120,6 +1128,50 @@
 			path = Quit;
 			sourceTree = "<group>";
 		};
+		DED00C1229AF521900661F03 /* Glossary */ = {
+			isa = PBXGroup;
+			children = (
+				DED00C1E29AF5E2D00661F03 /* Mocks */,
+				DED00C1429AF522500661F03 /* Request */,
+				DED00C1329AF522000661F03 /* Model */,
+				DED00C1529AF523000661F03 /* GlossaryManager.swift */,
+			);
+			path = Glossary;
+			sourceTree = "<group>";
+		};
+		DED00C1329AF522000661F03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DED00C1729AF52C800661F03 /* SkillLevel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DED00C1429AF522500661F03 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DED00C1929AF52EE00661F03 /* GetSkillLevels */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DED00C1929AF52EE00661F03 /* GetSkillLevels */ = {
+			isa = PBXGroup;
+			children = (
+				DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */,
+				DED00C1C29AF530000661F03 /* GetSkillLevelsResponse.swift */,
+			);
+			path = GetSkillLevels;
+			sourceTree = "<group>";
+		};
+		DED00C1E29AF5E2D00661F03 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DED00C1F29AF5EC200661F03 /* SkillLevels.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		DED89C6C2990D1D400325104 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1357,6 +1409,7 @@
 				DEA8FEEA298A7B4600868C0E /* Inter-Bold.ttf in Resources */,
 				DED89C7F2990D81A00325104 /* Drills.json in Resources */,
 				DED89C6E2990D1EB00325104 /* HomeKit.json in Resources */,
+				DED00C2029AF5EC200661F03 /* SkillLevels.json in Resources */,
 				DEA8FEF4298A7B6700868C0E /* PlusJakartaSans-Medium.ttf in Resources */,
 				DEA8FEE9298A7B4600868C0E /* Inter-Medium.ttf in Resources */,
 				DEA8FEEC298A7B4600868C0E /* Inter-Black.ttf in Resources */,
@@ -1454,6 +1507,7 @@
 				DEA8FE58298A7AE000868C0E /* UIColor+Extension.swift in Sources */,
 				DEBC2B2E298C113E002C84E3 /* Drill.swift in Sources */,
 				DEA8FE9C298A7AE000868C0E /* SplashViewModel.swift in Sources */,
+				DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */,
 				DEA8FE59298A7AE000868C0E /* Collection+Extension.swift in Sources */,
 				DED89C8C2990E22100325104 /* HomeTableElement.swift in Sources */,
 				DEA8FE7B298A7AE000868C0E /* PushNotificationsManager.swift in Sources */,
@@ -1525,6 +1579,7 @@
 				DEA8FE75298A7AE000868C0E /* PaddingTextField.swift in Sources */,
 				DEA8FE9F298A7AE000868C0E /* PaygateViewModel.swift in Sources */,
 				DED89CE02994D71C00325104 /* DrillTrainingInstructionViewModel.swift in Sources */,
+				DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */,
 				DEA8FE68298A7AE000868C0E /* SignError.swift in Sources */,
 				DEBC2B1D298BF9C0002C84E3 /* DayOfWeek.swift in Sources */,
 				DEA8FE63298A7AE000868C0E /* TextAttributes.swift in Sources */,
@@ -1544,6 +1599,7 @@
 				DED89CF129952EC700325104 /* DTIInstructionCell.swift in Sources */,
 				DEC9007029A62024001B24A3 /* DrillTrainingPrepareTimer.swift in Sources */,
 				DEACE5C6298AA01C0096FF15 /* Role.swift in Sources */,
+				DED00C1D29AF530000661F03 /* GetSkillLevelsResponse.swift in Sources */,
 				DEA8FE5C298A7AE000868C0E /* UIViewRxExtension.swift in Sources */,
 				DEBC2B49298D0BD7002C84E3 /* OFocusZoneButton.swift in Sources */,
 				DEA8FF15298A89D200868C0E /* MainViewCoordinator.swift in Sources */,
@@ -1567,7 +1623,6 @@
 				DEA8FF14298A89D200868C0E /* TabView.swift in Sources */,
 				DEA8FF12298A89D200868C0E /* MainView.swift in Sources */,
 				DED89CEF299522AF00325104 /* DTIButtonsCell.swift in Sources */,
-				DEBC2B0F298BCC04002C84E3 /* SkillLevel.swift in Sources */,
 				DEC9005A29A602E0001B24A3 /* DrillTrainingsTableCell.swift in Sources */,
 				DEA8FEE0298A7AE000868C0E /* OnboardingView.swift in Sources */,
 				DED89CDE2994D71500325104 /* DrillTrainingInstructionViewController.swift in Sources */,
@@ -1605,6 +1660,7 @@
 				DED89CE22994D72000325104 /* DailyTrainingInstructionView.swift in Sources */,
 				DEBC2B15298BEFE2002C84E3 /* OGoalButton.swift in Sources */,
 				DEA8FE5D298A7AE000868C0E /* GlobalDefinitions.swift in Sources */,
+				DED00C1629AF523000661F03 /* GlossaryManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
