@@ -11,7 +11,7 @@ struct GetDrillsRequest: APIRequestBody {
     let userToken: String
 
     var url: String {
-        GlobalDefinitions.domain + "/api/drills"
+        GlobalDefinitions.domain + "/api/glossary/drill_categories"
     }
     
     var method: HTTPMethod {

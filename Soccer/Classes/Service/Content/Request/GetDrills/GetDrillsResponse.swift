@@ -9,14 +9,15 @@ final class GetDrillsResponse {
     static func map(from response: Any) -> [Drill] {
         guard
             let json = response as? [String: Any],
-            let data = json["_data"] as? [[String: Any]]
+            let data = json["_data"] as? [String: Any],
+            let drillsArray = data["drill_categories"] as? [[String: Any]]
         else {
             return []
         }
         
-        return data.compactMap { drillJSON -> Drill? in
+        return drillsArray.compactMap { drillJSON -> Drill? in
             guard
-                let id = drillJSON["id"] as? Int,
+                let id = drillJSON["drill_category_id"] as? Int,
                 let name = drillJSON["name"] as? String
             else {
                 return nil
