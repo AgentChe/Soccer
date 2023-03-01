@@ -8,65 +8,48 @@
 import RxSwift
 import RxCocoa
 
-protocol ProfileMediatorDelegate: AnyObject {
-    func profileMediatorDidChange(skillLevel: SkillLevel)
-    func profileMediatorDidChange(weekSchedule: WeekSchedule)
-    func profileMediatorDidChange(drillsIds: [Int])
-    func profileMediatorDidChange(focusZones: [FocusZone])
-}
-
 final class ProfileMediator {
     static let shared = ProfileMediator()
     
-    private lazy var skillLevelChangeTrigger = PublishRelay<SkillLevel>()
+    private lazy var skillLevelIdChangeTrigger = PublishRelay<Int>()
     private lazy var weekScheduleChangeTrigger = PublishRelay<WeekSchedule>()
     private lazy var drillsIdsChangeTrigger = PublishRelay<[Int]>()
-    private lazy var focusZonesChangeTrigger = PublishRelay<[FocusZone]>()
-    
-    private var delegates = [Weak<ProfileMediatorDelegate>]()
+    private lazy var focusZonesIdsChangeTrigger = PublishRelay<[Int]>()
     
     private init() {}
 }
 
 // MARK: Public
 extension ProfileMediator {
-    func notify(skillLevel: SkillLevel) {
+    func notify(skillLevelId: Int) {
         DispatchQueue.main.async { [weak self] in
-            self?.delegates.forEach { $0.weak?.profileMediatorDidChange(skillLevel: skillLevel) }
-            
-            self?.skillLevelChangeTrigger.accept(skillLevel)
+            self?.skillLevelIdChangeTrigger.accept(skillLevelId)
         }
     }
     
     func notify(weekSchedule: WeekSchedule) {
         DispatchQueue.main.async { [weak self] in
-            self?.delegates.forEach { $0.weak?.profileMediatorDidChange(weekSchedule: weekSchedule) }
-            
             self?.weekScheduleChangeTrigger.accept(weekSchedule)
         }
     }
     
     func notify(drillsIds: [Int]) {
         DispatchQueue.main.async { [weak self] in
-            self?.delegates.forEach { $0.weak?.profileMediatorDidChange(drillsIds: drillsIds) }
-            
             self?.drillsIdsChangeTrigger.accept(drillsIds)
         }
     }
     
-    func notify(focusZones: [FocusZone]) {
+    func notify(focusZonesIds: [Int]) {
         DispatchQueue.main.async { [weak self] in
-            self?.delegates.forEach { $0.weak?.profileMediatorDidChange(focusZones: focusZones) }
-            
-            self?.focusZonesChangeTrigger.accept(focusZones)
+            self?.focusZonesIdsChangeTrigger.accept(focusZonesIds)
         }
     }
 }
 
 // MARK: Public (Rx)
 extension ProfileMediator {
-    var skillLevelChange: Signal<SkillLevel> {
-        skillLevelChangeTrigger.asSignal()
+    var skillLevelIdChange: Signal<Int> {
+        skillLevelIdChangeTrigger.asSignal()
     }
     
     var weekScheduleChange: Signal<WeekSchedule> {
@@ -77,22 +60,7 @@ extension ProfileMediator {
         drillsIdsChangeTrigger.asSignal()
     }
     
-    var focusZonesChange: Signal<[FocusZone]> {
-        focusZonesChangeTrigger.asSignal()
-    }
-}
-
-// MARK: Public (Observer)
-extension ProfileMediator {
-    func add(delegate: ProfileMediatorDelegate) {
-        let weakly = delegate as AnyObject
-        delegates.append(Weak<ProfileMediatorDelegate>(weakly))
-        delegates = delegates.filter { $0.weak != nil }
-    }
-    
-    func remove(delegate: ProfileMediatorDelegate) {
-        if let index = delegates.firstIndex(where: { $0.weak === delegate }) {
-            delegates.remove(at: index)
-        }
+    var focusZonesIdsChange: Signal<[Int]> {
+        focusZonesIdsChangeTrigger.asSignal()
     }
 }

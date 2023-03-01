@@ -63,10 +63,10 @@ private extension OPreloaderView {
         
         func source() -> Single<Void> {
             profileManager
-                .set(skillLevel: data.skillLevel,
+                .set(skillLevelId: data.skillLevel.code, // TODO
                      weekSchedule: data.weekSchedule,
                      drillsIds: data.drills,
-                     focusZones: data.focusZones)
+                     focusZonesIds: data.focusZones.map { $0.code }) // TODO
         }
         
         func error(err: Error) -> Observable<Void> {

@@ -8,10 +8,10 @@
 import RxSwift
 
 protocol ProfileManagerProtocol {
-    func set(skillLevel: SkillLevel?,
+    func set(skillLevelId: Int?,
              weekSchedule: WeekSchedule?,
              drillsIds: [Int]?,
-             focusZones: [FocusZone]?) -> Single<Void>
+             focusZonesIds: [Int]?) -> Single<Void>
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?>
     func syncTokens(oldToken: String, newToken: String) -> Single<Void>
     func login(userToken: String) -> Single<Void>
@@ -19,10 +19,10 @@ protocol ProfileManagerProtocol {
 
 final class ProfileManager {
     enum Constants {
-        static let skillLevel = "profile_manager_skill_level_key"
+        static let skillLevelId = "profile_manager_skill_level_id_key"
         static let weekSchedule = "profile_manager_week_schedule_key"
         static let drillsIds = "profile_manager_drills_ids_key"
-        static let focusZones = "profile_manager_focus_zones_key"
+        static let focusZonesIds = "profile_manager_focus_zones_ids_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -32,39 +32,45 @@ final class ProfileManager {
 
 // MARK: ProfileManagerProtocol
 extension ProfileManager: ProfileManagerProtocol {
-    func set(skillLevel: SkillLevel? = nil,
+    func set(skillLevelId: Int? = nil,
              weekSchedule: WeekSchedule? = nil,
              drillsIds: [Int]? = nil,
-             focusZones: [FocusZone]? = nil) -> Single<Void> {
+             focusZonesIds: [Int]? = nil) -> Single<Void> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
         
-        let weekScheduleDict = weekSchedule.map { weekSchedule -> [String: Bool] in
+        let weekScheduleDays = weekSchedule.map { weekSchedule -> [Int] in
             [
-                "su": weekSchedule.su,
-                "mo": weekSchedule.mo,
-                "tu": weekSchedule.tu,
-                "we": weekSchedule.we,
-                "th": weekSchedule.th,
-                "fr": weekSchedule.fr,
-                "sa": weekSchedule.sa
-            ]
+                weekSchedule.su ? 0 : nil,
+                weekSchedule.mo ? 1: nil,
+                weekSchedule.tu ? 2 : nil,
+                weekSchedule.we ? 3 : nil,
+                weekSchedule.th ? 4 : nil,
+                weekSchedule.fr ? 5 : nil,
+                weekSchedule.sa ? 6 : nil
+            ].compactMap { $0 }
         }
         
-        let request = SetRequest(userToken: userToken,
-                                 skillLevel: skillLevel?.code,
-                                 weekSchedule: weekScheduleDict,
-                                 drills: drillsIds,
-                                 focusZones: focusZones?.map { $0.code })
+        let timezone = TimeZone.current.secondsFromGMT()
+        
+        let request = SetRequest(
+            userToken: userToken,
+            skillLevel: skillLevelId,
+            weekSchedule: weekScheduleDays,
+            drills: drillsIds,
+            focusZones: focusZonesIds,
+            timezone: String(timezone)
+        )
+        
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .mapToVoid()
             .do(onSuccess: { [weak self] in
-                self?.store(skillLevel: skillLevel)
+                self?.store(skillLevelId: skillLevelId)
                 self?.store(weekSchedule: weekSchedule)
                 self?.store(drillsIds: drillsIds)
-                self?.store(focusZones: focusZones)
+                self?.store(focusZonesIds: focusZonesIds)
             })
     }
     
@@ -103,51 +109,44 @@ private extension ProfileManager {
             .callServerApi(requestBody: request)
             .map { GetProfileResponse.map(from: $0) }
             .do(onSuccess: { [weak self] profile in
-                self?.store(skillLevel: profile?.skillLevel)
+                self?.store(skillLevelId: profile?.skillLevelId)
                 self?.store(weekSchedule: profile?.weekSchedule)
                 self?.store(drillsIds: profile?.drillsIds)
-                self?.store(focusZones: profile?.focusZones)
+                self?.store(focusZonesIds: profile?.focusZonesIds)
             })
     }
     
     func cachedProfile() -> Single<Profile?> {
         Single
             .zip(
-                cachedSkillLevel(),
+                cachedSkillLevelId(),
                 cachedWeekSchedule(),
                 cachedDrillsIds(),
-                cachedFocusZones()
+                cachedFocusZonesIds()
             )
-            .map { skillLevel, weekSchedule, drillsIds, focusZones -> Profile in
-                Profile(skillLevel: skillLevel,
+            .map { skillLevelId, weekSchedule, drillsIds, focusZonesIds -> Profile in
+                Profile(skillLevelId: skillLevelId,
                         weekSchedule: weekSchedule,
                         drillsIds: drillsIds,
-                        focusZones: focusZones)
+                        focusZonesIds: focusZonesIds)
             }
     }
     
-    func store(skillLevel: SkillLevel?) {
-        guard let skillLevel = skillLevel else {
+    func store(skillLevelId: Int?) {
+        guard let skillLevelId = skillLevelId else {
             return
         }
         
-        let data = try? JSONEncoder().encode(skillLevel)
+        UserDefaults.standard.set(skillLevelId, forKey: Constants.skillLevelId)
         
-        UserDefaults.standard.set(data, forKey: Constants.skillLevel)
-        
-        ProfileMediator.shared.notify(skillLevel: skillLevel)
+        ProfileMediator.shared.notify(skillLevelId: skillLevelId)
     }
     
-    func cachedSkillLevel() -> Single<SkillLevel?> {
-        Single<SkillLevel?>.create { event in
-            guard let data = UserDefaults.standard.data(forKey: Constants.skillLevel) else {
-                event(.success(nil))
-                return Disposables.create()
-            }
+    func cachedSkillLevelId() -> Single<Int?> {
+        Single<Int?>.create { event in
+            let skillLevelId = UserDefaults.standard.value(forKey: Constants.skillLevelId) as? Int
             
-            let skillLevel = try? JSONDecoder().decode(SkillLevel.self, from: data)
-            
-            event(.success(skillLevel))
+            event(.success(skillLevelId))
             
             return Disposables.create()
         }
@@ -185,21 +184,14 @@ private extension ProfileManager {
             return
         }
         
-        let data = try? JSONEncoder().encode(drillsIds)
-        
-        UserDefaults.standard.set(data, forKey: Constants.drillsIds)
+        UserDefaults.standard.set(drillsIds, forKey: Constants.drillsIds)
         
         ProfileMediator.shared.notify(drillsIds: drillsIds)
     }
     
     func cachedDrillsIds() -> Single<[Int]?> {
         Single<[Int]?>.create { event in
-            guard let data = UserDefaults.standard.data(forKey: Constants.drillsIds) else {
-                event(.success(nil))
-                return Disposables.create()
-            }
-            
-            let drillsIds = try? JSONDecoder().decode([Int].self, from: data)
+            let drillsIds = UserDefaults.standard.value(forKey: Constants.drillsIds) as? [Int]
             
             event(.success(drillsIds))
             
@@ -207,28 +199,21 @@ private extension ProfileManager {
         }
     }
     
-    func store(focusZones: [FocusZone]?) {
-        guard let focusZones = focusZones else {
+    func store(focusZonesIds: [Int]?) {
+        guard let focusZonesIds = focusZonesIds else {
             return
         }
         
-        let data = try? JSONEncoder().encode(focusZones)
+        UserDefaults.standard.set(focusZonesIds, forKey: Constants.focusZonesIds)
         
-        UserDefaults.standard.set(data, forKey: Constants.focusZones)
-        
-        ProfileMediator.shared.notify(focusZones: focusZones)
+        ProfileMediator.shared.notify(focusZonesIds: focusZonesIds)
     }
     
-    func cachedFocusZones() -> Single<[FocusZone]?> {
-        Single<[FocusZone]?>.create { event in
-            guard let data = UserDefaults.standard.data(forKey: Constants.focusZones) else {
-                event(.success(nil))
-                return Disposables.create()
-            }
+    func cachedFocusZonesIds() -> Single<[Int]?> {
+        Single<[Int]?>.create { event in
+            let focusZonesIds = UserDefaults.standard.value(forKey: Constants.focusZonesIds) as? [Int]
             
-            let focusZones = try? JSONDecoder().decode([FocusZone].self, from: data)
-            
-            event(.success(focusZones))
+            event(.success(focusZonesIds))
             
             return Disposables.create()
         }
