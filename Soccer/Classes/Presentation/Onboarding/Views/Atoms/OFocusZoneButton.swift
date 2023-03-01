@@ -16,10 +16,10 @@ final class OFocusZoneButton: UIButton {
     
     lazy var label = makeLabel()
     
-    let focusZone: FocusZone
+    let name: String
     
-    init(focusZone: FocusZone) {
-        self.focusZone = focusZone
+    init(name: String) {
+        self.name = name
         
         super.init(frame: .zero)
         
@@ -62,7 +62,7 @@ private extension OFocusZoneButton {
             .textAlignment(.center)
         
         let view = UILabel()
-        view.attributedText = focusZone.localizedTitle.attributed(with: attrs)
+        view.attributedText = name.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

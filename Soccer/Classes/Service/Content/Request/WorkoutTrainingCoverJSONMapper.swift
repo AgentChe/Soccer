@@ -15,19 +15,16 @@ final class WorkoutTrainingCoverJSONMapper {
             let skillLevelId = json["level_id"] as? Int, // TODO
             let imagePath = json["image"] as? String,
             let imageUrl = URL(string: imagePath),
-            let focusZonesCodes = json["focus_zones"] as? [Int],
             let paid = json["paid"] as? Bool
         else {
             return nil
         }
         
-        let focusZones = focusZonesCodes.compactMap { FocusZone(code: $0) }
-        
         return WorkoutTrainingCover(id: id,
                                   name: name,
                                   skillLevelId: skillLevelId,
                                   image: imageUrl,
-                                  focusZones: focusZones,
+                                  focusZones: [], // TODO
                                   paid: paid)
     }
 }

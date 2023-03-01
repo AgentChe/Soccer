@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol OFocusZoneViewDelegate: AnyObject {
     func focusZoneDidSelect(focusZones: [FocusZone])
@@ -16,11 +17,11 @@ final class OFocusZoneView: OSlideView {
     
     lazy var titleLabel = makeTitleLabel()
     lazy var imageView = makeImageView()
-    lazy var armsButton = makeFocusZoneButton(focusZone: .arms)
-    lazy var chestButton = makeFocusZoneButton(focusZone: .chest)
-    lazy var coreButton = makeFocusZoneButton(focusZone: .core)
-    lazy var glutesButton = makeFocusZoneButton(focusZone: .glutes)
-    lazy var legsButton = makeFocusZoneButton(focusZone: .legs)
+    lazy var armsButton = makeFocusZoneButton(name: "Onboarding.FocusZone.Arms".localized)
+    lazy var chestButton = makeFocusZoneButton(name: "Onboarding.FocusZone.Chest".localized)
+    lazy var coreButton = makeFocusZoneButton(name: "Onboarding.FocusZone.Core".localized)
+    lazy var glutesButton = makeFocusZoneButton(name: "Onboarding.FocusZone.Glutes".localized)
+    lazy var legsButton = makeFocusZoneButton(name: "Onboarding.FocusZone.Legs".localized)
     lazy var continueButton = makeContinueButton()
     
     private lazy var buttons = [
@@ -30,6 +31,12 @@ final class OFocusZoneView: OSlideView {
         glutesButton,
         legsButton
     ]
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var focusZones = [FocusZone]()
+    
+    private lazy var glossaryManager = GlossaryManager()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
@@ -62,6 +69,14 @@ extension OFocusZoneView: OGenderViewDelegate {
 private extension OFocusZoneView {
     func initialize() {
         backgroundColor = Appearance.background
+        
+        glossaryManager
+            .obtainFocusZones(forceUpdate: false)
+            .asDriver(onErrorJustReturn: [])
+            .drive(Binder(self) { base, focusZones in
+                base.focusZones = focusZones
+            })
+            .disposed(by: disposeBag)
     }
     
     @objc
@@ -82,10 +97,13 @@ private extension OFocusZoneView {
     
     @objc
     func nextTapped() {
-        let focusZones = buttons
+        let selectedNames = buttons
             .filter { $0.marked }
-            .map { $0.focusZone }
-        mainDelegate?.focusZoneDidSelect(focusZones: focusZones)
+            .map { $0.name }
+        let selectedZones = focusZones
+            .filter { selectedNames.contains($0.name) }
+        
+        mainDelegate?.focusZoneDidSelect(focusZones: selectedZones)
         
         onNext()
     }
@@ -175,8 +193,8 @@ private extension OFocusZoneView {
         return view
     }
     
-    func makeFocusZoneButton(focusZone: FocusZone) -> OFocusZoneButton {
-        let view = OFocusZoneButton(focusZone: focusZone)
+    func makeFocusZoneButton(name: String) -> OFocusZoneButton {
+        let view = OFocusZoneButton(name: name)
         view.layer.cornerRadius = 10.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(focusZoneTapped(sender:)), for: .touchUpInside)

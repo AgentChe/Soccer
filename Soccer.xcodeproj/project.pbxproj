@@ -184,6 +184,9 @@
 		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
 		DED00C1D29AF530000661F03 /* GetSkillLevelsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1C29AF530000661F03 /* GetSkillLevelsResponse.swift */; };
 		DED00C2029AF5EC200661F03 /* SkillLevels.json in Resources */ = {isa = PBXBuildFile; fileRef = DED00C1F29AF5EC200661F03 /* SkillLevels.json */; };
+		DED00C2229AF6DAF00661F03 /* FocusZones.json in Resources */ = {isa = PBXBuildFile; fileRef = DED00C2129AF6DAF00661F03 /* FocusZones.json */; };
+		DED00C2529AF6DDD00661F03 /* GetFocusZonesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C2429AF6DDD00661F03 /* GetFocusZonesRequest.swift */; };
+		DED00C2729AF6DE400661F03 /* GetFocusZonesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C2629AF6DE400661F03 /* GetFocusZonesResponse.swift */; };
 		DED89C6E2990D1EB00325104 /* HomeKit.json in Resources */ = {isa = PBXBuildFile; fileRef = DED89C6D2990D1EB00325104 /* HomeKit.json */; };
 		DED89C702990D28B00325104 /* DrillTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C6F2990D28B00325104 /* DrillTraining.swift */; };
 		DED89C722990D38700325104 /* WorkoutTrainingCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C712990D38700325104 /* WorkoutTrainingCover.swift */; };
@@ -393,6 +396,9 @@
 		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
 		DED00C1C29AF530000661F03 /* GetSkillLevelsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsResponse.swift; sourceTree = "<group>"; };
 		DED00C1F29AF5EC200661F03 /* SkillLevels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SkillLevels.json; sourceTree = "<group>"; };
+		DED00C2129AF6DAF00661F03 /* FocusZones.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FocusZones.json; sourceTree = "<group>"; };
+		DED00C2429AF6DDD00661F03 /* GetFocusZonesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFocusZonesRequest.swift; sourceTree = "<group>"; };
+		DED00C2629AF6DE400661F03 /* GetFocusZonesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFocusZonesResponse.swift; sourceTree = "<group>"; };
 		DED89C6D2990D1EB00325104 /* HomeKit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeKit.json; sourceTree = "<group>"; };
 		DED89C6F2990D28B00325104 /* DrillTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTraining.swift; sourceTree = "<group>"; };
 		DED89C712990D38700325104 /* WorkoutTrainingCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingCover.swift; sourceTree = "<group>"; };
@@ -722,7 +728,6 @@
 		DEA8FDD9298A7AE000868C0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DEBC2B46298D09D2002C84E3 /* FocusZone.swift */,
 				DEACE5BB298A93880096FF15 /* Gender.swift */,
 				DEACE5C5298AA01C0096FF15 /* Role.swift */,
 				DEBC2B1C298BF9C0002C84E3 /* DayOfWeek.swift */,
@@ -1142,6 +1147,7 @@
 		DED00C1329AF522000661F03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DEBC2B46298D09D2002C84E3 /* FocusZone.swift */,
 				DED00C1729AF52C800661F03 /* SkillLevel.swift */,
 			);
 			path = Model;
@@ -1150,6 +1156,7 @@
 		DED00C1429AF522500661F03 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DED00C2329AF6DC600661F03 /* GetFocusZones */,
 				DED00C1929AF52EE00661F03 /* GetSkillLevels */,
 			);
 			path = Request;
@@ -1168,8 +1175,18 @@
 			isa = PBXGroup;
 			children = (
 				DED00C1F29AF5EC200661F03 /* SkillLevels.json */,
+				DED00C2129AF6DAF00661F03 /* FocusZones.json */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		DED00C2329AF6DC600661F03 /* GetFocusZones */ = {
+			isa = PBXGroup;
+			children = (
+				DED00C2429AF6DDD00661F03 /* GetFocusZonesRequest.swift */,
+				DED00C2629AF6DE400661F03 /* GetFocusZonesResponse.swift */,
+			);
+			path = GetFocusZones;
 			sourceTree = "<group>";
 		};
 		DED89C6C2990D1D400325104 /* Mocks */ = {
@@ -1399,6 +1416,7 @@
 			files = (
 				DE77646E298A5F5F00908BD3 /* LaunchScreen.storyboard in Resources */,
 				DEA8FEF6298A7B6700868C0E /* PlusJakartaSans-Regular.ttf in Resources */,
+				DED00C2229AF6DAF00661F03 /* FocusZones.json in Resources */,
 				DEA8FEF8298A7B6700868C0E /* PlusJakartaSans-ExtraBold.ttf in Resources */,
 				DEA8FEF5298A7B6700868C0E /* PlusJakartaSans-SemiBold.ttf in Resources */,
 				DEA8FEEB298A7B4600868C0E /* Inter-Regular.ttf in Resources */,
@@ -1535,9 +1553,11 @@
 				DEA8FE61298A7AE000868C0E /* Scalable.swift in Sources */,
 				DEBC2B27298C0BAF002C84E3 /* OWhereTrainView.swift in Sources */,
 				DEA8FEE1298A7AE000868C0E /* OnboardingViewModel.swift in Sources */,
+				DED00C2729AF6DE400661F03 /* GetFocusZonesResponse.swift in Sources */,
 				DED89C9129913D9A00325104 /* HomeTitleCell.swift in Sources */,
 				DEA8FEA3298A7AE000868C0E /* PaygateViewControllerDelegate.swift in Sources */,
 				DEA8FE81298A7AE000868C0E /* BranchManager.swift in Sources */,
+				DED00C2529AF6DDD00661F03 /* GetFocusZonesRequest.swift in Sources */,
 				DEA8FE6A298A7AE000868C0E /* ContentError.swift in Sources */,
 				DED89C792990D48D00325104 /* GetHomeKitResponse.swift in Sources */,
 				DED89CB62992880100325104 /* HomeWorkoutsCollectionView.swift in Sources */,

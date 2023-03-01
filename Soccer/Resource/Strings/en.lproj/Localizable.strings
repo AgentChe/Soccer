@@ -22,13 +22,6 @@
 "TryAgain.Button" = "Try again";
 "TryAgain.Contact" = "Contact the support";
 
-// MARK: FocusZone
-"FocusZone.Arms" = "Arms";
-"FocusZone.Chest" = "Chest";
-"FocusZone.Core" = "Core";
-"FocusZone.Glutes" = "Glutes";
-"FocusZone.Legs" = "Legs";
-
 // MARK: Splash
 "Splash.Text" = "Wicca Spells";
 "Splash.Bottom" = "The sky above me. Earth below\nme. Fire within me.";
@@ -108,6 +101,11 @@
 "Onboarding.WorkoutType.Cell4" = "Yoga (or other mind-body workouts)";
 "Onboarding.WorkoutType.Cell5" = "No particular preference";
 "Onboarding.FocusZone.Title" = "Which body part would\nyou like to improve?";
+"Onboarding.FocusZone.Arms" = "Arms";
+"Onboarding.FocusZone.Chest" = "Chest";
+"Onboarding.FocusZone.Core" = "Core";
+"Onboarding.FocusZone.Glutes" = "Glutes";
+"Onboarding.FocusZone.Legs" = "Legs";
 "Onboarding.Preloader.Text1" = "Analyzing your preferences...";
 "Onboarding.Preloader.Text2" = "Identifying your skill level...";
 "Onboarding.Preloader.Text3" = "Creating personalized\nworkouts...";

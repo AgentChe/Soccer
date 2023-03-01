@@ -66,7 +66,7 @@ private extension OPreloaderView {
                 .set(skillLevelId: data.skillLevel.id,
                      weekSchedule: data.weekSchedule,
                      drillsIds: data.drills,
-                     focusZonesIds: data.focusZones.map { $0.code }) // TODO
+                     focusZonesIds: data.focusZones.map { $0.id })
         }
         
         func error(err: Error) -> Observable<Void> {

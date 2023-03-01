@@ -114,13 +114,17 @@ private extension SplashViewModel {
             let levels = glossaryManager
                 .obtainLevels(forceUpdate: true)
                 .mapToVoid()
+            let focusZones = glossaryManager
+                .obtainFocusZones(forceUpdate: true)
+                .mapToVoid()
             
             return Single
                 .zip([
                     paygate,
                     drills,
                     profile,
-                    levels
+                    levels,
+                    focusZones
                 ])
                 .mapToVoid()
         }
