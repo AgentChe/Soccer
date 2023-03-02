@@ -9,7 +9,7 @@ import UIKit
 
 protocol HomeTableViewDelegate: AnyObject {
     func homeTableDidTap(drillTraining: DrillTraining)
-    func homeTableDidTap(workout: WorkoutTrainingCover)
+    func homeTableDidTap(workout: WorkoutCover)
     func homeTableDidTap(drill: Drill)
     func homeTableDidTapTryDrills()
     func homeTableDidTapWorkouts()

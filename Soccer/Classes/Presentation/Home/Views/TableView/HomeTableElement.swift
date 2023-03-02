@@ -15,13 +15,13 @@ enum HomeTableElement {
     case tryDrillsTitle(String)
     case drillTraining(HomeDrillTrainingElement)
     case workoutsTitle(String)
-    case workouts([WorkoutTrainingCover])
+    case workouts([WorkoutCover])
 }
 
 struct DailyPicksElement {
     enum DailyPicks {
         case drill(DrillTraining)
-        case workout(WorkoutTrainingCover)
+        case workout(WorkoutCover)
     }
     
     let dailyPicks: DailyPicks
@@ -42,7 +42,7 @@ struct DailyPicksElement {
         action = "Home.StartTraining".localized
     }
     
-    init(workout: WorkoutTrainingCover) {
+    init(workout: WorkoutCover) {
         dailyPicks = .workout(workout)
         image = workout.image
         type = "Home.Training".localized

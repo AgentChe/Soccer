@@ -193,12 +193,12 @@
 		DED00C5A29B0CCFB00661F03 /* DrillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C5929B0CCFB00661F03 /* DrillManager.swift */; };
 		DED89C6E2990D1EB00325104 /* HomeKit.json in Resources */ = {isa = PBXBuildFile; fileRef = DED89C6D2990D1EB00325104 /* HomeKit.json */; };
 		DED89C702990D28B00325104 /* DrillTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C6F2990D28B00325104 /* DrillTraining.swift */; };
-		DED89C722990D38700325104 /* WorkoutTrainingCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C712990D38700325104 /* WorkoutTrainingCover.swift */; };
+		DED89C722990D38700325104 /* WorkoutCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C712990D38700325104 /* WorkoutCover.swift */; };
 		DED89C742990D3CF00325104 /* HomeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C732990D3CF00325104 /* HomeKit.swift */; };
 		DED89C772990D48700325104 /* GetHomeKitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C762990D48700325104 /* GetHomeKitRequest.swift */; };
 		DED89C792990D48D00325104 /* GetHomeKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C782990D48D00325104 /* GetHomeKitResponse.swift */; };
 		DED89C7B2990D62D00325104 /* DrillTrainingJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C7A2990D62D00325104 /* DrillTrainingJSONMapper.swift */; };
-		DED89C7D2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C7C2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift */; };
+		DED89C7D2990D6CC00325104 /* WorkoutCoverJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C7C2990D6CC00325104 /* WorkoutCoverJSONMapper.swift */; };
 		DED89C822990DA3E00325104 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C812990DA3E00325104 /* HomeViewController.swift */; };
 		DED89C842990DA4300325104 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C832990DA4300325104 /* HomeViewModel.swift */; };
 		DED89C862990DA4800325104 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C852990DA4800325104 /* HomeView.swift */; };
@@ -408,12 +408,12 @@
 		DED00C5929B0CCFB00661F03 /* DrillManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillManager.swift; sourceTree = "<group>"; };
 		DED89C6D2990D1EB00325104 /* HomeKit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeKit.json; sourceTree = "<group>"; };
 		DED89C6F2990D28B00325104 /* DrillTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTraining.swift; sourceTree = "<group>"; };
-		DED89C712990D38700325104 /* WorkoutTrainingCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingCover.swift; sourceTree = "<group>"; };
+		DED89C712990D38700325104 /* WorkoutCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCover.swift; sourceTree = "<group>"; };
 		DED89C732990D3CF00325104 /* HomeKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKit.swift; sourceTree = "<group>"; };
 		DED89C762990D48700325104 /* GetHomeKitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHomeKitRequest.swift; sourceTree = "<group>"; };
 		DED89C782990D48D00325104 /* GetHomeKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHomeKitResponse.swift; sourceTree = "<group>"; };
 		DED89C7A2990D62D00325104 /* DrillTrainingJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingJSONMapper.swift; sourceTree = "<group>"; };
-		DED89C7C2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingCoverJSONMapper.swift; sourceTree = "<group>"; };
+		DED89C7C2990D6CC00325104 /* WorkoutCoverJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCoverJSONMapper.swift; sourceTree = "<group>"; };
 		DED89C812990DA3E00325104 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DED89C832990DA4300325104 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DED89C852990DA4800325104 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -1071,7 +1071,7 @@
 		DED00C1329AF522000661F03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DED89C712990D38700325104 /* WorkoutTrainingCover.swift */,
+				DED89C712990D38700325104 /* WorkoutCover.swift */,
 				DEBC2B46298D09D2002C84E3 /* FocusZone.swift */,
 				DED00C4D29B0B85C00661F03 /* WorkoutStep.swift */,
 			);
@@ -1083,7 +1083,7 @@
 			children = (
 				DED00C2329AF6DC600661F03 /* GetFocusZones */,
 				DED00C4F29B0B87900661F03 /* GetWorkoutSteps */,
-				DED89C7C2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift */,
+				DED89C7C2990D6CC00325104 /* WorkoutCoverJSONMapper.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1539,7 +1539,7 @@
 				DEC9006D29A61B5F001B24A3 /* DrillTrainingBackgroundImageView.swift in Sources */,
 				DEA8FF04298A83AF00868C0E /* Toast.swift in Sources */,
 				DEA8FF00298A7CD800868C0E /* Inter-Regular.ttf in Sources */,
-				DED89C7D2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift in Sources */,
+				DED89C7D2990D6CC00325104 /* WorkoutCoverJSONMapper.swift in Sources */,
 				DEA8FF01298A7CD800868C0E /* Inter-Black.ttf in Sources */,
 				DED89C9F2991559700325104 /* HomeDrillsCollectionCell.swift in Sources */,
 				DED89CEB2994DC8400325104 /* DTIHeaderCell.swift in Sources */,
@@ -1674,7 +1674,7 @@
 				DED89CA1299155A300325104 /* HomeDrillsCollectionView.swift in Sources */,
 				DEA8FE92298A7AE000868C0E /* ProductPrice.swift in Sources */,
 				DEA8FE6C298A7AE000868C0E /* RequestReview.swift in Sources */,
-				DED89C722990D38700325104 /* WorkoutTrainingCover.swift in Sources */,
+				DED89C722990D38700325104 /* WorkoutCover.swift in Sources */,
 				DED89CED2995209E00325104 /* DTIDescriptionCell.swift in Sources */,
 				DEA8FE8E298A7AE000868C0E /* SyncTokensRequest.swift in Sources */,
 				DED00C3529B0AF8A00661F03 /* GetPaygateResponse.swift in Sources */,

@@ -7,7 +7,7 @@
 
 struct HomeKit: Codable, Hashable {
     let dailyDrill: DrillTraining
-    let dailyWorkout: WorkoutTrainingCover
+    let dailyWorkout: WorkoutCover
     let tryDrills: [DrillTraining]
-    let workouts: [WorkoutTrainingCover]
+    let workouts: [WorkoutCover]
 }

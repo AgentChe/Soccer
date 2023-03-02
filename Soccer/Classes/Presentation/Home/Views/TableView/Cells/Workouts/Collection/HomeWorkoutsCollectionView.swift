@@ -8,9 +8,9 @@
 import UIKit
 
 final class HomeWorkoutsCollectionView: UICollectionView {
-    var didTap: ((WorkoutTrainingCover) -> Void)?
+    var didTap: ((WorkoutCover) -> Void)?
     
-    lazy var elements = [WorkoutTrainingCover]()
+    lazy var elements = [WorkoutCover]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -25,7 +25,7 @@ final class HomeWorkoutsCollectionView: UICollectionView {
 
 // MARK: Public
 extension HomeWorkoutsCollectionView {
-    func setup(elements: [WorkoutTrainingCover]) {
+    func setup(elements: [WorkoutCover]) {
         self.elements = elements
         
         reloadData()

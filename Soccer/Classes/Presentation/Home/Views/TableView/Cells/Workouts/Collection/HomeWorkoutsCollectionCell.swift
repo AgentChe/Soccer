@@ -47,7 +47,7 @@ final class HomeWorkoutsCollectionCell: UICollectionViewCell {
 
 // MARK: Public
 extension HomeWorkoutsCollectionCell {
-    func setup(element: WorkoutTrainingCover) {
+    func setup(element: WorkoutCover) {
         imageView.kf.setImage(with: element.image)
         
         nameLabel.attributedText = element.name.attributed(with: nameAttrs)

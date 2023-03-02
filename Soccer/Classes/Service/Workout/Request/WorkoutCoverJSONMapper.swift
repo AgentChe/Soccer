@@ -1,5 +1,5 @@
 //
-//  WorkoutTrainingCoverJSONMapper.swift
+//  WorkoutCoverJSONMapper.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 06.02.2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class WorkoutTrainingCoverJSONMapper {
-    static func map(from json: [String: Any]) -> WorkoutTrainingCover? {
+final class WorkoutCoverJSONMapper {
+    static func map(from json: [String: Any]) -> WorkoutCover? {
         guard
             let id = json["id"] as? Int,
             let name = json["name"] as? String,
@@ -20,11 +20,11 @@ final class WorkoutTrainingCoverJSONMapper {
             return nil
         }
         
-        return WorkoutTrainingCover(id: id,
-                                  name: name,
-                                  skillLevelId: skillLevelId,
-                                  image: imageUrl,
-                                  focusZones: [], // TODO
-                                  paid: paid)
+        return WorkoutCover(id: id,
+                            name: name,
+                            skillLevelId: skillLevelId,
+                            image: imageUrl,
+                            focusZones: [], // TODO
+                            paid: paid)
     }
 }
