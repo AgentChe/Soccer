@@ -11,7 +11,7 @@ import RxSwift
 final class PaygateViewController: UIViewController {
     weak var delegate: PaygateViewControllerDelegate?
     
-    lazy var mainView = PaygateView()
+    lazy var mainView =  PaygateView()
     
     private lazy var disposeBag = DisposeBag()
     
@@ -29,9 +29,16 @@ final class PaygateViewController: UIViewController {
         FirebaseManager.shared
             .logEvent(name: "client_paygate_screen")
         
+        viewModel.questionsCount
+            .drive(Binder(mainView) { base, questionsCount in
+                base.setup(questionsCount: questionsCount)
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.products
             .drive(Binder(self) { base, products in
-                base.configure(products: products)
+                base.mainView.leftOptionButton.info = products.first
+                base.mainView.rightOptionButton.info = products.last
             })
             .disposed(by: disposeBag)
         
@@ -92,9 +99,9 @@ final class PaygateViewController: UIViewController {
         mainView.continueButton.rx.tap
             .bind(to: Binder(self) { base, void in
                 let id = [
-                    base.mainView.lifetimeButton,
-                    base.mainView.subscriptionButton
-                ].first(where: { $0.isChecked })?.product?.price.id
+                    base.mainView.leftOptionButton,
+                    base.mainView.rightOptionButton
+                ].first(where: { $0.isChecked })?.info?.productId
                 
                 guard let id = id else {
                     return
@@ -104,11 +111,11 @@ final class PaygateViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        mainView.lifetimeButton.isChecked = true
+        mainView.leftOptionButton.isChecked = true
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
+    override var prefersStatusBarHidden: Bool {
+        true
     }
 }
 
@@ -123,21 +130,6 @@ extension PaygateViewController {
 
 // MARK: Private
 private extension PaygateViewController {
-    func configure(products: [PaygateProduct]) {
-        products.forEach { [weak self] product in
-            guard let self = self else {
-                return
-            }
-            
-            switch product.type {
-            case .lifetime:
-                self.mainView.lifetimeButton.product = product
-            case .monthly:
-                self.mainView.subscriptionButton.product = product
-            }
-        }
-    }
-    
     func dismiss(with result: PaygateViewControllerResult) {
         dismiss(animated: true) { [weak self] in
             guard let self = self else {
@@ -151,8 +143,8 @@ private extension PaygateViewController {
     func activityIndicator(active: Bool) {
         active ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
         
-        mainView.lifetimeButton.isHidden = active
-        mainView.subscriptionButton.isHidden = active
+        mainView.leftOptionButton.isHidden = active
+        mainView.rightOptionButton.isHidden = active
         mainView.continueButton.isHidden = active
         mainView.restoreButton.isHidden = active
     }

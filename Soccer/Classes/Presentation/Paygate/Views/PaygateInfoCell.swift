@@ -27,7 +27,7 @@ extension PaygateInfoCell {
     func setup(text: String) {
         let attrs = TextAttributes()
             .textColor(Appearance.white)
-            .font(Fonts.Inter.regular(size: 17.scale))
+            .font(Fonts.PlusJakartaSans.regular(size: 17.scale))
             .lineHeight(27.2.scale)
             .letterSpacing(-0.41.scale)
         label.attributedText = text.attributed(with: attrs)

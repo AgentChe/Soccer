@@ -7,8 +7,8 @@
 
 // TODO: заменить все
 final class GlobalDefinitions {
-    static let domain = "https://wicca.thinkaboutapps.com"
-    static let apiKey = "HzwgWp8i43qgS6rWyKyf"
+    static let domain = "https://soccer.thinkaboutapps.com"
+    static let apiKey = "4Mf7e1kE1sJHZraKrR8o"
     
     static let otterScaleHost = "https://api.korrekted.com"
     static let otterScaleApiKey = "ZSrEBNnAvi4nvYPB"
@@ -22,4 +22,9 @@ final class GlobalDefinitions {
     static let termsOfServiceUrl = "https://thinkaboutapps.com/terms"
     static let privacyPolicyUrl = "https://thinkaboutapps.com/policy"
     static let contactUsUrl = "https://thinkaboutapps.com/contact"
+    
+    enum Paygate {
+        static let defaultLifetime = "mobile.manga.4ever"
+        static let defaultMonthly = "mobile.manga.month"
+    }
 }

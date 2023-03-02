@@ -117,6 +117,9 @@ private extension SplashViewModel {
             let focusZones = glossaryManager
                 .obtainFocusZones(forceUpdate: true)
                 .mapToVoid()
+            let workoutSteps = glossaryManager
+                .obtainWorkoutSteps(forceUpdate: true)
+                .mapToVoid()
             
             return Single
                 .zip([
@@ -124,7 +127,8 @@ private extension SplashViewModel {
                     drills,
                     profile,
                     levels,
-                    focusZones
+                    focusZones,
+                    workoutSteps
                 ])
                 .mapToVoid()
         }

@@ -8,7 +8,7 @@
 import RxSwift
 
 protocol PaygateManagerProtocol: AnyObject {
-    func obtainPaygate(forceUpdate: Bool) -> Single<Paygate>
+    func obtainPaygate(forceUpdate: Bool) -> Single<Paygate?>
 }
 
 final class PaygateManager: PaygateManagerProtocol {
@@ -23,14 +23,14 @@ final class PaygateManager: PaygateManagerProtocol {
 
 // MARK: Public
 extension PaygateManager {
-    func obtainPaygate(forceUpdate: Bool) -> Single<Paygate> {
+    func obtainPaygate(forceUpdate: Bool) -> Single<Paygate?> {
         forceUpdate ? loadPaygate() : cachedPaygate()
     }
 }
 
 // MARK: Private
 private extension PaygateManager {
-    func loadPaygate() -> Single<Paygate> {
+    func loadPaygate() -> Single<Paygate?> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -49,8 +49,8 @@ private extension PaygateManager {
             })
     }
     
-    func cachedPaygate() -> Single<Paygate> {
-        Single<Paygate>
+    func cachedPaygate() -> Single<Paygate?> {
+        Single<Paygate?>
             .create { event in
                 guard
                     let data = UserDefaults.standard.data(forKey: Constants.paygateKey),

@@ -10,12 +10,14 @@ import RxSwift
 protocol GlossaryManagerProtocol {
     func obtainLevels(forceUpdate: Bool) -> Single<[SkillLevel]>
     func obtainFocusZones(forceUpdate: Bool) -> Single<[FocusZone]>
+    func obtainWorkoutSteps(forceUpdate: Bool) -> Single<[WorkoutStep]>
 }
 
 final class GlossaryManager {
     enum Constants {
         static let skillLevels = "glossary_manager_skill_levels_key"
         static let focusZones = "glossary_manager_focus_zones_key"
+        static let workoutSteps = "glossary_manager_workout_steps_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -25,36 +27,16 @@ final class GlossaryManager {
 
 // MARK: GlossaryManagerProtocol
 extension GlossaryManager: GlossaryManagerProtocol {
-    // TODO: remove mocks
     func obtainLevels(forceUpdate: Bool) -> Single<[SkillLevel]> {
-        Single<[SkillLevel]>.create { event in
-            let url = Bundle.main.url(forResource: "SkillLevels", withExtension: "json")!
-            let data = try! Data(contentsOf: url)
-            let result = try! JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-            
-            let skillLevels = GetSkillLevelsResponse.map(from: result)
-            event(.success(skillLevels))
-            
-            return Disposables.create()
-        }
-        
-//        forceUpdate ? loadLevels() : cachedLevels()
+        forceUpdate ? loadLevels() : cachedLevels()
     }
     
-    // TODO: remove mocks
     func obtainFocusZones(forceUpdate: Bool) -> Single<[FocusZone]> {
-        Single<[FocusZone]>.create { event in
-            let url = Bundle.main.url(forResource: "FocusZones", withExtension: "json")!
-            let data = try! Data(contentsOf: url)
-            let result = try! JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-            
-            let focusZones = GetFocusZonesResponse.map(from: result)
-            event(.success(focusZones))
-            
-            return Disposables.create()
-        }
-        
-//        forceUpdate ? loadLevels() : cachedLevels()
+        forceUpdate ? loadFocusZones() : cachedFocusZones()
+    }
+    
+    func obtainWorkoutSteps(forceUpdate: Bool) -> Single<[WorkoutStep]> {
+        forceUpdate ? loadWorkoutSteps() : cachedWorkoutSteps()
     }
 }
 
@@ -123,6 +105,40 @@ private extension GlossaryManager {
             let focusZones = try? JSONDecoder().decode([FocusZone].self, from: data)
             
             event(.success(focusZones ?? []))
+            
+            return Disposables.create()
+        }
+    }
+    
+    func loadWorkoutSteps() -> Single<[WorkoutStep]> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetWorkoutStepsRequest(userToken: userToken)
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetWorkoutStepsResponse.map(from: $0) }
+            .do(onSuccess: { workoutSteps in
+                guard let data = try? JSONEncoder().encode(workoutSteps) else {
+                    return
+                }
+                
+                UserDefaults.standard.set(data, forKey: Constants.workoutSteps)
+            })
+    }
+    
+    func cachedWorkoutSteps() -> Single<[WorkoutStep]> {
+        Single<[WorkoutStep]>.create { event in
+            guard let data = UserDefaults.standard.data(forKey: Constants.workoutSteps) else {
+                event(.success([]))
+                return Disposables.create()
+            }
+            
+            let workoutSteps = try? JSONDecoder().decode([WorkoutStep].self, from: data)
+            
+            event(.success(workoutSteps ?? []))
             
             return Disposables.create()
         }

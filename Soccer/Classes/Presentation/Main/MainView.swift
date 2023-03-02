@@ -1,6 +1,6 @@
 //
 //  MainView.swift
-//  Manga
+//  Soccer
 //
 //  Created by Андрей Чернышев on 07.07.2022.
 //

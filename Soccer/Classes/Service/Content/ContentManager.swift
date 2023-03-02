@@ -26,20 +26,8 @@ final class ContentManager {
 
 // MARK: ContentManagerProtocol
 extension ContentManager {
-    // TODO
     func obtainDrills(forceUpdate: Bool) -> Single<[Drill]> {
-        Single<[Drill]>.create { event in
-            let url = Bundle.main.url(forResource: "Drills", withExtension: "json")!
-            let data = try! Data(contentsOf: url)
-            let result = try! JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-            
-            let drills = GetDrillsResponse.map(from: result)
-            event(.success(drills))
-            
-            return Disposables.create()
-        }
-        
-//        forceUpdate ? loadDrills() : cachedDrills()
+        forceUpdate ? loadDrills() : cachedDrills()
     }
     
     // TODO

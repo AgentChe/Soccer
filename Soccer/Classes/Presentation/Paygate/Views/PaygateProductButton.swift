@@ -14,18 +14,19 @@ final class PaygateProductButton: UIButton {
         }
     }
     
-    var product: PaygateProduct? {
+    var info: PaygateOptionInfo? {
         didSet {
             update()
         }
     }
     
     lazy var checkedView = makeCheckedView()
-    lazy var nameLabel = makeLabel()
-    lazy var priceLabel = makeLabel()
+    lazy var line1Label = makeLabel()
+    lazy var line2Label = makeLabel()
+    lazy var line3Label = makeLabel()
     lazy var discountPlaceholderView = makeDiscountPlaceholderView()
     lazy var discountLabel = makeLabel()
-    lazy var bottomLabel = makeLabel()
+    lazy var line5Label = makeLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,77 +48,32 @@ private extension PaygateProductButton {
     }
     
     func changeSelection() {
-        layer.borderWidth = isChecked ? 2.scale : 0
-        layer.borderColor = isChecked ? Appearance.white.cgColor : UIColor.clear.cgColor
+        layer.borderWidth = 2.scale
+        layer.borderColor = isChecked ? Appearance.primary.cgColor : Appearance.white.cgColor
         
         checkedView.isHidden = !isChecked
     }
     
     func configure() {
-        guard let info = product?.info else {
+        guard let info = info else {
             return
         }
         
-        nameLabel.attributedText = info.name
-            .attributed(with: TextAttributes()
-                            .textColor(Appearance.white)
-                            .font(Fonts.Inter.bold(size: 20.scale))
-                            .lineHeight(24.scale))
+        line1Label.attributedText = info.line1
+        line1Label.isHidden = info.line1 == nil
         
-        let slash = "/".attributed(with: TextAttributes()
-                                .textColor(Appearance.white)
-                                .font(Fonts.Inter.semiBold(size: 22.scale))
-                                .lineHeight(22.scale)
-                                .letterSpacing(-1.scale))
+        line2Label.attributedText = info.line2
+        line2Label.isHidden = info.line2 == nil
         
-        let priceValue = info.price.attributed(with: TextAttributes()
-                                .textColor(Appearance.white)
-                                .font(Fonts.Inter.semiBold(size: 22.scale))
-                                .lineHeight(22.scale)
-                                .letterSpacing(-1.scale))
-        let pricePeriod = info.pricePeriod.attributed(with: TextAttributes()
-                                .textColor(Appearance.white)
-                                .font(Fonts.Inter.regular(size: 12.scale))
-                                .lineHeight(12.scale))
-        let priceDescription = info.priceDescription?.attributed(with: TextAttributes()
-                                .textColor(Appearance.white)
-                                .font(Fonts.Inter.regular(size: 12.scale))
-                                .lineHeight(12.scale))
-        let price = NSMutableAttributedString()
-        price.append(priceValue)
-        price.append(slash)
-        price.append(pricePeriod)
-        if let priceDescription = priceDescription {
-            price.append(priceDescription)
-        }
-        priceLabel.attributedText = price
+        line3Label.attributedText = info.line3
+        line3Label.isHidden = info.line3 == nil
         
-        discountPlaceholderView.isHidden = info.discount == nil
-        discountLabel.isHidden = info.discount == nil
-        if let discount = info.discount {
-            discountLabel.attributedText = String(format: "Paygate.Discount".localized, discount)
-                .attributed(with: TextAttributes()
-                                .textColor(Appearance.white)
-                                .font(Fonts.Inter.bold(size: 14.scale))
-                                .lineHeight(16.8.scale))
-        }
+        discountLabel.attributedText = info.line4
+        discountLabel.isHidden = info.line4 == nil
+        discountPlaceholderView.isHidden = info.line4 == nil
         
-        let bottomPrice = info.bottomPrice?.attributed(with: TextAttributes()
-                                .textColor(Appearance.white)
-                                .font(Fonts.Inter.semiBold(size: 22.scale))
-                                .lineHeight(30.8.scale)
-                                .letterSpacing(-1.scale))
-        let bottomDescription = info.bottomDescription.attributed(with: TextAttributes()
-                                .textColor(Appearance.white)
-                                .font(Fonts.Inter.regular(size: 12.scale))
-                                .lineHeight(16.8.scale))
-        let bottom = NSMutableAttributedString()
-        if let bottomPrice = bottomPrice {
-            bottom.append(bottomPrice)
-            bottom.append(slash)
-        }
-        bottom.append(bottomDescription)
-        bottomLabel.attributedText = bottom
+        line5Label.attributedText = info.line5
+        line5Label.isHidden = info.line5 == nil
     }
 }
 
@@ -132,30 +88,36 @@ private extension PaygateProductButton {
         ])
         
         NSLayoutConstraint.activate([
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12.scale),
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 34.scale)
+            line1Label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12.scale),
+            line1Label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -127.scale)
         ])
         
         NSLayoutConstraint.activate([
-            priceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12.scale),
-            priceLabel.topAnchor.constraint(equalTo: topAnchor, constant: 66.scale)
+            line2Label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12.scale),
+            line2Label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -91.scale)
         ])
         
         NSLayoutConstraint.activate([
-            discountPlaceholderView.widthAnchor.constraint(equalToConstant: 74.scale),
+            line3Label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12.scale),
+            line3Label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -74.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             discountPlaceholderView.heightAnchor.constraint(equalToConstant: 23.scale),
             discountPlaceholderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12.scale),
-            discountPlaceholderView.topAnchor.constraint(equalTo: topAnchor, constant: 114.scale)
+            discountPlaceholderView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -47.scale)
         ])
         
         NSLayoutConstraint.activate([
-            discountLabel.centerXAnchor.constraint(equalTo: discountPlaceholderView.centerXAnchor),
-            discountLabel.centerYAnchor.constraint(equalTo: discountPlaceholderView.centerYAnchor)
+            discountLabel.leadingAnchor.constraint(equalTo: discountPlaceholderView.leadingAnchor, constant: 2.scale),
+            discountLabel.trailingAnchor.constraint(equalTo: discountPlaceholderView.trailingAnchor, constant: -2.scale),
+            discountLabel.topAnchor.constraint(equalTo: discountPlaceholderView.topAnchor, constant: 3.scale),
+            discountLabel.bottomAnchor.constraint(equalTo: discountPlaceholderView.bottomAnchor, constant: -3.scale)
         ])
         
         NSLayoutConstraint.activate([
-            bottomLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12.scale),
-            bottomLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12.scale)
+            line5Label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12.scale),
+            line5Label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12.scale)
         ])
     }
 }
@@ -173,7 +135,6 @@ private extension PaygateProductButton {
     
     func makeLabel() -> UILabel {
         let view = UILabel()
-        view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -181,7 +142,7 @@ private extension PaygateProductButton {
     
     func makeDiscountPlaceholderView() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.secondary
+        view.backgroundColor = UIColor(integralRed: 229, green: 137, blue: 64)
         view.layer.cornerRadius = 4.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
