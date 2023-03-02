@@ -21,7 +21,7 @@ final class OSkillLevelView: OSlideView {
     
     private lazy var levelViews = [OSkillLevelScoreView]()
     
-    private lazy var glossaryManager = GlossaryManager()
+    private lazy var contentManager = ContentManager()
     
     private lazy var disposeBag = DisposeBag()
     
@@ -42,7 +42,7 @@ private extension OSkillLevelView {
     func initialize() {
         backgroundColor = Appearance.background
         
-        glossaryManager
+        contentManager
             .obtainLevels(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
             .drive(Binder(self) { base, levels in

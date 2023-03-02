@@ -1,5 +1,5 @@
 //
-//  GlossaryManager.swift
+//  WorkoutManager.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 01.03.2023.
@@ -7,17 +7,15 @@
 
 import RxSwift
 
-protocol GlossaryManagerProtocol {
-    func obtainLevels(forceUpdate: Bool) -> Single<[SkillLevel]>
+protocol WorkoutManagerProtocol {
     func obtainFocusZones(forceUpdate: Bool) -> Single<[FocusZone]>
     func obtainWorkoutSteps(forceUpdate: Bool) -> Single<[WorkoutStep]>
 }
 
-final class GlossaryManager {
+final class WorkoutManager {
     enum Constants {
-        static let skillLevels = "glossary_manager_skill_levels_key"
-        static let focusZones = "glossary_manager_focus_zones_key"
-        static let workoutSteps = "glossary_manager_workout_steps_key"
+        static let focusZones = "workout_manager_focus_zones_key"
+        static let workoutSteps = "workout_manager_workout_steps_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -25,12 +23,8 @@ final class GlossaryManager {
     private lazy var sessionManager = SessionManager()
 }
 
-// MARK: GlossaryManagerProtocol
-extension GlossaryManager: GlossaryManagerProtocol {
-    func obtainLevels(forceUpdate: Bool) -> Single<[SkillLevel]> {
-        forceUpdate ? loadLevels() : cachedLevels()
-    }
-    
+// MARK: WorkoutManagerProtocol
+extension WorkoutManager: WorkoutManagerProtocol {
     func obtainFocusZones(forceUpdate: Bool) -> Single<[FocusZone]> {
         forceUpdate ? loadFocusZones() : cachedFocusZones()
     }
@@ -41,41 +35,7 @@ extension GlossaryManager: GlossaryManagerProtocol {
 }
 
 // MARK: Private
-private extension GlossaryManager {
-    func loadLevels() -> Single<[SkillLevel]> {
-        guard let userToken = sessionManager.getSession()?.userToken else {
-            return .error(SignError.tokenNotFound)
-        }
-        
-        let request = GetSkillLevelsRequest(userToken: userToken)
-        
-        return defaultRequestWrapper
-            .callServerApi(requestBody: request)
-            .map { GetSkillLevelsResponse.map(from: $0) }
-            .do(onSuccess: { levels in
-                guard let data = try? JSONEncoder().encode(levels) else {
-                    return
-                }
-                
-                UserDefaults.standard.set(data, forKey: Constants.skillLevels)
-            })
-    }
-    
-    func cachedLevels() -> Single<[SkillLevel]> {
-        Single<[SkillLevel]>.create { event in
-            guard let data = UserDefaults.standard.data(forKey: Constants.skillLevels) else {
-                event(.success([]))
-                return Disposables.create()
-            }
-            
-            let levels = try? JSONDecoder().decode([SkillLevel].self, from: data)
-            
-            event(.success(levels ?? []))
-            
-            return Disposables.create()
-        }
-    }
-    
+private extension WorkoutManager {
     func loadFocusZones() -> Single<[FocusZone]> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)

@@ -18,6 +18,7 @@ final class HomeViewModel {
     private lazy var drills = makeDrills()
     
     private lazy var contentManager = ContentManager()
+    private lazy var drillManager = DrillManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
 }
@@ -107,7 +108,7 @@ private extension HomeViewModel {
     }
     
     func makeDrills() -> Driver<[Drill]> {
-        contentManager
+        drillManager
             .obtainDrills(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
     }

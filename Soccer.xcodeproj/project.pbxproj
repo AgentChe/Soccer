@@ -166,7 +166,7 @@
 		DEC9007629A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007529A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift */; };
 		DEC9007929A64974001B24A3 /* DrillTrainingQuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007829A64974001B24A3 /* DrillTrainingQuitViewController.swift */; };
 		DEC9007B29A64979001B24A3 /* DrillTrainingQuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007A29A64979001B24A3 /* DrillTrainingQuitView.swift */; };
-		DED00C1629AF523000661F03 /* GlossaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* GlossaryManager.swift */; };
+		DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* WorkoutManager.swift */; };
 		DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1729AF52C800661F03 /* SkillLevel.swift */; };
 		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
 		DED00C1D29AF530000661F03 /* GetSkillLevelsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1C29AF530000661F03 /* GetSkillLevelsResponse.swift */; };
@@ -190,6 +190,7 @@
 		DED00C4E29B0B85C00661F03 /* WorkoutStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C4D29B0B85C00661F03 /* WorkoutStep.swift */; };
 		DED00C5429B0B8C100661F03 /* GetWorkoutStepsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C5329B0B8C100661F03 /* GetWorkoutStepsRequest.swift */; };
 		DED00C5629B0B8C700661F03 /* GetWorkoutStepsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C5529B0B8C700661F03 /* GetWorkoutStepsResponse.swift */; };
+		DED00C5A29B0CCFB00661F03 /* DrillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C5929B0CCFB00661F03 /* DrillManager.swift */; };
 		DED89C6E2990D1EB00325104 /* HomeKit.json in Resources */ = {isa = PBXBuildFile; fileRef = DED89C6D2990D1EB00325104 /* HomeKit.json */; };
 		DED89C702990D28B00325104 /* DrillTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C6F2990D28B00325104 /* DrillTraining.swift */; };
 		DED89C722990D38700325104 /* WorkoutTrainingCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C712990D38700325104 /* WorkoutTrainingCover.swift */; };
@@ -380,7 +381,7 @@
 		DEC9007529A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingPlayPauseButton.swift; sourceTree = "<group>"; };
 		DEC9007829A64974001B24A3 /* DrillTrainingQuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingQuitViewController.swift; sourceTree = "<group>"; };
 		DEC9007A29A64979001B24A3 /* DrillTrainingQuitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingQuitView.swift; sourceTree = "<group>"; };
-		DED00C1529AF523000661F03 /* GlossaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryManager.swift; sourceTree = "<group>"; };
+		DED00C1529AF523000661F03 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		DED00C1729AF52C800661F03 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
 		DED00C1C29AF530000661F03 /* GetSkillLevelsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsResponse.swift; sourceTree = "<group>"; };
@@ -404,6 +405,7 @@
 		DED00C4D29B0B85C00661F03 /* WorkoutStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStep.swift; sourceTree = "<group>"; };
 		DED00C5329B0B8C100661F03 /* GetWorkoutStepsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorkoutStepsRequest.swift; sourceTree = "<group>"; };
 		DED00C5529B0B8C700661F03 /* GetWorkoutStepsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorkoutStepsResponse.swift; sourceTree = "<group>"; };
+		DED00C5929B0CCFB00661F03 /* DrillManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillManager.swift; sourceTree = "<group>"; };
 		DED89C6D2990D1EB00325104 /* HomeKit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HomeKit.json; sourceTree = "<group>"; };
 		DED89C6F2990D28B00325104 /* DrillTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTraining.swift; sourceTree = "<group>"; };
 		DED89C712990D38700325104 /* WorkoutTrainingCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingCover.swift; sourceTree = "<group>"; };
@@ -673,8 +675,9 @@
 		DEA8FDCE298A7AE000868C0E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DED00C5829B0CCF100661F03 /* Drill */,
+				DED00C5729B0CA1400661F03 /* Workout */,
 				DED00C2829B0AF8A00661F03 /* Paygate */,
-				DED00C1229AF521900661F03 /* Glossary */,
 				DEBC2B2B298C1115002C84E3 /* Content */,
 				DEA8FDD7298A7AE000868C0E /* Profile */,
 				DEA8FDE1298A7AE000868C0E /* Purchase */,
@@ -934,31 +937,26 @@
 			children = (
 				DED89C6C2990D1D400325104 /* Mocks */,
 				DEBC2B2F298C1154002C84E3 /* Request */,
-				DEBC2B2C298C1119002C84E3 /* Models */,
+				DEBC2B2C298C1119002C84E3 /* Model */,
 				DEBC2B35298C11FA002C84E3 /* ContentManager.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
 		};
-		DEBC2B2C298C1119002C84E3 /* Models */ = {
+		DEBC2B2C298C1119002C84E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DEBC2B2D298C113E002C84E3 /* Drill.swift */,
-				DED89C6F2990D28B00325104 /* DrillTraining.swift */,
-				DED89C712990D38700325104 /* WorkoutTrainingCover.swift */,
+				DED00C1729AF52C800661F03 /* SkillLevel.swift */,
 				DED89C732990D3CF00325104 /* HomeKit.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DEBC2B2F298C1154002C84E3 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				DEC9005F29A60B5E001B24A3 /* GetDrillTrainings */,
+				DED00C1929AF52EE00661F03 /* GetSkillLevels */,
 				DED89C752990D47C00325104 /* GetHomeKit */,
-				DEBC2B30298C115B002C84E3 /* GetDrills */,
-				DED89C7A2990D62D00325104 /* DrillTrainingJSONMapper.swift */,
-				DED89C7C2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1070,21 +1068,11 @@
 			path = Quit;
 			sourceTree = "<group>";
 		};
-		DED00C1229AF521900661F03 /* Glossary */ = {
-			isa = PBXGroup;
-			children = (
-				DED00C1429AF522500661F03 /* Request */,
-				DED00C1329AF522000661F03 /* Model */,
-				DED00C1529AF523000661F03 /* GlossaryManager.swift */,
-			);
-			path = Glossary;
-			sourceTree = "<group>";
-		};
 		DED00C1329AF522000661F03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DED89C712990D38700325104 /* WorkoutTrainingCover.swift */,
 				DEBC2B46298D09D2002C84E3 /* FocusZone.swift */,
-				DED00C1729AF52C800661F03 /* SkillLevel.swift */,
 				DED00C4D29B0B85C00661F03 /* WorkoutStep.swift */,
 			);
 			path = Model;
@@ -1093,9 +1081,9 @@
 		DED00C1429AF522500661F03 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				DED00C4F29B0B87900661F03 /* GetWorkoutSteps */,
 				DED00C2329AF6DC600661F03 /* GetFocusZones */,
-				DED00C1929AF52EE00661F03 /* GetSkillLevels */,
+				DED00C4F29B0B87900661F03 /* GetWorkoutSteps */,
+				DED89C7C2990D6CC00325104 /* WorkoutTrainingCoverJSONMapper.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1196,11 +1184,58 @@
 			path = GetWorkoutSteps;
 			sourceTree = "<group>";
 		};
+		DED00C5729B0CA1400661F03 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				DED00C1429AF522500661F03 /* Request */,
+				DED00C1329AF522000661F03 /* Model */,
+				DED00C1529AF523000661F03 /* WorkoutManager.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		DED00C5829B0CCF100661F03 /* Drill */ = {
+			isa = PBXGroup;
+			children = (
+				DED00C5B29B0CCFD00661F03 /* Mocks */,
+				DED00C5D29B0CD0800661F03 /* Model */,
+				DED00C5C29B0CD0300661F03 /* Request */,
+				DED00C5929B0CCFB00661F03 /* DrillManager.swift */,
+			);
+			path = Drill;
+			sourceTree = "<group>";
+		};
+		DED00C5B29B0CCFD00661F03 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9005D29A60AEB001B24A3 /* DrillTrainings.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		DED00C5C29B0CD0300661F03 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9005F29A60B5E001B24A3 /* GetDrillTrainings */,
+				DEBC2B30298C115B002C84E3 /* GetDrills */,
+				DED89C7A2990D62D00325104 /* DrillTrainingJSONMapper.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DED00C5D29B0CD0800661F03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC2B2D298C113E002C84E3 /* Drill.swift */,
+				DED89C6F2990D28B00325104 /* DrillTraining.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DED89C6C2990D1D400325104 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
 				DED89C6D2990D1EB00325104 /* HomeKit.json */,
-				DEC9005D29A60AEB001B24A3 /* DrillTrainings.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1539,6 +1574,7 @@
 				DED00C4C29B0AF9400661F03 /* PaygateInfoCell.swift in Sources */,
 				DEC9007229A623CE001B24A3 /* DrillTrainingLifeCyrcle.swift in Sources */,
 				DED00C3629B0AF8A00661F03 /* GetPaygateRequest.swift in Sources */,
+				DED00C5A29B0CCFB00661F03 /* DrillManager.swift in Sources */,
 				DEC9006629A61917001B24A3 /* DrillTrainingViewController.swift in Sources */,
 				DEBC2B32298C1165002C84E3 /* GetDrillsRequest.swift in Sources */,
 				DEBC2B45298D048E002C84E3 /* OWorkoutTypeView.swift in Sources */,
@@ -1688,7 +1724,7 @@
 				DED89CE22994D72000325104 /* DailyTrainingInstructionView.swift in Sources */,
 				DEBC2B15298BEFE2002C84E3 /* OGoalButton.swift in Sources */,
 				DEA8FE5D298A7AE000868C0E /* GlobalDefinitions.swift in Sources */,
-				DED00C1629AF523000661F03 /* GlossaryManager.swift in Sources */,
+				DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

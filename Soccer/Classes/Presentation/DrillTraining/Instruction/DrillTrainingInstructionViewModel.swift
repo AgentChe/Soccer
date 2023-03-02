@@ -14,7 +14,7 @@ final class DrillTrainingInstructionViewModel {
     private let drillTraining: Driver<DrillTraining>
     private lazy var drills = makeDrills()
     
-    private lazy var contentManager = ContentManager()
+    private lazy var drillManager = DrillManager()
     
     init(drillTraining: DrillTraining) {
         self.drillTraining = BehaviorRelay(value: drillTraining).asDriver()
@@ -55,7 +55,7 @@ private extension DrillTrainingInstructionViewModel {
     }
     
     func makeDrills() -> Driver<[Drill]> {
-        contentManager
+        drillManager
             .obtainDrills(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
     }

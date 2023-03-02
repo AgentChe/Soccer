@@ -18,7 +18,7 @@ final class DrillTrainingsViewModel {
     private lazy var drillTrainings = makeDrillTrainings()
     private lazy var activeSubscription = makeActiveSubscription()
     
-    private lazy var contentManager = ContentManager()
+    private lazy var drillManager = DrillManager()
     private lazy var sessionManager = SessionManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
@@ -50,7 +50,7 @@ private extension DrillTrainingsViewModel {
                 }
                 
                 func source() -> Single<[DrillTraining]> {
-                    self.contentManager
+                    self.drillManager
                         .obtainDrillTrainings(at: drill.id)
                 }
                 

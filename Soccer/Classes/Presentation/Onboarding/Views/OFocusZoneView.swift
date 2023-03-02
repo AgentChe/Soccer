@@ -36,7 +36,7 @@ final class OFocusZoneView: OSlideView {
     
     private lazy var focusZones = [FocusZone]()
     
-    private lazy var glossaryManager = GlossaryManager()
+    private lazy var workoutManager = WorkoutManager()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
@@ -70,7 +70,7 @@ private extension OFocusZoneView {
     func initialize() {
         backgroundColor = Appearance.background
         
-        glossaryManager
+        workoutManager
             .obtainFocusZones(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
             .drive(Binder(self) { base, focusZones in

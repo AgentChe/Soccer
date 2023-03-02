@@ -21,7 +21,7 @@ final class ODrillsView: OSlideView {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var contentManager = ContentManager()
+    private lazy var drillManager = DrillManager()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
@@ -45,7 +45,7 @@ private extension ODrillsView {
             self?.checkEnabled()
         }
         
-        contentManager
+        drillManager
             .obtainDrills(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
             .drive(Binder(tableView) { base, drills in
