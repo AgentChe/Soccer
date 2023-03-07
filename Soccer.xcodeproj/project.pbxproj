@@ -166,6 +166,8 @@
 		DEC9007629A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007529A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift */; };
 		DEC9007929A64974001B24A3 /* DrillTrainingQuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007829A64974001B24A3 /* DrillTrainingQuitViewController.swift */; };
 		DEC9007B29A64979001B24A3 /* DrillTrainingQuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007A29A64979001B24A3 /* DrillTrainingQuitView.swift */; };
+		DECA71F429B68E8100F9667B /* GetWorkoutCoversRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA71F329B68E8100F9667B /* GetWorkoutCoversRequest.swift */; };
+		DECA71F629B68E8800F9667B /* GetWorkoutCoversResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA71F529B68E8800F9667B /* GetWorkoutCoversResponse.swift */; };
 		DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* WorkoutManager.swift */; };
 		DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1729AF52C800661F03 /* SkillLevel.swift */; };
 		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
@@ -198,7 +200,6 @@
 		DED89C772990D48700325104 /* GetHomeKitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C762990D48700325104 /* GetHomeKitRequest.swift */; };
 		DED89C792990D48D00325104 /* GetHomeKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C782990D48D00325104 /* GetHomeKitResponse.swift */; };
 		DED89C7B2990D62D00325104 /* DrillTrainingJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C7A2990D62D00325104 /* DrillTrainingJSONMapper.swift */; };
-		DED89C7D2990D6CC00325104 /* WorkoutCoverJSONMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C7C2990D6CC00325104 /* WorkoutCoverJSONMapper.swift */; };
 		DED89C822990DA3E00325104 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C812990DA3E00325104 /* HomeViewController.swift */; };
 		DED89C842990DA4300325104 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C832990DA4300325104 /* HomeViewModel.swift */; };
 		DED89C862990DA4800325104 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C852990DA4800325104 /* HomeView.swift */; };
@@ -381,6 +382,8 @@
 		DEC9007529A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingPlayPauseButton.swift; sourceTree = "<group>"; };
 		DEC9007829A64974001B24A3 /* DrillTrainingQuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingQuitViewController.swift; sourceTree = "<group>"; };
 		DEC9007A29A64979001B24A3 /* DrillTrainingQuitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingQuitView.swift; sourceTree = "<group>"; };
+		DECA71F329B68E8100F9667B /* GetWorkoutCoversRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorkoutCoversRequest.swift; sourceTree = "<group>"; };
+		DECA71F529B68E8800F9667B /* GetWorkoutCoversResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorkoutCoversResponse.swift; sourceTree = "<group>"; };
 		DED00C1529AF523000661F03 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		DED00C1729AF52C800661F03 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
@@ -413,7 +416,6 @@
 		DED89C762990D48700325104 /* GetHomeKitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHomeKitRequest.swift; sourceTree = "<group>"; };
 		DED89C782990D48D00325104 /* GetHomeKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHomeKitResponse.swift; sourceTree = "<group>"; };
 		DED89C7A2990D62D00325104 /* DrillTrainingJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingJSONMapper.swift; sourceTree = "<group>"; };
-		DED89C7C2990D6CC00325104 /* WorkoutCoverJSONMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCoverJSONMapper.swift; sourceTree = "<group>"; };
 		DED89C812990DA3E00325104 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DED89C832990DA4300325104 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DED89C852990DA4800325104 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -1068,6 +1070,15 @@
 			path = Quit;
 			sourceTree = "<group>";
 		};
+		DECA71F229B68E7200F9667B /* GetWorkoutCovers */ = {
+			isa = PBXGroup;
+			children = (
+				DECA71F329B68E8100F9667B /* GetWorkoutCoversRequest.swift */,
+				DECA71F529B68E8800F9667B /* GetWorkoutCoversResponse.swift */,
+			);
+			path = GetWorkoutCovers;
+			sourceTree = "<group>";
+		};
 		DED00C1329AF522000661F03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1081,9 +1092,9 @@
 		DED00C1429AF522500661F03 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DECA71F229B68E7200F9667B /* GetWorkoutCovers */,
 				DED00C2329AF6DC600661F03 /* GetFocusZones */,
 				DED00C4F29B0B87900661F03 /* GetWorkoutSteps */,
-				DED89C7C2990D6CC00325104 /* WorkoutCoverJSONMapper.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1539,7 +1550,6 @@
 				DEC9006D29A61B5F001B24A3 /* DrillTrainingBackgroundImageView.swift in Sources */,
 				DEA8FF04298A83AF00868C0E /* Toast.swift in Sources */,
 				DEA8FF00298A7CD800868C0E /* Inter-Regular.ttf in Sources */,
-				DED89C7D2990D6CC00325104 /* WorkoutCoverJSONMapper.swift in Sources */,
 				DEA8FF01298A7CD800868C0E /* Inter-Black.ttf in Sources */,
 				DED89C9F2991559700325104 /* HomeDrillsCollectionCell.swift in Sources */,
 				DED89CEB2994DC8400325104 /* DTIHeaderCell.swift in Sources */,
@@ -1584,6 +1594,7 @@
 				DEA8FE6B298A7AE000868C0E /* Weak.swift in Sources */,
 				DEA8FE5E298A7AE000868C0E /* DefaultRequestWrapper.swift in Sources */,
 				DEA8FE95298A7AE000868C0E /* IAPError.swift in Sources */,
+				DECA71F629B68E8800F9667B /* GetWorkoutCoversResponse.swift in Sources */,
 				DED89C9B2991557600325104 /* HomeDrillsCell.swift in Sources */,
 				DED00C4B29B0AF9400661F03 /* PaygateProductButton.swift in Sources */,
 				DEA8FEBA298A7AE000868C0E /* TryAgainView.swift in Sources */,
@@ -1696,6 +1707,7 @@
 				DEA8FE6E298A7AE000868C0E /* RxActivityIndicator.swift in Sources */,
 				DED00C4529B0AF9400661F03 /* DefaultPaygate.swift in Sources */,
 				DEA8FE77298A7AE000868C0E /* CircleView.swift in Sources */,
+				DECA71F429B68E8100F9667B /* GetWorkoutCoversRequest.swift in Sources */,
 				DEA8FE79298A7AE000868C0E /* CircleProgressView.swift in Sources */,
 				DEA8FE9B298A7AE000868C0E /* SplashReceiptValidationObserver.swift in Sources */,
 				DEA8FED3298A7AE000868C0E /* OPreloaderView.swift in Sources */,

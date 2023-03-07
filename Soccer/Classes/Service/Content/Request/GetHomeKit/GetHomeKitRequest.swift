@@ -21,7 +21,7 @@ struct GetHomeKitRequest: APIRequestBody {
     var parameters: Parameters? {
         [
             "_api_key": GlobalDefinitions.apiKey,
-            "user_token": userToken
+            "_user_token": userToken
         ]
     }
 }

@@ -11,4 +11,5 @@ struct FocusZone: Codable, Hashable {
     let id: Int
     let name: String
     let image: URL
+    let paid: Bool
 }

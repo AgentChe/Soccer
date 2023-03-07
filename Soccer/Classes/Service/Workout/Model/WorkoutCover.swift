@@ -10,8 +10,6 @@ import Foundation
 struct WorkoutCover: Codable, Hashable {
     let id: Int
     let name: String
-    let skillLevelId: Int // TODO
     let image: URL
-    let focusZones: [FocusZone]
     let paid: Bool
 }

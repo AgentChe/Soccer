@@ -22,7 +22,8 @@ final class GetFocusZonesResponse {
                 let id = focusZoneJSON["body_part_id"] as? Int,
                 let name = focusZoneJSON["name"] as? String,
                 let imagePath = focusZoneJSON["image"] as? String,
-                let imageUrl = URL(string: imagePath)
+                let imageUrl = URL(string: imagePath),
+                let paid = focusZoneJSON["paid"] as? Bool
             else {
                 return nil
             }
@@ -30,7 +31,8 @@ final class GetFocusZonesResponse {
             return FocusZone(
                 id: id,
                 name: name,
-                image: imageUrl
+                image: imageUrl,
+                paid: paid
             )
         }
     }

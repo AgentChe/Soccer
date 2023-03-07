@@ -22,7 +22,8 @@ final class GetWorkoutStepsResponse {
                 let id = stepJSON["training_step_id"] as? Int,
                 let name = stepJSON["name"] as? String,
                 let imagePath = stepJSON["image"] as? String,
-                let imageUrl = URL(string: imagePath)
+                let imageUrl = URL(string: imagePath),
+                let paid = stepJSON["paid"] as? Bool
             else {
                 return nil
             }
@@ -30,7 +31,8 @@ final class GetWorkoutStepsResponse {
             return WorkoutStep(
                 id: id,
                 name: name,
-                image: imageUrl
+                image: imageUrl,
+                paid: paid
             )
         }
     }

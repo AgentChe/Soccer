@@ -10,12 +10,14 @@ import RxSwift
 protocol WorkoutManagerProtocol {
     func obtainFocusZones(forceUpdate: Bool) -> Single<[FocusZone]>
     func obtainWorkoutSteps(forceUpdate: Bool) -> Single<[WorkoutStep]>
+    func obtainWorkoutCovers(forceUpdate: Bool) -> Single<[WorkoutCover]>
 }
 
 final class WorkoutManager {
     enum Constants {
         static let focusZones = "workout_manager_focus_zones_key"
         static let workoutSteps = "workout_manager_workout_steps_key"
+        static let workoutCovers = "workout_manager_workout_covers_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -31,6 +33,10 @@ extension WorkoutManager: WorkoutManagerProtocol {
     
     func obtainWorkoutSteps(forceUpdate: Bool) -> Single<[WorkoutStep]> {
         forceUpdate ? loadWorkoutSteps() : cachedWorkoutSteps()
+    }
+    
+    func obtainWorkoutCovers(forceUpdate: Bool) -> Single<[WorkoutCover]> {
+        forceUpdate ? loadWorkoutCovers() : cachedWorkoutCovers()
     }
 }
 
@@ -99,6 +105,40 @@ private extension WorkoutManager {
             let workoutSteps = try? JSONDecoder().decode([WorkoutStep].self, from: data)
             
             event(.success(workoutSteps ?? []))
+            
+            return Disposables.create()
+        }
+    }
+    
+    func loadWorkoutCovers() -> Single<[WorkoutCover]> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetWorkoutCoversRequest(userToken: userToken)
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetWorkoutCoversResponse.map(from: $0) }
+            .do(onSuccess: { workoutCovers in
+                guard let data = try? JSONEncoder().encode(workoutCovers) else {
+                    return
+                }
+                
+                UserDefaults.standard.set(data, forKey: Constants.workoutCovers)
+            })
+    }
+    
+    func cachedWorkoutCovers() -> Single<[WorkoutCover]> {
+        Single<[WorkoutCover]>.create { event in
+            guard let data = UserDefaults.standard.data(forKey: Constants.workoutCovers) else {
+                event(.success([]))
+                return Disposables.create()
+            }
+            
+            let workoutCovers = try? JSONDecoder().decode([WorkoutCover].self, from: data)
+            
+            event(.success(workoutCovers ?? []))
             
             return Disposables.create()
         }

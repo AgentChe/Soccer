@@ -121,6 +121,9 @@ private extension SplashViewModel {
             let workoutSteps = workoutManager
                 .obtainWorkoutSteps(forceUpdate: true)
                 .mapToVoid()
+            let workoutCovers = workoutManager
+                .obtainWorkoutCovers(forceUpdate: true)
+                .mapToVoid()
             
             return Single
                 .zip([
@@ -129,7 +132,8 @@ private extension SplashViewModel {
                     profile,
                     levels,
                     focusZones,
-                    workoutSteps
+                    workoutSteps,
+                    workoutCovers
                 ])
                 .mapToVoid()
         }
