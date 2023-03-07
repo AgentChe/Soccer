@@ -35,7 +35,7 @@ extension ODrillsTableCell {
             .lineHeight(25.6.scale)
             .textAlignment(.center)
             .lineBreakMode(.byTruncatingTail)
-        label.attributedText = element.drill.name.attributed(with: attrs)
+        label.attributedText = element.drillCategory.name.attributed(with: attrs)
         
         checkedView.image = UIImage(named: element.marked ? "Onboarding.Drills.Checked" : "Onboarding.Drills.Unchecked")
     }

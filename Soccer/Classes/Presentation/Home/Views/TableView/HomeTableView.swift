@@ -10,7 +10,7 @@ import UIKit
 protocol HomeTableViewDelegate: AnyObject {
     func homeTableDidTap(drillTraining: DrillTraining)
     func homeTableDidTap(workout: WorkoutCover)
-    func homeTableDidTap(drill: Drill)
+    func homeTableDidTap(drillCategory: DrillCategory)
     func homeTableDidTapTryDrills()
     func homeTableDidTapWorkouts()
 }
@@ -70,11 +70,11 @@ extension HomeTableView: UITableViewDataSource {
                 }
             }
             return cell
-        case .drills(let element):
+        case .drillCategories(let element):
             let cell = dequeueReusableCell(withIdentifier: String(describing: HomeDrillsCell.self)) as! HomeDrillsCell
             cell.collectionView.setup(elements: element)
-            cell.collectionView.didTap = { [weak self] drill in
-                self?.mainDelegate?.homeTableDidTap(drill: drill)
+            cell.collectionView.didTap = { [weak self] drillCategory in
+                self?.mainDelegate?.homeTableDidTap(drillCategory: drillCategory)
             }
             return cell
         case .tryDrillsTitle(let element), .workoutsTitle(let element):
@@ -104,12 +104,12 @@ extension HomeTableView: UITableViewDelegate {
             return offset
         case .dailyPicks:
             return 330.scale
-        case .drills(let elements):
-            guard let drill = elements.first else {
+        case .drillCategories(let elements):
+            guard let drillCategory = elements.first else {
                 return 0
             }
             
-            return HomeDrillsCollectionCell.size(for: drill).height * 2 + 16.scale
+            return HomeDrillsCollectionCell.size(for: drillCategory).height * 2 + 16.scale
         case .tryDrillsTitle, .workoutsTitle:
             return 30.scale
         case .drillTraining:

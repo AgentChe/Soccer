@@ -8,14 +8,14 @@
 import RxSwift
 
 protocol DrillManagerProtocol {
-    func obtainDrills(forceUpdate: Bool) -> Single<[Drill]>
+    func obtainDrillCategories(forceUpdate: Bool) -> Single<[DrillCategory]>
     func obtainDrillTrainings(at drillId: Int) -> Single<[DrillTraining]>
 }
 
 // TODO: удалить Mocks folder
 final class DrillManager {
     enum Constants {
-        static let drillsKey = "content_manager_drills"
+        static let drillCategoriesKey = "content_manager_drill_categories_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -25,8 +25,8 @@ final class DrillManager {
 
 // MARK: DrillManagerProtocol
 extension DrillManager: DrillManagerProtocol {
-    func obtainDrills(forceUpdate: Bool) -> Single<[Drill]> {
-        forceUpdate ? loadDrills() : cachedDrills()
+    func obtainDrillCategories(forceUpdate: Bool) -> Single<[DrillCategory]> {
+        forceUpdate ? loadDrillCategories() : cachedDrillCategories()
     }
     
     // TODO
@@ -57,36 +57,36 @@ extension DrillManager: DrillManagerProtocol {
 
 // MARK: Private
 private extension DrillManager {
-    func loadDrills() -> Single<[Drill]> {
+    func loadDrillCategories() -> Single<[DrillCategory]> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
         
-        let request = GetDrillsRequest(userToken: userToken)
+        let request = GetDrillCategoriesRequest(userToken: userToken)
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .map { GetDrillsResponse.map(from: $0) }
+            .map { GetDrillCategoriesResponse.map(from: $0) }
             .do(onSuccess: { drills in
                 guard let data = try? JSONEncoder().encode(drills) else {
                     return
                 }
                 
-                UserDefaults.standard.set(data, forKey: Constants.drillsKey)
+                UserDefaults.standard.set(data, forKey: Constants.drillCategoriesKey)
             })
     }
     
-    func cachedDrills() -> Single<[Drill]> {
-        Single<[Drill]>
+    func cachedDrillCategories() -> Single<[DrillCategory]> {
+        Single<[DrillCategory]>
             .create { event in
-                guard let data = UserDefaults.standard.data(forKey: Constants.drillsKey) else {
+                guard let data = UserDefaults.standard.data(forKey: Constants.drillCategoriesKey) else {
                     event(.success([]))
                     return Disposables.create()
                 }
                 
-                let drills = try? JSONDecoder().decode([Drill].self, from: data)
+                let drillCategories = try? JSONDecoder().decode([DrillCategory].self, from: data)
                 
-                event(.success(drills ?? []))
+                event(.success(drillCategories ?? []))
                 
                 return Disposables.create()
             }

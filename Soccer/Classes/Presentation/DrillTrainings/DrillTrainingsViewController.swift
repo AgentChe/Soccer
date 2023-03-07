@@ -11,14 +11,14 @@ import RxSwift
 final class DrillTrainingsViewController: UIViewController {
     lazy var mainView = DrillTrainingsView()
     
-    private lazy var viewModel = DrillTrainingsViewModel(drill: drill)
+    private lazy var viewModel = DrillTrainingsViewModel(drillCategory: drillCategory)
     
     private lazy var disposeBag = DisposeBag()
     
-    private let drill: Drill
+    private let drillCategory: DrillCategory
     
-    private init(drill: Drill) {
-        self.drill = drill
+    private init(drillCategory: DrillCategory) {
+        self.drillCategory = drillCategory
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -60,9 +60,9 @@ final class DrillTrainingsViewController: UIViewController {
 
 // MARK: Make
 extension DrillTrainingsViewController {
-    static func make(drill: Drill) -> DrillTrainingsViewController {
-        let vc = DrillTrainingsViewController(drill: drill)
-        vc.navigationItem.title = drill.name
+    static func make(drillCategory: DrillCategory) -> DrillTrainingsViewController {
+        let vc = DrillTrainingsViewController(drillCategory: drillCategory)
+        vc.navigationItem.title = drillCategory.name
         vc.navigationItem.backButtonTitle = " "
         return vc
     }

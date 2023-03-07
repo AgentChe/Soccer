@@ -30,12 +30,12 @@ final class HomeDrillsCollectionCell: UICollectionViewCell {
 
 // MARK: Public
 extension HomeDrillsCollectionCell {
-    static func size(for drill: Drill) -> CGSize {
-        let size = drill.name.attributed(with: HomeDrillsCollectionCell.attrs).size()
+    static func size(for drillCategory: DrillCategory) -> CGSize {
+        let size = drillCategory.name.attributed(with: HomeDrillsCollectionCell.attrs).size()
         return CGSize(width: size.width + 32.scale, height: size.height + 20.scale)
     }
     
-    func setup(element: Drill) {
+    func setup(element: DrillCategory) {
         label.attributedText = element.name.attributed(with: HomeDrillsCollectionCell.attrs)
     }
 }

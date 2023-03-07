@@ -15,7 +15,7 @@ final class HomeViewModel {
     lazy var activity = RxActivityIndicator()
     
     private lazy var homeKit = makeHomeKit()
-    private lazy var drills = makeDrills()
+    private lazy var drillCategories = makeDrillCategories()
     
     private lazy var contentManager = ContentManager()
     private lazy var drillManager = DrillManager()
@@ -27,8 +27,8 @@ final class HomeViewModel {
 private extension HomeViewModel {
     func makeElements() -> Driver<[HomeTableElement]> {
         Driver
-            .combineLatest(homeKit, drills)
-            .map { homeKit, drills -> [HomeTableElement] in
+            .combineLatest(homeKit, drillCategories)
+            .map { homeKit, drillCategories -> [HomeTableElement] in
                 guard let homeKit = homeKit else {
                     return []
                 }
@@ -36,8 +36,8 @@ private extension HomeViewModel {
                 var result = [HomeTableElement]()
                 
                 var dailyPicks = [DailyPicksElement]()
-                if let drill = drills.first(where: { $0.id == homeKit.dailyDrill.drillId }) {
-                    dailyPicks.append(.init(drillTraining: homeKit.dailyDrill, drill: drill))
+                if let drillCategory = drillCategories.first(where: { $0.id == homeKit.dailyDrill.drillId }) {
+                    dailyPicks.append(.init(drillTraining: homeKit.dailyDrill, drillCategory: drillCategory))
                 }
                 dailyPicks.append(.init(workout: homeKit.dailyWorkout))
                 result.append(contentsOf: [
@@ -48,7 +48,7 @@ private extension HomeViewModel {
                 
                 result.append(contentsOf: [
                     .offset(40.scale),
-                    .drills(drills)
+                    .drillCategories(drillCategories)
                 ])
                 
                 if !homeKit.tryDrills.isEmpty {
@@ -59,7 +59,7 @@ private extension HomeViewModel {
                     ])
                     
                     homeKit.tryDrills.enumerated().forEach { index, drillTraining in
-                        guard let drill = drills.first(where: { drillTraining.id == $0.id }) else {
+                        guard let drillCategory = drillCategories.first(where: { drillTraining.id == $0.id }) else {
                             return
                         }
                         
@@ -68,7 +68,7 @@ private extension HomeViewModel {
                         }
                         
                         let element = HomeDrillTrainingElement(drillTraining: drillTraining,
-                                                               drill: drill)
+                                                               drillCategory: drillCategory)
                         result.append(.drillTraining(element))
                     }
                 }
@@ -107,9 +107,9 @@ private extension HomeViewModel {
             .asDriver(onErrorJustReturn: nil)
     }
     
-    func makeDrills() -> Driver<[Drill]> {
+    func makeDrillCategories() -> Driver<[DrillCategory]> {
         drillManager
-            .obtainDrills(forceUpdate: false)
+            .obtainDrillCategories(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
     }
 }

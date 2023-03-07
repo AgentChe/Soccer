@@ -14,7 +14,7 @@ final class DrillTrainingsViewModel {
     lazy var elements = makeElements()
     lazy var activity = RxActivityIndicator()
     
-    private let drill: Driver<Drill>
+    private let drillCategory: Driver<DrillCategory>
     private lazy var drillTrainings = makeDrillTrainings()
     private lazy var activeSubscription = makeActiveSubscription()
     
@@ -23,8 +23,8 @@ final class DrillTrainingsViewModel {
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
     
-    init(drill: Drill) {
-        self.drill = BehaviorRelay(value: drill).asDriver()
+    init(drillCategory: DrillCategory) {
+        self.drillCategory = BehaviorRelay(value: drillCategory).asDriver()
     }
 }
 
@@ -32,26 +32,26 @@ final class DrillTrainingsViewModel {
 private extension DrillTrainingsViewModel {
     func makeElements() -> Driver<[DrillTrainingsTableElement]> {
         Driver
-            .combineLatest(drill, drillTrainings, activeSubscription)
-            .map { drill, drillTrainings, activeSubscription -> [DrillTrainingsTableElement] in
+            .combineLatest(drillCategory, drillTrainings, activeSubscription)
+            .map { drillCategory, drillTrainings, activeSubscription -> [DrillTrainingsTableElement] in
                 drillTrainings.map { drillTraining -> DrillTrainingsTableElement in
                     DrillTrainingsTableElement(drillTraining: drillTraining,
-                                               drill: drill,
+                                               drillCategory: drillCategory,
                                                locked: drillTraining.paid ? !activeSubscription : false)
                 }
             }
     }
     
     func makeDrillTrainings() -> Driver<[DrillTraining]> {
-        drill
-            .flatMapLatest { [weak self] drill -> Driver<[DrillTraining]> in
+        drillCategory
+            .flatMapLatest { [weak self] drillCategory -> Driver<[DrillTraining]> in
                 guard let self = self else {
                     return .never()
                 }
                 
                 func source() -> Single<[DrillTraining]> {
                     self.drillManager
-                        .obtainDrillTrainings(at: drill.id)
+                        .obtainDrillTrainings(at: drillCategory.id)
                 }
                 
                 func trigger(error: Error) -> Observable<Void> {

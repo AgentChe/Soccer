@@ -47,7 +47,7 @@ extension DTIHeaderCell {
         
         nameLabel.attributedText = element.name.attributed(with: nameAttrs)
         tag1Label.attributedText = element.skillLevel.attributed(with: tagAttrs)
-        tag2Label.attributedText = element.drill.attributed(with: tagAttrs)
+        tag2Label.attributedText = element.drillCategory.attributed(with: tagAttrs)
     }
 }
 

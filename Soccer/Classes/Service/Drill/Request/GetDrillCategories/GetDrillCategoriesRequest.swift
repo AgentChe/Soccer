@@ -1,5 +1,5 @@
 //
-//  GetDrillsRequest.swift
+//  GetDrillCategoriesRequest.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 02.02.2023.
@@ -7,7 +7,7 @@
 
 import Alamofire
 
-struct GetDrillsRequest: APIRequestBody {
+struct GetDrillCategoriesRequest: APIRequestBody {
     let userToken: String
 
     var url: String {

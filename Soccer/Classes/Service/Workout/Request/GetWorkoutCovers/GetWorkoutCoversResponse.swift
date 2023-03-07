@@ -19,7 +19,7 @@ final class GetWorkoutCoversResponse {
         
         return coversArray.compactMap { coverJSON -> WorkoutCover? in
             guard
-                let id = coverJSON["body_part_id"] as? Int,
+                let id = coverJSON["workout_name_id"] as? Int,
                 let name = coverJSON["name"] as? String,
                 let imagePath = coverJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),

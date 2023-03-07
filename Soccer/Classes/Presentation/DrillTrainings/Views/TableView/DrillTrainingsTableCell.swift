@@ -54,7 +54,7 @@ extension DrillTrainingsTableCell {
         nameLabel.attributedText = element.drillTraining.name.attributed(with: nameAttrs)
         
         tag1Label.attributedText = "TODO".attributed(with: tagAttrs) //element.drillTraining.skillLevel.localizedTitle.attributed(with: tagAttrs) // TODO
-        tag2Label.attributedText = element.drill.name.attributed(with: tagAttrs)
+        tag2Label.attributedText = element.drillCategory.name.attributed(with: tagAttrs)
         
         lockedView.isHidden = !element.locked
     }

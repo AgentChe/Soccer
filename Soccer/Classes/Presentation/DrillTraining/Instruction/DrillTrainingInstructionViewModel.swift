@@ -12,7 +12,7 @@ final class DrillTrainingInstructionViewModel {
     lazy var elements = makeElements()
     
     private let drillTraining: Driver<DrillTraining>
-    private lazy var drills = makeDrills()
+    private lazy var drillCategories = makeDrillCategories()
     
     private lazy var drillManager = DrillManager()
     
@@ -25,19 +25,19 @@ final class DrillTrainingInstructionViewModel {
 private extension DrillTrainingInstructionViewModel {
     func makeElements() -> Driver<[DTITableElement]> {
         Driver
-            .combineLatest(drillTraining, drills)
-            .map { drillTraining, drills -> [DTITableElement] in
+            .combineLatest(drillTraining, drillCategories)
+            .map { drillTraining, drillCategories -> [DTITableElement] in
                 var result = [DTITableElement]()
                 
                 let headerElement = DTIHeaderElement(image: drillTraining.image,
                                                      name: drillTraining.name,
                                                      skillLevel: "TODO", //drillTraining.skillLevel.localizedTitle, // TODO
-                                                     drill: drills.first(where: { $0.id == drillTraining.drillId })?.name ?? "")
+                                                     drillCategory: drillCategories.first(where: { $0.id == drillTraining.drillId })?.name ?? "")
                 result.append(.header(headerElement))
                 
                 result.append(contentsOf: [
                     .offset(1.scale),
-                    .description(drillTraining.description)
+                    .description(drillTraining.explanation)
                 ])
                 
                 result.append(contentsOf: [
@@ -54,9 +54,9 @@ private extension DrillTrainingInstructionViewModel {
             }
     }
     
-    func makeDrills() -> Driver<[Drill]> {
+    func makeDrillCategories() -> Driver<[DrillCategory]> {
         drillManager
-            .obtainDrills(forceUpdate: false)
+            .obtainDrillCategories(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
     }
 }

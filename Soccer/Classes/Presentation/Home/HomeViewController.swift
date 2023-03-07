@@ -83,8 +83,8 @@ extension HomeViewController: HomeTableViewDelegate {
         print("homeTableDidTap workout: \(workout.name)")
     }
     
-    func homeTableDidTap(drill: Drill) {
-        let vc = DrillTrainingsViewController.make(drill: drill)
+    func homeTableDidTap(drillCategory: DrillCategory) {
+        let vc = DrillTrainingsViewController.make(drillCategory: drillCategory)
         navigationController?.pushViewController(vc, animated: true)
     }
     

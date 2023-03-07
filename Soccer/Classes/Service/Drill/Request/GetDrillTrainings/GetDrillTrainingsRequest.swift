@@ -9,10 +9,11 @@ import Alamofire
 
 struct GetDrillTrainingsRequest: APIRequestBody {
     let userToken: String
-    let id: Int
+    let drillId: Int
+    let levelId: Int
     
     var url: String {
-        GlobalDefinitions.domain + "/api/drill_trainings"
+        GlobalDefinitions.domain + "/api/drills/list"
     }
     
     var method: HTTPMethod {
@@ -23,7 +24,8 @@ struct GetDrillTrainingsRequest: APIRequestBody {
         [
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
-            "drill_id": id
+            "drill_category_id": drillId,
+            "level_id": levelId
         ]
     }
 }

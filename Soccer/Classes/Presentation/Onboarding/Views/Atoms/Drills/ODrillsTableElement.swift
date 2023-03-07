@@ -6,11 +6,11 @@
 //
 
 final class ODrillsTableElement {
-    let drill: Drill
+    let drillCategory: DrillCategory
     var marked: Bool
     
-    init(drill: Drill, marked: Bool = false) {
-        self.drill = drill
+    init(drillCategory: DrillCategory, marked: Bool = false) {
+        self.drillCategory = drillCategory
         self.marked = marked
     }
 }

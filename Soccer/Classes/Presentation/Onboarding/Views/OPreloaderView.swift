@@ -65,7 +65,7 @@ private extension OPreloaderView {
             profileManager
                 .set(skillLevelId: data.skillLevel.id,
                      weekSchedule: data.weekSchedule,
-                     drillsIds: data.drills,
+                     drillsIds: data.drillCategories,
                      focusZonesIds: data.focusZones.map { $0.id })
         }
         

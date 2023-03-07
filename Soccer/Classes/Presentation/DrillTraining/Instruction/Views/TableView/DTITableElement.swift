@@ -19,5 +19,5 @@ struct DTIHeaderElement {
     let image: URL
     let name: String
     let skillLevel: String
-    let drill: String
+    let drillCategory: String
 }

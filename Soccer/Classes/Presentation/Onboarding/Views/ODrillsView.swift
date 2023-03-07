@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 protocol ODrillsViewDelegate: AnyObject {
-    func drillsViewDidSelect(drills: [Drill])
+    func drillsViewDidSelect(drillCategories: [DrillCategory])
 }
 
 final class ODrillsView: OSlideView {
@@ -46,10 +46,10 @@ private extension ODrillsView {
         }
         
         drillManager
-            .obtainDrills(forceUpdate: false)
+            .obtainDrillCategories(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
-            .drive(Binder(tableView) { base, drills in
-                let elements = drills.map { ODrillsTableElement(drill: $0) }
+            .drive(Binder(tableView) { base, drillCategories in
+                let elements = drillCategories.map { ODrillsTableElement(drillCategory: $0) }
                 base.setup(elements: elements)
             })
             .disposed(by: disposeBag)
@@ -62,10 +62,10 @@ private extension ODrillsView {
     
     @objc
     func nextTapped() {
-        let drills = tableView.elements
+        let drillCategories = tableView.elements
             .filter { $0.marked }
-            .map { $0.drill }
-        mainDelegate?.drillsViewDidSelect(drills: drills)
+            .map { $0.drillCategory }
+        mainDelegate?.drillsViewDidSelect(drillCategories: drillCategories)
         
         onNext()
     }

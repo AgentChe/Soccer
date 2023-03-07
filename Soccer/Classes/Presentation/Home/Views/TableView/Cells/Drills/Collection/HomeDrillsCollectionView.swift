@@ -8,9 +8,9 @@
 import UIKit
 
 final class HomeDrillsCollectionView: UICollectionView {
-    var didTap: ((Drill) -> Void)?
+    var didTap: ((DrillCategory) -> Void)?
     
-    lazy var elements = [Drill]()
+    lazy var elements = [DrillCategory]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -25,7 +25,7 @@ final class HomeDrillsCollectionView: UICollectionView {
 
 // MARK: Public
 extension HomeDrillsCollectionView {
-    func setup(elements: [Drill]) {
+    func setup(elements: [DrillCategory]) {
         self.elements = elements
         
         reloadData()
@@ -52,8 +52,8 @@ extension HomeDrillsCollectionView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let drill = elements[indexPath.row]
-        didTap?(drill)
+        let drillCategory = elements[indexPath.row]
+        didTap?(drillCategory)
     }
 }
 

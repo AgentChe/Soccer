@@ -106,8 +106,8 @@ private extension SplashViewModel {
             let paygate = paygateManager
                 .obtainPaygate(forceUpdate: true)
                 .mapToVoid()
-            let drills = drillManager
-                .obtainDrills(forceUpdate: true)
+            let drillCategories = drillManager
+                .obtainDrillCategories(forceUpdate: true)
                 .mapToVoid()
             let profile = profileManager
                 .obtainProfile(forceUpdate: true)
@@ -128,7 +128,7 @@ private extension SplashViewModel {
             return Single
                 .zip([
                     paygate,
-                    drills,
+                    drillCategories,
                     profile,
                     levels,
                     focusZones,

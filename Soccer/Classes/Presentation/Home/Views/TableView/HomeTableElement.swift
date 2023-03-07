@@ -11,7 +11,7 @@ enum HomeTableElement {
     case offset(CGFloat)
     case title(String)
     case dailyPicks([DailyPicksElement])
-    case drills([Drill])
+    case drillCategories([DrillCategory])
     case tryDrillsTitle(String)
     case drillTraining(HomeDrillTrainingElement)
     case workoutsTitle(String)
@@ -32,13 +32,13 @@ struct DailyPicksElement {
     let tag2: String?
     let action: String
     
-    init(drillTraining: DrillTraining, drill: Drill) {
+    init(drillTraining: DrillTraining, drillCategory: DrillCategory) {
         dailyPicks = .drill(drillTraining)
         image = drillTraining.image
         type = "Home.Drill".localized
         name = drillTraining.name
         tag1 = "TODO" // drillTraining.skillLevel.localizedTitle // TODO
-        tag2 = drill.name
+        tag2 = drillCategory.name
         action = "Home.StartTraining".localized
     }
     
@@ -55,5 +55,5 @@ struct DailyPicksElement {
 
 struct HomeDrillTrainingElement {
     let drillTraining: DrillTraining
-    let drill: Drill
+    let drillCategory: DrillCategory
 }

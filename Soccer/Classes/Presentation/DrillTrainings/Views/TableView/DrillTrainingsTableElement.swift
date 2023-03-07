@@ -7,6 +7,6 @@
 
 struct DrillTrainingsTableElement {
     let drillTraining: DrillTraining
-    let drill: Drill
+    let drillCategory: DrillCategory
     let locked: Bool
 }

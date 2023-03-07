@@ -10,21 +10,21 @@ import Foundation
 struct OCombineData {
     let skillLevel: SkillLevel
     let weekSchedule: WeekSchedule
-    let drills: [Int]
+    let drillCategories: [Int]
     let focusZones: [FocusZone]
 }
 
 final class OnboardingCombineData {
     private var skillLevel: SkillLevel?
     private var weekSchedule: WeekSchedule?
-    private var drills: [Drill]?
+    private var drillCategories: [DrillCategory]?
     private var focusZones: [FocusZone]?
     
     func combineData() -> OCombineData? {
         guard
             let skillLevel = skillLevel,
             let weekSchedule = weekSchedule,
-            let drills = drills,
+            let drillCategories = drillCategories,
             let focusZones = focusZones
         else {
             return nil
@@ -33,7 +33,7 @@ final class OnboardingCombineData {
         return OCombineData(
             skillLevel: skillLevel,
             weekSchedule: weekSchedule,
-            drills: drills.map { $0.id },
+            drillCategories: drillCategories.map { $0.id },
             focusZones: focusZones
         )
     }
@@ -55,8 +55,8 @@ extension OnboardingCombineData: ODaysOfWeekViewDelegate {
 
 // MARK: ODrillsViewDelegate
 extension OnboardingCombineData: ODrillsViewDelegate {
-    func drillsViewDidSelect(drills: [Drill]) {
-        self.drills = drills
+    func drillsViewDidSelect(drillCategories: [DrillCategory]) {
+        self.drillCategories = drillCategories
     }
 }
 
