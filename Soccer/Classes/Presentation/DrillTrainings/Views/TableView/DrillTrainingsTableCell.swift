@@ -49,9 +49,9 @@ final class DrillTrainingsTableCell: UITableViewCell {
 // MARK: Public
 extension DrillTrainingsTableCell {
     func setup(element: DrillTrainingsTableElement) {
-        pictureView.kf.setImage(with: element.drillTraining.image)
+        pictureView.kf.setImage(with: element.drill.image)
         
-        nameLabel.attributedText = element.drillTraining.name.attributed(with: nameAttrs)
+        nameLabel.attributedText = element.drill.name.attributed(with: nameAttrs)
         
         tag1Label.attributedText = "TODO".attributed(with: tagAttrs) //element.drillTraining.skillLevel.localizedTitle.attributed(with: tagAttrs) // TODO
         tag2Label.attributedText = element.drillCategory.name.attributed(with: tagAttrs)

@@ -13,12 +13,12 @@ final class DrillTrainingInstructionViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var viewModel = DrillTrainingInstructionViewModel(drillTraining: drillTraining)
+    private lazy var viewModel = DrillTrainingInstructionViewModel(drill: drill)
     
-    private let drillTraining: DrillTraining
+    private let drill: Drill
     
-    private init(drillTraining: DrillTraining) {
-        self.drillTraining = drillTraining
+    private init(drill: Drill) {
+        self.drill = drill
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,8 +46,8 @@ final class DrillTrainingInstructionViewController: UIViewController {
 
 // MARK: Make
 extension DrillTrainingInstructionViewController {
-    static func make(drillTraining: DrillTraining) -> DrillTrainingInstructionViewController {
-        let vc = DrillTrainingInstructionViewController(drillTraining: drillTraining)
+    static func make(drill: Drill) -> DrillTrainingInstructionViewController {
+        let vc = DrillTrainingInstructionViewController(drill: drill)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
@@ -61,7 +61,7 @@ extension DrillTrainingInstructionViewController: DTITableDelegate {
     }
     
     func dtiTableDidTappedStartTraining() {
-        let vc = DrillTrainingViewController.make(drillTraining: drillTraining)
+        let vc = DrillTrainingViewController.make(drill: drill)
         present(vc, animated: true)
     }
 }

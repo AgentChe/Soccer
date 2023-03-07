@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 final class DrillTrainingViewController: UIViewController {
-    lazy var mainView = DrillTrainingView(drillTraining: drillTraining)
+    lazy var mainView = DrillTrainingView(drill: drill)
     
     private lazy var viewModel = DrillTrainingViewModel()
     
@@ -17,10 +17,10 @@ final class DrillTrainingViewController: UIViewController {
     
     private lazy var lifeCyrcle = DrillTrainingLifeCyrcle()
     
-    private let drillTraining: DrillTraining
+    private let drill: Drill
     
-    private init(drillTraining: DrillTraining) {
-        self.drillTraining = drillTraining
+    private init(drill: Drill) {
+        self.drill = drill
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -52,8 +52,8 @@ final class DrillTrainingViewController: UIViewController {
 
 // MARK: Make
 extension DrillTrainingViewController {
-    static func make(drillTraining: DrillTraining) -> DrillTrainingViewController {
-        let vc = DrillTrainingViewController(drillTraining: drillTraining)
+    static func make(drill: Drill) -> DrillTrainingViewController {
+        let vc = DrillTrainingViewController(drill: drill)
         vc.modalPresentationStyle = .fullScreen
         return vc
     }

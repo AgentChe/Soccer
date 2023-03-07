@@ -56,10 +56,10 @@ final class HomeDrillCoverCell: UITableViewCell {
 // MARK: Public
 extension HomeDrillCoverCell {
     func setup(element: HomeDrillTrainingElement) {
-        pictureView.kf.setImage(with: element.drillTraining.image)
+        pictureView.kf.setImage(with: element.drill.image)
         
         drillTypeLabel.attributedText = element.drillCategory.name.attributed(with: drillTypeAttrs)
-        nameLabel.attributedText = element.drillTraining.name.attributed(with: nameAttrs)
+        nameLabel.attributedText = element.drill.name.attributed(with: nameAttrs)
         skillLevelLabel.attributedText = "TODO".attributed(with: skillLevelAttrs) // element.drillTraining.skillLevel.localizedTitle.attributed(with: skillLevelAttrs) // TODO
     }
 }

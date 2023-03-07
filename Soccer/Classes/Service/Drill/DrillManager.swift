@@ -9,10 +9,13 @@ import RxSwift
 
 protocol DrillManagerProtocol {
     func obtainDrillCategories(forceUpdate: Bool) -> Single<[DrillCategory]>
-    func obtainDrillTrainings(at drillId: Int) -> Single<[DrillTraining]>
+    func obtainDrills(categoryId: Int?, levelId: Int?) -> Single<[Drill]>
+    func assignDrill(id: Int) -> Single<AssignedDrill?>
+    func scheduleDrill(customerDrillId: Int, scheduleDate: TimeInterval) -> Single<AssignedDrill?>
+    func obtainDrillTrainig(customerDrillId: Int) -> Single<DrillTraining?>
+    func logProgress(customerDrillId: Int, trainedTime: Int, finish: Bool) -> Single<AssignedDrill?>
 }
 
-// TODO: удалить Mocks folder
 final class DrillManager {
     enum Constants {
         static let drillCategoriesKey = "content_manager_drill_categories_key"
@@ -29,29 +32,83 @@ extension DrillManager: DrillManagerProtocol {
         forceUpdate ? loadDrillCategories() : cachedDrillCategories()
     }
     
-    // TODO
-    func obtainDrillTrainings(at drillId: Int) -> Single<[DrillTraining]> {
-        Single<[DrillTraining]>.create { event in
-            let url = Bundle.main.url(forResource: "DrillTrainings", withExtension: "json")!
-            let data = try! Data(contentsOf: url)
-            let result = try! JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-            
-            let drillTrainings = GetDrillTrainingsResponse.map(from: result)
-            event(.success(drillTrainings))
-            
-            return Disposables.create()
+    func obtainDrills(categoryId: Int?, levelId: Int?) -> Single<[Drill]> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = GetDrillsRequest(
+            userToken: userToken,
+            categoryId: categoryId,
+            levelId: levelId
+        )
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetDrillsResponse.map(from: $0) }
+    }
+    
+    func assignDrill(id: Int) -> Single<AssignedDrill?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
         }
         
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetDrillTrainingsRequest(userToken: userToken,
-//                                               id: drillId)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetDrillTrainingsResponse.map(from: $0) }
+        let request = AssignDrillRequest(
+            userToken: userToken,
+            drillId: id
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { AssignDrillResponse.map(from: $0) }
+    }
+    
+    func scheduleDrill(customerDrillId: Int, scheduleDate: TimeInterval) -> Single<AssignedDrill?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = ScheduleDrillRequest(
+            userToken: userToken,
+            customerDrillId: customerDrillId,
+            scheduleDate: scheduleDate
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { ScheduleDrillResponse.map(from: $0) }
+    }
+    
+    func obtainDrillTrainig(customerDrillId: Int) -> Single<DrillTraining?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetDrillTrainingRequest(
+            userToken: userToken,
+            customerDrillId: customerDrillId
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetDrillTrainingResponse.map(from: $0) }
+    }
+    
+    func logProgress(customerDrillId: Int, trainedTime: Int, finish: Bool) -> Single<AssignedDrill?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = LogProgressRequest(
+            userToken: userToken,
+            customerDrillId: customerDrillId,
+            trainedTime: trainedTime,
+            finish: finish
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { LogProgressResponse.map(from: $0) }
     }
 }
 

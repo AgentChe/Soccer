@@ -1,19 +1,18 @@
 //
-//  GetDrillTrainingsRequest.swift
+//  AssignDrillRequest.swift
 //  Soccer
 //
-//  Created by Андрей Чернышев on 22.02.2023.
+//  Created by Андрей Чернышев on 07.03.2023.
 //
 
 import Alamofire
 
-struct GetDrillTrainingsRequest: APIRequestBody {
+struct AssignDrillRequest: APIRequestBody {
     let userToken: String
     let drillId: Int
-    let levelId: Int
     
     var url: String {
-        GlobalDefinitions.domain + "/api/drills/list"
+        GlobalDefinitions.domain + "/api/drills/assign"
     }
     
     var method: HTTPMethod {
@@ -24,8 +23,7 @@ struct GetDrillTrainingsRequest: APIRequestBody {
         [
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
-            "drill_category_id": drillId,
-            "level_id": levelId
+            "drill_id": drillId
         ]
     }
 }

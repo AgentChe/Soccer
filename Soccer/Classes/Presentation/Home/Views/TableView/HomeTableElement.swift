@@ -20,7 +20,7 @@ enum HomeTableElement {
 
 struct DailyPicksElement {
     enum DailyPicks {
-        case drill(DrillTraining)
+        case drill(Drill)
         case workout(WorkoutCover)
     }
     
@@ -32,11 +32,11 @@ struct DailyPicksElement {
     let tag2: String?
     let action: String
     
-    init(drillTraining: DrillTraining, drillCategory: DrillCategory) {
-        dailyPicks = .drill(drillTraining)
-        image = drillTraining.image
+    init(drill: Drill, drillCategory: DrillCategory) {
+        dailyPicks = .drill(drill)
+        image = drill.image
         type = "Home.Drill".localized
-        name = drillTraining.name
+        name = drill.name
         tag1 = "TODO" // drillTraining.skillLevel.localizedTitle // TODO
         tag2 = drillCategory.name
         action = "Home.StartTraining".localized
@@ -54,6 +54,6 @@ struct DailyPicksElement {
 }
 
 struct HomeDrillTrainingElement {
-    let drillTraining: DrillTraining
+    let drill: Drill
     let drillCategory: DrillCategory
 }

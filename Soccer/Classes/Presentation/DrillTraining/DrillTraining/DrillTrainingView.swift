@@ -33,10 +33,10 @@ final class DrillTrainingView: UIView {
     
     private lazy var menuBottomConstraint = NSLayoutConstraint()
     
-    private let drillTraining: DrillTraining
+    private let drill: Drill
     
-    init(drillTraining: DrillTraining) {
-        self.drillTraining = drillTraining
+    init(drill: Drill) {
+        self.drill = drill
         
         super.init(frame: .zero)
         
@@ -134,7 +134,7 @@ private extension DrillTrainingView {
 // MARK: Lazy initialization
 private extension DrillTrainingView {
     func makeImageView() -> DrillTrainingBackgroundImageView {
-        let view = DrillTrainingBackgroundImageView(imageUrl: drillTraining.image)
+        let view = DrillTrainingBackgroundImageView(imageUrl: drill.image)
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -177,7 +177,7 @@ private extension DrillTrainingView {
     }
     
     func makeMenuView() -> DrillTrainingMenuView {
-        let view = DrillTrainingMenuView(name: drillTraining.name)
+        let view = DrillTrainingMenuView(name: drill.name)
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

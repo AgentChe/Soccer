@@ -11,13 +11,13 @@ import RxCocoa
 final class DrillTrainingInstructionViewModel {
     lazy var elements = makeElements()
     
-    private let drillTraining: Driver<DrillTraining>
+    private let drill: Driver<Drill>
     private lazy var drillCategories = makeDrillCategories()
     
     private lazy var drillManager = DrillManager()
     
-    init(drillTraining: DrillTraining) {
-        self.drillTraining = BehaviorRelay(value: drillTraining).asDriver()
+    init(drill: Drill) {
+        self.drill = BehaviorRelay(value: drill).asDriver()
     }
 }
 
@@ -25,19 +25,19 @@ final class DrillTrainingInstructionViewModel {
 private extension DrillTrainingInstructionViewModel {
     func makeElements() -> Driver<[DTITableElement]> {
         Driver
-            .combineLatest(drillTraining, drillCategories)
-            .map { drillTraining, drillCategories -> [DTITableElement] in
+            .combineLatest(drill, drillCategories)
+            .map { drill, drillCategories -> [DTITableElement] in
                 var result = [DTITableElement]()
                 
-                let headerElement = DTIHeaderElement(image: drillTraining.image,
-                                                     name: drillTraining.name,
-                                                     skillLevel: "TODO", //drillTraining.skillLevel.localizedTitle, // TODO
-                                                     drillCategory: drillCategories.first(where: { $0.id == drillTraining.drillId })?.name ?? "")
+                let headerElement = DTIHeaderElement(image: drill.image,
+                                                     name: drill.name,
+                                                     skillLevel: "TODO", //drill.skillLevel.localizedTitle, // TODO
+                                                     drillCategory: drillCategories.first(where: { $0.id == drill.categoryId })?.name ?? "")
                 result.append(.header(headerElement))
                 
                 result.append(contentsOf: [
                     .offset(1.scale),
-                    .description(drillTraining.explanation)
+                    .description(drill.explanation)
                 ])
                 
                 result.append(contentsOf: [
@@ -47,7 +47,7 @@ private extension DrillTrainingInstructionViewModel {
                 
                 result.append(contentsOf: [
                     .offset(24.scale),
-                    .instruction(drillTraining.instruction)
+                    .instruction(drill.instruction)
                 ])
                 
                 return result

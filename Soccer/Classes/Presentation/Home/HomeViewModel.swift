@@ -36,8 +36,8 @@ private extension HomeViewModel {
                 var result = [HomeTableElement]()
                 
                 var dailyPicks = [DailyPicksElement]()
-                if let drillCategory = drillCategories.first(where: { $0.id == homeKit.dailyDrill.drillId }) {
-                    dailyPicks.append(.init(drillTraining: homeKit.dailyDrill, drillCategory: drillCategory))
+                if let drillCategory = drillCategories.first(where: { $0.id == homeKit.dailyDrill.categoryId }) {
+                    dailyPicks.append(.init(drill: homeKit.dailyDrill, drillCategory: drillCategory))
                 }
                 dailyPicks.append(.init(workout: homeKit.dailyWorkout))
                 result.append(contentsOf: [
@@ -58,8 +58,8 @@ private extension HomeViewModel {
                         .offset(19.scale)
                     ])
                     
-                    homeKit.tryDrills.enumerated().forEach { index, drillTraining in
-                        guard let drillCategory = drillCategories.first(where: { drillTraining.id == $0.id }) else {
+                    homeKit.tryDrills.enumerated().forEach { index, drill in
+                        guard let drillCategory = drillCategories.first(where: { drill.id == $0.id }) else {
                             return
                         }
                         
@@ -67,7 +67,7 @@ private extension HomeViewModel {
                             result.append(.offset(16.scale))
                         }
                         
-                        let element = HomeDrillTrainingElement(drillTraining: drillTraining,
+                        let element = HomeDrillTrainingElement(drill: drill,
                                                                drillCategory: drillCategory)
                         result.append(.drillTraining(element))
                     }

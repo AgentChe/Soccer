@@ -75,7 +75,7 @@ extension DrillTrainingsViewController: DrillTrainingsTableDelegate {
             let vc = PaygateViewController.make()
             present(vc, animated: true)
         } else {
-            let vc = DrillTrainingInstructionViewController.make(drillTraining: element.drillTraining)
+            let vc = DrillTrainingInstructionViewController.make(drill: element.drill)
             navigationController?.pushViewController(vc, animated: true)
         }
     }

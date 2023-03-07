@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeTableViewDelegate: AnyObject {
-    func homeTableDidTap(drillTraining: DrillTraining)
+    func homeTableDidTap(drill: Drill)
     func homeTableDidTap(workout: WorkoutCover)
     func homeTableDidTap(drillCategory: DrillCategory)
     func homeTableDidTapTryDrills()
@@ -64,7 +64,7 @@ extension HomeTableView: UITableViewDataSource {
             cell.collectionView.didTap = { [weak self] dailyPicks in
                 switch dailyPicks {
                 case .drill(let drill):
-                    self?.mainDelegate?.homeTableDidTap(drillTraining: drill)
+                    self?.mainDelegate?.homeTableDidTap(drill: drill)
                 case .workout(let workout):
                     self?.mainDelegate?.homeTableDidTap(workout: workout)
                 }
@@ -128,7 +128,7 @@ extension HomeTableView: UITableViewDelegate {
         case .workoutsTitle:
             mainDelegate?.homeTableDidTapWorkouts()
         case .drillTraining(let element):
-            mainDelegate?.homeTableDidTap(drillTraining: element.drillTraining)
+            mainDelegate?.homeTableDidTap(drill: element.drill)
         default:
             return
         }

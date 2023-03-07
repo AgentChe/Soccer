@@ -25,19 +25,8 @@ final class ContentManager {
 
 // MARK: ContentManagerProtocol
 extension ContentManager: ContentManagerProtocol {
-    // TODO
     func obtainHomeKit() -> Single<HomeKit?> {
-        Single<HomeKit?>.create { event in
-            let url = Bundle.main.url(forResource: "HomeKit", withExtension: "json")!
-            let data = try! Data(contentsOf: url)
-            let result = try! JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-            
-            let homeKit = GetHomeKitResponse.map(from: result)
-            event(.success(homeKit))
-            
-            return Disposables.create()
-        }
-        
+        .just(nil)
 //        guard let userToken = sessionManager.getSession()?.userToken else {
 //            return .error(SignError.tokenNotFound)
 //        }

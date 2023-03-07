@@ -2,18 +2,10 @@
 //  DrillTraining.swift
 //  Soccer
 //
-//  Created by Андрей Чернышев on 06.02.2023.
+//  Created by Андрей Чернышев on 07.03.2023.
 //
 
-import Foundation
-
 struct DrillTraining: Codable, Hashable {
-    let id: Int
-    let name: String
-    let skillLevelId: Int
-    let image: URL
-    let drillId: Int
-    let paid: Bool
-    let explanation: String
-    let instruction: String
+    let drill: Drill
+    let assignedDrill: AssignedDrill
 }
