@@ -19,14 +19,16 @@ final class GetWorkoutTrainingResponse {
             let levelId = data["level_id"] as? Int,
             let focusZonesIds = data["body_part_ids"] as? [Int],
             let exercisesBundleArray = data["training_steps"] as? [[String: Any]],
-            let customerWorkoutId = data["customer_workout_id"] as? Int
+            let customerWorkoutId = data["customer_workout_id"] as? Int,
+            let finished = data["finished"] as? Bool,
+            let trainedTime = data["trained_time"] as? Int
         else {
             return nil
         }
         
         let exercises = exercisesBundleArray.reduce([]) { result, exercisesBundleJSON -> [WorkoutExercise] in
             guard
-                let workoutStepId = exercisesBundleJSON["id"] as? Int,
+                let workoutStepId = exercisesBundleJSON["training_step_id"] as? Int,
                 let exercisesArray = exercisesBundleJSON["exercises"] as? [[String: Any]]
             else {
                 return result
@@ -70,10 +72,6 @@ final class GetWorkoutTrainingResponse {
         if let scheduleTimestamp = data["schedule_date"] as? TimeInterval {
             scheduleDate = Date(timeIntervalSince1970: scheduleTimestamp)
         }
-        
-        // TODO: в guard при добавлении на бэке
-        let finished = data["finished"] as? Bool ?? false
-        let trainedTime = data["trained_time"] as? Int ?? 0
         
         let assignedWorkout = AssignedWorkout(
             customerWorkoutId: customerWorkoutId,
