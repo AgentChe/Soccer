@@ -11,6 +11,13 @@ protocol WorkoutManagerProtocol {
     func obtainFocusZones(forceUpdate: Bool) -> Single<[FocusZone]>
     func obtainWorkoutSteps(forceUpdate: Bool) -> Single<[WorkoutStep]>
     func obtainWorkoutCovers(forceUpdate: Bool) -> Single<[WorkoutCover]>
+    func obtainWorkoutTemplate(coverId: Int, levelId: Int) -> Single<WorkoutTemplate?>
+    func obtainWorkoutTemplate(focusZoneId: Int, levelId: Int) -> Single<WorkoutTemplate?>
+    func obtainWorkoutTemplate(stepId: Int, levelId: Int) -> Single<WorkoutTemplate?>
+    func assignWorkout(id: Int) -> Single<AssignedWorkout?>
+    func scheduleWorkout(id: Int, scheduleDate: TimeInterval) -> Single<AssignedWorkout?>
+    func obtainWorkoutTraining(customerWorkoutId: Int) -> Single<WorkoutTraining?>
+    func logProgress(customerWorkoutId: Int, exerciseId: Int, trainedTime: Int, finish: Bool) -> Single<AssignedWorkout?>
 }
 
 final class WorkoutManager {
@@ -37,6 +44,124 @@ extension WorkoutManager: WorkoutManagerProtocol {
     
     func obtainWorkoutCovers(forceUpdate: Bool) -> Single<[WorkoutCover]> {
         forceUpdate ? loadWorkoutCovers() : cachedWorkoutCovers()
+    }
+    
+    func obtainWorkoutTemplate(coverId: Int, levelId: Int) -> Single<WorkoutTemplate?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetWorkoutTemplateRequest(
+            userToken: userToken,
+            workoutCoverId: coverId,
+            focusZoneId: nil,
+            workoutStepId: nil,
+            levelId: levelId
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetWorkoutTemplateResponse.map(from: $0) }
+    }
+    
+    func obtainWorkoutTemplate(focusZoneId: Int, levelId: Int) -> Single<WorkoutTemplate?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetWorkoutTemplateRequest(
+            userToken: userToken,
+            workoutCoverId: nil,
+            focusZoneId: focusZoneId,
+            workoutStepId: nil,
+            levelId: levelId
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetWorkoutTemplateResponse.map(from: $0) }
+    }
+    
+    func obtainWorkoutTemplate(stepId: Int, levelId: Int) -> Single<WorkoutTemplate?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetWorkoutTemplateRequest(
+            userToken: userToken,
+            workoutCoverId: nil,
+            focusZoneId: nil,
+            workoutStepId: stepId,
+            levelId: levelId
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetWorkoutTemplateResponse.map(from: $0) }
+    }
+    
+    func assignWorkout(id: Int) -> Single<AssignedWorkout?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = AssignWorkoutRequest(
+            userToken: userToken,
+            workoutId: id
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { AssignWorkoutResponse.map(from: $0) }
+    }
+    
+    func scheduleWorkout(id: Int, scheduleDate: TimeInterval) -> Single<AssignedWorkout?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = ScheduleWorkoutRequest(
+            userToken: userToken,
+            customerWorkoutId: id,
+            scheduleDate: scheduleDate
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map {  ScheduleWorkoutResponse.map(from: $0)}
+    }
+    
+    func obtainWorkoutTraining(customerWorkoutId: Int) -> Single<WorkoutTraining?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetWorkoutTrainingRequest(
+            userToken: userToken,
+            customerWorkoutId: customerWorkoutId
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetWorkoutTrainingResponse.map(from: $0) }
+    }
+    
+    func logProgress(customerWorkoutId: Int, exerciseId: Int, trainedTime: Int, finish: Bool) -> Single<AssignedWorkout?> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = LogWorkoutProgressRequest(
+            userToken: userToken,
+            customerWorkoutId: customerWorkoutId,
+            exerciseId: exerciseId,
+            trainedTime: trainedTime,
+            finish: finish
+        )
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { LogWorkoutProgressResponse.map(from: $0) }
     }
 }
 

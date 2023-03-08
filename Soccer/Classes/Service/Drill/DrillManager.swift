@@ -99,7 +99,7 @@ extension DrillManager: DrillManagerProtocol {
             return .error(SignError.tokenNotFound)
         }
         
-        let request = LogProgressRequest(
+        let request = LogDrillProgressRequest(
             userToken: userToken,
             customerDrillId: customerDrillId,
             trainedTime: trainedTime,
@@ -108,7 +108,7 @@ extension DrillManager: DrillManagerProtocol {
         
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
-            .map { LogProgressResponse.map(from: $0) }
+            .map { LogDrillProgressResponse.map(from: $0) }
     }
 }
 

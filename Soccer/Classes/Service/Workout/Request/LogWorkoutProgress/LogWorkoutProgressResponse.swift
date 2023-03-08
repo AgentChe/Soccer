@@ -1,18 +1,18 @@
 //
-//  LogProgressResponse.swift
+//  LogWorkoutProgressResponse.swift
 //  Soccer
 //
-//  Created by Андрей Чернышев on 07.03.2023.
+//  Created by Андрей Чернышев on 08.03.2023.
 //
 
 import Foundation
 
-final class LogProgressResponse {
-    static func map(from response: Any) -> AssignedDrill? {
+final class LogWorkoutProgressResponse {
+    static func map(from response: Any) -> AssignedWorkout? {
         guard
             let json = response as? [String: Any],
             let data = json["_data"] as? [String: Any],
-            let customerDrillId = data["customer_drill_id"] as? Int,
+            let customerWorkoutId = data["customer_workout_id"] as? Int,
             let finished = data["finished"] as? Bool,
             let trainedTime = data["trained_time"] as? Int
         else {
@@ -24,8 +24,8 @@ final class LogProgressResponse {
             scheduleDate = Date(timeIntervalSince1970: scheduleTimestamp)
         }
         
-        return AssignedDrill(
-            customerDrillId: customerDrillId,
+        return AssignedWorkout(
+            customerWorkoutId: customerWorkoutId,
             scheduleDate: scheduleDate,
             finished: finished,
             trainedTime: trainedTime

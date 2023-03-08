@@ -1,5 +1,5 @@
 //
-//  LogProgressRequest.swift
+//  LogDrillProgressRequest.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 07.03.2023.
@@ -7,7 +7,7 @@
 
 import Alamofire
 
-struct LogProgressRequest: APIRequestBody {
+struct LogDrillProgressRequest: APIRequestBody {
     let userToken: String
     let customerDrillId: Int
     let trainedTime: Int
