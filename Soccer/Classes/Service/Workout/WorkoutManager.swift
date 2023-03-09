@@ -113,6 +113,13 @@ extension WorkoutManager: WorkoutManagerProtocol {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .map { AssignWorkoutResponse.map(from: $0) }
+            .do(onSuccess: { assignedWorkout in
+                guard let assignedWorkout = assignedWorkout else {
+                    return
+                }
+                
+                WorkoutMediator.shared.didAssign(assignedWorkout)
+            })
     }
     
     func scheduleWorkout(id: Int, scheduleDate: TimeInterval) -> Single<AssignedWorkout?> {
@@ -129,6 +136,13 @@ extension WorkoutManager: WorkoutManagerProtocol {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .map {  ScheduleWorkoutResponse.map(from: $0)}
+            .do(onSuccess: { assignedWorkout in
+                guard let assignedWorkout = assignedWorkout else {
+                    return
+                }
+                
+                WorkoutMediator.shared.didSchedule(assignedWorkout)
+            })
     }
     
     func obtainWorkoutTraining(customerWorkoutId: Int) -> Single<WorkoutTraining?> {
@@ -162,6 +176,13 @@ extension WorkoutManager: WorkoutManagerProtocol {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .map { LogWorkoutProgressResponse.map(from: $0) }
+            .do(onSuccess: { assignedWorkout in
+                guard let assignedWorkout = assignedWorkout else {
+                    return
+                }
+                
+                WorkoutMediator.shared.didLogProgress(assignedWorkout)
+            })
     }
 }
 

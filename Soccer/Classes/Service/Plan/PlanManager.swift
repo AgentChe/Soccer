@@ -42,5 +42,8 @@ extension PlanManager: PlanManagerProtocol {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .mapToVoid()
+            .do(onSuccess: {
+                PlanMediator.shared.didReinitNotify()
+            })
     }
 }

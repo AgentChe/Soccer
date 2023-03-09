@@ -61,6 +61,13 @@ extension DrillManager: DrillManagerProtocol {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .map { AssignDrillResponse.map(from: $0) }
+            .do(onSuccess: { assignDrill in
+                guard let assignDrill = assignDrill else {
+                    return
+                }
+                
+                DrillMediator.shared.didAssign(assignDrill)
+            })
     }
     
     func scheduleDrill(customerDrillId: Int, scheduleDate: TimeInterval) -> Single<AssignedDrill?> {
@@ -77,6 +84,13 @@ extension DrillManager: DrillManagerProtocol {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .map { ScheduleDrillResponse.map(from: $0) }
+            .do(onSuccess: { assignDrill in
+                guard let assignDrill = assignDrill else {
+                    return
+                }
+                
+                DrillMediator.shared.didSchedule(assignDrill)
+            })
     }
     
     func obtainDrillTrainig(customerDrillId: Int) -> Single<DrillTraining?> {
@@ -109,6 +123,13 @@ extension DrillManager: DrillManagerProtocol {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .map { LogDrillProgressResponse.map(from: $0) }
+            .do(onSuccess: { assignDrill in
+                guard let assignDrill = assignDrill else {
+                    return
+                }
+                
+                DrillMediator.shared.didLogProgress(assignDrill)
+            })
     }
 }
 

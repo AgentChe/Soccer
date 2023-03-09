@@ -199,6 +199,9 @@
 		DECA724129B9016600F9667B /* GetPlanRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724029B9016600F9667B /* GetPlanRequest.swift */; };
 		DECA724329B9016D00F9667B /* GetPlanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724229B9016D00F9667B /* GetPlanResponse.swift */; };
 		DECA724629B9059500F9667B /* ReinitPlanRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724529B9059500F9667B /* ReinitPlanRequest.swift */; };
+		DECA724829B9BBE300F9667B /* PlanMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724729B9BBE300F9667B /* PlanMediator.swift */; };
+		DECA724A29B9BCB300F9667B /* DrillMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724929B9BCB300F9667B /* DrillMediator.swift */; };
+		DECA724C29B9BE0D00F9667B /* WorkoutMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724B29B9BE0D00F9667B /* WorkoutMediator.swift */; };
 		DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* WorkoutManager.swift */; };
 		DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1729AF52C800661F03 /* SkillLevel.swift */; };
 		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
@@ -444,6 +447,9 @@
 		DECA724029B9016600F9667B /* GetPlanRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlanRequest.swift; sourceTree = "<group>"; };
 		DECA724229B9016D00F9667B /* GetPlanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlanResponse.swift; sourceTree = "<group>"; };
 		DECA724529B9059500F9667B /* ReinitPlanRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinitPlanRequest.swift; sourceTree = "<group>"; };
+		DECA724729B9BBE300F9667B /* PlanMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanMediator.swift; sourceTree = "<group>"; };
+		DECA724929B9BCB300F9667B /* DrillMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillMediator.swift; sourceTree = "<group>"; };
+		DECA724B29B9BE0D00F9667B /* WorkoutMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutMediator.swift; sourceTree = "<group>"; };
 		DED00C1529AF523000661F03 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		DED00C1729AF52C800661F03 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
@@ -1224,6 +1230,7 @@
 				DECA723429B8FDA100F9667B /* Request */,
 				DECA723329B8FD8A00F9667B /* Model */,
 				DECA723529B8FDAC00F9667B /* PlanManager.swift */,
+				DECA724729B9BBE300F9667B /* PlanMediator.swift */,
 			);
 			path = Plan;
 			sourceTree = "<group>";
@@ -1396,6 +1403,7 @@
 				DED00C1429AF522500661F03 /* Request */,
 				DED00C1329AF522000661F03 /* Model */,
 				DED00C1529AF523000661F03 /* WorkoutManager.swift */,
+				DECA724B29B9BE0D00F9667B /* WorkoutMediator.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -1406,6 +1414,7 @@
 				DED00C5D29B0CD0800661F03 /* Model */,
 				DED00C5C29B0CD0300661F03 /* Request */,
 				DED00C5929B0CCFB00661F03 /* DrillManager.swift */,
+				DECA724929B9BCB300F9667B /* DrillMediator.swift */,
 			);
 			path = Drill;
 			sourceTree = "<group>";
@@ -1768,6 +1777,8 @@
 				DEC9006329A60B74001B24A3 /* GetDrillsResponse.swift in Sources */,
 				DEACE5C0298A9C4A0096FF15 /* OAgeButton.swift in Sources */,
 				DECA720B29B7618900F9667B /* GetDrillTrainingResponse.swift in Sources */,
+				DECA724829B9BBE300F9667B /* PlanMediator.swift in Sources */,
+				DECA724A29B9BCB300F9667B /* DrillMediator.swift in Sources */,
 				DED89C9729913F6500325104 /* DailyPicksCollectionCell.swift in Sources */,
 				DEA8FE66298A7AE000868C0E /* XOREncryption.swift in Sources */,
 				DED89CB1299287EA00325104 /* HomeWorkoutsCell.swift in Sources */,
@@ -1803,6 +1814,7 @@
 				DEA8FEE1298A7AE000868C0E /* OnboardingViewModel.swift in Sources */,
 				DED00C2729AF6DE400661F03 /* GetFocusZonesResponse.swift in Sources */,
 				DECA720E29B7638B00F9667B /* LogDrillProgressRequest.swift in Sources */,
+				DECA724C29B9BE0D00F9667B /* WorkoutMediator.swift in Sources */,
 				DED89C9129913D9A00325104 /* HomeTitleCell.swift in Sources */,
 				DEA8FE81298A7AE000868C0E /* BranchManager.swift in Sources */,
 				DED00C5429B0B8C100661F03 /* GetWorkoutStepsRequest.swift in Sources */,
