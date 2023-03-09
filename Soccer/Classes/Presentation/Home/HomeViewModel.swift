@@ -29,60 +29,7 @@ private extension HomeViewModel {
         Driver
             .combineLatest(homeKit, drillCategories)
             .map { homeKit, drillCategories -> [HomeTableElement] in
-                guard let homeKit = homeKit else {
-                    return []
-                }
-                
-                var result = [HomeTableElement]()
-                
-                var dailyPicks = [DailyPicksElement]()
-                if let drillCategory = drillCategories.first(where: { $0.id == homeKit.dailyDrill.categoryId }) {
-                    dailyPicks.append(.init(drill: homeKit.dailyDrill, drillCategory: drillCategory))
-                }
-                dailyPicks.append(.init(workout: homeKit.dailyWorkout))
-                result.append(contentsOf: [
-                    .title("Home.DailyPicks".localized),
-                    .offset(16.scale),
-                    .dailyPicks(dailyPicks)
-                ])
-                
-                result.append(contentsOf: [
-                    .offset(40.scale),
-                    .drillCategories(drillCategories)
-                ])
-                
-                if !homeKit.tryDrills.isEmpty {
-                    result.append(contentsOf: [
-                        .offset(43.scale),
-                        .tryDrillsTitle("Home.TryDrills".localized),
-                        .offset(19.scale)
-                    ])
-                    
-                    homeKit.tryDrills.enumerated().forEach { index, drill in
-                        guard let drillCategory = drillCategories.first(where: { drill.id == $0.id }) else {
-                            return
-                        }
-                        
-                        if index != 0 {
-                            result.append(.offset(16.scale))
-                        }
-                        
-                        let element = HomeDrillTrainingElement(drill: drill,
-                                                               drillCategory: drillCategory)
-                        result.append(.drillTraining(element))
-                    }
-                }
-                
-                if !homeKit.workouts.isEmpty {
-                    result.append(contentsOf: [
-                        .offset(43.scale),
-                        .tryDrillsTitle("Home.ImproveYourFitness".localized),
-                        .offset(19.scale),
-                        .workouts(homeKit.workouts)
-                    ])
-                }
-                
-                return result
+                []
             }
     }
     

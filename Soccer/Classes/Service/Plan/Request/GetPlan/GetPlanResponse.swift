@@ -17,7 +17,11 @@ final class GetPlanResponse {
             return []
         }
         
-        return plan.compactMap { day, planJSON -> PlanOnDay? in
+        return map(planJSON: plan)
+    }
+    
+    static func map(planJSON: [String: [String: Any]]) -> [PlanOnDay] {
+        planJSON.compactMap { day, planJSON -> PlanOnDay? in
             guard
                 let day = TimeInterval(day),
                 let statusCode = planJSON["status"] as? Int,

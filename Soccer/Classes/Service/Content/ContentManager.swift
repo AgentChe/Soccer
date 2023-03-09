@@ -26,16 +26,15 @@ final class ContentManager {
 // MARK: ContentManagerProtocol
 extension ContentManager: ContentManagerProtocol {
     func obtainHomeKit() -> Single<HomeKit?> {
-        .just(nil)
-//        guard let userToken = sessionManager.getSession()?.userToken else {
-//            return .error(SignError.tokenNotFound)
-//        }
-//
-//        let request = GetHomeKitRequest(userToken: userToken)
-//
-//        return defaultRequestWrapper
-//            .callServerApi(requestBody: request)
-//            .map { GetHomeKitResponse.map(from: $0) }
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+
+        let request = GetHomeKitRequest(userToken: userToken)
+
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .map { GetHomeKitResponse.map(from: $0) }
     }
     
     func obtainLevels(forceUpdate: Bool) -> Single<[SkillLevel]> {
