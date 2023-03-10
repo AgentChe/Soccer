@@ -47,11 +47,11 @@ final class HomeWorkoutsCollectionCell: UICollectionViewCell {
 
 // MARK: Public
 extension HomeWorkoutsCollectionCell {
-    func setup(element: WorkoutCover) {
-        imageView.kf.setImage(with: element.image)
+    func setup(element: HomeWorkoutElement) {
+        imageView.kf.setImage(with: element.workout.image)
         
-        nameLabel.attributedText = element.name.attributed(with: nameAttrs)
-        skillLevel.attributedText = "TODO".attributed(with: skillLevelAttrs) //element.skillLevel.localizedTitle.attributed(with: skillLevelAttrs) // TODO
+        nameLabel.attributedText = element.workout.name.attributed(with: nameAttrs)
+        skillLevel.attributedText = element.skillLevel.name.attributed(with: skillLevelAttrs)
     }
 }
 

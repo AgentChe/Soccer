@@ -134,7 +134,7 @@ private extension DailyPicksCollectionCell {
 private extension DailyPicksCollectionCell {
     func makeImageView() -> UIImageView {
         let view = UIImageView()
-        view.layer.cornerRadius = 8.scale
+        view.layer.cornerRadius = 10.scale
         view.layer.masksToBounds = true
         view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -144,6 +144,8 @@ private extension DailyPicksCollectionCell {
     
     func makeShadowView() -> UIView {
         let view = UIView()
+        view.layer.cornerRadius = 10.scale
+        view.layer.masksToBounds = true
         view.backgroundColor = UIColor(integralRed: 9, green: 9, blue: 9, alpha: 0.5)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

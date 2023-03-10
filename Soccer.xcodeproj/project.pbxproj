@@ -202,6 +202,7 @@
 		DECA724829B9BBE300F9667B /* PlanMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724729B9BBE300F9667B /* PlanMediator.swift */; };
 		DECA724A29B9BCB300F9667B /* DrillMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724929B9BCB300F9667B /* DrillMediator.swift */; };
 		DECA724C29B9BE0D00F9667B /* WorkoutMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724B29B9BE0D00F9667B /* WorkoutMediator.swift */; };
+		DECA724E29BB41DA00F9667B /* HomeStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724D29BB41DA00F9667B /* HomeStatsCell.swift */; };
 		DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* WorkoutManager.swift */; };
 		DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1729AF52C800661F03 /* SkillLevel.swift */; };
 		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
@@ -242,10 +243,10 @@
 		DED89C9429913F4700325104 /* DailyPicksTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9329913F4700325104 /* DailyPicksTableCell.swift */; };
 		DED89C9729913F6500325104 /* DailyPicksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9629913F6500325104 /* DailyPicksCollectionCell.swift */; };
 		DED89C992991476100325104 /* DailyPicksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C982991476100325104 /* DailyPicksCollectionView.swift */; };
-		DED89C9B2991557600325104 /* HomeDrillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9A2991557600325104 /* HomeDrillsCell.swift */; };
-		DED89C9F2991559700325104 /* HomeDrillsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9E2991559700325104 /* HomeDrillsCollectionCell.swift */; };
-		DED89CA1299155A300325104 /* HomeDrillsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CA0299155A300325104 /* HomeDrillsCollectionView.swift */; };
-		DED89CA52992464F00325104 /* HomeDrillsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CA42992464F00325104 /* HomeDrillsCollectionLayout.swift */; };
+		DED89C9B2991557600325104 /* HomeDrillCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9A2991557600325104 /* HomeDrillCategoriesCell.swift */; };
+		DED89C9F2991559700325104 /* HomeDrillCategoriesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89C9E2991559700325104 /* HomeDrillCategoriesCollectionCell.swift */; };
+		DED89CA1299155A300325104 /* HomeDrillCategoriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CA0299155A300325104 /* HomeDrillCategoriesCollectionView.swift */; };
+		DED89CA52992464F00325104 /* HomeDrillCategoriesCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CA42992464F00325104 /* HomeDrillCategoriesCollectionLayout.swift */; };
 		DED89CAE29925ABF00325104 /* HomeDrillCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CAD29925ABF00325104 /* HomeDrillCoverCell.swift */; };
 		DED89CB1299287EA00325104 /* HomeWorkoutsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CB0299287EA00325104 /* HomeWorkoutsCell.swift */; };
 		DED89CB4299287FA00325104 /* HomeWorkoutsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED89CB3299287FA00325104 /* HomeWorkoutsCollectionCell.swift */; };
@@ -450,6 +451,7 @@
 		DECA724729B9BBE300F9667B /* PlanMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanMediator.swift; sourceTree = "<group>"; };
 		DECA724929B9BCB300F9667B /* DrillMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillMediator.swift; sourceTree = "<group>"; };
 		DECA724B29B9BE0D00F9667B /* WorkoutMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutMediator.swift; sourceTree = "<group>"; };
+		DECA724D29BB41DA00F9667B /* HomeStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsCell.swift; sourceTree = "<group>"; };
 		DED00C1529AF523000661F03 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		DED00C1729AF52C800661F03 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
@@ -490,10 +492,10 @@
 		DED89C9329913F4700325104 /* DailyPicksTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPicksTableCell.swift; sourceTree = "<group>"; };
 		DED89C9629913F6500325104 /* DailyPicksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPicksCollectionCell.swift; sourceTree = "<group>"; };
 		DED89C982991476100325104 /* DailyPicksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPicksCollectionView.swift; sourceTree = "<group>"; };
-		DED89C9A2991557600325104 /* HomeDrillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillsCell.swift; sourceTree = "<group>"; };
-		DED89C9E2991559700325104 /* HomeDrillsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillsCollectionCell.swift; sourceTree = "<group>"; };
-		DED89CA0299155A300325104 /* HomeDrillsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillsCollectionView.swift; sourceTree = "<group>"; };
-		DED89CA42992464F00325104 /* HomeDrillsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillsCollectionLayout.swift; sourceTree = "<group>"; };
+		DED89C9A2991557600325104 /* HomeDrillCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillCategoriesCell.swift; sourceTree = "<group>"; };
+		DED89C9E2991559700325104 /* HomeDrillCategoriesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillCategoriesCollectionCell.swift; sourceTree = "<group>"; };
+		DED89CA0299155A300325104 /* HomeDrillCategoriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillCategoriesCollectionView.swift; sourceTree = "<group>"; };
+		DED89CA42992464F00325104 /* HomeDrillCategoriesCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillCategoriesCollectionLayout.swift; sourceTree = "<group>"; };
 		DED89CAD29925ABF00325104 /* HomeDrillCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrillCoverCell.swift; sourceTree = "<group>"; };
 		DED89CB0299287EA00325104 /* HomeWorkoutsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkoutsCell.swift; sourceTree = "<group>"; };
 		DED89CB3299287FA00325104 /* HomeWorkoutsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkoutsCollectionCell.swift; sourceTree = "<group>"; };
@@ -1485,11 +1487,12 @@
 			isa = PBXGroup;
 			children = (
 				DED89CAF299287DC00325104 /* Workouts */,
-				DED89C9C2991557D00325104 /* Drills */,
+				DED89C9C2991557D00325104 /* DrillCategories */,
 				DED89C9229913F3C00325104 /* DailyPicks */,
 				DED89C9029913D9A00325104 /* HomeTitleCell.swift */,
 				DED89C8E2990EDAD00325104 /* SeeAllTableCell.swift */,
 				DED89CAD29925ABF00325104 /* HomeDrillCoverCell.swift */,
+				DECA724D29BB41DA00F9667B /* HomeStatsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1512,21 +1515,21 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
-		DED89C9C2991557D00325104 /* Drills */ = {
+		DED89C9C2991557D00325104 /* DrillCategories */ = {
 			isa = PBXGroup;
 			children = (
 				DED89C9D2991558C00325104 /* Collection */,
-				DED89C9A2991557600325104 /* HomeDrillsCell.swift */,
+				DED89C9A2991557600325104 /* HomeDrillCategoriesCell.swift */,
 			);
-			path = Drills;
+			path = DrillCategories;
 			sourceTree = "<group>";
 		};
 		DED89C9D2991558C00325104 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				DED89C9E2991559700325104 /* HomeDrillsCollectionCell.swift */,
-				DED89CA0299155A300325104 /* HomeDrillsCollectionView.swift */,
-				DED89CA42992464F00325104 /* HomeDrillsCollectionLayout.swift */,
+				DED89C9E2991559700325104 /* HomeDrillCategoriesCollectionCell.swift */,
+				DED89CA0299155A300325104 /* HomeDrillCategoriesCollectionView.swift */,
+				DED89CA42992464F00325104 /* HomeDrillCategoriesCollectionLayout.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -1744,7 +1747,7 @@
 				DEA8FF00298A7CD800868C0E /* Inter-Regular.ttf in Sources */,
 				DEA8FF01298A7CD800868C0E /* Inter-Black.ttf in Sources */,
 				DECA720629B760EF00F9667B /* DrillTraining.swift in Sources */,
-				DED89C9F2991559700325104 /* HomeDrillsCollectionCell.swift in Sources */,
+				DED89C9F2991559700325104 /* HomeDrillCategoriesCollectionCell.swift in Sources */,
 				DECA723E29B9000300F9667B /* PlanOnDay.swift in Sources */,
 				DED89CEB2994DC8400325104 /* DTIHeaderCell.swift in Sources */,
 				DED89C8F2990EDAD00325104 /* SeeAllTableCell.swift in Sources */,
@@ -1786,6 +1789,7 @@
 				DEC9007229A623CE001B24A3 /* DrillTrainingLifeCyrcle.swift in Sources */,
 				DED00C3629B0AF8A00661F03 /* GetPaygateRequest.swift in Sources */,
 				DED00C5A29B0CCFB00661F03 /* DrillManager.swift in Sources */,
+				DECA724E29BB41DA00F9667B /* HomeStatsCell.swift in Sources */,
 				DEC9006629A61917001B24A3 /* DrillTrainingViewController.swift in Sources */,
 				DEBC2B32298C1165002C84E3 /* GetDrillCategoriesRequest.swift in Sources */,
 				DEBC2B45298D048E002C84E3 /* OWorkoutTypeView.swift in Sources */,
@@ -1800,7 +1804,7 @@
 				DEA8FE95298A7AE000868C0E /* IAPError.swift in Sources */,
 				DECA71F629B68E8800F9667B /* GetWorkoutCoversResponse.swift in Sources */,
 				DECA722029B8092800F9667B /* AssignWorkoutResponse.swift in Sources */,
-				DED89C9B2991557600325104 /* HomeDrillsCell.swift in Sources */,
+				DED89C9B2991557600325104 /* HomeDrillCategoriesCell.swift in Sources */,
 				DED00C4B29B0AF9400661F03 /* PaygateProductButton.swift in Sources */,
 				DEA8FEBA298A7AE000868C0E /* TryAgainView.swift in Sources */,
 				DEA8FE5A298A7AE000868C0E /* ObservableAndSingle+Extension.swift in Sources */,
@@ -1901,7 +1905,7 @@
 				DEA8FE80298A7AE000868C0E /* AppsFlyerManager.swift in Sources */,
 				DECA721029B7639100F9667B /* LogDrillProgressResponse.swift in Sources */,
 				DEA8FE72298A7AE000868C0E /* NavigationController.swift in Sources */,
-				DED89CA1299155A300325104 /* HomeDrillsCollectionView.swift in Sources */,
+				DED89CA1299155A300325104 /* HomeDrillCategoriesCollectionView.swift in Sources */,
 				DEA8FE92298A7AE000868C0E /* ProductPrice.swift in Sources */,
 				DEA8FE6C298A7AE000868C0E /* RequestReview.swift in Sources */,
 				DED89C722990D38700325104 /* WorkoutCover.swift in Sources */,
@@ -1940,7 +1944,7 @@
 				DEA8FEBB298A7AE000868C0E /* TryAgainViewController.swift in Sources */,
 				DEBC2B13298BCF15002C84E3 /* OSkillLevelView.swift in Sources */,
 				DEC9006829A6191D001B24A3 /* DrillTrainingViewModel.swift in Sources */,
-				DED89CA52992464F00325104 /* HomeDrillsCollectionLayout.swift in Sources */,
+				DED89CA52992464F00325104 /* HomeDrillCategoriesCollectionLayout.swift in Sources */,
 				DECA723C29B8FE6000F9667B /* PlanWorkout.swift in Sources */,
 				DEA8FE74298A7AE000868C0E /* Spinner.swift in Sources */,
 				DEBC2B50298D1C88002C84E3 /* GetProfileResponse.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  HomeDrillsCell.swift
+//  HomeDrillCategoriesCell.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 06.02.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeDrillsCell: UITableViewCell {
+final class HomeDrillCategoriesCell: UITableViewCell {
     lazy var collectionView = makeCollectionView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -23,7 +23,7 @@ final class HomeDrillsCell: UITableViewCell {
 }
 
 // MARK: Private
-private extension HomeDrillsCell {
+private extension HomeDrillCategoriesCell {
     func initialize() {
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
@@ -33,7 +33,7 @@ private extension HomeDrillsCell {
 }
 
 // MARK: Make constraints
-private extension HomeDrillsCell {
+private extension HomeDrillCategoriesCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -45,15 +45,15 @@ private extension HomeDrillsCell {
 }
 
 // MARK: Lazy initialization
-private extension HomeDrillsCell {
-    func makeCollectionView() -> HomeDrillsCollectionView {
-        let layout = HomeDrillsCollectionLayout()
+private extension HomeDrillCategoriesCell {
+    func makeCollectionView() -> HomeDrillCategoriesCollectionView {
+        let layout = HomeDrillCategoriesCollectionLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 16.scale
         layout.minimumInteritemSpacing = 8.scale
         layout.sectionInset = UIEdgeInsets(top: 0, left: 16.scale, bottom: 0, right: 16.scale)
         
-        let view = HomeDrillsCollectionView(frame: .zero, collectionViewLayout: layout)
+        let view = HomeDrillCategoriesCollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = UIColor.clear
         view.showsHorizontalScrollIndicator = false
         view.showsVerticalScrollIndicator = false

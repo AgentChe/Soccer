@@ -12,7 +12,6 @@ protocol ContentManagerProtocol {
     func obtainLevels(forceUpdate: Bool) -> Single<[SkillLevel]>
 }
 
-// TODO: удалить Mocks folder
 final class ContentManager {
     enum Constants {
         static let skillLevels = "content_manager_skill_levels_key"

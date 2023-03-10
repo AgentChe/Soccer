@@ -1,5 +1,5 @@
 //
-//  HomeDrillsCollectionView.swift
+//  HomeDrillCategoriesCollectionView.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 06.02.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeDrillsCollectionView: UICollectionView {
+final class HomeDrillCategoriesCollectionView: UICollectionView {
     var didTap: ((DrillCategory) -> Void)?
     
     lazy var elements = [DrillCategory]()
@@ -24,7 +24,7 @@ final class HomeDrillsCollectionView: UICollectionView {
 }
 
 // MARK: Public
-extension HomeDrillsCollectionView {
+extension HomeDrillCategoriesCollectionView {
     func setup(elements: [DrillCategory]) {
         self.elements = elements
         
@@ -33,22 +33,22 @@ extension HomeDrillsCollectionView {
 }
 
 // MARK: UICollectionViewDataSource
-extension HomeDrillsCollectionView: UICollectionViewDataSource {
+extension HomeDrillCategoriesCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         elements.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: String(describing: HomeDrillsCollectionCell.self), for: indexPath) as! HomeDrillsCollectionCell
+        let cell = dequeueReusableCell(withReuseIdentifier: String(describing: HomeDrillCategoriesCollectionCell.self), for: indexPath) as! HomeDrillCategoriesCollectionCell
         cell.setup(element: elements[indexPath.row])
         return cell
     }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
-extension HomeDrillsCollectionView: UICollectionViewDelegateFlowLayout {
+extension HomeDrillCategoriesCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        HomeDrillsCollectionCell.size(for: elements[indexPath.row])
+        HomeDrillCategoriesCollectionCell.size(for: elements[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -58,9 +58,9 @@ extension HomeDrillsCollectionView: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: Private
-private extension HomeDrillsCollectionView {
+private extension HomeDrillCategoriesCollectionView {
     func initialize() {
-        register(HomeDrillsCollectionCell.self, forCellWithReuseIdentifier: String(describing: HomeDrillsCollectionCell.self))
+        register(HomeDrillCategoriesCollectionCell.self, forCellWithReuseIdentifier: String(describing: HomeDrillCategoriesCollectionCell.self))
         
         dataSource = self
         delegate = self

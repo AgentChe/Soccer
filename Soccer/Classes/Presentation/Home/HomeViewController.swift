@@ -78,9 +78,14 @@ extension HomeViewController: HomeTableViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func homeTableDidTap(workout: WorkoutCover) {
+    func homeTableDidTap(workoutTemplate: WorkoutTemplate) {
         // TODO
-        print("homeTableDidTap workout: \(workout.name)")
+        print("homeTableDidTap workoutTemplate: \(workoutTemplate.name)")
+    }
+    
+    func homeTableDidTap(workoutCover: WorkoutCover) {
+        // TODO
+        print("homeTableDidTap workoutCover: \(workoutCover.name)")
     }
     
     func homeTableDidTap(drillCategory: DrillCategory) {

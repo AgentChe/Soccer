@@ -1,5 +1,5 @@
 //
-//  HomeDrillsCollectionCell.swift
+//  HomeDrillCategoriesCollectionCell.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 06.02.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeDrillsCollectionCell: UICollectionViewCell {
+final class HomeDrillCategoriesCollectionCell: UICollectionViewCell {
     lazy var label = makeLabel()
     
     private static let attrs = TextAttributes()
@@ -29,19 +29,19 @@ final class HomeDrillsCollectionCell: UICollectionViewCell {
 }
 
 // MARK: Public
-extension HomeDrillsCollectionCell {
+extension HomeDrillCategoriesCollectionCell {
     static func size(for drillCategory: DrillCategory) -> CGSize {
-        let size = drillCategory.name.attributed(with: HomeDrillsCollectionCell.attrs).size()
+        let size = drillCategory.name.attributed(with: HomeDrillCategoriesCollectionCell.attrs).size()
         return CGSize(width: size.width + 32.scale, height: size.height + 20.scale)
     }
     
     func setup(element: DrillCategory) {
-        label.attributedText = element.name.attributed(with: HomeDrillsCollectionCell.attrs)
+        label.attributedText = element.name.attributed(with: HomeDrillCategoriesCollectionCell.attrs)
     }
 }
 
 // MARK: Private
-private extension HomeDrillsCollectionCell {
+private extension HomeDrillCategoriesCollectionCell {
     func initialize() {
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
@@ -53,7 +53,7 @@ private extension HomeDrillsCollectionCell {
 }
 
 // MARK: Make constraints
-private extension HomeDrillsCollectionCell {
+private extension HomeDrillCategoriesCollectionCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
@@ -63,7 +63,7 @@ private extension HomeDrillsCollectionCell {
 }
 
 // MARK: Lazy initialization
-private extension HomeDrillsCollectionCell {
+private extension HomeDrillCategoriesCollectionCell {
     func makeLabel() -> PaddingLabel {
         let view = PaddingLabel()
         view.insets = UIEdgeInsets(top: 10.scale, left: 16.scale, bottom: 10.scale, right: 16.scale)

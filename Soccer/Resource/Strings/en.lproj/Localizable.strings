@@ -125,6 +125,8 @@
 "Home.ImproveYourFitness" = "Improve your fitness";
 "Home.StartTraining" = "Start training";
 "Home.StartWorkout" = "Start workout";
+"Home.YourScore" = "Your score";
+"Home.Level" = "Level - %@";
 
 // MARK: DrillTrainingInstruction
 "DrillTrainingInstruction.StartTraining" = "Start training";

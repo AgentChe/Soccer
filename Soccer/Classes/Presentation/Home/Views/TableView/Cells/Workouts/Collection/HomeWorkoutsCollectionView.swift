@@ -10,7 +10,7 @@ import UIKit
 final class HomeWorkoutsCollectionView: UICollectionView {
     var didTap: ((WorkoutCover) -> Void)?
     
-    lazy var elements = [WorkoutCover]()
+    lazy var elements = [HomeWorkoutElement]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -25,7 +25,7 @@ final class HomeWorkoutsCollectionView: UICollectionView {
 
 // MARK: Public
 extension HomeWorkoutsCollectionView {
-    func setup(elements: [WorkoutCover]) {
+    func setup(elements: [HomeWorkoutElement]) {
         self.elements = elements
         
         reloadData()
@@ -52,7 +52,7 @@ extension HomeWorkoutsCollectionView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let workout = elements[indexPath.row]
+        let workout = elements[indexPath.row].workout
         didTap?(workout)
     }
 }

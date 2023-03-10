@@ -1,5 +1,5 @@
 //
-//  HomeDrillsCollectionLayout.swift
+//  HomeDrillCategoriesCollectionLayout.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 07.02.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeDrillsCollectionLayout: UICollectionViewFlowLayout {
+final class HomeDrillCategoriesCollectionLayout: UICollectionViewFlowLayout {
     private var layoutInfo = [IndexPath: UICollectionViewLayoutAttributes]()
     private var contentWidth = CGFloat(0)
     
