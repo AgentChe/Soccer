@@ -49,6 +49,7 @@ private extension GetHomeKitResponse {
                 let skillLevelId = drillJSON["level_id"] as? Int,
                 let imagePath = drillJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),
+                let categoryId = drillJSON["drill_category_id"] as? Int,
                 let paid = drillJSON["paid"] as? Bool,
                 let explanation = drillJSON["explanation"] as? String,
                 let instruction = drillJSON["description"] as? String
@@ -61,7 +62,7 @@ private extension GetHomeKitResponse {
                 name: name,
                 skillLevelId: skillLevelId,
                 image: imageUrl,
-                categoryId: 1, // TODO: получать из json после добавления на бэке
+                categoryId: categoryId,
                 paid: paid,
                 explanation: explanation,
                 instruction: instruction
@@ -77,13 +78,11 @@ private extension GetHomeKitResponse {
                 let imagePath = workoutJSON["image"] as? String,
                 let imageUrl = URL(string: imagePath),
                 let levelId = workoutJSON["level_id"] as? Int,
-                let focusZonesIds = workoutJSON["body_part_ids"] as? [Int]
+                let focusZonesIds = workoutJSON["body_part_ids"] as? [Int],
+                let exercisesBundleArray = workoutJSON["training_steps"] as? [[String: Any]]
             else {
                 return nil
             }
-            
-            // TODO: получать из json после добавления на бэке
-            let exercisesBundleArray = workoutJSON["training_steps"] as? [[String: Any]] ?? []
             
             let exercises = exercisesBundleArray.reduce([]) { result, exercisesBundleJSON -> [WorkoutExercise] in
                 guard
@@ -95,7 +94,7 @@ private extension GetHomeKitResponse {
                 
                 let exercises = exercisesArray.compactMap { exerciseJSON -> WorkoutExercise? in
                     guard
-                        let id = exerciseJSON["excersise_id"] as? Int,
+                        let id = exerciseJSON["exercise_id"] as? Int,
                         let name = exerciseJSON["name"] as? String,
                         let subTitle = exerciseJSON["subtitle"] as? String,
                         let imagePath = exerciseJSON["image"] as? String,
