@@ -1,5 +1,5 @@
 //
-//  DrillTrainingsViewController.swift
+//  DrillsViewController.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 22.02.2023.
@@ -8,10 +8,10 @@
 import UIKit
 import RxSwift
 
-final class DrillTrainingsViewController: UIViewController {
-    lazy var mainView = DrillTrainingsView()
+final class DrillsViewController: UIViewController {
+    lazy var mainView = DrillsView()
     
-    private lazy var viewModel = DrillTrainingsViewModel(drillCategory: drillCategory)
+    private lazy var viewModel = DrillsViewModel(drillCategory: drillCategory)
     
     private lazy var disposeBag = DisposeBag()
     
@@ -59,18 +59,18 @@ final class DrillTrainingsViewController: UIViewController {
 }
 
 // MARK: Make
-extension DrillTrainingsViewController {
-    static func make(drillCategory: DrillCategory) -> DrillTrainingsViewController {
-        let vc = DrillTrainingsViewController(drillCategory: drillCategory)
+extension DrillsViewController {
+    static func make(drillCategory: DrillCategory) -> DrillsViewController {
+        let vc = DrillsViewController(drillCategory: drillCategory)
         vc.navigationItem.title = drillCategory.name
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
 }
 
-// MARK: DrillTrainingsTableDelegate
-extension DrillTrainingsViewController: DrillTrainingsTableDelegate {
-    func drillTrainingsTableDidTap(element: DrillTrainingsTableElement) {
+// MARK: DrillsTableDelegate
+extension DrillsViewController: DrillsTableDelegate {
+    func drillsTableDidTap(element: DrillsTableElement) {
         if element.locked {
             let vc = PaygateViewController.make()
             present(vc, animated: true)
@@ -82,7 +82,7 @@ extension DrillTrainingsViewController: DrillTrainingsTableDelegate {
 }
 
 // MARK: Private
-private extension DrillTrainingsViewController {
+private extension DrillsViewController {
     func activity(_ activity: Bool) {
         activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
     }

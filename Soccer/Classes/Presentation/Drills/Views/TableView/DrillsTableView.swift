@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol DrillTrainingsTableDelegate: AnyObject {
-    func drillTrainingsTableDidTap(element: DrillTrainingsTableElement)
+protocol DrillsTableDelegate: AnyObject {
+    func drillsTableDidTap(element: DrillsTableElement)
 }
 
-final class DrillTrainingsTableView: UITableView {
-    weak var mainDelegate: DrillTrainingsTableDelegate?
+final class DrillsTableView: UITableView {
+    weak var mainDelegate: DrillsTableDelegate?
     
-    lazy var elements = [DrillTrainingsTableElement]()
+    lazy var elements = [DrillsTableElement]()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -28,8 +28,8 @@ final class DrillTrainingsTableView: UITableView {
 }
 
 // MARK: Public
-extension DrillTrainingsTableView {
-    func setup(elements: [DrillTrainingsTableElement]) {
+extension DrillsTableView {
+    func setup(elements: [DrillsTableElement]) {
         self.elements = elements
         
         reloadData()
@@ -37,34 +37,34 @@ extension DrillTrainingsTableView {
 }
 
 // MARK: UITableViewDataSource
-extension DrillTrainingsTableView: UITableViewDataSource {
+extension DrillsTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         elements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueReusableCell(withIdentifier: String(describing: DrillTrainingsTableCell.self)) as! DrillTrainingsTableCell
+        let cell = dequeueReusableCell(withIdentifier: String(describing: DrillsTableCell.self)) as! DrillsTableCell
         cell.setup(element: elements[indexPath.row])
         return cell
     }
 }
 
 // MARK: UITableViewDelegate
-extension DrillTrainingsTableView: UITableViewDelegate {
+extension DrillsTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         220.scale
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let element = elements[indexPath.row]
-        mainDelegate?.drillTrainingsTableDidTap(element: element)
+        mainDelegate?.drillsTableDidTap(element: element)
     }
 }
 
 // MARK: Private
-private extension DrillTrainingsTableView {
+private extension DrillsTableView {
     func initialize() {
-        register(DrillTrainingsTableCell.self, forCellReuseIdentifier: String(describing: DrillTrainingsTableCell.self))
+        register(DrillsTableCell.self, forCellReuseIdentifier: String(describing: DrillsTableCell.self))
         
         dataSource = self
         delegate = self

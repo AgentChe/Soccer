@@ -1,5 +1,5 @@
 //
-//  DrillTrainingsViewModel.swift
+//  DrillsViewModel.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 22.02.2023.
@@ -8,7 +8,7 @@
 import RxSwift
 import RxCocoa
 
-final class DrillTrainingsViewModel {
+final class DrillsViewModel {
     var tryAgain: ((Error) -> (Observable<Void>))?
     
     lazy var elements = makeElements()
@@ -16,10 +16,14 @@ final class DrillTrainingsViewModel {
     
     private let drillCategory: Driver<DrillCategory>
     private lazy var drills = makeDrills()
+    private lazy var profile = makeProfile()
     private lazy var activeSubscription = makeActiveSubscription()
+    private lazy var skillLevels = makeSkillLevels()
     
     private lazy var drillManager = DrillManager()
     private lazy var sessionManager = SessionManager()
+    private lazy var profileManager = ProfileManager()
+    private lazy var contentManager = ContentManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
     
@@ -29,29 +33,36 @@ final class DrillTrainingsViewModel {
 }
 
 // MARK: Private
-private extension DrillTrainingsViewModel {
-    func makeElements() -> Driver<[DrillTrainingsTableElement]> {
+private extension DrillsViewModel {
+    func makeElements() -> Driver<[DrillsTableElement]> {
         Driver
-            .combineLatest(drillCategory, drills, activeSubscription)
-            .map { drillCategory, drills, activeSubscription -> [DrillTrainingsTableElement] in
-                drills.map { drill -> DrillTrainingsTableElement in
-                    DrillTrainingsTableElement(drill: drill,
-                                               drillCategory: drillCategory,
-                                               locked: drill.paid ? !activeSubscription : false)
+            .combineLatest(drillCategory, drills, activeSubscription, skillLevels)
+            .map { drillCategory, drills, activeSubscription, skillLevels -> [DrillsTableElement] in
+                drills.compactMap { drill -> DrillsTableElement? in
+                    guard let skillLevel = skillLevels.first(where: { $0.id == drill.skillLevelId }) else {
+                        return nil
+                    }
+                    
+                    return DrillsTableElement(drill: drill,
+                                              drillCategory: drillCategory,
+                                              skillLevel: skillLevel,
+                                              locked: drill.paid ? !activeSubscription : false)
                 }
             }
     }
     
     func makeDrills() -> Driver<[Drill]> {
-        drillCategory
-            .flatMapLatest { [weak self] drillCategory -> Driver<[Drill]> in
+        Driver
+            .combineLatest(drillCategory, profile)
+            .flatMapLatest { [weak self] drillCategory, profile -> Driver<[Drill]> in
                 guard let self = self else {
                     return .never()
                 }
                 
                 func source() -> Single<[Drill]> {
                     self.drillManager
-                        .obtainDrills(categoryId: drillCategory.id, levelId: 1) // TODO
+                        .obtainDrills(categoryId: drillCategory.id,
+                                      levelId: profile?.skillLevelId)
                 }
                 
                 func trigger(error: Error) -> Observable<Void> {
@@ -68,6 +79,18 @@ private extension DrillTrainingsViewModel {
                     .trackActivity(self.activity)
                     .asDriver(onErrorJustReturn: [])
             }
+    }
+    
+    func makeProfile() -> Driver<Profile?> {
+        profileManager
+            .obtainProfile(forceUpdate: false)
+            .asDriver(onErrorJustReturn: nil)
+    }
+    
+    func makeSkillLevels() -> Driver<[SkillLevel]> {
+        contentManager
+            .obtainLevels(forceUpdate: false)
+            .asDriver(onErrorJustReturn: [])
     }
     
     func makeActiveSubscription() -> Driver<Bool> {

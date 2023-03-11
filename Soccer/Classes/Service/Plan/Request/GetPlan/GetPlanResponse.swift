@@ -40,7 +40,8 @@ final class GetPlanResponse {
                     let imageUrl = URL(string: imagePath),
                     let levelId = drillJSON["level_id"] as? Int,
                     let statusCode = drillJSON["status"] as? Int,
-                    let status = Self.status(from: statusCode)
+                    let status = Self.status(from: statusCode),
+                    let categoryId = drillJSON["drill_category_id"] as? Int
                 else {
                     return nil
                 }
@@ -51,7 +52,7 @@ final class GetPlanResponse {
                     image: imageUrl,
                     levelId: levelId,
                     status: status,
-                    categoryId: 1 // TODO: получать из json в guard после реализации на бэке
+                    categoryId: categoryId
                 )
             }
             

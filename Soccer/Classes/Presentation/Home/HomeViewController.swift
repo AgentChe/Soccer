@@ -103,7 +103,7 @@ extension HomeViewController: HomeTableViewDelegate {
     }
     
     func homeTableDidTap(drillCategory: DrillCategory) {
-        let vc = DrillTrainingsViewController.make(drillCategory: drillCategory)
+        let vc = DrillsViewController.make(drillCategory: drillCategory)
         navigationController?.pushViewController(vc, animated: true)
     }
     

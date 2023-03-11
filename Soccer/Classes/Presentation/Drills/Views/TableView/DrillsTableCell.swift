@@ -1,5 +1,5 @@
 //
-//  DrillTrainingsTableCell.swift
+//  DrillsTableCell.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 22.02.2023.
@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class DrillTrainingsTableCell: UITableViewCell {
+final class DrillsTableCell: UITableViewCell {
     lazy var pictureView = makeImageView()
     lazy var shadowView = makeShadowView()
     lazy var nameLabel = makeNameLabel()
@@ -47,13 +47,13 @@ final class DrillTrainingsTableCell: UITableViewCell {
 }
 
 // MARK: Public
-extension DrillTrainingsTableCell {
-    func setup(element: DrillTrainingsTableElement) {
+extension DrillsTableCell {
+    func setup(element: DrillsTableElement) {
         pictureView.kf.setImage(with: element.drill.image)
         
         nameLabel.attributedText = element.drill.name.attributed(with: nameAttrs)
         
-        tag1Label.attributedText = "TODO".attributed(with: tagAttrs) //element.drillTraining.skillLevel.localizedTitle.attributed(with: tagAttrs) // TODO
+        tag1Label.attributedText = element.skillLevel.name.attributed(with: tagAttrs)
         tag2Label.attributedText = element.drillCategory.name.attributed(with: tagAttrs)
         
         lockedView.isHidden = !element.locked
@@ -61,7 +61,7 @@ extension DrillTrainingsTableCell {
 }
 
 // MARK: Private
-private extension DrillTrainingsTableCell {
+private extension DrillsTableCell {
     func initialize() {
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
@@ -73,7 +73,7 @@ private extension DrillTrainingsTableCell {
 }
 
 // MARK: Make constraints
-private extension DrillTrainingsTableCell {
+private extension DrillsTableCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             pictureView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
@@ -114,7 +114,7 @@ private extension DrillTrainingsTableCell {
 }
 
 // MARK: Lazy initialization
-private extension DrillTrainingsTableCell {
+private extension DrillsTableCell {
     func makeImageView() -> UIImageView {
         let view = UIImageView()
         view.layer.cornerRadius = 10.scale
@@ -156,7 +156,7 @@ private extension DrillTrainingsTableCell {
     func makeLockedView() -> UIImageView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
-        view.image = UIImage(named: "DrillTrainings.Locked")
+        view.image = UIImage(named: "Drills.Locked")
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

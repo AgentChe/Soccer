@@ -8,6 +8,9 @@
 import RxSwift
 import RxCocoa
 
+// TODO:
+// 1. Триггеры медиаторов
+// 2. Workouts plan
 final class HomeViewModel {
     var tryAgain: ((Error) -> (Observable<Void>))?
     

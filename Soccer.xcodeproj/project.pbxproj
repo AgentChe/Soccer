@@ -147,12 +147,12 @@
 		DEBC2B50298D1C88002C84E3 /* GetProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B4F298D1C88002C84E3 /* GetProfileResponse.swift */; };
 		DEBC2B53298D1DB6002C84E3 /* GetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B52298D1DB6002C84E3 /* GetProfileRequest.swift */; };
 		DEBC2B55298D254B002C84E3 /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC2B54298D254B002C84E3 /* ProfileMediator.swift */; };
-		DEC9005029A5FE8B001B24A3 /* DrillTrainingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9004F29A5FE8B001B24A3 /* DrillTrainingsViewController.swift */; };
-		DEC9005229A5FE93001B24A3 /* DrillTrainingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005129A5FE93001B24A3 /* DrillTrainingsViewModel.swift */; };
-		DEC9005429A5FE9A001B24A3 /* DrillTrainingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005329A5FE9A001B24A3 /* DrillTrainingsView.swift */; };
-		DEC9005829A602D3001B24A3 /* DrillTrainingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005729A602D3001B24A3 /* DrillTrainingsTableView.swift */; };
-		DEC9005A29A602E0001B24A3 /* DrillTrainingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005929A602E0001B24A3 /* DrillTrainingsTableCell.swift */; };
-		DEC9005C29A60303001B24A3 /* DrillTrainingsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005B29A60303001B24A3 /* DrillTrainingsTableElement.swift */; };
+		DEC9005029A5FE8B001B24A3 /* DrillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9004F29A5FE8B001B24A3 /* DrillsViewController.swift */; };
+		DEC9005229A5FE93001B24A3 /* DrillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005129A5FE93001B24A3 /* DrillsViewModel.swift */; };
+		DEC9005429A5FE9A001B24A3 /* DrillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005329A5FE9A001B24A3 /* DrillsView.swift */; };
+		DEC9005829A602D3001B24A3 /* DrillsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005729A602D3001B24A3 /* DrillsTableView.swift */; };
+		DEC9005A29A602E0001B24A3 /* DrillsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005929A602E0001B24A3 /* DrillsTableCell.swift */; };
+		DEC9005C29A60303001B24A3 /* DrillsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9005B29A60303001B24A3 /* DrillsTableElement.swift */; };
 		DEC9006129A60B6E001B24A3 /* GetDrillsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9006029A60B6E001B24A3 /* GetDrillsRequest.swift */; };
 		DEC9006329A60B74001B24A3 /* GetDrillsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9006229A60B74001B24A3 /* GetDrillsResponse.swift */; };
 		DEC9006629A61917001B24A3 /* DrillTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9006529A61917001B24A3 /* DrillTrainingViewController.swift */; };
@@ -402,12 +402,12 @@
 		DEBC2B4F298D1C88002C84E3 /* GetProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileResponse.swift; sourceTree = "<group>"; };
 		DEBC2B52298D1DB6002C84E3 /* GetProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileRequest.swift; sourceTree = "<group>"; };
 		DEBC2B54298D254B002C84E3 /* ProfileMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediator.swift; sourceTree = "<group>"; };
-		DEC9004F29A5FE8B001B24A3 /* DrillTrainingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingsViewController.swift; sourceTree = "<group>"; };
-		DEC9005129A5FE93001B24A3 /* DrillTrainingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingsViewModel.swift; sourceTree = "<group>"; };
-		DEC9005329A5FE9A001B24A3 /* DrillTrainingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingsView.swift; sourceTree = "<group>"; };
-		DEC9005729A602D3001B24A3 /* DrillTrainingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingsTableView.swift; sourceTree = "<group>"; };
-		DEC9005929A602E0001B24A3 /* DrillTrainingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingsTableCell.swift; sourceTree = "<group>"; };
-		DEC9005B29A60303001B24A3 /* DrillTrainingsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingsTableElement.swift; sourceTree = "<group>"; };
+		DEC9004F29A5FE8B001B24A3 /* DrillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsViewController.swift; sourceTree = "<group>"; };
+		DEC9005129A5FE93001B24A3 /* DrillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsViewModel.swift; sourceTree = "<group>"; };
+		DEC9005329A5FE9A001B24A3 /* DrillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsView.swift; sourceTree = "<group>"; };
+		DEC9005729A602D3001B24A3 /* DrillsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsTableView.swift; sourceTree = "<group>"; };
+		DEC9005929A602E0001B24A3 /* DrillsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsTableCell.swift; sourceTree = "<group>"; };
+		DEC9005B29A60303001B24A3 /* DrillsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsTableElement.swift; sourceTree = "<group>"; };
 		DEC9006029A60B6E001B24A3 /* GetDrillsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDrillsRequest.swift; sourceTree = "<group>"; };
 		DEC9006229A60B74001B24A3 /* GetDrillsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDrillsResponse.swift; sourceTree = "<group>"; };
 		DEC9006529A61917001B24A3 /* DrillTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingViewController.swift; sourceTree = "<group>"; };
@@ -853,7 +853,7 @@
 			isa = PBXGroup;
 			children = (
 				DED00C3829B0AF9400661F03 /* Paygate */,
-				DEC9004E29A5FE7B001B24A3 /* DrillTrainings */,
+				DEC9004E29A5FE7B001B24A3 /* Drills */,
 				DED89CDB2994D6EC00325104 /* DrillTraining */,
 				DED89C802990DA2E00325104 /* Home */,
 				DEA8FF09298A89D200868C0E /* Main */,
@@ -1070,15 +1070,15 @@
 			path = GetProfile;
 			sourceTree = "<group>";
 		};
-		DEC9004E29A5FE7B001B24A3 /* DrillTrainings */ = {
+		DEC9004E29A5FE7B001B24A3 /* Drills */ = {
 			isa = PBXGroup;
 			children = (
 				DEC9005529A602BE001B24A3 /* Views */,
-				DEC9004F29A5FE8B001B24A3 /* DrillTrainingsViewController.swift */,
-				DEC9005129A5FE93001B24A3 /* DrillTrainingsViewModel.swift */,
-				DEC9005329A5FE9A001B24A3 /* DrillTrainingsView.swift */,
+				DEC9004F29A5FE8B001B24A3 /* DrillsViewController.swift */,
+				DEC9005129A5FE93001B24A3 /* DrillsViewModel.swift */,
+				DEC9005329A5FE9A001B24A3 /* DrillsView.swift */,
 			);
-			path = DrillTrainings;
+			path = Drills;
 			sourceTree = "<group>";
 		};
 		DEC9005529A602BE001B24A3 /* Views */ = {
@@ -1092,9 +1092,9 @@
 		DEC9005629A602C5001B24A3 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				DEC9005729A602D3001B24A3 /* DrillTrainingsTableView.swift */,
-				DEC9005929A602E0001B24A3 /* DrillTrainingsTableCell.swift */,
-				DEC9005B29A60303001B24A3 /* DrillTrainingsTableElement.swift */,
+				DEC9005729A602D3001B24A3 /* DrillsTableView.swift */,
+				DEC9005929A602E0001B24A3 /* DrillsTableCell.swift */,
+				DEC9005B29A60303001B24A3 /* DrillsTableElement.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -1761,7 +1761,7 @@
 				DEA8FEFC298A7CD800868C0E /* PlusJakartaSans-Bold.ttf in Sources */,
 				DECA721B29B8090100F9667B /* AssignedWorkout.swift in Sources */,
 				DEBC2B43298CFD2B002C84E3 /* OPositionView.swift in Sources */,
-				DEC9005C29A60303001B24A3 /* DrillTrainingsTableElement.swift in Sources */,
+				DEC9005C29A60303001B24A3 /* DrillsTableElement.swift in Sources */,
 				DECA71FB29B75C3F00F9667B /* AssignDrillRequest.swift in Sources */,
 				DEA8FEFD298A7CD800868C0E /* PlusJakartaSans-ExtraBold.ttf in Sources */,
 				DEA8FEFE298A7CD800868C0E /* Inter-Medium.ttf in Sources */,
@@ -1792,7 +1792,7 @@
 				DEBC2B21298BFF77002C84E3 /* WeekSchedule.swift in Sources */,
 				DECA725B29BC6DDC00F9667B /* Date+Extension.swift in Sources */,
 				DED89C772990D48700325104 /* GetHomeKitRequest.swift in Sources */,
-				DEC9005229A5FE93001B24A3 /* DrillTrainingsViewModel.swift in Sources */,
+				DEC9005229A5FE93001B24A3 /* DrillsViewModel.swift in Sources */,
 				DEBC2B39298C1394002C84E3 /* ODrillsTableView.swift in Sources */,
 				DEA8FE64298A7AE000868C0E /* ScreenSize.swift in Sources */,
 				DEA8FE58298A7AE000868C0E /* UIColor+Extension.swift in Sources */,
@@ -1864,11 +1864,11 @@
 				DEC9006A29A61923001B24A3 /* DrillTrainingView.swift in Sources */,
 				DEA8FE69298A7AE000868C0E /* NetworkError.swift in Sources */,
 				DED00C3729B0AF8A00661F03 /* PaygateManager.swift in Sources */,
-				DEC9005029A5FE8B001B24A3 /* DrillTrainingsViewController.swift in Sources */,
+				DEC9005029A5FE8B001B24A3 /* DrillsViewController.swift in Sources */,
 				DED00C3229B0AF8A00661F03 /* PaygateOptionLineComponent.swift in Sources */,
 				DEA8FE7A298A7AE000868C0E /* AppDelegate.swift in Sources */,
 				DEBC2B34298C116B002C84E3 /* GetDrillCategoriesResponse.swift in Sources */,
-				DEC9005829A602D3001B24A3 /* DrillTrainingsTableView.swift in Sources */,
+				DEC9005829A602D3001B24A3 /* DrillsTableView.swift in Sources */,
 				DEBC2B47298D09D2002C84E3 /* FocusZone.swift in Sources */,
 				DEBC2B23298C02E1002C84E3 /* ODaysOfWeekView.swift in Sources */,
 				DED00C4429B0AF9400661F03 /* PaygateViewModel.swift in Sources */,
@@ -1886,7 +1886,7 @@
 				DEA8FE56298A7AE000868C0E /* UIApplication+Extension.swift in Sources */,
 				DEACE5C2298A9C8E0096FF15 /* OAgeView.swift in Sources */,
 				DEA8FE71298A7AE000868C0E /* NavigationControllerSettings.swift in Sources */,
-				DEC9005429A5FE9A001B24A3 /* DrillTrainingsView.swift in Sources */,
+				DEC9005429A5FE9A001B24A3 /* DrillsView.swift in Sources */,
 				DED00C4729B0AF9400661F03 /* PaygateViewControllerDelegate.swift in Sources */,
 				DED00C3429B0AF8A00661F03 /* Paygate.swift in Sources */,
 				DEA8FED2298A7AE000868C0E /* OWelcomeView.swift in Sources */,
@@ -1955,7 +1955,7 @@
 				DEA8FF14298A89D200868C0E /* TabView.swift in Sources */,
 				DEA8FF12298A89D200868C0E /* MainView.swift in Sources */,
 				DED89CEF299522AF00325104 /* DTIButtonsCell.swift in Sources */,
-				DEC9005A29A602E0001B24A3 /* DrillTrainingsTableCell.swift in Sources */,
+				DEC9005A29A602E0001B24A3 /* DrillsTableCell.swift in Sources */,
 				DEA8FEE0298A7AE000868C0E /* OnboardingView.swift in Sources */,
 				DED89CDE2994D71500325104 /* DrillTrainingInstructionViewController.swift in Sources */,
 				DECA721729B8046800F9667B /* GetWorkoutTemplateRequest.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  DrillTrainingsView.swift
+//  DrillsView.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 22.02.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DrillTrainingsView: UIView {
+final class DrillsView: UIView {
     lazy var tableView = makeTableView()
     lazy var preloader = makePreloader()
     
@@ -24,14 +24,14 @@ final class DrillTrainingsView: UIView {
 }
 
 // MARK: Private
-private extension DrillTrainingsView {
+private extension DrillsView {
     func initialize() {
         backgroundColor = Appearance.background
     }
 }
 
 // MARK: Make constraints
-private extension DrillTrainingsView {
+private extension DrillsView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -48,9 +48,9 @@ private extension DrillTrainingsView {
 }
 
 // MARK: Lazy initialization
-private extension DrillTrainingsView {
-    func makeTableView() -> DrillTrainingsTableView {
-        let view = DrillTrainingsTableView()
+private extension DrillsView {
+    func makeTableView() -> DrillsTableView {
+        let view = DrillsTableView()
         view.contentInset = UIEdgeInsets(top: 8.scale, left: 0, bottom: 8.scale, right: 0)
         view.setContentOffset(CGPoint(x: 0, y: -8.scale), animated: false)
         view.separatorStyle = .none
