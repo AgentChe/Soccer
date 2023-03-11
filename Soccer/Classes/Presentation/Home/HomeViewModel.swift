@@ -10,7 +10,6 @@ import RxCocoa
 
 // TODO:
 // 1. Триггеры медиаторов
-// 2. Workouts plan
 final class HomeViewModel {
     var tryAgain: ((Error) -> (Observable<Void>))?
     
@@ -60,13 +59,12 @@ private extension HomeViewModel {
                 )
                 result.append(contentsOf: plan)
                 
-                let planDrills = self.planDrillsElements(
+                let planTrainings = self.planTrainingsElements(
                     homeKit: homeKit,
                     skillLevels: skillLevels,
-                    drillCategories: drillCategories,
                     planDay: planDay
                 )
-                result.append(contentsOf: planDrills)
+                result.append(contentsOf: planTrainings)
                 
                 let drillCategoriesElements: [HomeTableElement] = [
                     .offset(40.scale),
@@ -241,10 +239,9 @@ private extension HomeViewModel {
         ]
     }
     
-    func planDrillsElements(
+    func planTrainingsElements(
         homeKit: HomeKit,
         skillLevels: [SkillLevel],
-        drillCategories: [DrillCategory],
         planDay: Date
     ) -> [HomeTableElement] {
         guard let plan = homeKit.plan.first(where: { $0.day.isEqualByDays(with: planDay) }), !plan.drills.isEmpty else {
@@ -259,31 +256,50 @@ private extension HomeViewModel {
         let baseDrills = plan.drills.filter { $0.status != .completed }
         let completedDrills = plan.drills.filter { $0.status == .completed }
         
+        let baseWorkout = plan.workouts.filter { $0.status != .completed }
+        let completedWorkouts = plan.workouts.filter { $0.status == .completed }
+        
         var result = [HomeTableElement]()
         
-        func fill(from array: [PlanDrill]) {
-            array.enumerated().forEach { index, planDrill in
-                guard
-                    let drillCategory = drillCategories.first(where: { $0.id == planDrill.categoryId }),
-                    let skillLevel = skillLevels.first(where: { $0.id == planDrill.levelId })
-                else {
+        func fill(from drills: [PlanDrill]) {
+            drills.enumerated().forEach { index, planDrill in
+                guard let skillLevel = skillLevels.first(where: { $0.id == planDrill.levelId }) else {
                     return
                 }
                 
-                let element = HomePlanDrillElement(
-                    planDrill: planDrill,
-                    drillCategory: drillCategory,
+                let element = HomePlanTrainingElement(
+                    training: .drill(planDrill),
                     skillLevel: skillLevel
                 )
                 result.append(contentsOf: [
                     .offset(16.scale),
-                    .planDrill(element)
+                    .planTraining(element)
+                ])
+            }
+        }
+        
+        func fill(from workouts: [PlanWorkout]) {
+            workouts.enumerated().forEach { index, planWorkout in
+                guard let skillLevel = skillLevels.first(where: { $0.id == planWorkout.levelId }) else {
+                    return
+                }
+                
+                let element = HomePlanTrainingElement(
+                    training: .workout(planWorkout),
+                    skillLevel: skillLevel
+                )
+                result.append(contentsOf: [
+                    .offset(16.scale),
+                    .planTraining(element)
                 ])
             }
         }
         
         if !baseDrills.isEmpty {
             fill(from: baseDrills)
+        }
+        if !baseWorkout.isEmpty {
+            fill(from: baseWorkout)
         }
         
         if !completedDrills.isEmpty {
@@ -293,6 +309,16 @@ private extension HomeViewModel {
             ])
             
             fill(from: completedDrills)
+        }
+        if !completedWorkouts.isEmpty {
+            if completedDrills.isEmpty {
+                result.append(contentsOf: [
+                    .offset(24.scale),
+                    .title(.small("Home.Completed".localized))
+                ])
+            }
+            
+            fill(from: completedWorkouts)
         }
         
         result.append(contentsOf: [

@@ -13,6 +13,7 @@ protocol HomeTableViewDelegate: AnyObject {
     func homeTableDidTap(workoutCover: WorkoutCover)
     func homeTableDidTap(planDay: Date)
     func homeTableDidTap(planDrill: PlanDrill)
+    func homeTableDidTap(planWorkout: PlanWorkout)
     func homeTableDidTapAddTraining()
     func homeTableDidTap(drillCategory: DrillCategory)
     func homeTableDidTapTryDrills()
@@ -85,8 +86,8 @@ extension HomeTableView: UITableViewDataSource {
                 self?.mainDelegate?.homeTableDidTap(planDay: day)
             }
             return cell
-        case .planDrill(let element):
-            let cell = dequeueReusableCell(withIdentifier: String(describing: HomePlanDrillCell.self), for: indexPath) as! HomePlanDrillCell
+        case .planTraining(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: HomePlanTrainingCell.self), for: indexPath) as! HomePlanTrainingCell
             cell.setup(element: element)
             return cell
         case .noTrainings:
@@ -131,7 +132,7 @@ extension HomeTableView: UITableViewDelegate {
             return 330.scale
         case .plan:
             return 93.scale
-        case .planDrill:
+        case .planTraining:
             return 122.scale
         case .noTrainings:
             return 122.scale
@@ -156,8 +157,13 @@ extension HomeTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch elements[indexPath.row] {
-        case .planDrill(let element):
-            mainDelegate?.homeTableDidTap(planDrill: element.planDrill)
+        case .planTraining(let element):
+            switch element.training {
+            case .drill(let drill):
+                mainDelegate?.homeTableDidTap(planDrill: drill)
+            case .workout(let workout):
+                mainDelegate?.homeTableDidTap(planWorkout: workout)
+            }
         case .addTraining:
             mainDelegate?.homeTableDidTapAddTraining()
         case .tryDrillsTitle:
@@ -180,7 +186,7 @@ private extension HomeTableView {
         register(HomeStatsCell.self, forCellReuseIdentifier: String(describing: HomeStatsCell.self))
         register(DailyPicksTableCell.self, forCellReuseIdentifier: String(describing: DailyPicksTableCell.self))
         register(PlanWeekdaysCell.self, forCellReuseIdentifier: String(describing: PlanWeekdaysCell.self))
-        register(HomePlanDrillCell.self, forCellReuseIdentifier: String(describing: HomePlanDrillCell.self))
+        register(HomePlanTrainingCell.self, forCellReuseIdentifier: String(describing: HomePlanTrainingCell.self))
         register(HomeNoTrainingsCell.self, forCellReuseIdentifier: String(describing: HomeNoTrainingsCell.self))
         register(HomeAddTrainingCell.self, forCellReuseIdentifier: String(describing: HomeAddTrainingCell.self))
         register(HomeDrillCategoriesCell.self, forCellReuseIdentifier: String(describing: HomeDrillCategoriesCell.self))

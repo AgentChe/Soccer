@@ -13,7 +13,7 @@ enum HomeTableElement {
     case stats(HomeStatsElement)
     case dailyPicks([DailyPicksElement])
     case plan([PlanWeekDayButton.Model])
-    case planDrill(HomePlanDrillElement)
+    case planTraining(HomePlanTrainingElement)
     case noTrainings
     case addTraining
     case drillCategories([DrillCategory])
@@ -68,9 +68,13 @@ struct DailyPicksElement {
     }
 }
 
-struct HomePlanDrillElement {
-    let planDrill: PlanDrill
-    let drillCategory: DrillCategory
+struct HomePlanTrainingElement {
+    enum Training {
+        case drill(PlanDrill)
+        case workout(PlanWorkout)
+    }
+    
+    let training: Training
     let skillLevel: SkillLevel
 }
 

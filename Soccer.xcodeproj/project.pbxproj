@@ -206,7 +206,7 @@
 		DECA725029BB54B600F9667B /* HomeAddTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724F29BB54B600F9667B /* HomeAddTrainingCell.swift */; };
 		DECA725229BC31B400F9667B /* HomeNoTrainingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725129BC31B400F9667B /* HomeNoTrainingsCell.swift */; };
 		DECA725429BC35C200F9667B /* PlanWeekdaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725329BC35C200F9667B /* PlanWeekdaysCell.swift */; };
-		DECA725629BC371000F9667B /* HomePlanDrillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725529BC371000F9667B /* HomePlanDrillCell.swift */; };
+		DECA725629BC371000F9667B /* HomePlanTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725529BC371000F9667B /* HomePlanTrainingCell.swift */; };
 		DECA725929BC3AEF00F9667B /* PlanWeekDayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725829BC3AEF00F9667B /* PlanWeekDayButton.swift */; };
 		DECA725B29BC6DDC00F9667B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725A29BC6DDC00F9667B /* Date+Extension.swift */; };
 		DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* WorkoutManager.swift */; };
@@ -461,7 +461,7 @@
 		DECA724F29BB54B600F9667B /* HomeAddTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAddTrainingCell.swift; sourceTree = "<group>"; };
 		DECA725129BC31B400F9667B /* HomeNoTrainingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoTrainingsCell.swift; sourceTree = "<group>"; };
 		DECA725329BC35C200F9667B /* PlanWeekdaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanWeekdaysCell.swift; sourceTree = "<group>"; };
-		DECA725529BC371000F9667B /* HomePlanDrillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanDrillCell.swift; sourceTree = "<group>"; };
+		DECA725529BC371000F9667B /* HomePlanTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanTrainingCell.swift; sourceTree = "<group>"; };
 		DECA725829BC3AEF00F9667B /* PlanWeekDayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanWeekDayButton.swift; sourceTree = "<group>"; };
 		DECA725A29BC6DDC00F9667B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DED00C1529AF523000661F03 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
@@ -1518,7 +1518,7 @@
 				DECA724D29BB41DA00F9667B /* HomeStatsCell.swift */,
 				DECA724F29BB54B600F9667B /* HomeAddTrainingCell.swift */,
 				DECA725129BC31B400F9667B /* HomeNoTrainingsCell.swift */,
-				DECA725529BC371000F9667B /* HomePlanDrillCell.swift */,
+				DECA725529BC371000F9667B /* HomePlanTrainingCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1803,7 +1803,7 @@
 				DECA722729B8846900F9667B /* WorkoutTraining.swift in Sources */,
 				DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */,
 				DEA8FE59298A7AE000868C0E /* Collection+Extension.swift in Sources */,
-				DECA725629BC371000F9667B /* HomePlanDrillCell.swift in Sources */,
+				DECA725629BC371000F9667B /* HomePlanTrainingCell.swift in Sources */,
 				DED89C8C2990E22100325104 /* HomeTableElement.swift in Sources */,
 				DEA8FE7B298A7AE000868C0E /* PushNotificationsManager.swift in Sources */,
 				DEC9006329A60B74001B24A3 /* GetDrillsResponse.swift in Sources */,

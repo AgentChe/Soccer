@@ -97,6 +97,11 @@ extension HomeViewController: HomeTableViewDelegate {
         print("homeTableDidTap planDrill: \(planDrill.name)")
     }
     
+    func homeTableDidTap(planWorkout: PlanWorkout) {
+        // TODO
+        print("homeTableDidTap planWorkout: \(planWorkout.name)")
+    }
+    
     func homeTableDidTapAddTraining() {
         // TODO
         print("homeTableDidTapAddTraining")

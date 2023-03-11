@@ -1,5 +1,5 @@
 //
-//  HomePlanDrillCell.swift
+//  HomePlanTrainingCell.swift
 //  Soccer
 //
 //  Created by Андрей Чернышев on 11.03.2023.
@@ -8,14 +8,14 @@
 import UIKit
 import Kingfisher
 
-final class HomePlanDrillCell: UITableViewCell {
+final class HomePlanTrainingCell: UITableViewCell {
     lazy var container = makeContainer()
     lazy var pictureView = makeImageView()
-    lazy var drillTypeLabel = makeLabel(numberOfLines: 1)
+    lazy var typeLabel = makeLabel(numberOfLines: 1)
     lazy var nameLabel = makeLabel(numberOfLines: 2)
     lazy var skillLevelLabel = makeLabel(numberOfLines: 1)
     
-    private lazy var drillTypeAttrs = TextAttributes()
+    private lazy var typeAttrs = TextAttributes()
         .textColor(Appearance.primary)
         .font(Fonts.Inter.regular(size: 12.scale))
         .lineHeight(15.6.scale)
@@ -52,18 +52,25 @@ final class HomePlanDrillCell: UITableViewCell {
 }
 
 // MARK: Public
-extension HomePlanDrillCell {
-    func setup(element: HomePlanDrillElement) {
-        pictureView.kf.setImage(with: element.planDrill.image)
+extension HomePlanTrainingCell {
+    func setup(element: HomePlanTrainingElement) {
+        switch element.training {
+        case .drill(let drill):
+            pictureView.kf.setImage(with: drill.image)
+            typeLabel.attributedText = "Home.Drill".localized.attributed(with: typeAttrs)
+            nameLabel.attributedText = drill.name.attributed(with: nameAttrs)
+        case .workout(let workout):
+            pictureView.kf.setImage(with: workout.image)
+            typeLabel.attributedText = "Home.Training".localized.attributed(with: typeAttrs)
+            nameLabel.attributedText = workout.name.attributed(with: nameAttrs)
+        }
         
-        drillTypeLabel.attributedText = element.drillCategory.name.attributed(with: drillTypeAttrs)
-        nameLabel.attributedText = element.planDrill.name.attributed(with: nameAttrs)
         skillLevelLabel.attributedText = element.skillLevel.name.attributed(with: skillLevelAttrs)
     }
 }
 
 // MARK: Private
-private extension HomePlanDrillCell {
+private extension HomePlanTrainingCell {
     func initialize() {
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
@@ -73,7 +80,7 @@ private extension HomePlanDrillCell {
 }
 
 // MARK: Make constraints
-private extension HomePlanDrillCell {
+private extension HomePlanTrainingCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
@@ -90,9 +97,9 @@ private extension HomePlanDrillCell {
         ])
         
         NSLayoutConstraint.activate([
-            drillTypeLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 122.scale),
-            drillTypeLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
-            drillTypeLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -5.scale)
+            typeLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 122.scale),
+            typeLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
+            typeLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -5.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -110,7 +117,7 @@ private extension HomePlanDrillCell {
 }
 
 // MARK: Lazy initialization
-private extension HomePlanDrillCell {
+private extension HomePlanTrainingCell {
     func makeContainer() -> UIView {
         let view = UIView()
         view.backgroundColor = Appearance.black
