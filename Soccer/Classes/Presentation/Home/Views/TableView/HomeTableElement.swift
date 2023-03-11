@@ -9,14 +9,23 @@ import UIKit
 
 enum HomeTableElement {
     case offset(CGFloat)
-    case title(String)
+    case title(HomeTitleElement)
     case stats(HomeStatsElement)
     case dailyPicks([DailyPicksElement])
+    case plan([PlanWeekDayButton.Model])
+    case planDrill(HomePlanDrillElement)
+    case noTrainings
+    case addTraining
     case drillCategories([DrillCategory])
     case tryDrillsTitle(String)
     case drill(HomeDrillElement)
     case workoutsTitle(String)
     case workouts([HomeWorkoutElement])
+}
+
+enum HomeTitleElement {
+    case large(String)
+    case small(String)
 }
 
 struct HomeStatsElement {
@@ -57,6 +66,12 @@ struct DailyPicksElement {
         tag2 = nil
         action = "Home.StartWorkout".localized
     }
+}
+
+struct HomePlanDrillElement {
+    let planDrill: PlanDrill
+    let drillCategory: DrillCategory
+    let skillLevel: SkillLevel
 }
 
 struct HomeDrillElement {

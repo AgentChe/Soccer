@@ -203,6 +203,12 @@
 		DECA724A29B9BCB300F9667B /* DrillMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724929B9BCB300F9667B /* DrillMediator.swift */; };
 		DECA724C29B9BE0D00F9667B /* WorkoutMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724B29B9BE0D00F9667B /* WorkoutMediator.swift */; };
 		DECA724E29BB41DA00F9667B /* HomeStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724D29BB41DA00F9667B /* HomeStatsCell.swift */; };
+		DECA725029BB54B600F9667B /* HomeAddTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA724F29BB54B600F9667B /* HomeAddTrainingCell.swift */; };
+		DECA725229BC31B400F9667B /* HomeNoTrainingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725129BC31B400F9667B /* HomeNoTrainingsCell.swift */; };
+		DECA725429BC35C200F9667B /* PlanWeekdaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725329BC35C200F9667B /* PlanWeekdaysCell.swift */; };
+		DECA725629BC371000F9667B /* HomePlanDrillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725529BC371000F9667B /* HomePlanDrillCell.swift */; };
+		DECA725929BC3AEF00F9667B /* PlanWeekDayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725829BC3AEF00F9667B /* PlanWeekDayButton.swift */; };
+		DECA725B29BC6DDC00F9667B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725A29BC6DDC00F9667B /* Date+Extension.swift */; };
 		DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* WorkoutManager.swift */; };
 		DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1729AF52C800661F03 /* SkillLevel.swift */; };
 		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
@@ -452,6 +458,12 @@
 		DECA724929B9BCB300F9667B /* DrillMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillMediator.swift; sourceTree = "<group>"; };
 		DECA724B29B9BE0D00F9667B /* WorkoutMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutMediator.swift; sourceTree = "<group>"; };
 		DECA724D29BB41DA00F9667B /* HomeStatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsCell.swift; sourceTree = "<group>"; };
+		DECA724F29BB54B600F9667B /* HomeAddTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAddTrainingCell.swift; sourceTree = "<group>"; };
+		DECA725129BC31B400F9667B /* HomeNoTrainingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoTrainingsCell.swift; sourceTree = "<group>"; };
+		DECA725329BC35C200F9667B /* PlanWeekdaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanWeekdaysCell.swift; sourceTree = "<group>"; };
+		DECA725529BC371000F9667B /* HomePlanDrillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanDrillCell.swift; sourceTree = "<group>"; };
+		DECA725829BC3AEF00F9667B /* PlanWeekDayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanWeekDayButton.swift; sourceTree = "<group>"; };
+		DECA725A29BC6DDC00F9667B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DED00C1529AF523000661F03 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		DED00C1729AF52C800661F03 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
@@ -627,6 +639,7 @@
 				DEA8FD99298A7AE000868C0E /* ObservableAndSingle+Extension.swift */,
 				DEA8FD9A298A7AE000868C0E /* String+Extension.swift */,
 				DEA8FD9B298A7AE000868C0E /* UIViewRxExtension.swift */,
+				DECA725A29BC6DDC00F9667B /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1274,6 +1287,15 @@
 			path = ReinitPlan;
 			sourceTree = "<group>";
 		};
+		DECA725729BC3AA800F9667B /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				DECA725329BC35C200F9667B /* PlanWeekdaysCell.swift */,
+				DECA725829BC3AEF00F9667B /* PlanWeekDayButton.swift */,
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
 		DED00C1329AF522000661F03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1486,6 +1508,7 @@
 		DED89C8D2990E7F100325104 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DECA725729BC3AA800F9667B /* Plan */,
 				DED89CAF299287DC00325104 /* Workouts */,
 				DED89C9C2991557D00325104 /* DrillCategories */,
 				DED89C9229913F3C00325104 /* DailyPicks */,
@@ -1493,6 +1516,9 @@
 				DED89C8E2990EDAD00325104 /* SeeAllTableCell.swift */,
 				DED89CAD29925ABF00325104 /* HomeDrillCoverCell.swift */,
 				DECA724D29BB41DA00F9667B /* HomeStatsCell.swift */,
+				DECA724F29BB54B600F9667B /* HomeAddTrainingCell.swift */,
+				DECA725129BC31B400F9667B /* HomeNoTrainingsCell.swift */,
+				DECA725529BC371000F9667B /* HomePlanDrillCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1739,6 +1765,7 @@
 				DECA71FB29B75C3F00F9667B /* AssignDrillRequest.swift in Sources */,
 				DEA8FEFD298A7CD800868C0E /* PlusJakartaSans-ExtraBold.ttf in Sources */,
 				DEA8FEFE298A7CD800868C0E /* Inter-Medium.ttf in Sources */,
+				DECA725429BC35C200F9667B /* PlanWeekdaysCell.swift in Sources */,
 				DEBC2B36298C11FA002C84E3 /* ContentManager.swift in Sources */,
 				DECA724629B9059500F9667B /* ReinitPlanRequest.swift in Sources */,
 				DEA8FEFF298A7CD800868C0E /* Inter-Bold.ttf in Sources */,
@@ -1763,6 +1790,7 @@
 				DED00C4829B0AF9400661F03 /* PaygateInteractor.swift in Sources */,
 				DED89C702990D28B00325104 /* Drill.swift in Sources */,
 				DEBC2B21298BFF77002C84E3 /* WeekSchedule.swift in Sources */,
+				DECA725B29BC6DDC00F9667B /* Date+Extension.swift in Sources */,
 				DED89C772990D48700325104 /* GetHomeKitRequest.swift in Sources */,
 				DEC9005229A5FE93001B24A3 /* DrillTrainingsViewModel.swift in Sources */,
 				DEBC2B39298C1394002C84E3 /* ODrillsTableView.swift in Sources */,
@@ -1775,6 +1803,7 @@
 				DECA722729B8846900F9667B /* WorkoutTraining.swift in Sources */,
 				DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */,
 				DEA8FE59298A7AE000868C0E /* Collection+Extension.swift in Sources */,
+				DECA725629BC371000F9667B /* HomePlanDrillCell.swift in Sources */,
 				DED89C8C2990E22100325104 /* HomeTableElement.swift in Sources */,
 				DEA8FE7B298A7AE000868C0E /* PushNotificationsManager.swift in Sources */,
 				DEC9006329A60B74001B24A3 /* GetDrillsResponse.swift in Sources */,
@@ -1803,6 +1832,7 @@
 				DECA722C29B884F600F9667B /* GetWorkoutTrainingResponse.swift in Sources */,
 				DEA8FE95298A7AE000868C0E /* IAPError.swift in Sources */,
 				DECA71F629B68E8800F9667B /* GetWorkoutCoversResponse.swift in Sources */,
+				DECA725929BC3AEF00F9667B /* PlanWeekDayButton.swift in Sources */,
 				DECA722029B8092800F9667B /* AssignWorkoutResponse.swift in Sources */,
 				DED89C9B2991557600325104 /* HomeDrillCategoriesCell.swift in Sources */,
 				DED00C4B29B0AF9400661F03 /* PaygateProductButton.swift in Sources */,
@@ -1816,6 +1846,7 @@
 				DEBC2B27298C0BAF002C84E3 /* OWhereTrainView.swift in Sources */,
 				DECA720929B7618300F9667B /* GetDrillTrainingRequest.swift in Sources */,
 				DEA8FEE1298A7AE000868C0E /* OnboardingViewModel.swift in Sources */,
+				DECA725229BC31B400F9667B /* HomeNoTrainingsCell.swift in Sources */,
 				DED00C2729AF6DE400661F03 /* GetFocusZonesResponse.swift in Sources */,
 				DECA720E29B7638B00F9667B /* LogDrillProgressRequest.swift in Sources */,
 				DECA724C29B9BE0D00F9667B /* WorkoutMediator.swift in Sources */,
@@ -1896,6 +1927,7 @@
 				DED89CF129952EC700325104 /* DTIInstructionCell.swift in Sources */,
 				DEC9007029A62024001B24A3 /* DrillTrainingPrepareTimer.swift in Sources */,
 				DEACE5C6298AA01C0096FF15 /* Role.swift in Sources */,
+				DECA725029BB54B600F9667B /* HomeAddTrainingCell.swift in Sources */,
 				DED00C1D29AF530000661F03 /* GetSkillLevelsResponse.swift in Sources */,
 				DECA722529B8816700F9667B /* ScheduleWorkoutResponse.swift in Sources */,
 				DEA8FE5C298A7AE000868C0E /* UIViewRxExtension.swift in Sources */,

@@ -13,4 +13,5 @@ struct PlanDrill: Codable, Hashable {
     let image: URL
     let levelId: Int
     let status: PlanStatus
+    let categoryId: Int
 }

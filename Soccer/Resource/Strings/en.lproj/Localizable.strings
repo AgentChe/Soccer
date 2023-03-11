@@ -127,6 +127,10 @@
 "Home.StartWorkout" = "Start workout";
 "Home.YourScore" = "Your score";
 "Home.Level" = "Level - %@";
+"Home.Schedule" = "Schedule • %@";
+"Home.NoTrainings" = "No trainings for today";
+"Home.AddTraining" = "Add a training";
+"Home.Completed" = "Completed";
 
 // MARK: DrillTrainingInstruction
 "DrillTrainingInstruction.StartTraining" = "Start training";

@@ -11,6 +11,8 @@ import RxCocoa
 final class HomeViewModel {
     var tryAgain: ((Error) -> (Observable<Void>))?
     
+    lazy var didTapPlanDay = PublishRelay<Date>()
+    
     lazy var elements = makeElements()
     lazy var activity = RxActivityIndicator()
     
@@ -18,6 +20,7 @@ final class HomeViewModel {
     private lazy var skillLevels = makeSkillLevels()
     private lazy var drillCategories = makeDrillCategories()
     private lazy var workoutCovers = makeWorkoutCovers()
+    private lazy var planDay = makePlanDay()
     
     private lazy var contentManager = ContentManager()
     private lazy var drillManager = DrillManager()
@@ -30,8 +33,8 @@ final class HomeViewModel {
 private extension HomeViewModel {
     func makeElements() -> Driver<[HomeTableElement]> {
         Driver
-            .combineLatest(homeKit, skillLevels, drillCategories, workoutCovers)
-            .map { [weak self] homeKit, skillLevels, drillCategories, workoutCovers -> [HomeTableElement] in
+            .combineLatest(homeKit, skillLevels, drillCategories, workoutCovers, planDay)
+            .map { [weak self] homeKit, skillLevels, drillCategories, workoutCovers, planDay -> [HomeTableElement] in
                 guard let self = self, let homeKit = homeKit else {
                     return []
                 }
@@ -47,6 +50,20 @@ private extension HomeViewModel {
                     drillCategories: drillCategories
                 )
                 result.append(contentsOf: dailyPicks)
+                
+                let plan = self.planElements(
+                    homeKit: homeKit,
+                    planDay: planDay
+                )
+                result.append(contentsOf: plan)
+                
+                let planDrills = self.planDrillsElements(
+                    homeKit: homeKit,
+                    skillLevels: skillLevels,
+                    drillCategories: drillCategories,
+                    planDay: planDay
+                )
+                result.append(contentsOf: planDrills)
                 
                 let drillCategoriesElements: [HomeTableElement] = [
                     .offset(40.scale),
@@ -110,6 +127,12 @@ private extension HomeViewModel {
             .obtainWorkoutCovers(forceUpdate: false)
             .asDriver(onErrorJustReturn: [])
     }
+    
+    func makePlanDay() -> Driver<Date> {
+        didTapPlanDay
+            .startWith(Calendar.current.startOfDay(for: Date()))
+            .asDriver(onErrorDriveWith: .never())
+    }
 }
 
 // MARK: Private (Additional)
@@ -166,10 +189,115 @@ private extension HomeViewModel {
         
         return [
             .offset(32.scale),
-            .title("Home.DailyPicks".localized),
+            .title(.large("Home.DailyPicks".localized)),
             .offset(16.scale),
             .dailyPicks(elements)
         ]
+    }
+    
+    func planElements(
+        homeKit: HomeKit,
+        planDay: Date
+    ) -> [HomeTableElement] {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let todayDayOfWeek = calendar.component(.weekday, from: today)
+        
+        guard
+            let weekdaysRange = calendar.range(of: .weekday, in: .weekOfYear, for: today),
+            let index = weekdaysRange.firstIndex(of: calendar.firstWeekday)
+        else {
+            return []
+        }
+        
+        let weekdays = weekdaysRange[index...] + weekdaysRange[..<index].map { $0 + weekdaysRange.count }
+        let dates = weekdays.compactMap { calendar.date(byAdding: .day, value: $0 - todayDayOfWeek, to: today) }
+        
+        let models = dates.map { day -> PlanWeekDayButton.Model in
+            PlanWeekDayButton.Model(
+                day: day,
+                isCurrentDay: calendar.isDateInToday(day),
+                isSelected: day.isEqualByDays(with: planDay),
+                planStatus: homeKit.plan.first(where: { $0.day.isEqualByDays(with: day) })?.status
+            )
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd"
+        formatter.dateStyle = .medium
+        formatter.doesRelativeDateFormatting = true
+        
+        let planDayLocalized = formatter.string(from: planDay)
+        let planDayTitle = String(format: "Home.Schedule".localized, planDayLocalized)
+        
+        return [
+            .offset(40.scale),
+            .title(.large(planDayTitle)),
+            .offset(16.scale),
+            .plan(models)
+        ]
+    }
+    
+    func planDrillsElements(
+        homeKit: HomeKit,
+        skillLevels: [SkillLevel],
+        drillCategories: [DrillCategory],
+        planDay: Date
+    ) -> [HomeTableElement] {
+        guard let plan = homeKit.plan.first(where: { $0.day.isEqualByDays(with: planDay) }), !plan.drills.isEmpty else {
+            return [
+                .offset(16.scale),
+                .noTrainings,
+                .offset(16.scale),
+                .addTraining
+            ]
+        }
+        
+        let baseDrills = plan.drills.filter { $0.status != .completed }
+        let completedDrills = plan.drills.filter { $0.status == .completed }
+        
+        var result = [HomeTableElement]()
+        
+        func fill(from array: [PlanDrill]) {
+            array.enumerated().forEach { index, planDrill in
+                guard
+                    let drillCategory = drillCategories.first(where: { $0.id == planDrill.categoryId }),
+                    let skillLevel = skillLevels.first(where: { $0.id == planDrill.levelId })
+                else {
+                    return
+                }
+                
+                let element = HomePlanDrillElement(
+                    planDrill: planDrill,
+                    drillCategory: drillCategory,
+                    skillLevel: skillLevel
+                )
+                result.append(contentsOf: [
+                    .offset(16.scale),
+                    .planDrill(element)
+                ])
+            }
+        }
+        
+        if !baseDrills.isEmpty {
+            fill(from: baseDrills)
+        }
+        
+        if !completedDrills.isEmpty {
+            result.append(contentsOf: [
+                .offset(24.scale),
+                .title(.small("Home.Completed".localized))
+            ])
+            
+            fill(from: completedDrills)
+        }
+        
+        result.append(contentsOf: [
+            .offset(24.scale),
+            .addTraining
+        ])
+        
+        return result
     }
     
     func drillsElements(
@@ -225,8 +353,6 @@ private extension HomeViewModel {
                 skillLevel: skillLevel
             )
         }.prefix(3)
-        
-        
         
         guard !workoutElements.isEmpty else {
             return []

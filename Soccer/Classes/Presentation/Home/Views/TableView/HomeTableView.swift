@@ -11,6 +11,9 @@ protocol HomeTableViewDelegate: AnyObject {
     func homeTableDidTap(drill: Drill)
     func homeTableDidTap(workoutTemplate: WorkoutTemplate)
     func homeTableDidTap(workoutCover: WorkoutCover)
+    func homeTableDidTap(planDay: Date)
+    func homeTableDidTap(planDrill: PlanDrill)
+    func homeTableDidTapAddTraining()
     func homeTableDidTap(drillCategory: DrillCategory)
     func homeTableDidTapTryDrills()
     func homeTableDidTapWorkouts()
@@ -75,6 +78,21 @@ extension HomeTableView: UITableViewDataSource {
                 }
             }
             return cell
+        case .plan(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: PlanWeekdaysCell.self), for: indexPath) as! PlanWeekdaysCell
+            cell.setup(element: element)
+            cell.didTap = { [weak self] day in
+                self?.mainDelegate?.homeTableDidTap(planDay: day)
+            }
+            return cell
+        case .planDrill(let element):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: HomePlanDrillCell.self), for: indexPath) as! HomePlanDrillCell
+            cell.setup(element: element)
+            return cell
+        case .noTrainings:
+            return dequeueReusableCell(withIdentifier: String(describing: HomeNoTrainingsCell.self), for: indexPath)
+        case .addTraining:
+            return dequeueReusableCell(withIdentifier: String(describing: HomeAddTrainingCell.self), for: indexPath)
         case .drillCategories(let element):
             let cell = dequeueReusableCell(withIdentifier: String(describing: HomeDrillCategoriesCell.self)) as! HomeDrillCategoriesCell
             cell.collectionView.setup(elements: element)
@@ -111,6 +129,14 @@ extension HomeTableView: UITableViewDelegate {
             return 56.scale
         case .dailyPicks:
             return 330.scale
+        case .plan:
+            return 93.scale
+        case .planDrill:
+            return 122.scale
+        case .noTrainings:
+            return 122.scale
+        case .addTraining:
+            return 54.scale
         case .drillCategories(let elements):
             guard let drillCategory = elements.first else {
                 return 0
@@ -130,6 +156,10 @@ extension HomeTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch elements[indexPath.row] {
+        case .planDrill(let element):
+            mainDelegate?.homeTableDidTap(planDrill: element.planDrill)
+        case .addTraining:
+            mainDelegate?.homeTableDidTapAddTraining()
         case .tryDrillsTitle:
             mainDelegate?.homeTableDidTapTryDrills()
         case .workoutsTitle:
@@ -149,6 +179,10 @@ private extension HomeTableView {
         register(HomeTitleCell.self, forCellReuseIdentifier: String(describing: HomeTitleCell.self))
         register(HomeStatsCell.self, forCellReuseIdentifier: String(describing: HomeStatsCell.self))
         register(DailyPicksTableCell.self, forCellReuseIdentifier: String(describing: DailyPicksTableCell.self))
+        register(PlanWeekdaysCell.self, forCellReuseIdentifier: String(describing: PlanWeekdaysCell.self))
+        register(HomePlanDrillCell.self, forCellReuseIdentifier: String(describing: HomePlanDrillCell.self))
+        register(HomeNoTrainingsCell.self, forCellReuseIdentifier: String(describing: HomeNoTrainingsCell.self))
+        register(HomeAddTrainingCell.self, forCellReuseIdentifier: String(describing: HomeAddTrainingCell.self))
         register(HomeDrillCategoriesCell.self, forCellReuseIdentifier: String(describing: HomeDrillCategoriesCell.self))
         register(SeeAllTableCell.self, forCellReuseIdentifier: String(describing: SeeAllTableCell.self))
         register(HomeDrillCoverCell.self, forCellReuseIdentifier: String(describing: HomeDrillCoverCell.self))

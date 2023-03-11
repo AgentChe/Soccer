@@ -14,11 +14,11 @@ final class HomeStatsCell: UITableViewCell {
     lazy var levelLabel = makeLabel()
     
     private lazy var scoreValueAttrs = TextAttributes()
-        .textColor(UIColor.white)
+        .textColor(Appearance.white)
         .font(Fonts.Inter.semiBold(size: 20.scale))
         .lineHeight(24.scale)
     private lazy var levelAttrs = TextAttributes()
-        .textColor(UIColor.white.withAlphaComponent(0.7))
+        .textColor(Appearance.white.withAlphaComponent(0.7))
         .font(Fonts.Inter.regular(size: 14.scale))
         .lineHeight(19.6.scale)
         .letterSpacing(0.14.scale)
@@ -102,7 +102,7 @@ private extension HomeStatsCell {
     
     func makeScoreTitleLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(UIColor.white)
+            .textColor(Appearance.white)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
         

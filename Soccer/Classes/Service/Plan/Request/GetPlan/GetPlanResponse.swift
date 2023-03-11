@@ -50,7 +50,8 @@ final class GetPlanResponse {
                     name: name,
                     image: imageUrl,
                     levelId: levelId,
-                    status: status
+                    status: status,
+                    categoryId: 1 // TODO: получать из json в guard после реализации на бэке
                 )
             }
             

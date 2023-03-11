@@ -10,6 +10,17 @@ import UIKit
 final class HomeTitleCell: UITableViewCell {
     lazy var nameLabel = makeLabel()
     
+    private lazy var largeAttrs = TextAttributes()
+        .textColor(Appearance.white)
+        .font(Fonts.Inter.semiBold(size: 20.scale))
+        .lineHeight(24.scale)
+        .textAlignment(.left)
+    private lazy var smallAttrs = TextAttributes()
+        .textColor(Appearance.white)
+        .font(Fonts.Inter.semiBold(size: 16.scale))
+        .lineHeight(19.2.scale)
+        .textAlignment(.left)
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -24,13 +35,13 @@ final class HomeTitleCell: UITableViewCell {
 
 // MARK: Public
 extension HomeTitleCell {
-    func setup(element: String) {
-        let attrs = TextAttributes()
-            .textColor(Appearance.white)
-            .font(Fonts.Inter.semiBold(size: 20.scale))
-            .lineHeight(24.scale)
-            .textAlignment(.left)
-        nameLabel.attributedText = element.attributed(with: attrs)
+    func setup(element: HomeTitleElement) {
+        switch element {
+        case .large(let text):
+            nameLabel.attributedText = text.attributed(with: largeAttrs)
+        case .small(let text):
+            nameLabel.attributedText = text.attributed(with: smallAttrs)
+        }
     }
 }
 
