@@ -8,8 +8,6 @@
 import RxSwift
 import RxCocoa
 
-// TODO:
-// 1. Триггеры медиаторов
 final class HomeViewModel {
     var tryAgain: ((Error) -> (Observable<Void>))?
     
@@ -91,24 +89,40 @@ private extension HomeViewModel {
     }
     
     func makeHomeKit() -> Driver<HomeKit?> {
-        func source() -> Single<HomeKit?> {
-            contentManager
-                .obtainHomeKit()
-        }
+        let triggers = Signal<Void>.merge(
+            WorkoutMediator.shared.didLogProgress.map { _ in Void() },
+            WorkoutMediator.shared.didSchedule.map { _ in Void() },
+            DrillMediator.shared.didLogProgress.map { _ in Void() },
+            DrillMediator.shared.didSchedule.map { _ in Void() },
+            PlanMediator.shared.didReinit.map { _ in Void() }
+        )
         
-        func trigger(error: Error) -> Observable<Void> {
-            guard let tryAgain = self.tryAgain?(error) else {
-                return .empty()
+        return triggers
+            .startWith(Void())
+            .flatMapLatest { [weak self] void -> Driver<HomeKit?> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                func source() -> Single<HomeKit?> {
+                    self.contentManager
+                        .obtainHomeKit()
+                }
+                
+                func trigger(error: Error) -> Observable<Void> {
+                    guard let tryAgain = self.tryAgain?(error) else {
+                        return .empty()
+                    }
+                    
+                    return tryAgain
+                }
+                
+                return self.observableRetrySingle
+                    .retry(source: { source() },
+                           trigger: { trigger(error: $0) })
+                    .trackActivity(self.activity)
+                    .asDriver(onErrorJustReturn: nil)
             }
-            
-            return tryAgain
-        }
-        
-        return self.observableRetrySingle
-            .retry(source: { source() },
-                   trigger: { trigger(error: $0) })
-            .trackActivity(activity)
-            .asDriver(onErrorJustReturn: nil)
     }
     
     func makeSkillLevels() -> Driver<[SkillLevel]> {

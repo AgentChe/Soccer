@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 extension ObservableType {
     func mapToVoid() -> Observable<Void> {
