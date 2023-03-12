@@ -29,12 +29,6 @@ final class PaygateViewController: UIViewController {
         FirebaseManager.shared
             .logEvent(name: "client_paygate_screen")
         
-        viewModel.questionsCount
-            .drive(Binder(mainView) { base, questionsCount in
-                base.setup(questionsCount: questionsCount)
-            })
-            .disposed(by: disposeBag)
-        
         viewModel.products
             .drive(Binder(self) { base, products in
                 base.mainView.leftOptionButton.info = products.first
@@ -114,8 +108,8 @@ final class PaygateViewController: UIViewController {
         mainView.leftOptionButton.isChecked = true
     }
     
-    override var prefersStatusBarHidden: Bool {
-        true
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }
 

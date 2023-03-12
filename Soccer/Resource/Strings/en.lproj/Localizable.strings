@@ -27,11 +27,10 @@
 "Splash.Bottom" = "The sky above me. Earth below\nme. Fire within me.";
 
 // MARK: Paygate
-"Paygate.Title" = "Unlock it all!";
-"Paygate.Cell1" = "Complete collection of spells";
-"Paygate.Cell2" = "Lunar calendar";
-"Paygate.Cell3" = "Magical Herbs & Glossary";
-"Paygate.Cell4" = "Podcasts & Books";
+"Paygate.Title" = "Unlock Premium Status";
+"Paygate.Cell1" = "100+ workout plans and soccer drills";
+"Paygate.Cell2" = "Detailed instructions";
+"Paygate.Cell3" = "Easily schedule your training";
 "Paygate.Info" = "Secured by the App Store. Cancel anytime.";
 "Paygate.TermsOfUse" = "Terms of Use";
 "Paygate.PrivacyPolicy" = "Privacy Policy";

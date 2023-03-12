@@ -12,7 +12,6 @@ final class PaygateViewModel {
     let buy = PublishRelay<String>()
     let restore = PublishRelay<Void>()
     
-    lazy var questionsCount = makeQuestionsCount()
     lazy var products = makeProducts()
     lazy var buyed = makeBuyed()
     lazy var restored = makeRestored()
@@ -26,10 +25,6 @@ final class PaygateViewModel {
 
 // MARK: Private
 private extension PaygateViewModel {
-    func makeQuestionsCount() -> Driver<Int> {
-        .deferred { .just(200) }
-    }
-    
     func makeProducts() -> Driver<[PaygateOptionInfo]> {
         makeProductIds()
             .flatMap { [weak self] args -> Driver<[PaygateOptionInfo]> in

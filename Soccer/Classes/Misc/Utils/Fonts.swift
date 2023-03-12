@@ -10,10 +10,6 @@ import UIKit
 struct Fonts {
     // MARK: Inter
     struct Inter {
-        static func black(size: CGFloat) -> UIFont {
-            UIFont(name: "Inter-Black", size: size)!
-        }
-        
         static func bold(size: CGFloat) -> UIFont {
             UIFont(name: "Inter-Bold", size: size)!
         }
@@ -28,6 +24,10 @@ struct Fonts {
         
         static func regular(size: CGFloat) -> UIFont {
             UIFont(name: "Inter-Regular", size: size)!
+        }
+        
+        static func boldItalic(size: CGFloat) -> UIFont {
+            UIFont(name: "Inter-BoldItalic", size: size)!
         }
     }
     

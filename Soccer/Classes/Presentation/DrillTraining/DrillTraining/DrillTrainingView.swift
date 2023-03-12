@@ -27,7 +27,7 @@ final class DrillTrainingView: UIView {
         .textAlignment(.center)
     private lazy var preparedAttrs = TextAttributes()
         .textColor(Appearance.white)
-        .font(Fonts.Inter.black(size: 60.scale))
+        .font(Fonts.Inter.bold(size: 60.scale))
         .lineHeight(70.scale)
         .textAlignment(.center)
     
