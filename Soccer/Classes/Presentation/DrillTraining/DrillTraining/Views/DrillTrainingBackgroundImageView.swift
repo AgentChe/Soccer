@@ -12,15 +12,10 @@ final class DrillTrainingBackgroundImageView: UIImageView {
     lazy var shadowView = makeShadowView()
     lazy var gradientView = makeGradientView()
     
-    private let imageUrl: URL
-    
-    init(imageUrl: URL) {
-        self.imageUrl = imageUrl
-        
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         makeConstraints()
-        initialize()
     }
     
     required init?(coder: NSCoder) {
@@ -28,10 +23,10 @@ final class DrillTrainingBackgroundImageView: UIImageView {
     }
 }
 
-// MARK: Private
-private extension DrillTrainingBackgroundImageView {
-    func initialize() {
-        kf.setImage(with: imageUrl)
+// MARK: Public
+extension DrillTrainingBackgroundImageView {
+    func setup(image: URL) {
+        kf.setImage(with: image)
     }
 }
 

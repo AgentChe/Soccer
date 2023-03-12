@@ -208,6 +208,7 @@
 		DECA725929BC3AEF00F9667B /* PlanWeekDayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725829BC3AEF00F9667B /* PlanWeekDayButton.swift */; };
 		DECA725B29BC6DDC00F9667B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725A29BC6DDC00F9667B /* Date+Extension.swift */; };
 		DECA725F29BDA78400F9667B /* Inter-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DECA725E29BDA77600F9667B /* Inter-Italic.otf */; };
+		DECA726429BE3D3B00F9667B /* ScreenPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA726329BE3D3B00F9667B /* ScreenPreloader.swift */; };
 		DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* WorkoutManager.swift */; };
 		DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1729AF52C800661F03 /* SkillLevel.swift */; };
 		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
@@ -463,6 +464,7 @@
 		DECA725829BC3AEF00F9667B /* PlanWeekDayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanWeekDayButton.swift; sourceTree = "<group>"; };
 		DECA725A29BC6DDC00F9667B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DECA725E29BDA77600F9667B /* Inter-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Italic.otf"; sourceTree = "<group>"; };
+		DECA726329BE3D3B00F9667B /* ScreenPreloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPreloader.swift; sourceTree = "<group>"; };
 		DED00C1529AF523000661F03 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		DED00C1729AF52C800661F03 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
@@ -709,6 +711,7 @@
 				DEA8FDBD298A7AE000868C0E /* CircleView.swift */,
 				DEA8FDBE298A7AE000868C0E /* GradientView.swift */,
 				DEA8FDBF298A7AE000868C0E /* CircleProgressView.swift */,
+				DECA726329BE3D3B00F9667B /* ScreenPreloader.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1974,6 +1977,7 @@
 				DEA8FEBB298A7AE000868C0E /* TryAgainViewController.swift in Sources */,
 				DEBC2B13298BCF15002C84E3 /* OSkillLevelView.swift in Sources */,
 				DEC9006829A6191D001B24A3 /* DrillTrainingViewModel.swift in Sources */,
+				DECA726429BE3D3B00F9667B /* ScreenPreloader.swift in Sources */,
 				DED89CA52992464F00325104 /* HomeDrillCategoriesCollectionLayout.swift in Sources */,
 				DECA723C29B8FE6000F9667B /* PlanWorkout.swift in Sources */,
 				DEA8FE74298A7AE000868C0E /* Spinner.swift in Sources */,

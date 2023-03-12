@@ -52,9 +52,21 @@ final class DrillTrainingInstructionViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        viewModel.assignActivity
+            .drive(Binder(self) { base, activity in
+                base.assignActivity(activity)
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.elements
             .drive(Binder(mainView.tableView) { base, elements in
                 base.setup(elements: elements)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.route
+            .drive(Binder(self) { base, route in
+                base.route(route)
             })
             .disposed(by: disposeBag)
         
@@ -85,17 +97,27 @@ extension DrillTrainingInstructionViewController: DTITableDelegate {
     }
     
     func dtiTableDidTappedStartTraining() {
-        // TODO
-//        let vc = DrillTrainingViewController.make(drill: drill)
-//        present(vc, animated: true)
+        viewModel.didTapStartTraining.accept(Void())
     }
 }
 
 // MARK: Private
 private extension DrillTrainingInstructionViewController {
+    func route(_ route: DrillTrainingInstructionViewModel.Route) {
+        switch route {
+        case .training(let customerDrillId):
+            let vc = DrillTrainingViewController.make(customerDrillId: customerDrillId)
+            present(vc, animated: true)
+        }
+    }
+    
     func activity(_ activity: Bool) {
         mainView.tableView.isHidden = activity
         activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
+    }
+    
+    func assignActivity(_ activity: Bool) {
+        activity ? mainView.screenPreloader.startAnimating() : mainView.screenPreloader.stopAnimating()
     }
     
     func open(error: Error) -> Observable<Void> {

@@ -14,18 +14,27 @@ final class DrillTrainingMenuView: UIView {
     lazy var refreshButton = makeRefreshButton()
     lazy var finishButton = makeFinishButton()
     
-    private let name: String
-    
-    init(name: String) {
-        self.name = name
-        
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         makeConstrains()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Public
+extension DrillTrainingMenuView {
+    func setup(name: String) {
+        let attrs = TextAttributes()
+            .textColor(Appearance.white)
+            .font(Fonts.Inter.semiBold(size: 24.scale))
+            .lineHeight(28.8.scale)
+            .textAlignment(.center)
+            .lineBreakMode(.byTruncatingTail)
+        nameLabel.attributedText = name.attributed(with: attrs)
     }
 }
 
@@ -71,15 +80,7 @@ private extension DrillTrainingMenuView {
 // MARK: Lazy initialization
 private extension DrillTrainingMenuView {
     func makeNameLabel() -> UILabel {
-        let attrs = TextAttributes()
-            .textColor(Appearance.white)
-            .font(Fonts.Inter.semiBold(size: 24.scale))
-            .lineHeight(28.8.scale)
-            .textAlignment(.center)
-            .lineBreakMode(.byTruncatingTail)
-        
         let view = UILabel()
-        view.attributedText = name.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

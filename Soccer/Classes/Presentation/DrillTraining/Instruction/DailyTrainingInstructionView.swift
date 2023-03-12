@@ -10,6 +10,7 @@ import UIKit
 final class DrillTrainingInstructionView: UIView {
     lazy var tableView = makeTableView()
     lazy var preloader = makePreloader()
+    lazy var screenPreloader = makeScreenPreloader()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,6 +45,13 @@ private extension DrillTrainingInstructionView {
             preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
             preloader.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            screenPreloader.leadingAnchor.constraint(equalTo: leadingAnchor),
+            screenPreloader.trailingAnchor.constraint(equalTo: trailingAnchor),
+            screenPreloader.topAnchor.constraint(equalTo: topAnchor),
+            screenPreloader.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }
 
@@ -64,6 +72,13 @@ private extension DrillTrainingInstructionView {
     
     func makePreloader() -> Spinner {
         let view = Spinner(size: CGSize(width: 45.scale, height: 45.scale))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeScreenPreloader() -> ScreenPreloader {
+        let view = ScreenPreloader()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

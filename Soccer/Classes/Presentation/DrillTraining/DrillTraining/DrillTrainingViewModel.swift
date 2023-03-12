@@ -9,7 +9,9 @@ import RxSwift
 import RxCocoa
 
 final class DrillTrainingViewModel {
-    
+    init(customerDrillId: Int) {
+        
+    }
 }
 
 // MARK: Private
