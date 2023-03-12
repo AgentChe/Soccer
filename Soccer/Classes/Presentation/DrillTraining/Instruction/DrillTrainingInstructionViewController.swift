@@ -13,12 +13,16 @@ final class DrillTrainingInstructionViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var viewModel = DrillTrainingInstructionViewModel(drill: drill)
-    
-    private let drill: Drill
+    private let viewModel: DrillTrainingInstructionViewModel
     
     private init(drill: Drill) {
-        self.drill = drill
+        viewModel = DrillTrainingInstructionViewModel(source: .drill(drill))
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    private init(planDrill: PlanDrill) {
+        viewModel = DrillTrainingInstructionViewModel(source: .planDrill(planDrill))
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,6 +37,20 @@ final class DrillTrainingInstructionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            guard let self = self else {
+                return .never()
+            }
+            
+            return self.open(error: error)
+        }
+        
+        viewModel.activity
+            .drive(Binder(self) { base, activity in
+                base.activity(activity)
+            })
+            .disposed(by: disposeBag)
         
         viewModel.elements
             .drive(Binder(mainView.tableView) { base, elements in
@@ -51,6 +69,12 @@ extension DrillTrainingInstructionViewController {
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
+    
+    static func make(planDrill: PlanDrill) -> DrillTrainingInstructionViewController {
+        let vc = DrillTrainingInstructionViewController(planDrill: planDrill)
+        vc.navigationItem.backButtonTitle = " "
+        return vc
+    }
 }
 
 // MARK: DTITableDelegate
@@ -61,7 +85,32 @@ extension DrillTrainingInstructionViewController: DTITableDelegate {
     }
     
     func dtiTableDidTappedStartTraining() {
-        let vc = DrillTrainingViewController.make(drill: drill)
-        present(vc, animated: true)
+        // TODO
+//        let vc = DrillTrainingViewController.make(drill: drill)
+//        present(vc, animated: true)
+    }
+}
+
+// MARK: Private
+private extension DrillTrainingInstructionViewController {
+    func activity(_ activity: Bool) {
+        mainView.tableView.isHidden = activity
+        activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
+    }
+    
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
     }
 }

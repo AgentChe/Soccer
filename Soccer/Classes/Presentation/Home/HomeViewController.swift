@@ -74,8 +74,15 @@ extension HomeViewController {
 // MARK: HomeTableViewDelegate
 extension HomeViewController: HomeTableViewDelegate {
     func homeTableDidTap(drill: Drill) {
-        let vc = DrillTrainingInstructionViewController.make(drill: drill)
-        navigationController?.pushViewController(vc, animated: true)
+        let needPayment = drill.paid ? !SessionManager().hasActiveSubscriptions() : false
+        
+        if needPayment {
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
+        } else {
+            let vc = DrillTrainingInstructionViewController.make(drill: drill)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func homeTableDidTap(workoutTemplate: WorkoutTemplate) {
@@ -93,8 +100,8 @@ extension HomeViewController: HomeTableViewDelegate {
     }
     
     func homeTableDidTap(planDrill: PlanDrill) {
-        // TODO
-        print("homeTableDidTap planDrill: \(planDrill.name)")
+        let vc = DrillTrainingInstructionViewController.make(planDrill: planDrill)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func homeTableDidTap(planWorkout: PlanWorkout) {

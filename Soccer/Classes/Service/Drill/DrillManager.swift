@@ -12,7 +12,7 @@ protocol DrillManagerProtocol {
     func obtainDrills(categoryId: Int?, levelId: Int?) -> Single<[Drill]>
     func assignDrill(id: Int) -> Single<AssignedDrill?>
     func scheduleDrill(customerDrillId: Int, scheduleDate: TimeInterval) -> Single<AssignedDrill?>
-    func obtainDrillTrainig(customerDrillId: Int) -> Single<DrillTraining?>
+    func obtainDrillTraining(customerDrillId: Int) -> Single<DrillTraining?>
     func logProgress(customerDrillId: Int, trainedTime: Int, finish: Bool) -> Single<AssignedDrill?>
 }
 
@@ -93,7 +93,7 @@ extension DrillManager: DrillManagerProtocol {
             })
     }
     
-    func obtainDrillTrainig(customerDrillId: Int) -> Single<DrillTraining?> {
+    func obtainDrillTraining(customerDrillId: Int) -> Single<DrillTraining?> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
