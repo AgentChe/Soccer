@@ -144,3 +144,12 @@
 "DrillTraining.ConfirmFinish.SubTitle" = "Do you really want to end the workout?";
 "DrillTraining.ConfirmFinish.Continue" = "Continue training";
 "DrillTraining.ConfirmFinish.Quit" = "Quit training";
+
+// MARK: Train
+"Train.Filter.Drills" = "Drills";
+"Train.Filter.Workouts" = "Fitness";
+"Train.SeeAll" = "See all";
+
+// MARK: TrainInfo
+"TrainInfo.Title" = "Info";
+"TrainInfo.SubTitle" = "To change the level of difficulty please go to the settings To change the level of difficulty please go to the settings  ";

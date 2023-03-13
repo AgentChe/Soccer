@@ -209,6 +209,19 @@
 		DECA725B29BC6DDC00F9667B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA725A29BC6DDC00F9667B /* Date+Extension.swift */; };
 		DECA725F29BDA78400F9667B /* Inter-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DECA725E29BDA77600F9667B /* Inter-Italic.otf */; };
 		DECA726429BE3D3B00F9667B /* ScreenPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA726329BE3D3B00F9667B /* ScreenPreloader.swift */; };
+		DECA726829BF13B800F9667B /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA726729BF13B800F9667B /* TrainViewController.swift */; };
+		DECA726A29BF13BD00F9667B /* TrainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA726929BF13BD00F9667B /* TrainViewModel.swift */; };
+		DECA726C29BF13C200F9667B /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA726B29BF13C200F9667B /* TrainView.swift */; };
+		DECA727029BF152A00F9667B /* TrainFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA726F29BF152A00F9667B /* TrainFilterButton.swift */; };
+		DECA727229BF17AE00F9667B /* TrainFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA727129BF17AE00F9667B /* TrainFilterView.swift */; };
+		DECA727529BF1F5100F9667B /* TrainInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA727429BF1F5100F9667B /* TrainInfoViewController.swift */; };
+		DECA727729BF1F5500F9667B /* TrainInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA727629BF1F5500F9667B /* TrainInfoView.swift */; };
+		DECA727A29BF299900F9667B /* TrainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA727929BF299900F9667B /* TrainTableView.swift */; };
+		DECA727C29BF29A200F9667B /* TrainTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA727B29BF29A200F9667B /* TrainTableElement.swift */; };
+		DECA727F29BF2A0D00F9667B /* TrainTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA727E29BF2A0D00F9667B /* TrainTitleCell.swift */; };
+		DECA728229BF6B4200F9667B /* TrainCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA728129BF6B4200F9667B /* TrainCollectionCell.swift */; };
+		DECA728429BF6B4C00F9667B /* TrainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA728329BF6B4C00F9667B /* TrainCollectionView.swift */; };
+		DECA728629BF6B6500F9667B /* TrainTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA728529BF6B6500F9667B /* TrainTrainingCell.swift */; };
 		DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* WorkoutManager.swift */; };
 		DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1729AF52C800661F03 /* SkillLevel.swift */; };
 		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
@@ -465,6 +478,19 @@
 		DECA725A29BC6DDC00F9667B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DECA725E29BDA77600F9667B /* Inter-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Italic.otf"; sourceTree = "<group>"; };
 		DECA726329BE3D3B00F9667B /* ScreenPreloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPreloader.swift; sourceTree = "<group>"; };
+		DECA726729BF13B800F9667B /* TrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
+		DECA726929BF13BD00F9667B /* TrainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewModel.swift; sourceTree = "<group>"; };
+		DECA726B29BF13C200F9667B /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
+		DECA726F29BF152A00F9667B /* TrainFilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainFilterButton.swift; sourceTree = "<group>"; };
+		DECA727129BF17AE00F9667B /* TrainFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainFilterView.swift; sourceTree = "<group>"; };
+		DECA727429BF1F5100F9667B /* TrainInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainInfoViewController.swift; sourceTree = "<group>"; };
+		DECA727629BF1F5500F9667B /* TrainInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainInfoView.swift; sourceTree = "<group>"; };
+		DECA727929BF299900F9667B /* TrainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTableView.swift; sourceTree = "<group>"; };
+		DECA727B29BF29A200F9667B /* TrainTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTableElement.swift; sourceTree = "<group>"; };
+		DECA727E29BF2A0D00F9667B /* TrainTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTitleCell.swift; sourceTree = "<group>"; };
+		DECA728129BF6B4200F9667B /* TrainCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCollectionCell.swift; sourceTree = "<group>"; };
+		DECA728329BF6B4C00F9667B /* TrainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCollectionView.swift; sourceTree = "<group>"; };
+		DECA728529BF6B6500F9667B /* TrainTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTrainingCell.swift; sourceTree = "<group>"; };
 		DED00C1529AF523000661F03 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		DED00C1729AF52C800661F03 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
@@ -854,6 +880,7 @@
 		DEA8FDEF298A7AE000868C0E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DECA726529BF13A700F9667B /* Train */,
 				DED00C3829B0AF9400661F03 /* Paygate */,
 				DEC9004E29A5FE7B001B24A3 /* Drills */,
 				DED89CDB2994D6EC00325104 /* DrillTraining */,
@@ -1296,6 +1323,82 @@
 				DECA725829BC3AEF00F9667B /* PlanWeekDayButton.swift */,
 			);
 			path = Plan;
+			sourceTree = "<group>";
+		};
+		DECA726529BF13A700F9667B /* Train */ = {
+			isa = PBXGroup;
+			children = (
+				DECA727329BF1F4200F9667B /* Info */,
+				DECA726629BF13AD00F9667B /* Train */,
+			);
+			path = Train;
+			sourceTree = "<group>";
+		};
+		DECA726629BF13AD00F9667B /* Train */ = {
+			isa = PBXGroup;
+			children = (
+				DECA726D29BF145F00F9667B /* Views */,
+				DECA726729BF13B800F9667B /* TrainViewController.swift */,
+				DECA726929BF13BD00F9667B /* TrainViewModel.swift */,
+				DECA726B29BF13C200F9667B /* TrainView.swift */,
+			);
+			path = Train;
+			sourceTree = "<group>";
+		};
+		DECA726D29BF145F00F9667B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DECA727829BF298B00F9667B /* TableView */,
+				DECA726E29BF152000F9667B /* Filter */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DECA726E29BF152000F9667B /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				DECA726F29BF152A00F9667B /* TrainFilterButton.swift */,
+				DECA727129BF17AE00F9667B /* TrainFilterView.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		DECA727329BF1F4200F9667B /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				DECA727429BF1F5100F9667B /* TrainInfoViewController.swift */,
+				DECA727629BF1F5500F9667B /* TrainInfoView.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		DECA727829BF298B00F9667B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DECA727D29BF29FF00F9667B /* Cells */,
+				DECA727929BF299900F9667B /* TrainTableView.swift */,
+				DECA727B29BF29A200F9667B /* TrainTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DECA727D29BF29FF00F9667B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DECA728029BF6B3700F9667B /* Collection */,
+				DECA727E29BF2A0D00F9667B /* TrainTitleCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DECA728029BF6B3700F9667B /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				DECA728129BF6B4200F9667B /* TrainCollectionCell.swift */,
+				DECA728329BF6B4C00F9667B /* TrainCollectionView.swift */,
+				DECA728529BF6B6500F9667B /* TrainTrainingCell.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		DED00C1329AF522000661F03 /* Model */ = {
@@ -1761,6 +1864,7 @@
 				DEA8FEFB298A7CD800868C0E /* PlusJakartaSans-Regular.ttf in Sources */,
 				DEC9007B29A64979001B24A3 /* DrillTrainingQuitView.swift in Sources */,
 				DEA8FEFC298A7CD800868C0E /* PlusJakartaSans-Bold.ttf in Sources */,
+				DECA727C29BF29A200F9667B /* TrainTableElement.swift in Sources */,
 				DECA721B29B8090100F9667B /* AssignedWorkout.swift in Sources */,
 				DEBC2B43298CFD2B002C84E3 /* OPositionView.swift in Sources */,
 				DEC9005C29A60303001B24A3 /* DrillsTableElement.swift in Sources */,
@@ -1779,6 +1883,7 @@
 				DECA723E29B9000300F9667B /* PlanOnDay.swift in Sources */,
 				DED89CEB2994DC8400325104 /* DTIHeaderCell.swift in Sources */,
 				DED89C8F2990EDAD00325104 /* SeeAllTableCell.swift in Sources */,
+				DECA728429BF6B4C00F9667B /* TrainCollectionView.swift in Sources */,
 				DEA8FF02298A7CD800868C0E /* Inter-SemiBold.ttf in Sources */,
 				DEC9006129A60B6E001B24A3 /* GetDrillsRequest.swift in Sources */,
 				DECA723829B8FDC600F9667B /* PlanDrill.swift in Sources */,
@@ -1809,6 +1914,7 @@
 				DEA8FE7B298A7AE000868C0E /* PushNotificationsManager.swift in Sources */,
 				DEC9006329A60B74001B24A3 /* GetDrillsResponse.swift in Sources */,
 				DEACE5C0298A9C4A0096FF15 /* OAgeButton.swift in Sources */,
+				DECA727F29BF2A0D00F9667B /* TrainTitleCell.swift in Sources */,
 				DECA720B29B7618900F9667B /* GetDrillTrainingResponse.swift in Sources */,
 				DECA724829B9BBE300F9667B /* PlanMediator.swift in Sources */,
 				DECA724A29B9BCB300F9667B /* DrillMediator.swift in Sources */,
@@ -1852,12 +1958,16 @@
 				DECA720E29B7638B00F9667B /* LogDrillProgressRequest.swift in Sources */,
 				DECA724C29B9BE0D00F9667B /* WorkoutMediator.swift in Sources */,
 				DED89C9129913D9A00325104 /* HomeTitleCell.swift in Sources */,
+				DECA727529BF1F5100F9667B /* TrainInfoViewController.swift in Sources */,
+				DECA726829BF13B800F9667B /* TrainViewController.swift in Sources */,
+				DECA727029BF152A00F9667B /* TrainFilterButton.swift in Sources */,
 				DEA8FE81298A7AE000868C0E /* BranchManager.swift in Sources */,
 				DED00C5429B0B8C100661F03 /* GetWorkoutStepsRequest.swift in Sources */,
 				DED00C2529AF6DDD00661F03 /* GetFocusZonesRequest.swift in Sources */,
 				DED00C4A29B0AF9400661F03 /* PaygateViewController.swift in Sources */,
 				DEA8FE6A298A7AE000868C0E /* ContentError.swift in Sources */,
 				DECA723A29B8FDFD00F9667B /* PlanStatus.swift in Sources */,
+				DECA727229BF17AE00F9667B /* TrainFilterView.swift in Sources */,
 				DED89C792990D48D00325104 /* GetHomeKitResponse.swift in Sources */,
 				DED89CB62992880100325104 /* HomeWorkoutsCollectionView.swift in Sources */,
 				DEC9007629A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift in Sources */,
@@ -1887,6 +1997,7 @@
 				DEA8FE56298A7AE000868C0E /* UIApplication+Extension.swift in Sources */,
 				DEACE5C2298A9C8E0096FF15 /* OAgeView.swift in Sources */,
 				DEA8FE71298A7AE000868C0E /* NavigationControllerSettings.swift in Sources */,
+				DECA726C29BF13C200F9667B /* TrainView.swift in Sources */,
 				DEC9005429A5FE9A001B24A3 /* DrillsView.swift in Sources */,
 				DED00C4729B0AF9400661F03 /* PaygateViewControllerDelegate.swift in Sources */,
 				DED00C3429B0AF8A00661F03 /* Paygate.swift in Sources */,
@@ -1902,6 +2013,7 @@
 				DEA8FE7D298A7AE000868C0E /* PushNotificationsModel.swift in Sources */,
 				DEA8FE5B298A7AE000868C0E /* String+Extension.swift in Sources */,
 				DED89C992991476100325104 /* DailyPicksCollectionView.swift in Sources */,
+				DECA728629BF6B6500F9667B /* TrainTrainingCell.swift in Sources */,
 				DEA8FE75298A7AE000868C0E /* PaddingTextField.swift in Sources */,
 				DED89CE02994D71C00325104 /* DrillTrainingInstructionViewModel.swift in Sources */,
 				DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */,
@@ -1913,6 +2025,7 @@
 				DEBC2B41298CFC83002C84E3 /* OPositionButton.swift in Sources */,
 				DED89CB4299287FA00325104 /* HomeWorkoutsCollectionCell.swift in Sources */,
 				DED89C742990D3CF00325104 /* HomeKit.swift in Sources */,
+				DECA726A29BF13BD00F9667B /* TrainViewModel.swift in Sources */,
 				DEA8FE96298A7AE000868C0E /* IAPErrorHelper.swift in Sources */,
 				DEBC2B1F298BFACD002C84E3 /* ODayOfWeekButton.swift in Sources */,
 				DEA8FE76298A7AE000868C0E /* PaddingLabel.swift in Sources */,
@@ -1945,6 +2058,7 @@
 				DED89CED2995209E00325104 /* DTIDescriptionCell.swift in Sources */,
 				DEA8FE8E298A7AE000868C0E /* SyncTokensRequest.swift in Sources */,
 				DED00C3529B0AF8A00661F03 /* GetPaygateResponse.swift in Sources */,
+				DECA727A29BF299900F9667B /* TrainTableView.swift in Sources */,
 				DED89C862990DA4800325104 /* HomeView.swift in Sources */,
 				DEACE5C4298AA0020096FF15 /* ORoleButton.swift in Sources */,
 				DEA8FE90298A7AE000868C0E /* IAPManager.swift in Sources */,
@@ -1958,6 +2072,7 @@
 				DED89CEF299522AF00325104 /* DTIButtonsCell.swift in Sources */,
 				DEC9005A29A602E0001B24A3 /* DrillsTableCell.swift in Sources */,
 				DEA8FEE0298A7AE000868C0E /* OnboardingView.swift in Sources */,
+				DECA727729BF1F5500F9667B /* TrainInfoView.swift in Sources */,
 				DED89CDE2994D71500325104 /* DrillTrainingInstructionViewController.swift in Sources */,
 				DECA721729B8046800F9667B /* GetWorkoutTemplateRequest.swift in Sources */,
 				DEA8FE93298A7AE000868C0E /* IAPActionResult.swift in Sources */,
@@ -1997,6 +2112,7 @@
 				DED89CE22994D72000325104 /* DailyTrainingInstructionView.swift in Sources */,
 				DEBC2B15298BEFE2002C84E3 /* OGoalButton.swift in Sources */,
 				DEA8FE5D298A7AE000868C0E /* GlobalDefinitions.swift in Sources */,
+				DECA728229BF6B4200F9667B /* TrainCollectionCell.swift in Sources */,
 				DECA723129B88C8800F9667B /* LogWorkoutProgressResponse.swift in Sources */,
 				DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */,
 			);
