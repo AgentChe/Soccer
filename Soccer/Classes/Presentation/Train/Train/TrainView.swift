@@ -38,7 +38,7 @@ private extension TrainView {
         NSLayoutConstraint.activate([
             infoButton.widthAnchor.constraint(equalToConstant: 24.scale),
             infoButton.heightAnchor.constraint(equalToConstant: 24.scale),
-            infoButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 50.scale : 50.scale),
+            infoButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 50.scale : 20.scale),
             infoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale)
         ])
         

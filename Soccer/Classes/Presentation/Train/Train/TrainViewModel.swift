@@ -16,6 +16,10 @@ final class TrainViewModel {
     lazy var sections = makeSections()
     lazy var activity = RxActivityIndicator()
     
+    private lazy var workoutsSections = makeWorkoutsSections()
+    private lazy var workoutSteps = makeWorkoutSteps()
+    private lazy var focusZones = makeFocusZones()
+    private lazy var workoutCovers = makeWorkoutCovers()
     private lazy var drillsSections = makeDrillsSections()
     private lazy var drills = makeDrills()
     private lazy var drillCategories = makeDrillCategories()
@@ -33,15 +37,95 @@ final class TrainViewModel {
 private extension TrainViewModel {
     func makeSections() -> Driver<[TrainTableSection]> {
         Driver
-            .combineLatest(didSelectFilter.asDriver(onErrorDriveWith: .never()), drillsSections)
-            .map { filter, drillsSections -> [TrainTableSection] in
+            .combineLatest(didSelectFilter.asDriver(onErrorDriveWith: .never()), drillsSections, workoutsSections)
+            .map { filter, drillsSections, workoutsSections -> [TrainTableSection] in
                 switch filter {
                 case .drills:
                     return drillsSections
                 case .workouts:
-                    return []
+                    return workoutsSections
                 }
             }
+    }
+    
+    func makeWorkoutsSections() -> Driver<[TrainTableSection]> {
+        Driver
+            .combineLatest(
+                skillLevel.asDriver(onErrorDriveWith: .never()),
+                workoutCovers,
+                focusZones,
+                workoutSteps
+            )
+            .map { skillLevel, workoutCovers, focusZones, workoutSteps -> [TrainTableSection] in
+                let workoutCoversSection = TrainTableSection(
+                    elements: [
+                        .title(.workout("Train.Workouts".localized)),
+                        .trainings(workoutCovers.map { workoutCover -> TrainTrainigElement in
+                            TrainTrainigElement(
+                                training: .workoutCover(workoutCover),
+                                image: workoutCover.image,
+                                name: workoutCover.name,
+                                tag1: skillLevel.name,
+                                tag2: nil
+                            )
+                        })
+                    ]
+                )
+                
+                let focusZonesSection = TrainTableSection(
+                    elements: [
+                        .title(.workout("Train.FocusZones".localized)),
+                        .trainings(focusZones.map { focusZone -> TrainTrainigElement in
+                            TrainTrainigElement(
+                                training: .focusZone(focusZone),
+                                image: focusZone.image,
+                                name: focusZone.name,
+                                tag1: skillLevel.name,
+                                tag2: nil
+                            )
+                        })
+                    ]
+                )
+                
+                let workoutStepsSection = TrainTableSection(
+                    elements: [
+                        .title(.workout("Train.Steps".localized)),
+                        .trainings(workoutSteps.map { workoutStep -> TrainTrainigElement in
+                            TrainTrainigElement(
+                                training: .workoutStep(workoutStep),
+                                image: workoutStep.image,
+                                name: workoutStep.name,
+                                tag1: skillLevel.name,
+                                tag2: nil
+                            )
+                        })
+                    ]
+                )
+                
+                return [
+                    workoutCoversSection,
+                    focusZonesSection,
+                    workoutStepsSection
+                ]
+            }
+    }
+    
+    func makeWorkoutSteps() -> Driver<[WorkoutStep]> {
+        workoutManager
+            .obtainWorkoutSteps(forceUpdate: false)
+            .asDriver(onErrorJustReturn: [])
+    }
+    
+    func makeFocusZones() -> Driver<[FocusZone]> {
+        workoutManager
+            .obtainFocusZones(forceUpdate: false)
+            .asDriver(onErrorJustReturn: [])
+    }
+    
+    func makeWorkoutCovers() -> Driver<[WorkoutCover]> {
+        workoutManager
+            .obtainWorkoutCovers(forceUpdate: false)
+            .asDriver(onErrorJustReturn: [])
     }
     
     func makeDrillsSections() -> Driver<[TrainTableSection]> {

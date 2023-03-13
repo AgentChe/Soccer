@@ -149,7 +149,10 @@
 "Train.Filter.Drills" = "Drills";
 "Train.Filter.Workouts" = "Fitness";
 "Train.SeeAll" = "See all";
+"Train.Workouts" = "Workouts";
+"Train.FocusZones" = "Focus Zones";
+"Train.Steps" = "Select by goals";
 
 // MARK: TrainInfo
 "TrainInfo.Title" = "Info";
-"TrainInfo.SubTitle" = "To change the level of difficulty please go to the settings To change the level of difficulty please go to the settings  ";
+"TrainInfo.SubTitle" = "To change the level of difficulty please go to the settings To change the level of difficulty please go to the settings";

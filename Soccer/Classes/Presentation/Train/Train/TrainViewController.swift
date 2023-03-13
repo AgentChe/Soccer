@@ -15,6 +15,18 @@ final class TrainViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
+    private let didOpenProfile: (() -> Void)
+    
+    private init(didOpenProfile: @escaping () -> Void) {
+        self.didOpenProfile = didOpenProfile
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = mainView
     }
@@ -71,8 +83,8 @@ final class TrainViewController: UIViewController {
 
 // MARK: Make
 extension TrainViewController {
-    static func make() -> TrainViewController {
-        let vc = TrainViewController()
+    static func make(didOpenProfile: @escaping () -> Void) -> TrainViewController {
+        let vc = TrainViewController(didOpenProfile: didOpenProfile)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
@@ -98,11 +110,11 @@ extension TrainViewController: TrainTableDelegate {
                 navigationController?.pushViewController(vc, animated: true)
             }
         case .workoutCover(let workoutCover):
-            break
-        case .focuzZone(let focusZone):
-            break
+            break // TODO
+        case .focusZone(let focusZone):
+            break // TODO
         case .workoutStep(let workoutStep):
-            break
+            break // TODO
         }
     }
 }
@@ -111,7 +123,7 @@ extension TrainViewController: TrainTableDelegate {
 private extension TrainViewController {
     func didTapInfo() {
         let vc = TrainInfoViewController.make { [weak self] in
-            // TODO: open profile
+            self?.didOpenProfile()
         }
         present(vc, animated: false)
     }

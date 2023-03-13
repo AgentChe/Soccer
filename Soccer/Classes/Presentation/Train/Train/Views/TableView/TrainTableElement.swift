@@ -25,7 +25,7 @@ struct TrainTrainigElement {
     enum Training {
         case drill(Drill)
         case workoutCover(WorkoutCover)
-        case focuzZone(FocusZone)
+        case focusZone(FocusZone)
         case workoutStep(WorkoutStep)
     }
     
