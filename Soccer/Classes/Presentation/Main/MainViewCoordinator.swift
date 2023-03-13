@@ -10,7 +10,11 @@ import UIKit
 final class MainViewCoordinator {
     weak var parentVC: MainViewController?
     
-    lazy var homeVC = NavigationController(rootViewController: HomeViewController.make())
+    lazy var homeVC = NavigationController(rootViewController: HomeViewController.make(seeAllDrills: { [weak self] in
+        self?.change(tab: .train)
+    }, seeAllWorkouts: { [weak self] in
+        self?.change(tab: .train)
+    }))
     lazy var trainVC = NavigationController(rootViewController: TrainViewController.make { [weak self] in
         self?.change(tab: .profile)
     })

@@ -15,6 +15,20 @@ final class HomeViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
+    private let seeAllDrills: (() -> Void)
+    private let seeAllWorkouts: (() -> Void)
+    
+    private init(seeAllDrills: @escaping (() -> Void), seeAllWorkouts: @escaping (() -> Void)) {
+        self.seeAllDrills = seeAllDrills
+        self.seeAllWorkouts = seeAllWorkouts
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = mainView
     }
@@ -64,8 +78,8 @@ final class HomeViewController: UIViewController {
 
 // MARK: Make
 extension HomeViewController {
-    static func make() -> HomeViewController {
-        let vc = HomeViewController()
+    static func make(seeAllDrills: @escaping (() -> Void), seeAllWorkouts: @escaping (() -> Void)) -> HomeViewController {
+        let vc = HomeViewController(seeAllDrills: seeAllDrills, seeAllWorkouts: seeAllWorkouts)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
@@ -120,13 +134,11 @@ extension HomeViewController: HomeTableViewDelegate {
     }
     
     func homeTableDidTapTryDrills() {
-        // TODO
-        print("homeTableDidTapTryDrills")
+        seeAllDrills()
     }
     
     func homeTableDidTapWorkouts() {
-        // TODO
-        print("homeTableDidTapWorkouts")
+        seeAllWorkouts()
     }
 }
 
