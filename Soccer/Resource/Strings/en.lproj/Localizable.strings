@@ -23,8 +23,9 @@
 "TryAgain.Contact" = "Contact the support";
 
 // MARK: Splash
-"Splash.Text" = "Wicca Spells";
-"Splash.Bottom" = "The sky above me. Earth below\nme. Fire within me.";
+"Splash.Preloader1" = "Checking your account...";
+"Splash.Preloader2" = "Syncing the soccer library";
+"Splash.Preloader3" = "Setting up your account...";
 
 // MARK: Paygate
 "Paygate.Title" = "Unlock Premium Status";

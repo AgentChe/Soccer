@@ -93,6 +93,14 @@ private extension SplashViewController {
     
     func activity(state: SplashActivity) {
         state == .none ? mainView.preloader.stopAnimating() : mainView.preloader.startAnimating()
+        
+        let attrs = TextAttributes()
+            .textColor(Appearance.white)
+            .font(Fonts.PlusJakartaSans.regular(size: 14.scale))
+            .lineHeight(19.6.scale)
+            .letterSpacing(-0.17.scale)
+            .textAlignment(.center)
+        mainView.preloaderLabel.attributedText = state.text.attributed(with: attrs)
     }
     
     func open(error: Error) -> Observable<Void> {

@@ -8,7 +8,9 @@
 import UIKit
 
 final class SplashView: UIView {
+    lazy var imageView = makeImageView()
     lazy var preloader = makePreloader()
+    lazy var preloaderLabel = makeLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +27,7 @@ final class SplashView: UIView {
 // MARK: Private
 private extension SplashView {
     func initialize() {
-        backgroundColor = Appearance.black
+        backgroundColor = Appearance.background
     }
 }
 
@@ -33,17 +35,47 @@ private extension SplashView {
 private extension SplashView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 100.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 100.scale),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
-            preloader.centerYAnchor.constraint(equalTo: centerYAnchor)
+            preloader.bottomAnchor.constraint(equalTo: preloaderLabel.topAnchor, constant: -10.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            preloaderLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            preloaderLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            preloaderLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -54.scale : -34.scale)
         ])
     }
 }
 
 // MARK: Lazy initialization
 private extension SplashView {
+    func makeImageView() -> UIImageView {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        view.image = UIImage(named: "Splash.Image")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makePreloader() -> Spinner {
-        let view = Spinner(size: CGSize(width: 45.scale, height: 45.scale))
+        let view = Spinner(size: CGSize(width: 36.scale, height: 36.scale))
         view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeLabel() -> UILabel {
+        let view = UILabel()
+        view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
