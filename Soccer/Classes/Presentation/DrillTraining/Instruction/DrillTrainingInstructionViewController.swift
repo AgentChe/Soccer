@@ -15,6 +15,8 @@ final class DrillTrainingInstructionViewController: UIViewController {
     
     private let viewModel: DrillTrainingInstructionViewModel
     
+    private lazy var drillTrainingAssembly = DrillTrainingAssembly()
+    
     private init(drill: Drill) {
         viewModel = DrillTrainingInstructionViewModel(source: .drill(drill))
         
@@ -106,8 +108,7 @@ private extension DrillTrainingInstructionViewController {
     func route(_ route: DrillTrainingInstructionViewModel.Route) {
         switch route {
         case .training(let customerDrillId):
-            let vc = DrillTrainingViewController.make(customerDrillId: customerDrillId)
-            present(vc, animated: true)
+            drillTrainingAssembly.startTraining(from: self, customerDrillId: customerDrillId)
         }
     }
     

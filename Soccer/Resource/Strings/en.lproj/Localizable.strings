@@ -142,6 +142,9 @@
 "DrillTraining.Instruction" = "Instruction";
 "DrillTraining.Paused" = "PAUSED";
 
+"DrillTrainingResult.Title" = "Workout completed";
+"DrillTrainingResult.Duration" = "Duration:";
+
 // MARK: DrillTrainingQuit
 "DrillTrainingQuit.Title" = "Are you sure?";
 "DrillTrainingQuit.SubTitle" = "Do you really want to end the workout?";

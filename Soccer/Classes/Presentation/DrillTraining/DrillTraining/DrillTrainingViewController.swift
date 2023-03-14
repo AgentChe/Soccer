@@ -17,8 +17,11 @@ final class DrillTrainingViewController: UIViewController {
     
     private lazy var lifeCyrcle = DrillTrainingLifeCyrcle()
     
-    private init(customerDrillId: Int) {
+    private let didFinish: ((DrillTraining) -> Void)
+    
+    private init(customerDrillId: Int, didFinish: @escaping ((DrillTraining) -> Void)) {
         viewModel = DrillTrainingViewModel(customerDrillId: customerDrillId)
+        self.didFinish = didFinish
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -108,8 +111,8 @@ final class DrillTrainingViewController: UIViewController {
 
 // MARK: Make
 extension DrillTrainingViewController {
-    static func make(customerDrillId: Int) -> DrillTrainingViewController {
-        let vc = DrillTrainingViewController(customerDrillId: customerDrillId)
+    static func make(customerDrillId: Int, didFinish: @escaping ((DrillTraining) -> Void)) -> DrillTrainingViewController {
+        let vc = DrillTrainingViewController(customerDrillId: customerDrillId, didFinish: didFinish)
         vc.modalPresentationStyle = .fullScreen
         return vc
     }
@@ -179,8 +182,10 @@ extension DrillTrainingViewController: DrillTrainingLifeCyrcleDelegate {
 private extension DrillTrainingViewController {
     func route(_ route: DrillTrainingViewModel.Route) {
         switch route {
-        case .finished(let assignedDrill):
-            print(assignedDrill)
+        case .finished(let drillTraining):
+            dismiss(animated: true) { [weak self] in
+                self?.didFinish(drillTraining)
+            }
         }
     }
     

@@ -10,7 +10,7 @@ import RxCocoa
 
 final class DrillTrainingViewModel {
     enum Route {
-        case finished(AssignedDrill)
+        case finished(DrillTraining)
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -39,24 +39,28 @@ private extension DrillTrainingViewModel {
     func makeRoute() -> Driver<Route> {
         didFinishTraining
             .withLatestFrom(drillTraining) { ($0, $1) }
-            .flatMapLatest { [weak self] totalSeconds, drillTraining -> Observable<AssignedDrill> in
+            .flatMapLatest { [weak self] totalSeconds, drillTraining -> Observable<DrillTraining> in
                 guard let self = self else {
                     return .never()
                 }
                 
-                func source() -> Single<AssignedDrill> {
+                func source() -> Single<DrillTraining> {
                     self.drillManager
                         .logProgress(
                             customerDrillId: drillTraining.assignedDrill.customerDrillId,
                             trainedTime: totalSeconds,
                             finish: true
                         )
-                        .flatMap { assignedDrill -> Single<AssignedDrill> in
+                        .flatMap { assignedDrill -> Single<DrillTraining> in
                             guard let assignedDrill = assignedDrill else {
                                 return .error(ContentError(.notContent))
                             }
                             
-                            return .just(assignedDrill)
+                            let result = DrillTraining(
+                                drill: drillTraining.drill,
+                                assignedDrill: assignedDrill
+                            )
+                            return .just(result)
                         }
                 }
                 
