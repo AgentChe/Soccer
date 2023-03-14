@@ -14,6 +14,8 @@ final class DrillTrainingView: UIView {
     lazy var pausedLabel = makePausedLabel()
     lazy var prepareLabel = makeLabel()
     lazy var menuView = makeMenuView()
+    lazy var instructionView = makeInstructionView()
+    lazy var preloader = makePreloader()
     
     private lazy var trainingTickAttrs = TextAttributes()
         .textColor(Appearance.white)
@@ -32,6 +34,7 @@ final class DrillTrainingView: UIView {
         .textAlignment(.center)
     
     private lazy var menuBottomConstraint = NSLayoutConstraint()
+    private lazy var instructionBottomConstraint = NSLayoutConstraint()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,6 +53,7 @@ extension DrillTrainingView {
     func setup(drill: Drill) {
         imageView.setup(image: drill.image)
         menuView.setup(name: drill.name)
+        instructionView.setup(instruction: drill.instruction)
     }
     
     func setup(trainingTick: String) {
@@ -64,10 +68,28 @@ extension DrillTrainingView {
         prepareLabel.attributedText = prepared.attributed(with: preparedAttrs)
     }
     
-    func menu(hidden: Bool, animated: Bool = true, completion: (() -> Void)?) {
+    func menu(hidden: Bool, animated: Bool = true, completion: (() -> Void)? = nil) {
         menuBottomConstraint.isActive = false
-        menuBottomConstraint.constant = hidden ? -289.scale : 0
+        menuBottomConstraint.constant = hidden ? 289.scale : 0
         menuBottomConstraint.isActive = true
+        
+        if animated {
+            UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                self?.layoutIfNeeded()
+            }, completion: { success in
+                completion?()
+            })
+        } else {
+            layoutIfNeeded()
+            
+            completion?()
+        }
+    }
+    
+    func instruction(hidden: Bool, animated: Bool = true, completion: (() -> Void)? = nil) {
+        instructionBottomConstraint.isActive = false
+        instructionBottomConstraint.constant = hidden ? 364.scale : 0
+        instructionBottomConstraint.isActive = true
         
         if animated {
             UIView.animate(withDuration: 0.3, animations: { [weak self] in
@@ -103,13 +125,13 @@ private extension DrillTrainingView {
         NSLayoutConstraint.activate([
             closeButton.widthAnchor.constraint(equalToConstant: 36.scale),
             closeButton.heightAnchor.constraint(equalToConstant: 36.scale),
-            closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 54.scale),
+            closeButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 54.scale : 34.scale),
             closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale)
         ])
         
         NSLayoutConstraint.activate([
             trainingTickLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            trainingTickLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60.scale)
+            trainingTickLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 60.scale : 40.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -128,6 +150,21 @@ private extension DrillTrainingView {
             menuView.trailingAnchor.constraint(equalTo: trailingAnchor),
             menuBottomConstraint,
             menuView.heightAnchor.constraint(equalToConstant: 289.scale)
+        ])
+        
+        instructionBottomConstraint = instructionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        NSLayoutConstraint.activate([
+            instructionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            instructionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            instructionBottomConstraint,
+            instructionView.heightAnchor.constraint(equalToConstant: 364.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            preloader.leadingAnchor.constraint(equalTo: leadingAnchor),
+            preloader.trailingAnchor.constraint(equalTo: trailingAnchor),
+            preloader.topAnchor.constraint(equalTo: topAnchor),
+            preloader.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
@@ -180,6 +217,20 @@ private extension DrillTrainingView {
     func makeMenuView() -> DrillTrainingMenuView {
         let view = DrillTrainingMenuView()
         view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeInstructionView() -> DrillTrainingInstructionScrollView {
+        let view = DrillTrainingInstructionScrollView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> ScreenPreloader {
+        let view = ScreenPreloader()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

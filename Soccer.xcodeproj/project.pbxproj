@@ -157,7 +157,6 @@
 		DEC9006829A6191D001B24A3 /* DrillTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9006729A6191D001B24A3 /* DrillTrainingViewModel.swift */; };
 		DEC9006A29A61923001B24A3 /* DrillTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9006929A61923001B24A3 /* DrillTrainingView.swift */; };
 		DEC9006D29A61B5F001B24A3 /* DrillTrainingBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9006C29A61B5F001B24A3 /* DrillTrainingBackgroundImageView.swift */; };
-		DEC9007029A62024001B24A3 /* DrillTrainingPrepareTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9006F29A62024001B24A3 /* DrillTrainingPrepareTimer.swift */; };
 		DEC9007229A623CE001B24A3 /* DrillTrainingLifeCyrcle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007129A623CE001B24A3 /* DrillTrainingLifeCyrcle.swift */; };
 		DEC9007429A637E0001B24A3 /* DrillTrainingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007329A637E0001B24A3 /* DrillTrainingMenuView.swift */; };
 		DEC9007629A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9007529A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift */; };
@@ -222,6 +221,7 @@
 		DECA728229BF6B4200F9667B /* TrainCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA728129BF6B4200F9667B /* TrainCollectionCell.swift */; };
 		DECA728429BF6B4C00F9667B /* TrainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA728329BF6B4C00F9667B /* TrainCollectionView.swift */; };
 		DECA728629BF6B6500F9667B /* TrainTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA728529BF6B6500F9667B /* TrainTrainingCell.swift */; };
+		DECA728929BFC8CC00F9667B /* DrillTrainingInstructionScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA728829BFC8CC00F9667B /* DrillTrainingInstructionScrollView.swift */; };
 		DED00C1629AF523000661F03 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1529AF523000661F03 /* WorkoutManager.swift */; };
 		DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1729AF52C800661F03 /* SkillLevel.swift */; };
 		DED00C1B29AF52FB00661F03 /* GetSkillLevelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */; };
@@ -426,7 +426,6 @@
 		DEC9006729A6191D001B24A3 /* DrillTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingViewModel.swift; sourceTree = "<group>"; };
 		DEC9006929A61923001B24A3 /* DrillTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingView.swift; sourceTree = "<group>"; };
 		DEC9006C29A61B5F001B24A3 /* DrillTrainingBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingBackgroundImageView.swift; sourceTree = "<group>"; };
-		DEC9006F29A62024001B24A3 /* DrillTrainingPrepareTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingPrepareTimer.swift; sourceTree = "<group>"; };
 		DEC9007129A623CE001B24A3 /* DrillTrainingLifeCyrcle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingLifeCyrcle.swift; sourceTree = "<group>"; };
 		DEC9007329A637E0001B24A3 /* DrillTrainingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingMenuView.swift; sourceTree = "<group>"; };
 		DEC9007529A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingPlayPauseButton.swift; sourceTree = "<group>"; };
@@ -491,6 +490,7 @@
 		DECA728129BF6B4200F9667B /* TrainCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCollectionCell.swift; sourceTree = "<group>"; };
 		DECA728329BF6B4C00F9667B /* TrainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCollectionView.swift; sourceTree = "<group>"; };
 		DECA728529BF6B6500F9667B /* TrainTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTrainingCell.swift; sourceTree = "<group>"; };
+		DECA728829BFC8CC00F9667B /* DrillTrainingInstructionScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillTrainingInstructionScrollView.swift; sourceTree = "<group>"; };
 		DED00C1529AF523000661F03 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		DED00C1729AF52C800661F03 /* SkillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillLevel.swift; sourceTree = "<group>"; };
 		DED00C1A29AF52FB00661F03 /* GetSkillLevelsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSkillLevelsRequest.swift; sourceTree = "<group>"; };
@@ -1152,10 +1152,10 @@
 		DEC9006B29A61929001B24A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DEC9007729A6495A001B24A3 /* Quit */,
 				DEC9006C29A61B5F001B24A3 /* DrillTrainingBackgroundImageView.swift */,
 				DEC9007329A637E0001B24A3 /* DrillTrainingMenuView.swift */,
 				DEC9007529A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift */,
+				DECA728829BFC8CC00F9667B /* DrillTrainingInstructionScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1163,19 +1163,9 @@
 		DEC9006E29A62018001B24A3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DEC9006F29A62024001B24A3 /* DrillTrainingPrepareTimer.swift */,
 				DEC9007129A623CE001B24A3 /* DrillTrainingLifeCyrcle.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		DEC9007729A6495A001B24A3 /* Quit */ = {
-			isa = PBXGroup;
-			children = (
-				DEC9007829A64974001B24A3 /* DrillTrainingQuitViewController.swift */,
-				DEC9007A29A64979001B24A3 /* DrillTrainingQuitView.swift */,
-			);
-			path = Quit;
 			sourceTree = "<group>";
 		};
 		DECA71F229B68E7200F9667B /* GetWorkoutCovers */ = {
@@ -1399,6 +1389,15 @@
 				DECA728529BF6B6500F9667B /* TrainTrainingCell.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		DECA728729BFB1CA00F9667B /* Quit */ = {
+			isa = PBXGroup;
+			children = (
+				DEC9007829A64974001B24A3 /* DrillTrainingQuitViewController.swift */,
+				DEC9007A29A64979001B24A3 /* DrillTrainingQuitView.swift */,
+			);
+			path = Quit;
 			sourceTree = "<group>";
 		};
 		DED00C1329AF522000661F03 /* Model */ = {
@@ -1686,6 +1685,7 @@
 		DED89CDB2994D6EC00325104 /* DrillTraining */ = {
 			isa = PBXGroup;
 			children = (
+				DECA728729BFB1CA00F9667B /* Quit */,
 				DEC9006429A6190C001B24A3 /* DrillTraining */,
 				DED89CDC2994D70000325104 /* Instruction */,
 			);
@@ -1866,6 +1866,7 @@
 				DEA8FEFC298A7CD800868C0E /* PlusJakartaSans-Bold.ttf in Sources */,
 				DECA727C29BF29A200F9667B /* TrainTableElement.swift in Sources */,
 				DECA721B29B8090100F9667B /* AssignedWorkout.swift in Sources */,
+				DECA728929BFC8CC00F9667B /* DrillTrainingInstructionScrollView.swift in Sources */,
 				DEBC2B43298CFD2B002C84E3 /* OPositionView.swift in Sources */,
 				DEC9005C29A60303001B24A3 /* DrillsTableElement.swift in Sources */,
 				DECA71FB29B75C3F00F9667B /* AssignDrillRequest.swift in Sources */,
@@ -2039,7 +2040,6 @@
 				DECA722F29B88C8200F9667B /* LogWorkoutProgressRequest.swift in Sources */,
 				DEA8FE62298A7AE000868C0E /* NumberLaunches.swift in Sources */,
 				DED89CF129952EC700325104 /* DTIInstructionCell.swift in Sources */,
-				DEC9007029A62024001B24A3 /* DrillTrainingPrepareTimer.swift in Sources */,
 				DEACE5C6298AA01C0096FF15 /* Role.swift in Sources */,
 				DECA725029BB54B600F9667B /* HomeAddTrainingCell.swift in Sources */,
 				DED00C1D29AF530000661F03 /* GetSkillLevelsResponse.swift in Sources */,

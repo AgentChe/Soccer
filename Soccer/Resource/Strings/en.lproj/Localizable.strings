@@ -141,10 +141,12 @@
 "DrillTraining.FinishTraining" = "Finish training";
 "DrillTraining.Instruction" = "Instruction";
 "DrillTraining.Paused" = "PAUSED";
-"DrillTraining.ConfirmFinish.Title" = "Are you sure?";
-"DrillTraining.ConfirmFinish.SubTitle" = "Do you really want to end the workout?";
-"DrillTraining.ConfirmFinish.Continue" = "Continue training";
-"DrillTraining.ConfirmFinish.Quit" = "Quit training";
+
+// MARK: DrillTrainingQuit
+"DrillTrainingQuit.Title" = "Are you sure?";
+"DrillTrainingQuit.SubTitle" = "Do you really want to end the workout?";
+"DrillTrainingQuit.Continue" = "Continue training";
+"DrillTrainingQuit.Finish" = "Finish training";
 
 // MARK: Train
 "Train.Filter.Drills" = "Drills";
