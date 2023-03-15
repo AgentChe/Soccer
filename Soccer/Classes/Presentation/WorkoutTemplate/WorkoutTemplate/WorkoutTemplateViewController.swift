@@ -137,8 +137,8 @@ extension WorkoutTemplateViewController: WorkoutTemplateTableDelegate {
     }
     
     func tableDidTapped(exercise: WorkoutExercise) {
-        // TODO
-        print("tableDidTapped exercise: \(exercise.name)")
+        let vc = ExerciseInstructionViewController.make(exercise: exercise)
+        present(vc, animated: true)
     }
 }
 

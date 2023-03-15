@@ -103,6 +103,14 @@ extension WorkoutTemplateTableView: UITableViewDelegate {
             return 90.scale
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard case let .exercise(exercise) = elements[indexPath.row] else {
+            return
+        }
+        
+        mainDelegate?.tableDidTapped(exercise: exercise)
+    }
 }
 
 // MARK: Private

@@ -166,3 +166,6 @@
 // MARK: WorkoutTemplate
 "WorkoutTemplate.StartWorkout" = "Start workout";
 "WorkoutTemplate.FocusZones" = "Focus Zones";
+
+// MARK: ExerciseInstruction
+"ExerciseInstruction.Title" = "Instruction";
