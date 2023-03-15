@@ -100,13 +100,20 @@ extension HomeViewController: HomeTableViewDelegate {
     }
     
     func homeTableDidTap(workoutTemplate: WorkoutTemplate) {
-        // TODO
-        print("homeTableDidTap workoutTemplate: \(workoutTemplate.name)")
+        let vc = WorkoutTemplateViewController.make(workoutTemplate: workoutTemplate)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func homeTableDidTap(workoutCover: WorkoutCover) {
-        // TODO
-        print("homeTableDidTap workoutCover: \(workoutCover.name)")
+        let needPayment = workoutCover.paid ? !SessionManager().hasActiveSubscriptions() : false
+        
+        if needPayment {
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
+        } else {
+            let vc = WorkoutTemplateViewController.make(workoutCover: workoutCover)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func homeTableDidTap(planDay: Date) {
@@ -119,8 +126,8 @@ extension HomeViewController: HomeTableViewDelegate {
     }
     
     func homeTableDidTap(planWorkout: PlanWorkout) {
-        // TODO
-        print("homeTableDidTap planWorkout: \(planWorkout.name)")
+        let vc = WorkoutTemplateViewController.make(planWorkout: planWorkout)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func homeTableDidTapAddTraining() {

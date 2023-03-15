@@ -110,11 +110,35 @@ extension TrainViewController: TrainTableDelegate {
                 navigationController?.pushViewController(vc, animated: true)
             }
         case .workoutCover(let workoutCover):
-            break // TODO
+            let needPayment = workoutCover.paid ? !SessionManager().hasActiveSubscriptions() : false
+            
+            if needPayment {
+                let vc = PaygateViewController.make()
+                present(vc, animated: true)
+            } else {
+                let vc = WorkoutTemplateViewController.make(workoutCover: workoutCover)
+                navigationController?.pushViewController(vc, animated: true)
+            }
         case .focusZone(let focusZone):
-            break // TODO
+            let needPayment = focusZone.paid ? !SessionManager().hasActiveSubscriptions() : false
+            
+            if needPayment {
+                let vc = PaygateViewController.make()
+                present(vc, animated: true)
+            } else {
+                let vc = WorkoutTemplateViewController.make(focusZone: focusZone)
+                navigationController?.pushViewController(vc, animated: true)
+            }
         case .workoutStep(let workoutStep):
-            break // TODO
+            let needPayment = workoutStep.paid ? !SessionManager().hasActiveSubscriptions() : false
+            
+            if needPayment {
+                let vc = PaygateViewController.make()
+                present(vc, animated: true)
+            } else {
+                let vc = WorkoutTemplateViewController.make(workoutStep: workoutStep)
+                navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }

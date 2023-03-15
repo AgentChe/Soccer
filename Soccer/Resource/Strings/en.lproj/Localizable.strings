@@ -162,3 +162,7 @@
 // MARK: TrainInfo
 "TrainInfo.Title" = "Info";
 "TrainInfo.SubTitle" = "To change the level of difficulty please go to the settings To change the level of difficulty please go to the settings";
+
+// MARK: WorkoutTemplate
+"WorkoutTemplate.StartWorkout" = "Start workout";
+"WorkoutTemplate.FocusZones" = "Focus Zones";
