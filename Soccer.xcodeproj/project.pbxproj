@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5E978629CC77AD00FC2837 /* WorkoutTrainingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E978529CC77AD00FC2837 /* WorkoutTrainingAssembly.swift */; };
+		0F5E978829CC781A00FC2837 /* WorkoutTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E978729CC781A00FC2837 /* WorkoutTrainingViewController.swift */; };
+		0F5E978A29CC7D2700FC2837 /* WorkoutTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E978929CC7D2600FC2837 /* WorkoutTrainingViewModel.swift */; };
+		0F5E978C29CC808900FC2837 /* WorkoutTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E978B29CC808900FC2837 /* WorkoutTrainingView.swift */; };
 		CB6C4160DCDD94E6245876CA /* Pods_Soccer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90675A16F14FB6DB9A75AF9C /* Pods_Soccer.framework */; };
 		DE6573BF29C106330074CBE5 /* WorkoutTemplateHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6573BE29C106330074CBE5 /* WorkoutTemplateHeaderCell.swift */; };
 		DE6573C129C108110074CBE5 /* WorkoutTemplateButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6573C029C108110074CBE5 /* WorkoutTemplateButtonsCell.swift */; };
@@ -306,6 +310,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F5E978529CC77AD00FC2837 /* WorkoutTrainingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingAssembly.swift; sourceTree = "<group>"; };
+		0F5E978729CC781A00FC2837 /* WorkoutTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingViewController.swift; sourceTree = "<group>"; };
+		0F5E978929CC7D2600FC2837 /* WorkoutTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingViewModel.swift; sourceTree = "<group>"; };
+		0F5E978B29CC808900FC2837 /* WorkoutTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingView.swift; sourceTree = "<group>"; };
 		90675A16F14FB6DB9A75AF9C /* Pods_Soccer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soccer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC7C801816BAAB1AD8A9A31 /* Pods-Soccer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soccer.debug.xcconfig"; path = "Target Support Files/Pods-Soccer/Pods-Soccer.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6573BE29C106330074CBE5 /* WorkoutTemplateHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTemplateHeaderCell.swift; sourceTree = "<group>"; };
@@ -611,6 +619,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F5E978429CC766800FC2837 /* WorkoutTraining */ = {
+			isa = PBXGroup;
+			children = (
+				0F5E978529CC77AD00FC2837 /* WorkoutTrainingAssembly.swift */,
+				0F5E978729CC781A00FC2837 /* WorkoutTrainingViewController.swift */,
+				0F5E978929CC7D2600FC2837 /* WorkoutTrainingViewModel.swift */,
+				0F5E978B29CC808900FC2837 /* WorkoutTrainingView.swift */,
+			);
+			path = WorkoutTraining;
+			sourceTree = "<group>";
+		};
 		1E41CD416B81215EDE7EED4E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1523,6 +1542,7 @@
 		DECA729329C0B81400F9667B /* WorkoutTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0F5E978429CC766800FC2837 /* WorkoutTraining */,
 				DE6573CF29C1F13D0074CBE5 /* ExerciseInstruction */,
 				DE6573CE29C1F12E0074CBE5 /* WorkoutTemplate */,
 			);
@@ -2095,6 +2115,7 @@
 				DED00C5A29B0CCFB00661F03 /* DrillManager.swift in Sources */,
 				DECA724E29BB41DA00F9667B /* HomeStatsCell.swift in Sources */,
 				DEC9006629A61917001B24A3 /* DrillTrainingViewController.swift in Sources */,
+				0F5E978C29CC808900FC2837 /* WorkoutTrainingView.swift in Sources */,
 				DEBC2B32298C1165002C84E3 /* GetDrillCategoriesRequest.swift in Sources */,
 				DEBC2B45298D048E002C84E3 /* OWorkoutTypeView.swift in Sources */,
 				DED00C4929B0AF9400661F03 /* PaygateView.swift in Sources */,
@@ -2143,6 +2164,7 @@
 				DED89CB62992880100325104 /* HomeWorkoutsCollectionView.swift in Sources */,
 				DEC9007629A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift in Sources */,
 				DEA8FE5F298A7AE000868C0E /* APIRequestBody.swift in Sources */,
+				0F5E978629CC77AD00FC2837 /* WorkoutTrainingAssembly.swift in Sources */,
 				DEC9006A29A61923001B24A3 /* DrillTrainingView.swift in Sources */,
 				DEA8FE69298A7AE000868C0E /* NetworkError.swift in Sources */,
 				DED00C3729B0AF8A00661F03 /* PaygateManager.swift in Sources */,
@@ -2201,6 +2223,7 @@
 				DED89CB4299287FA00325104 /* HomeWorkoutsCollectionCell.swift in Sources */,
 				DED89C742990D3CF00325104 /* HomeKit.swift in Sources */,
 				DECA726A29BF13BD00F9667B /* TrainViewModel.swift in Sources */,
+				0F5E978A29CC7D2700FC2837 /* WorkoutTrainingViewModel.swift in Sources */,
 				DEA8FE96298A7AE000868C0E /* IAPErrorHelper.swift in Sources */,
 				DEBC2B1F298BFACD002C84E3 /* ODayOfWeekButton.swift in Sources */,
 				DE6573CD29C1B2560074CBE5 /* WorkoutTemplateExerciseCell.swift in Sources */,
@@ -2291,6 +2314,7 @@
 				DEA8FE98298A7AE000868C0E /* SessionManager.swift in Sources */,
 				DEA8FE78298A7AE000868C0E /* GradientView.swift in Sources */,
 				DED89CE22994D72000325104 /* DailyTrainingInstructionView.swift in Sources */,
+				0F5E978829CC781A00FC2837 /* WorkoutTrainingViewController.swift in Sources */,
 				DE6573DA29C1F2CB0074CBE5 /* ExerciseInstructionTableElement.swift in Sources */,
 				DECA728E29C04F8F00F9667B /* DrillTrainingResultView.swift in Sources */,
 				DECA729D29C0C52D00F9667B /* WorkoutTemplateTableView.swift in Sources */,
