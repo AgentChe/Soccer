@@ -37,6 +37,14 @@ final class DrillTrainingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            guard let self = self else {
+                return .never()
+            }
+            
+            return self.open(error: error)
+        }
+        
         Observable
             .merge(
                 mainView.closeButton.rx.tap.asObservable(),
@@ -223,5 +231,21 @@ private extension DrillTrainingViewController {
                 self?.lifeCyrcle.continueTraining()
             }
         }
+    }
+    
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
     }
 }

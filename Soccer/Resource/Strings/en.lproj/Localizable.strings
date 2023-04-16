@@ -142,6 +142,19 @@
 "DrillTraining.Instruction" = "Instruction";
 "DrillTraining.Paused" = "PAUSED";
 
+// MARK: WorkoutTraining
+"WorkoutTraining.Go" = "GO";
+"WorkoutTraining.FinishWorkout" = "Finish workout";
+"WorkoutTraining.Instruction" = "Instruction";
+"WorkoutTraining.Paused" = "PAUSED";
+"WorkoutTraining.Next" = "NEXT";
+
+// MARK: WorkoutTrainingQuit
+"WorkoutTrainingQuit.Title" = "Are you sure?";
+"WorkoutTrainingQuit.SubTitle" = "Do you really want to end the workout?";
+"WorkoutTrainingQuit.Continue" = "Continue workout";
+"WorkoutTrainingQuit.Finish" = "Quit workout";
+
 "DrillTrainingResult.Title" = "Workout completed";
 "DrillTrainingResult.Duration" = "Duration:";
 
