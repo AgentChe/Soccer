@@ -23,6 +23,7 @@ target 'Soccer' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
   pod 'AppsFlyerFramework'
+  pod 'JTAppleCalendar'
 end
 
 post_install do |installer|

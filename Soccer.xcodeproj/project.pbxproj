@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F987CBD29F41DEB002B651C /* CalendarMonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F987CBC29F41DEB002B651C /* CalendarMonthHeader.swift */; };
+		0F987CBF29F548A5002B651C /* CalendarEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F987CBE29F548A5002B651C /* CalendarEventType.swift */; };
+		0FE3332029F3022700F1C412 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3331F29F3022700F1C412 /* CalendarView.swift */; };
+		0FE3332229F3023800F1C412 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3332129F3023800F1C412 /* CalendarViewController.swift */; };
+		0FE3332429F3024400F1C412 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3332329F3024400F1C412 /* CalendarViewModel.swift */; };
+		0FE3332829F3066200F1C412 /* CalendarDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3332729F3066200F1C412 /* CalendarDateCell.swift */; };
 		CB6C4160DCDD94E6245876CA /* Pods_Soccer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90675A16F14FB6DB9A75AF9C /* Pods_Soccer.framework */; };
 		DE6573BF29C106330074CBE5 /* WorkoutTemplateHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6573BE29C106330074CBE5 /* WorkoutTemplateHeaderCell.swift */; };
 		DE6573C129C108110074CBE5 /* WorkoutTemplateButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6573C029C108110074CBE5 /* WorkoutTemplateButtonsCell.swift */; };
@@ -306,6 +312,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F987CBC29F41DEB002B651C /* CalendarMonthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonthHeader.swift; sourceTree = "<group>"; };
+		0F987CBE29F548A5002B651C /* CalendarEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventType.swift; sourceTree = "<group>"; };
+		0FE3331F29F3022700F1C412 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		0FE3332129F3023800F1C412 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		0FE3332329F3024400F1C412 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		0FE3332729F3066200F1C412 /* CalendarDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCell.swift; sourceTree = "<group>"; };
 		90675A16F14FB6DB9A75AF9C /* Pods_Soccer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soccer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC7C801816BAAB1AD8A9A31 /* Pods-Soccer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soccer.debug.xcconfig"; path = "Target Support Files/Pods-Soccer/Pods-Soccer.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6573BE29C106330074CBE5 /* WorkoutTemplateHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTemplateHeaderCell.swift; sourceTree = "<group>"; };
@@ -611,6 +623,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FE3331E29F301FE00F1C412 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				0FE3332629F3063D00F1C412 /* View */,
+				0FE3331F29F3022700F1C412 /* CalendarView.swift */,
+				0FE3332129F3023800F1C412 /* CalendarViewController.swift */,
+				0FE3332329F3024400F1C412 /* CalendarViewModel.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		0FE3332629F3063D00F1C412 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FE3332729F3066200F1C412 /* CalendarDateCell.swift */,
+				0F987CBC29F41DEB002B651C /* CalendarMonthHeader.swift */,
+				0F987CBE29F548A5002B651C /* CalendarEventType.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1E41CD416B81215EDE7EED4E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -988,6 +1021,7 @@
 		DEA8FDEF298A7AE000868C0E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0FE3331E29F301FE00F1C412 /* Calendar */,
 				DECA729329C0B81400F9667B /* WorkoutTemplate */,
 				DECA726529BF13A700F9667B /* Train */,
 				DED00C3829B0AF9400661F03 /* Paygate */,
@@ -2065,6 +2099,7 @@
 				DECA725B29BC6DDC00F9667B /* Date+Extension.swift in Sources */,
 				DED89C772990D48700325104 /* GetHomeKitRequest.swift in Sources */,
 				DEC9005229A5FE93001B24A3 /* DrillsViewModel.swift in Sources */,
+				0FE3332829F3066200F1C412 /* CalendarDateCell.swift in Sources */,
 				DEBC2B39298C1394002C84E3 /* ODrillsTableView.swift in Sources */,
 				DEA8FE64298A7AE000868C0E /* ScreenSize.swift in Sources */,
 				DEA8FE58298A7AE000868C0E /* UIColor+Extension.swift in Sources */,
@@ -2073,6 +2108,7 @@
 				DECA722A29B884EF00F9667B /* GetWorkoutTrainingRequest.swift in Sources */,
 				DEA8FE9C298A7AE000868C0E /* SplashViewModel.swift in Sources */,
 				DECA722729B8846900F9667B /* WorkoutTraining.swift in Sources */,
+				0FE3332229F3023800F1C412 /* CalendarViewController.swift in Sources */,
 				DED00C1829AF52C800661F03 /* SkillLevel.swift in Sources */,
 				DECA729929C0B83000F9667B /* WorkoutTemplateViewModel.swift in Sources */,
 				DEA8FE59298A7AE000868C0E /* Collection+Extension.swift in Sources */,
@@ -2116,6 +2152,7 @@
 				DEA8FE5A298A7AE000868C0E /* ObservableAndSingle+Extension.swift in Sources */,
 				DEA8FE9D298A7AE000868C0E /* SplashView.swift in Sources */,
 				DEA8FEBE298A7AE000868C0E /* OCombineData.swift in Sources */,
+				0FE3332029F3022700F1C412 /* CalendarView.swift in Sources */,
 				DED89CE82994DA8E00325104 /* DTITableElement.swift in Sources */,
 				DED89C842990DA4300325104 /* HomeViewModel.swift in Sources */,
 				DEA8FE61298A7AE000868C0E /* Scalable.swift in Sources */,
@@ -2136,6 +2173,7 @@
 				DED00C4A29B0AF9400661F03 /* PaygateViewController.swift in Sources */,
 				DEA8FE6A298A7AE000868C0E /* ContentError.swift in Sources */,
 				DECA728C29C04F8A00F9667B /* DrillTrainingResultViewController.swift in Sources */,
+				0F987CBD29F41DEB002B651C /* CalendarMonthHeader.swift in Sources */,
 				DECA723A29B8FDFD00F9667B /* PlanStatus.swift in Sources */,
 				DECA727229BF17AE00F9667B /* TrainFilterView.swift in Sources */,
 				DE6573D529C1F15D0074CBE5 /* ExerciseInstructionViewModel.swift in Sources */,
@@ -2156,6 +2194,7 @@
 				DED00C4429B0AF9400661F03 /* PaygateViewModel.swift in Sources */,
 				DEA8FE60298A7AE000868C0E /* RestAPITransport.swift in Sources */,
 				DECA729229C0967400F9667B /* DrillTrainingAssembly.swift in Sources */,
+				0FE3332429F3024400F1C412 /* CalendarViewModel.swift in Sources */,
 				DECA721E29B8092200F9667B /* AssignWorkoutRequest.swift in Sources */,
 				DECA724329B9016D00F9667B /* GetPlanResponse.swift in Sources */,
 				DED89CAE29925ABF00325104 /* HomeDrillCoverCell.swift in Sources */,
@@ -2201,6 +2240,7 @@
 				DED89CB4299287FA00325104 /* HomeWorkoutsCollectionCell.swift in Sources */,
 				DED89C742990D3CF00325104 /* HomeKit.swift in Sources */,
 				DECA726A29BF13BD00F9667B /* TrainViewModel.swift in Sources */,
+				0F987CBF29F548A5002B651C /* CalendarEventType.swift in Sources */,
 				DEA8FE96298A7AE000868C0E /* IAPErrorHelper.swift in Sources */,
 				DEBC2B1F298BFACD002C84E3 /* ODayOfWeekButton.swift in Sources */,
 				DE6573CD29C1B2560074CBE5 /* WorkoutTemplateExerciseCell.swift in Sources */,

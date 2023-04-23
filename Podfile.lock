@@ -102,6 +102,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.11.0):
     - GoogleUtilities/Logger
+  - JTAppleCalendar (8.0.4)
   - Kingfisher (7.6.2)
   - MarqueeLabel (4.3.0)
   - nanopb (2.30909.0):
@@ -131,6 +132,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - Firebase/Analytics
   - Firebase/Messaging
+  - JTAppleCalendar
   - Kingfisher
   - NotificationBannerSwift
   - OtterScaleiOS (from `https://github.com/AgentChe/OtterScaleiOS.git`)
@@ -156,6 +158,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - JTAppleCalendar
     - Kingfisher
     - MarqueeLabel
     - nanopb
@@ -193,6 +196,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 686b48c3c895f3c55c70719041913d5d150b74f6
   GoogleDataTransport: ea169759df570f4e37bdee1623ec32a7e64e67c4
   GoogleUtilities: c2bdc4cf2ce786c4d2e6b3bcfd599a25ca78f06f
+  JTAppleCalendar: f95b02c64f56d6f938fbf6582a04dcab9d709ebd
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   MarqueeLabel: 02f5ac8fd6877c94564556cb93fa86c70c08baeb
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
@@ -205,6 +209,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 387e03099c5d64b38d4dd390bbb7737baba9672a
+PODFILE CHECKSUM: 1cb5cf19d5644c969bc9cd0b32bd003b5fe8007a
 
 COCOAPODS: 1.11.2

@@ -11,6 +11,7 @@ import RxCocoa
 final class DrillTrainingInstructionViewModel {
     enum Route {
         case training(customerDrillId: Int)
+        case calendar(customerDrillId: Int)
     }
     
     enum Source {
@@ -21,6 +22,7 @@ final class DrillTrainingInstructionViewModel {
     var tryAgain: ((Error) -> (Observable<Void>))?
     
     lazy var didTapStartTraining = PublishRelay<Void>()
+    lazy var didTapCalendar = PublishRelay<Void>()
     
     lazy var route = makeRoute()
     lazy var elements = makeElements()
@@ -45,7 +47,46 @@ final class DrillTrainingInstructionViewModel {
 // MARK: Private
 private extension DrillTrainingInstructionViewModel {
     func makeRoute() -> Driver<Route> {
-        didTapStartTraining
+        let calendarRoute = didTapCalendar
+            .withLatestFrom(source)
+            .flatMapLatest { [weak self] input -> Driver<Route> in
+                guard let self else {  return .never() }
+                
+                switch input {
+                case let .drill(drill):
+                    func source() -> Single<Route> {
+                        self.drillManager
+                            .assignDrill(id: drill.id)
+                            .flatMap { assignedDrill -> Single<Route> in
+                                guard let assignedDrill = assignedDrill else {
+                                    return .error(ContentError(.notContent))
+                                }
+                                
+                                return .just(.calendar(customerDrillId: assignedDrill.customerDrillId))
+                            }
+                    }
+                    
+                    func trigger(error: Error) -> Observable<Void> {
+                        guard let tryAgain = self.tryAgain?(error) else {
+                            return .empty()
+                        }
+                        
+                        return tryAgain
+                    }
+                    
+                    return self.observableRetrySingle
+                        .retry(source: { source() },
+                               trigger: { trigger(error: $0) })
+                        .trackActivity(self.assignActivity)
+                        .asDriver(onErrorDriveWith: .never())
+                case let .planDrill(planDrill):
+                    
+                    return .just(.calendar(customerDrillId: planDrill.customerDrillId))
+                }
+            }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let trainingRoute = didTapStartTraining
             .withLatestFrom(source)
             .flatMapLatest { [weak self] input -> Driver<Route> in
                 guard let self = self else {
@@ -84,6 +125,8 @@ private extension DrillTrainingInstructionViewModel {
                 }
             }
             .asDriver(onErrorDriveWith: .never())
+        
+        return Driver.merge(calendarRoute, trainingRoute)
     }
     
     func makeElements() -> Driver<[DTITableElement]> {
