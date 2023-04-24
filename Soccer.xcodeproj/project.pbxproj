@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F04264329DC6D4900EF7B20 /* WorkoutTrainingImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F04264229DC6D4900EF7B20 /* WorkoutTrainingImageViewCell.swift */; };
+		0F04264529DC703E00EF7B20 /* WorkoutTrainingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F04264429DC703E00EF7B20 /* WorkoutTrainingCollectionView.swift */; };
+		0F055B4D29CDE53F00819006 /* WorkoutTrainingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055B4C29CDE53F00819006 /* WorkoutTrainingMenuView.swift */; };
+		0F055B5029CF430D00819006 /* WorkoutTrainingLifeCyrcle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055B4F29CF430D00819006 /* WorkoutTrainingLifeCyrcle.swift */; };
+		0F055B5229CF548700819006 /* WorkoutNameLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F055B5129CF548700819006 /* WorkoutNameLabelView.swift */; };
+		0F11350B29EC8B3E00EFA98E /* ProgressSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F11350A29EC8B3E00EFA98E /* ProgressSegmentView.swift */; };
+		0F5E978629CC77AD00FC2837 /* WorkoutTrainingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E978529CC77AD00FC2837 /* WorkoutTrainingAssembly.swift */; };
+		0F5E978829CC781A00FC2837 /* WorkoutTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E978729CC781A00FC2837 /* WorkoutTrainingViewController.swift */; };
+		0F5E978A29CC7D2700FC2837 /* WorkoutTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E978929CC7D2600FC2837 /* WorkoutTrainingViewModel.swift */; };
+		0F5E978C29CC808900FC2837 /* WorkoutTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E978B29CC808900FC2837 /* WorkoutTrainingView.swift */; };
+		0FA3D45C29E86ED5008174D3 /* WorkoutTrainingQuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3D45B29E86ED5008174D3 /* WorkoutTrainingQuitViewController.swift */; };
+		0FA3D45E29E86EF1008174D3 /* WorkoutTrainingQuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3D45D29E86EF1008174D3 /* WorkoutTrainingQuitView.swift */; };
+		0FA3D46129E887CB008174D3 /* WorkoutTrainingResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3D46029E887CB008174D3 /* WorkoutTrainingResultView.swift */; };
+		0FA3D46329E887DA008174D3 /* WorkoutTrainingResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3D46229E887DA008174D3 /* WorkoutTrainingResultViewController.swift */; };
+		0FA3D46529E887F2008174D3 /* WorkoutTrainingResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3D46429E887F2008174D3 /* WorkoutTrainingResultViewModel.swift */; };
 		CB6C4160DCDD94E6245876CA /* Pods_Soccer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90675A16F14FB6DB9A75AF9C /* Pods_Soccer.framework */; };
 		DE6573BF29C106330074CBE5 /* WorkoutTemplateHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6573BE29C106330074CBE5 /* WorkoutTemplateHeaderCell.swift */; };
 		DE6573C129C108110074CBE5 /* WorkoutTemplateButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6573C029C108110074CBE5 /* WorkoutTemplateButtonsCell.swift */; };
@@ -306,6 +321,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F04264229DC6D4900EF7B20 /* WorkoutTrainingImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingImageViewCell.swift; sourceTree = "<group>"; };
+		0F04264429DC703E00EF7B20 /* WorkoutTrainingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingCollectionView.swift; sourceTree = "<group>"; };
+		0F055B4C29CDE53F00819006 /* WorkoutTrainingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingMenuView.swift; sourceTree = "<group>"; };
+		0F055B4F29CF430D00819006 /* WorkoutTrainingLifeCyrcle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingLifeCyrcle.swift; sourceTree = "<group>"; };
+		0F055B5129CF548700819006 /* WorkoutNameLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutNameLabelView.swift; sourceTree = "<group>"; };
+		0F11350A29EC8B3E00EFA98E /* ProgressSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSegmentView.swift; sourceTree = "<group>"; };
+		0F5E978529CC77AD00FC2837 /* WorkoutTrainingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingAssembly.swift; sourceTree = "<group>"; };
+		0F5E978729CC781A00FC2837 /* WorkoutTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingViewController.swift; sourceTree = "<group>"; };
+		0F5E978929CC7D2600FC2837 /* WorkoutTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingViewModel.swift; sourceTree = "<group>"; };
+		0F5E978B29CC808900FC2837 /* WorkoutTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingView.swift; sourceTree = "<group>"; };
+		0FA3D45B29E86ED5008174D3 /* WorkoutTrainingQuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingQuitViewController.swift; sourceTree = "<group>"; };
+		0FA3D45D29E86EF1008174D3 /* WorkoutTrainingQuitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingQuitView.swift; sourceTree = "<group>"; };
+		0FA3D46029E887CB008174D3 /* WorkoutTrainingResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingResultView.swift; sourceTree = "<group>"; };
+		0FA3D46229E887DA008174D3 /* WorkoutTrainingResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingResultViewController.swift; sourceTree = "<group>"; };
+		0FA3D46429E887F2008174D3 /* WorkoutTrainingResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrainingResultViewModel.swift; sourceTree = "<group>"; };
 		90675A16F14FB6DB9A75AF9C /* Pods_Soccer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soccer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC7C801816BAAB1AD8A9A31 /* Pods-Soccer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soccer.debug.xcconfig"; path = "Target Support Files/Pods-Soccer/Pods-Soccer.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6573BE29C106330074CBE5 /* WorkoutTemplateHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTemplateHeaderCell.swift; sourceTree = "<group>"; };
@@ -611,6 +641,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F04264129DC6C5400EF7B20 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				0F04264229DC6D4900EF7B20 /* WorkoutTrainingImageViewCell.swift */,
+				0F04264429DC703E00EF7B20 /* WorkoutTrainingCollectionView.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		0F055B4B29CDE50200819006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F04264129DC6C5400EF7B20 /* Collection */,
+				0F055B4C29CDE53F00819006 /* WorkoutTrainingMenuView.swift */,
+				0F055B5129CF548700819006 /* WorkoutNameLabelView.swift */,
+				0F11350A29EC8B3E00EFA98E /* ProgressSegmentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0F055B4E29CF42F200819006 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0F055B4F29CF430D00819006 /* WorkoutTrainingLifeCyrcle.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0F5E978429CC766800FC2837 /* WorkoutTraining */ = {
+			isa = PBXGroup;
+			children = (
+				0FA3D45F29E887AA008174D3 /* WorkoutTrainingResult */,
+				0FA3D45A29E86EA5008174D3 /* Quit */,
+				0FA3D45929E86E8E008174D3 /* WorkoutTraining */,
+			);
+			path = WorkoutTraining;
+			sourceTree = "<group>";
+		};
+		0FA3D45929E86E8E008174D3 /* WorkoutTraining */ = {
+			isa = PBXGroup;
+			children = (
+				0F055B4E29CF42F200819006 /* Utils */,
+				0F055B4B29CDE50200819006 /* Views */,
+				0F5E978529CC77AD00FC2837 /* WorkoutTrainingAssembly.swift */,
+				0F5E978729CC781A00FC2837 /* WorkoutTrainingViewController.swift */,
+				0F5E978929CC7D2600FC2837 /* WorkoutTrainingViewModel.swift */,
+				0F5E978B29CC808900FC2837 /* WorkoutTrainingView.swift */,
+			);
+			path = WorkoutTraining;
+			sourceTree = "<group>";
+		};
+		0FA3D45A29E86EA5008174D3 /* Quit */ = {
+			isa = PBXGroup;
+			children = (
+				0FA3D45B29E86ED5008174D3 /* WorkoutTrainingQuitViewController.swift */,
+				0FA3D45D29E86EF1008174D3 /* WorkoutTrainingQuitView.swift */,
+			);
+			path = Quit;
+			sourceTree = "<group>";
+		};
+		0FA3D45F29E887AA008174D3 /* WorkoutTrainingResult */ = {
+			isa = PBXGroup;
+			children = (
+				0FA3D46029E887CB008174D3 /* WorkoutTrainingResultView.swift */,
+				0FA3D46229E887DA008174D3 /* WorkoutTrainingResultViewController.swift */,
+				0FA3D46429E887F2008174D3 /* WorkoutTrainingResultViewModel.swift */,
+			);
+			path = WorkoutTrainingResult;
+			sourceTree = "<group>";
+		};
 		1E41CD416B81215EDE7EED4E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1523,6 +1623,7 @@
 		DECA729329C0B81400F9667B /* WorkoutTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0F5E978429CC766800FC2837 /* WorkoutTraining */,
 				DE6573CF29C1F13D0074CBE5 /* ExerciseInstruction */,
 				DE6573CE29C1F12E0074CBE5 /* WorkoutTemplate */,
 			);
@@ -2033,6 +2134,7 @@
 				DECA71FB29B75C3F00F9667B /* AssignDrillRequest.swift in Sources */,
 				DEA8FEFD298A7CD800868C0E /* PlusJakartaSans-ExtraBold.ttf in Sources */,
 				DE6573C129C108110074CBE5 /* WorkoutTemplateButtonsCell.swift in Sources */,
+				0F11350B29EC8B3E00EFA98E /* ProgressSegmentView.swift in Sources */,
 				DEA8FEFE298A7CD800868C0E /* Inter-Medium.ttf in Sources */,
 				DECA725429BC35C200F9667B /* PlanWeekdaysCell.swift in Sources */,
 				DEBC2B36298C11FA002C84E3 /* ContentManager.swift in Sources */,
@@ -2052,6 +2154,7 @@
 				DEC9006129A60B6E001B24A3 /* GetDrillsRequest.swift in Sources */,
 				DE6573DD29C1F3BA0074CBE5 /* ExerciseInstructionImageCell.swift in Sources */,
 				DECA723829B8FDC600F9667B /* PlanDrill.swift in Sources */,
+				0F04264329DC6D4900EF7B20 /* WorkoutTrainingImageViewCell.swift in Sources */,
 				DEA8FE82298A7AE000868C0E /* AmplitudeManager.swift in Sources */,
 				DEBC2B4D298D1B93002C84E3 /* Profile.swift in Sources */,
 				DEA8FE99298A7AE000868C0E /* SplashViewController.swift in Sources */,
@@ -2077,6 +2180,7 @@
 				DECA729929C0B83000F9667B /* WorkoutTemplateViewModel.swift in Sources */,
 				DEA8FE59298A7AE000868C0E /* Collection+Extension.swift in Sources */,
 				DE6573C929C10A0F0074CBE5 /* WTFocusZonesCollectionCell.swift in Sources */,
+				0F04264529DC703E00EF7B20 /* WorkoutTrainingCollectionView.swift in Sources */,
 				DECA725629BC371000F9667B /* HomePlanTrainingCell.swift in Sources */,
 				DED89C8C2990E22100325104 /* HomeTableElement.swift in Sources */,
 				DEA8FE7B298A7AE000868C0E /* PushNotificationsManager.swift in Sources */,
@@ -2094,13 +2198,16 @@
 				DED00C3629B0AF8A00661F03 /* GetPaygateRequest.swift in Sources */,
 				DED00C5A29B0CCFB00661F03 /* DrillManager.swift in Sources */,
 				DECA724E29BB41DA00F9667B /* HomeStatsCell.swift in Sources */,
+				0F055B5029CF430D00819006 /* WorkoutTrainingLifeCyrcle.swift in Sources */,
 				DEC9006629A61917001B24A3 /* DrillTrainingViewController.swift in Sources */,
+				0F5E978C29CC808900FC2837 /* WorkoutTrainingView.swift in Sources */,
 				DEBC2B32298C1165002C84E3 /* GetDrillCategoriesRequest.swift in Sources */,
 				DEBC2B45298D048E002C84E3 /* OWorkoutTypeView.swift in Sources */,
 				DED00C4929B0AF9400661F03 /* PaygateView.swift in Sources */,
 				DEA8FE65298A7AE000868C0E /* ObservableRetrySingle.swift in Sources */,
 				DEACE5BE298A97FA0096FF15 /* OGenderView.swift in Sources */,
 				DE6573D129C1F1500074CBE5 /* ExerciseInstructionView.swift in Sources */,
+				0FA3D46529E887F2008174D3 /* WorkoutTrainingResultViewModel.swift in Sources */,
 				DEA8FE6B298A7AE000868C0E /* Weak.swift in Sources */,
 				DECA71FD29B75C4500F9667B /* AssignDrillResponse.swift in Sources */,
 				DECA724129B9016600F9667B /* GetPlanRequest.swift in Sources */,
@@ -2125,6 +2232,7 @@
 				DECA725229BC31B400F9667B /* HomeNoTrainingsCell.swift in Sources */,
 				DED00C2729AF6DE400661F03 /* GetFocusZonesResponse.swift in Sources */,
 				DECA720E29B7638B00F9667B /* LogDrillProgressRequest.swift in Sources */,
+				0FA3D46329E887DA008174D3 /* WorkoutTrainingResultViewController.swift in Sources */,
 				DECA724C29B9BE0D00F9667B /* WorkoutMediator.swift in Sources */,
 				DED89C9129913D9A00325104 /* HomeTitleCell.swift in Sources */,
 				DECA727529BF1F5100F9667B /* TrainInfoViewController.swift in Sources */,
@@ -2139,10 +2247,12 @@
 				DECA723A29B8FDFD00F9667B /* PlanStatus.swift in Sources */,
 				DECA727229BF17AE00F9667B /* TrainFilterView.swift in Sources */,
 				DE6573D529C1F15D0074CBE5 /* ExerciseInstructionViewModel.swift in Sources */,
+				0FA3D45E29E86EF1008174D3 /* WorkoutTrainingQuitView.swift in Sources */,
 				DED89C792990D48D00325104 /* GetHomeKitResponse.swift in Sources */,
 				DED89CB62992880100325104 /* HomeWorkoutsCollectionView.swift in Sources */,
 				DEC9007629A63BA8001B24A3 /* DrillTrainingPlayPauseButton.swift in Sources */,
 				DEA8FE5F298A7AE000868C0E /* APIRequestBody.swift in Sources */,
+				0F5E978629CC77AD00FC2837 /* WorkoutTrainingAssembly.swift in Sources */,
 				DEC9006A29A61923001B24A3 /* DrillTrainingView.swift in Sources */,
 				DEA8FE69298A7AE000868C0E /* NetworkError.swift in Sources */,
 				DED00C3729B0AF8A00661F03 /* PaygateManager.swift in Sources */,
@@ -2187,6 +2297,8 @@
 				DEA8FE7D298A7AE000868C0E /* PushNotificationsModel.swift in Sources */,
 				DE6573CB29C1B1090074CBE5 /* WorkoutTemplateTitleCell.swift in Sources */,
 				DEA8FE5B298A7AE000868C0E /* String+Extension.swift in Sources */,
+				0F055B5229CF548700819006 /* WorkoutNameLabelView.swift in Sources */,
+				0F055B4D29CDE53F00819006 /* WorkoutTrainingMenuView.swift in Sources */,
 				DED89C992991476100325104 /* DailyPicksCollectionView.swift in Sources */,
 				DECA728629BF6B6500F9667B /* TrainTrainingCell.swift in Sources */,
 				DEA8FE75298A7AE000868C0E /* PaddingTextField.swift in Sources */,
@@ -2201,6 +2313,7 @@
 				DED89CB4299287FA00325104 /* HomeWorkoutsCollectionCell.swift in Sources */,
 				DED89C742990D3CF00325104 /* HomeKit.swift in Sources */,
 				DECA726A29BF13BD00F9667B /* TrainViewModel.swift in Sources */,
+				0F5E978A29CC7D2700FC2837 /* WorkoutTrainingViewModel.swift in Sources */,
 				DEA8FE96298A7AE000868C0E /* IAPErrorHelper.swift in Sources */,
 				DEBC2B1F298BFACD002C84E3 /* ODayOfWeekButton.swift in Sources */,
 				DE6573CD29C1B2560074CBE5 /* WorkoutTemplateExerciseCell.swift in Sources */,
@@ -2213,6 +2326,7 @@
 				DED00C3329B0AF8A00661F03 /* PaygateOptionConfig.swift in Sources */,
 				DECA729729C0B82A00F9667B /* WorkoutTemplateViewController.swift in Sources */,
 				DEA8FE7F298A7AE000868C0E /* Appearance.swift in Sources */,
+				0FA3D45C29E86ED5008174D3 /* WorkoutTrainingQuitViewController.swift in Sources */,
 				DEA8FE57298A7AE000868C0E /* UIDevice+Extension.swift in Sources */,
 				DECA722F29B88C8200F9667B /* LogWorkoutProgressRequest.swift in Sources */,
 				DEA8FE62298A7AE000868C0E /* NumberLaunches.swift in Sources */,
@@ -2222,6 +2336,7 @@
 				DED00C1D29AF530000661F03 /* GetSkillLevelsResponse.swift in Sources */,
 				DECA722529B8816700F9667B /* ScheduleWorkoutResponse.swift in Sources */,
 				DEA8FE5C298A7AE000868C0E /* UIViewRxExtension.swift in Sources */,
+				0FA3D46129E887CB008174D3 /* WorkoutTrainingResultView.swift in Sources */,
 				DEBC2B49298D0BD7002C84E3 /* OFocusZoneButton.swift in Sources */,
 				DECA721929B8046F00F9667B /* GetWorkoutTemplateResponse.swift in Sources */,
 				DEA8FF15298A89D200868C0E /* MainViewCoordinator.swift in Sources */,
@@ -2291,6 +2406,7 @@
 				DEA8FE98298A7AE000868C0E /* SessionManager.swift in Sources */,
 				DEA8FE78298A7AE000868C0E /* GradientView.swift in Sources */,
 				DED89CE22994D72000325104 /* DailyTrainingInstructionView.swift in Sources */,
+				0F5E978829CC781A00FC2837 /* WorkoutTrainingViewController.swift in Sources */,
 				DE6573DA29C1F2CB0074CBE5 /* ExerciseInstructionTableElement.swift in Sources */,
 				DECA728E29C04F8F00F9667B /* DrillTrainingResultView.swift in Sources */,
 				DECA729D29C0C52D00F9667B /* WorkoutTemplateTableView.swift in Sources */,
