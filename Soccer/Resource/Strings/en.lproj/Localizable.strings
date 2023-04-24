@@ -175,3 +175,4 @@
 "Calendar.Scheduled" = "Scheduled";
 "Calendar.Completed" = "Completed";
 "Calendar.Unfinished" = "Unfinished";
+"Calendar.SelectDate" = "Select Date";

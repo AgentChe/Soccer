@@ -16,9 +16,12 @@ final class CalendarViewModel {
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
+    lazy var didTapAdd = PublishRelay<Void>()
+    lazy var selectedDate = BehaviorRelay<Date?>(value: nil)
     
     lazy var activity = RxActivityIndicator()
     lazy var plan = makePlan()
+    lazy var scheduleResult = makeAddScheduleResult()
     
     private let schedulerType: SchedulerType
     
@@ -27,23 +30,48 @@ final class CalendarViewModel {
     }
     
     private lazy var planManager = PlanManager()
+    private lazy var drillManager = DrillManager()
+    private lazy var workoutManager = WorkoutManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
-    
-    private let needRetryObtainPlan = PublishRelay<Void>()
 }
 
 // MARK: Private
 private extension CalendarViewModel {
-    func makePlan() -> Driver<Set<PlanOnDay>> {
+    func makePlan() -> Driver<[PlanOnDay]> {
+        func source() -> Single<[PlanOnDay]> {
+            self.planManager.obtainPlan()
+        }
         
-        needRetryObtainPlan
-            .startWith(())
-            .flatMapLatest { [weak self] _ -> Observable<Set<PlanOnDay>> in
+        func trigger(error: Error) -> Observable<Void> {
+            guard let tryAgain = self.tryAgain?(error) else {
+                return .empty()
+            }
+            
+            return tryAgain
+        }
+        
+        return self.observableRetrySingle
+            .retry(source: source, trigger: trigger)
+            .trackActivity(self.activity)
+            .asDriver(onErrorJustReturn: [])
+    }
+    
+    func makeAddScheduleResult() -> Signal<Void> {
+        didTapAdd
+            .withLatestFrom(selectedDate.compactMap { $0 })
+            .flatMapLatest { [weak self] date -> Observable<Void> in
                 guard let self else { return .never() }
                 
-                func source() -> Single<[PlanOnDay]> {
-                    self.planManager.obtainPlan()
+                func source() -> Single<Void> {
+                    switch self.schedulerType {
+                    case let .drill(customerDrillId):
+                        return self.drillManager.scheduleDrill(customerDrillId: customerDrillId, scheduleDate: date.timeIntervalSince1970)
+                            .mapToVoid()
+                    case let .workout(customerDrillId):
+                        return self.workoutManager.scheduleWorkout(id: customerDrillId, scheduleDate: date.timeIntervalSince1970)
+                            .mapToVoid()
+                    }
                 }
                 
                 func trigger(error: Error) -> Observable<Void> {
@@ -54,27 +82,10 @@ private extension CalendarViewModel {
                     return tryAgain
                 }
                 
-                let calendar = Calendar.current
-                
-                
-                let test: [PlanOnDay] = [
-                    .init(day: calendar.date(byAdding: .day, value: -1, to: Date()) ?? Date(), status: .completed, drills: [], workouts: []),
-                    .init(day: calendar.date(byAdding: .day, value: -2, to: Date()) ?? Date(), status: .planned, drills: [], workouts: []),
-                    .init(day: calendar.date(byAdding: .day, value: -4, to: Date()) ?? Date(), status: .planned, drills: [], workouts: []),
-                    .init(day: calendar.date(byAdding: .day, value: -7, to: Date()) ?? Date(), status: .skipped, drills: [], workouts: []),
-                    .init(day: calendar.date(byAdding: .day, value: -6, to: Date()) ?? Date(), status: .completed, drills: [], workouts: []),
-                    .init(day: calendar.date(byAdding: .day, value: -5, to: Date()) ?? Date(), status: .completed, drills: [], workouts: []),
-                    .init(day: calendar.date(byAdding: .day, value: 1, to: Date()) ?? Date(), status: .completed, drills: [], workouts: []),
-                    .init(day: calendar.date(byAdding: .day, value: 0, to: Date()) ?? Date(), status: .planned, drills: [], workouts: []),
-                    .init(day: calendar.date(byAdding: .day, value: 3, to: Date()) ?? Date(), status: .skipped, drills: [], workouts: []),
-                    .init(day: calendar.date(byAdding: .day, value: 5, to: Date()) ?? Date(), status: .planned, drills: [], workouts: []),
-                ]
                 return self.observableRetrySingle
                     .retry(source: source, trigger: trigger)
-                    .map { _ in test }
-                    .map { Set($0) }
                     .trackActivity(self.activity)
             }
-            .asDriver(onErrorJustReturn: [])
+            .asSignal(onErrorSignalWith: .never())
     }
 }

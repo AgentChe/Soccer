@@ -16,6 +16,7 @@ final class CalendarView: UIView {
     lazy var dayOfWeakStack = makeStackView()
     private lazy var separatorView = makeSeparateView()
     private lazy var planStatusStack = makeStackView()
+    private lazy var titleLabel = makeTitleLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -68,9 +69,14 @@ private extension CalendarView {
         ])
         
         NSLayoutConstraint.activate([
+            titleLabel.centerYAnchor.constraint(equalTo: closeButton.centerYAnchor),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             dayOfWeakStack.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 9.scale),
-            dayOfWeakStack.leftAnchor.constraint(equalTo: leftAnchor),
-            dayOfWeakStack.rightAnchor.constraint(equalTo: rightAnchor),
+            dayOfWeakStack.leftAnchor.constraint(equalTo: leftAnchor, constant: 14.scale),
+            dayOfWeakStack.rightAnchor.constraint(equalTo: rightAnchor, constant: -14.scale),
             dayOfWeakStack.heightAnchor.constraint(equalToConstant: 45.scale)
         ])
         
@@ -83,8 +89,8 @@ private extension CalendarView {
         
         NSLayoutConstraint.activate([
             calendarCollection.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 16.scale),
-            calendarCollection.leftAnchor.constraint(equalTo: leftAnchor),
-            calendarCollection.rightAnchor.constraint(equalTo: rightAnchor)
+            calendarCollection.leftAnchor.constraint(equalTo: leftAnchor, constant: 17.scale),
+            calendarCollection.rightAnchor.constraint(equalTo: rightAnchor, constant: -17.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -112,12 +118,9 @@ private extension CalendarView {
 
 // MARK: Lazy initialization
 private extension CalendarView {
-    func makeCalendarCollection() -> JTACMonthView {
-        let view = JTACMonthView()
+    func makeCalendarCollection() -> CalendarCollectionView {
+        let view = CalendarCollectionView()
         view.backgroundColor = .clear
-        view.scrollDirection = .vertical
-        view.scrollingMode = .none
-        view.cellSize = 56.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -149,7 +152,7 @@ private extension CalendarView {
         let view = TapAreaButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
-        view.setImage(UIImage(named: "DrillTraining.Close"), for: .normal)
+        view.setImage(UIImage(named: "Calendar.Close"), for: .normal)
         addSubview(view)
         return view
     }
@@ -168,6 +171,19 @@ private extension CalendarView {
         let view = UIView()
         view.backgroundColor = Appearance.white.withAlphaComponent(0.2)
         view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeTitleLabel() -> UILabel {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        let attrs = TextAttributes()
+            .font(Fonts.Inter.semiBold(size: 20.scale))
+            .lineHeight(24.scale)
+            .textColor(Appearance.white)
+            .textAlignment(.center)
+        view.attributedText = "Calendar.SelectDate".localized.attributed(with: attrs)
         addSubview(view)
         return view
     }

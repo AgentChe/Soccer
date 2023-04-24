@@ -17,8 +17,6 @@ class CalendarViewController: UIViewController {
     private let viewModel: CalendarViewModel
     private lazy var disposeBag = DisposeBag()
     
-    private var elements: Set<PlanOnDay> = []
-    
     private init(schedulerType: CalendarViewModel.SchedulerType) {
         viewModel = .init(schedulerType: schedulerType)
         
@@ -35,11 +33,14 @@ class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView.calendarCollection.calendarDataSource = self
-        mainView.calendarCollection.calendarDelegate = self
-        mainView.calendarCollection.register(CalendarDateCell.self, forCellWithReuseIdentifier: String(describing: CalendarDateCell.self))
-        mainView.calendarCollection.register(CalendarMonthHeader.self, forSupplementaryViewOfKind: "", withReuseIdentifier: String(describing: CalendarMonthHeader.self))
-
+        viewModel.tryAgain = { [weak self] error -> Observable<Void> in
+            guard let self = self else {
+                return .never()
+            }
+            
+            return self.open(error: error)
+        }
+        
         viewModel.activity
             .drive(Binder(self) { base, activity in
                 base.activity(activity)
@@ -48,74 +49,41 @@ class CalendarViewController: UIViewController {
         
         viewModel.plan
             .drive(with: self) {
-                $0.elements = $1
-                $0.mainView.calendarCollection.reloadData()
+                $0.mainView.calendarCollection.setup(elements: $1)
             }
             .disposed(by: disposeBag)
         
-        mainView.calendarCollection.scrollToDate(Date(), animateScroll: false)
-    }
-}
-
-extension CalendarViewController: JTACMonthViewDataSource {
-    func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
-        let calendar = Calendar.current
-        let currentDate = Date()
+        viewModel.scheduleResult
+            .emit(with: self) { base, _ in
+                base.dismiss(animated: true)
+            }
+            .disposed(by: disposeBag)
         
-        let startDate = calendar.date(byAdding: .year, value: -2, to: currentDate) ?? currentDate
-        let endDate = calendar.date(byAdding: .year, value: 2, to: currentDate) ?? currentDate
+        mainView.addButton.rx.tap
+            .bind(to: viewModel.didTapAdd)
+            .disposed(by: disposeBag)
         
-        return ConfigurationParameters(
-            startDate: startDate,
-            endDate: endDate,
-            firstDayOfWeek: .sunday
-        )
-    }
-}
-
-extension CalendarViewController: JTACMonthViewDelegate {
-    func calendar(_ calendar: JTACMonthView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTACDayCell {
-        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: String(describing: CalendarDateCell.self), for: indexPath) as! CalendarDateCell
-        configureCell(cell: cell, cellState: cellState)
-        return cell
-    }
-    
-    func calendar(_ calendar: JTACMonthView, willDisplay cell: JTACDayCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        let cell = cell as! CalendarDateCell
-        configureCell(cell: cell, cellState: cellState)
-    }
-    
-    func configureCell(cell: CalendarDateCell, cellState: CellState) {
-        let calendar = Calendar.current
-        let status = elements.first(where: { calendar.compare($0.day, to: cellState.date, toGranularity: .day) == .orderedSame })?.status
+        mainView.closeButton.rx.tap
+            .bind(to: Binder(self) { base, _ in
+                base.dismiss(animated: true)
+            })
+            .disposed(by: disposeBag)
         
-        cell.isHidden = cellState.dateBelongsTo != .thisMonth
-        cell.setup(isCurrentDay: calendar.compare(cellState.date, to: Date(), toGranularity: .day) == .orderedSame)
-        cell.setup(status: status, text: cellState.text)
-    }
-    
-    func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
-        let cell = cell as! CalendarDateCell
-        cell.setup(isSelected: cellState.isSelected)
-    }
-    
-    func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
-        let cell = cell as! CalendarDateCell
-        cell.setup(isSelected: cellState.isSelected)
-    }
-    
-    func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView {
-        let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: String(describing: CalendarMonthHeader.self), for: indexPath) as! CalendarMonthHeader
-        let formatter = DateFormatter()
-        formatter.dateFormat = "LLLL yyyy"
+        mainView.calendarCollection.selectedDate
+            .bind(to: viewModel.selectedDate)
+            .disposed(by: disposeBag)
         
-        header.setup(title: formatter.string(from: range.start).capitalized)
-        
-        return header
-    }
-    
-    func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize? {
-        return .init(defaultSize: 41.scale)
+        mainView.calendarCollection.scrollToDate(.init(), animateScroll: false) { [weak self] in
+            
+            guard let self = self else { return }
+            
+            self.mainView.calendarCollection.selectDates([.init()])
+            
+            if let today = self.mainView.calendarCollection.indexPathsForSelectedItems?.first {
+                
+                self.mainView.calendarCollection.scrollToItem(at: today, at: .centeredVertically, animated: false)
+            }
+        }
     }
 }
 
@@ -132,5 +100,21 @@ extension CalendarViewController {
 private extension CalendarViewController {
     func activity(_ activity: Bool) {
         activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
+    }
+    
+    func open(error: Error) -> Observable<Void> {
+        Observable<Void>
+            .create { [weak self] observe in
+                guard let self = self else {
+                    return Disposables.create()
+                }
+                
+                let vc = TryAgainViewController.make(error: error) {
+                    observe.onNext(())
+                }
+                self.present(vc, animated: true)
+                
+                return Disposables.create()
+            }
     }
 }

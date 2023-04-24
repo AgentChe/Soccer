@@ -48,41 +48,35 @@ final class DrillTrainingInstructionViewModel {
 private extension DrillTrainingInstructionViewModel {
     func makeRoute() -> Driver<Route> {
         let calendarRoute = didTapCalendar
-            .withLatestFrom(source)
-            .flatMapLatest { [weak self] input -> Driver<Route> in
+            .withLatestFrom(drill)
+            .flatMapLatest { [weak self] drill -> Driver<Route> in
                 guard let self else {  return .never() }
                 
-                switch input {
-                case let .drill(drill):
-                    func source() -> Single<Route> {
-                        self.drillManager
-                            .assignDrill(id: drill.id)
-                            .flatMap { assignedDrill -> Single<Route> in
-                                guard let assignedDrill = assignedDrill else {
-                                    return .error(ContentError(.notContent))
-                                }
-                                
-                                return .just(.calendar(customerDrillId: assignedDrill.customerDrillId))
+                func source() -> Single<Route> {
+                    self.drillManager
+                        .assignDrill(id: drill.id)
+                        .flatMap { assignedDrill -> Single<Route> in
+                            guard let assignedDrill = assignedDrill else {
+                                return .error(ContentError(.notContent))
                             }
-                    }
-                    
-                    func trigger(error: Error) -> Observable<Void> {
-                        guard let tryAgain = self.tryAgain?(error) else {
-                            return .empty()
+                            
+                            return .just(.calendar(customerDrillId: assignedDrill.customerDrillId))
                         }
-                        
-                        return tryAgain
+                }
+                
+                func trigger(error: Error) -> Observable<Void> {
+                    guard let tryAgain = self.tryAgain?(error) else {
+                        return .empty()
                     }
                     
-                    return self.observableRetrySingle
-                        .retry(source: { source() },
-                               trigger: { trigger(error: $0) })
-                        .trackActivity(self.assignActivity)
-                        .asDriver(onErrorDriveWith: .never())
-                case let .planDrill(planDrill):
-                    
-                    return .just(.calendar(customerDrillId: planDrill.customerDrillId))
+                    return tryAgain
                 }
+                
+                return self.observableRetrySingle
+                    .retry(source: { source() },
+                           trigger: { trigger(error: $0) })
+                    .trackActivity(self.assignActivity)
+                    .asDriver(onErrorDriveWith: .never())
             }
             .asDriver(onErrorDriveWith: .never())
         
