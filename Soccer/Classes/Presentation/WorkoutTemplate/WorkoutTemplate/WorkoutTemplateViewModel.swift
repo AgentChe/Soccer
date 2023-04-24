@@ -11,6 +11,7 @@ import RxCocoa
 final class WorkoutTemplateViewModel {
     enum Route {
         case training(customerWorkoutId: Int)
+        case calendar(customerWorkoutId: Int)
     }
     enum Source {
         case cover(WorkoutCover)
@@ -23,6 +24,7 @@ final class WorkoutTemplateViewModel {
     var tryAgain: ((Error) -> (Observable<Void>))?
     
     lazy var didTapStartTraining = PublishRelay<Void>()
+    lazy var didTapCalendar = PublishRelay<Void>()
     
     lazy var route = makeRoute()
     lazy var elements = makeElements()
@@ -50,10 +52,20 @@ final class WorkoutTemplateViewModel {
 // MARK: Private
 private extension WorkoutTemplateViewModel {
     func makeRoute() -> Driver<Route> {
-        didTapStartTraining
-            .withLatestFrom(source)
+        enum Action {
+            case training
+            case calendar
+        }
+        
+        return Observable<Action>
+            .merge(
+                didTapCalendar.map { _ in .calendar },
+                didTapStartTraining.map { _ in .training }
+            )
+            .withLatestFrom(source) { ($0, $1) }
             .withUnretained(self)
-            .flatMapLatest { base, input -> Driver<Route> in
+            .flatMapLatest { base, args -> Driver<Route> in
+                let (action, input) = args
                 
                 let id: Int
                 switch input {
@@ -76,7 +88,14 @@ private extension WorkoutTemplateViewModel {
                                 throw ContentError(.notContent)
                             }
                             
-                            return .training(customerWorkoutId: assignedWorkout.customerWorkoutId)
+                            switch action {
+                            case .training:
+                                return .training(customerWorkoutId: assignedWorkout.customerWorkoutId)
+                            case .calendar:
+                                return .calendar(customerWorkoutId: assignedWorkout.customerWorkoutId)
+                            }
+                            
+                            
                         }
                 }
                 

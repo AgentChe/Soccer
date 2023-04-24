@@ -129,8 +129,7 @@ extension WorkoutTemplateViewController {
 // MARK: WorkoutTemplateTableDelegate
 extension WorkoutTemplateViewController: WorkoutTemplateTableDelegate {
     func tableDidTappedCalendar() {
-        // TODO
-        print("dtiTableDidTappedCalendar")
+        viewModel.didTapCalendar.accept(())
     }
     
     func tableDidTappedStartTraining() {
@@ -154,6 +153,9 @@ private extension WorkoutTemplateViewController {
         switch route {
         case .training(let customerWorkoutId):
             workoutTrainingAssembly.startTraining(from: self, customerWorkoutId: customerWorkoutId)
+        case .calendar(let customerWorkoutId):
+            let calendar = CalendarViewController.make(schedulerType: .workout(customerWorkoutId: customerWorkoutId))
+            present(calendar, animated: true)
         }
     }
     

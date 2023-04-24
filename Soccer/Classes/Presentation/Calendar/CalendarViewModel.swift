@@ -12,7 +12,7 @@ final class CalendarViewModel {
     
     enum SchedulerType {
         case drill(customerDrillId: Int)
-        case workout(customerDrillId: Int)
+        case workout(customerWorkoutId: Int)
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -68,8 +68,8 @@ private extension CalendarViewModel {
                     case let .drill(customerDrillId):
                         return self.drillManager.scheduleDrill(customerDrillId: customerDrillId, scheduleDate: date.timeIntervalSince1970)
                             .mapToVoid()
-                    case let .workout(customerDrillId):
-                        return self.workoutManager.scheduleWorkout(id: customerDrillId, scheduleDate: date.timeIntervalSince1970)
+                    case let .workout(customerWorkoutId):
+                        return self.workoutManager.scheduleWorkout(id: customerWorkoutId, scheduleDate: date.timeIntervalSince1970)
                             .mapToVoid()
                     }
                 }
