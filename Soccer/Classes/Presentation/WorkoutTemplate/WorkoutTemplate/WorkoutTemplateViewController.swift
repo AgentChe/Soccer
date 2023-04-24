@@ -13,6 +13,8 @@ final class WorkoutTemplateViewController: UIViewController {
     
     private let viewModel: WorkoutTemplateViewModel
     
+    private lazy var workoutTrainingAssembly = WorkoutTrainingAssembly()
+    
     private lazy var disposeBag = DisposeBag()
     
     private init(workoutCover: WorkoutCover) {
@@ -82,6 +84,10 @@ final class WorkoutTemplateViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        viewModel.route
+            .drive(with: self) { $0.route($1) }
+            .disposed(by: disposeBag)
+        
         mainView.tableView.mainDelegate = self
     }
 }
@@ -144,6 +150,13 @@ extension WorkoutTemplateViewController: WorkoutTemplateTableDelegate {
 
 // MARK: Private
 private extension WorkoutTemplateViewController {
+    func route(_ route: WorkoutTemplateViewModel.Route) {
+        switch route {
+        case .training(let customerWorkoutId):
+            workoutTrainingAssembly.startTraining(from: self, customerWorkoutId: customerWorkoutId)
+        }
+    }
+    
     func activity(_ activity: Bool) {
         mainView.tableView.isHidden = activity
         activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()

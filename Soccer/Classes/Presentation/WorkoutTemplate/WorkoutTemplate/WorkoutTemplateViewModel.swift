@@ -9,6 +9,9 @@ import RxSwift
 import RxCocoa
 
 final class WorkoutTemplateViewModel {
+    enum Route {
+        case training(customerWorkoutId: Int)
+    }
     enum Source {
         case cover(WorkoutCover)
         case focusZone(FocusZone)
@@ -21,6 +24,7 @@ final class WorkoutTemplateViewModel {
     
     lazy var didTapStartTraining = PublishRelay<Void>()
     
+    lazy var route = makeRoute()
     lazy var elements = makeElements()
     lazy var activity = RxActivityIndicator()
     lazy var assignActivity = RxActivityIndicator()
@@ -45,6 +49,55 @@ final class WorkoutTemplateViewModel {
 
 // MARK: Private
 private extension WorkoutTemplateViewModel {
+    func makeRoute() -> Driver<Route> {
+        didTapStartTraining
+            .withLatestFrom(source)
+            .withUnretained(self)
+            .flatMapLatest { base, input -> Driver<Route> in
+                
+                let id: Int
+                switch input {
+                case let .plan(workout):
+                    return .just(.training(customerWorkoutId: workout.customerWorkoutId))
+                case let .cover(workout):
+                    id = workout.id
+                case let .focusZone(workout):
+                    id = workout.id
+                case let .step(workout):
+                    id = workout.id
+                case let .template(workout):
+                    id = workout.id
+                }
+                
+                func source() -> Single<Route> {
+                    base.workoutManager.assignWorkout(id: id)
+                        .map { assignedWorkout -> Route in
+                            guard let assignedWorkout else {
+                                throw ContentError(.notContent)
+                            }
+                            
+                            return .training(customerWorkoutId: assignedWorkout.customerWorkoutId)
+                        }
+                }
+                
+                func trigger(error: Error) -> Observable<Void> {
+                    guard let tryAgain = base.tryAgain?(error) else {
+                        return .empty()
+                    }
+                    
+                    return tryAgain
+                }
+                
+                return base.observableRetrySingle
+                    .retry(
+                        source: source,
+                        trigger: trigger
+                    )
+                    .trackActivity(base.assignActivity)
+                    .asDriver(onErrorDriveWith: .never())
+            }
+            .asDriver(onErrorDriveWith: .never())
+    }
     func makeElements() -> Driver<[WorkoutTemplateTableElement]> {
         Driver
             .combineLatest(
