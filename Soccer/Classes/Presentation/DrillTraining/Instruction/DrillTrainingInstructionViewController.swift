@@ -94,8 +94,7 @@ extension DrillTrainingInstructionViewController {
 // MARK: DTITableDelegate
 extension DrillTrainingInstructionViewController: DTITableDelegate {
     func dtiTableDidTappedCalendar() {
-        // TODO
-        print("dtiTableDidTappedCalendar")
+        viewModel.didTapCalendar.accept(())
     }
     
     func dtiTableDidTappedStartTraining() {
@@ -109,6 +108,9 @@ private extension DrillTrainingInstructionViewController {
         switch route {
         case .training(let customerDrillId):
             drillTrainingAssembly.startTraining(from: self, customerDrillId: customerDrillId)
+        case .calendar(let customerDrillId):
+            let calendar = CalendarViewController.make(schedulerType: .drill(customerDrillId: customerDrillId))
+            present(calendar, animated: true)
         }
     }
     
