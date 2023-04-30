@@ -43,6 +43,9 @@ private extension CalendarView {
         planStatusStack.addArrangedSubview(completed)
         planStatusStack.addArrangedSubview(skipped)
         
+        dayOfWeakStack.distribution = .fillEqually
+        planStatusStack.distribution = .equalSpacing
+        
         let attr = TextAttributes()
             .font(Fonts.Inter.regular(size: 12.scale))
             .lineHeight(16.scale)
@@ -75,8 +78,8 @@ private extension CalendarView {
         
         NSLayoutConstraint.activate([
             dayOfWeakStack.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 9.scale),
-            dayOfWeakStack.leftAnchor.constraint(equalTo: leftAnchor, constant: 14.scale),
-            dayOfWeakStack.rightAnchor.constraint(equalTo: rightAnchor, constant: -14.scale),
+            dayOfWeakStack.leftAnchor.constraint(equalTo: leftAnchor, constant: 17.scale),
+            dayOfWeakStack.rightAnchor.constraint(equalTo: rightAnchor, constant: -17.scale),
             dayOfWeakStack.heightAnchor.constraint(equalToConstant: 45.scale)
         ])
         
@@ -161,7 +164,6 @@ private extension CalendarView {
         let view = UIStackView()
         view.axis = .horizontal
         view.alignment = .center
-        view.distribution = .equalSpacing
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

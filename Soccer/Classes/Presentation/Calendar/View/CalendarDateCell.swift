@@ -20,13 +20,7 @@ class CalendarDateCell: JTACDayCell {
         .font(Fonts.Inter.regular(size: 16.scale))
         .lineHeight(25.6.scale)
         .textAlignment(.center)
-    
-    private lazy var dayFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd"
-        return formatter
-    }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         

@@ -18,7 +18,7 @@ final class MainViewCoordinator {
     lazy var trainVC = NavigationController(rootViewController: TrainViewController.make { [weak self] in
         self?.change(tab: .profile)
     })
-    lazy var profileVC = NavigationController(rootViewController: UIViewController())
+    lazy var profileVC = NavigationController(rootViewController: ProfileMainViewController.make())
     
     private var previousVC: UIViewController?
     

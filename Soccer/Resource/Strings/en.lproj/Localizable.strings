@@ -189,3 +189,24 @@
 "Calendar.Completed" = "Completed";
 "Calendar.Unfinished" = "Unfinished";
 "Calendar.SelectDate" = "Select Date";
+
+// MARK: Profile
+"Profile.MyProfile" = "My profile";
+"Profile.DaysOfWeek.Su" = "S";
+"Profile.DaysOfWeek.Mo" = "M";
+"Profile.DaysOfWeek.Tu" = "T";
+"Profile.DaysOfWeek.We" = "W";
+"Profile.DaysOfWeek.Th" = "T";
+"Profile.DaysOfWeek.Fr" = "F";
+"Profile.DaysOfWeek.Sa" = "S";
+"Profile.Level" = "%@ Level";
+"Profile.Completed.Workouts" = "Completed workouts";
+"Profile.Completed.Drills" = "Completed drills";
+"Profile.StatsTitle" = "Personal stats";
+"Profile.SkillLevel" = "Skill level";
+"Profile.TrainingDays" = "Training days";
+"Profile.FocusZones" = "Focus zones";
+"Profile.TermsofUse" = "Terms of Use";
+"Profile.PrivacyPolicy" = "Privacy Policy";
+"Profile.ContactUs" = "Contact Us";
+"Profile.Legal&Privacy" = "Legal & Privacy";

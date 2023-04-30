@@ -14,6 +14,7 @@ struct SetRequest: APIRequestBody {
     let drills: [Int]?
     let focusZones: [Int]?
     let timezone: String?
+    let gender: Int?
     
     var url: String {
         GlobalDefinitions.domain + "/api/users/set"
@@ -47,6 +48,10 @@ struct SetRequest: APIRequestBody {
         
         if let timezone = timezone {
             params["timezone"] = timezone
+        }
+        
+        if let gender = gender {
+            params["gender"] = gender
         }
         
         return params

@@ -11,7 +11,8 @@ protocol ProfileManagerProtocol {
     func set(skillLevelId: Int?,
              weekSchedule: WeekSchedule?,
              drillsIds: [Int]?,
-             focusZonesIds: [Int]?) -> Single<Void>
+             focusZonesIds: [Int]?,
+             gender: Gender?) -> Single<Void>
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?>
     func syncTokens(oldToken: String, newToken: String) -> Single<Void>
     func login(userToken: String) -> Single<Void>
@@ -23,6 +24,7 @@ final class ProfileManager {
         static let weekSchedule = "profile_manager_week_schedule_key"
         static let drillsIds = "profile_manager_drills_ids_key"
         static let focusZonesIds = "profile_manager_focus_zones_ids_key"
+        static let gender = "profile_manager_gender_key"
     }
     
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
@@ -35,7 +37,8 @@ extension ProfileManager: ProfileManagerProtocol {
     func set(skillLevelId: Int? = nil,
              weekSchedule: WeekSchedule? = nil,
              drillsIds: [Int]? = nil,
-             focusZonesIds: [Int]? = nil) -> Single<Void> {
+             focusZonesIds: [Int]? = nil,
+             gender: Gender? = nil) -> Single<Void> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -60,7 +63,8 @@ extension ProfileManager: ProfileManagerProtocol {
             weekSchedule: weekScheduleDays,
             drills: drillsIds,
             focusZones: focusZonesIds,
-            timezone: String(timezone)
+            timezone: String(timezone),
+            gender: gender?.code
         )
         
         return defaultRequestWrapper
@@ -68,6 +72,7 @@ extension ProfileManager: ProfileManagerProtocol {
             .mapToVoid()
             .do(onSuccess: { [weak self] in
                 self?.store(skillLevelId: skillLevelId)
+                self?.store(gender: gender)
                 self?.store(weekSchedule: weekSchedule)
                 self?.store(drillsIds: drillsIds)
                 self?.store(focusZonesIds: focusZonesIds)
@@ -113,6 +118,7 @@ private extension ProfileManager {
                 self?.store(weekSchedule: profile?.weekSchedule)
                 self?.store(drillsIds: profile?.drillsIds)
                 self?.store(focusZonesIds: profile?.focusZonesIds)
+                self?.store(gender: profile?.gender)
             })
     }
     
@@ -120,12 +126,14 @@ private extension ProfileManager {
         Single
             .zip(
                 cachedSkillLevelId(),
+                cachedGender(),
                 cachedWeekSchedule(),
                 cachedDrillsIds(),
                 cachedFocusZonesIds()
             )
-            .map { skillLevelId, weekSchedule, drillsIds, focusZonesIds -> Profile in
+            .map { skillLevelId, gender, weekSchedule, drillsIds, focusZonesIds -> Profile in
                 Profile(skillLevelId: skillLevelId,
+                        gender: gender,
                         weekSchedule: weekSchedule,
                         drillsIds: drillsIds,
                         focusZonesIds: focusZonesIds)
@@ -214,6 +222,24 @@ private extension ProfileManager {
             let focusZonesIds = UserDefaults.standard.value(forKey: Constants.focusZonesIds) as? [Int]
             
             event(.success(focusZonesIds))
+            
+            return Disposables.create()
+        }
+    }
+    
+    func store(gender: Gender?) {
+        guard let gender else {
+            return
+        }
+        
+        UserDefaults.standard.set(gender.code, forKey: Constants.gender)
+    }
+    
+    func cachedGender() -> Single<Gender?> {
+        Single<Gender?>.create { event in
+            let genderCode = UserDefaults.standard.value(forKey: Constants.gender) as? Int
+            let gender = genderCode.flatMap { Gender(code: $0)}
+            event(.success(gender))
             
             return Disposables.create()
         }
