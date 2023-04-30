@@ -64,7 +64,7 @@ extension ProfileManager: ProfileManagerProtocol {
             drills: drillsIds,
             focusZones: focusZonesIds,
             timezone: String(timezone),
-            gender: gender
+            gender: gender?.code
         )
         
         return defaultRequestWrapper
@@ -118,6 +118,7 @@ private extension ProfileManager {
                 self?.store(weekSchedule: profile?.weekSchedule)
                 self?.store(drillsIds: profile?.drillsIds)
                 self?.store(focusZonesIds: profile?.focusZonesIds)
+                self?.store(gender: profile?.gender)
             })
     }
     
@@ -227,7 +228,9 @@ private extension ProfileManager {
     }
     
     func store(gender: Gender?) {
-        guard let gender else { return }
+        guard let gender else {
+            return
+        }
         
         UserDefaults.standard.set(gender.code, forKey: Constants.gender)
     }

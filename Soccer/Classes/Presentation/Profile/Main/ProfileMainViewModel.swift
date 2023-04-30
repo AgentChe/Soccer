@@ -13,6 +13,8 @@ final class ProfileMainViewModel {
     
     enum Route {
         case details
+        case drill(PlanDrill)
+        case workout(PlanWorkout)
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -41,6 +43,13 @@ private extension ProfileMainViewModel {
                 switch element {
                 case .profile:
                     return .details
+                case .planTraining(let element):
+                    switch element.training {
+                    case .drill(let drill):
+                        return .drill(drill)
+                    case .workout(let workout):
+                        return .workout(workout)
+                    }
                 default:
                     return nil
                 }

@@ -70,6 +70,12 @@ private extension ProfileMainViewController {
         case .details:
             let vc = ProfileDetailsViewController.make()
             navigationController?.pushViewController(vc, animated: true)
+        case .drill(let drill):
+            let vc = DrillTrainingInstructionViewController.make(planDrill: drill)
+            navigationController?.pushViewController(vc, animated: true)
+        case .workout(let workout):
+            let vc = WorkoutTemplateViewController.make(planWorkout: workout)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     
