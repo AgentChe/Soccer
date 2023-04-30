@@ -40,6 +40,14 @@ class ProfileMainViewController: UIViewController {
             .drive(with: mainView.tableView) { $0.setup(elements: $1) }
             .disposed(by: disposeBag)
         
+        viewModel.route
+            .emit(with: self) { $0.route($1) }
+            .disposed(by: disposeBag)
+        
+        mainView.tableView.didSelectCell
+            .bind(to: viewModel.didSelectCell)
+            .disposed(by: disposeBag)
+        
         mainView.tableView.didSelectDay
             .bind(to: viewModel.didTapPlanDay)
             .disposed(by: disposeBag)
@@ -57,6 +65,14 @@ extension ProfileMainViewController {
 
 // MARK: Private
 private extension ProfileMainViewController {
+    func route(_ route: ProfileMainViewModel.Route) {
+        switch route {
+        case .details:
+            let vc = ProfileDetailsViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     func activity(_ activity: Bool) {
         activity ? mainView.preloader.startAnimating() : mainView.preloader.stopAnimating()
     }

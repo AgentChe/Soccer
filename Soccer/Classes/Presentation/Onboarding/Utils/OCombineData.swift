@@ -12,6 +12,7 @@ struct OCombineData {
     let weekSchedule: WeekSchedule
     let drillCategories: [Int]
     let focusZones: [FocusZone]
+    let gender: Gender
 }
 
 final class OnboardingCombineData {
@@ -19,13 +20,15 @@ final class OnboardingCombineData {
     private var weekSchedule: WeekSchedule?
     private var drillCategories: [DrillCategory]?
     private var focusZones: [FocusZone]?
+    private var gender: Gender?
     
     func combineData() -> OCombineData? {
         guard
             let skillLevel = skillLevel,
             let weekSchedule = weekSchedule,
             let drillCategories = drillCategories,
-            let focusZones = focusZones
+            let focusZones = focusZones,
+            let gender = gender
         else {
             return nil
         }
@@ -34,7 +37,8 @@ final class OnboardingCombineData {
             skillLevel: skillLevel,
             weekSchedule: weekSchedule,
             drillCategories: drillCategories.map { $0.id },
-            focusZones: focusZones
+            focusZones: focusZones,
+            gender: gender
         )
     }
 }
@@ -64,5 +68,12 @@ extension OnboardingCombineData: ODrillsViewDelegate {
 extension OnboardingCombineData: OFocusZoneViewDelegate {
     func focusZoneDidSelect(focusZones: [FocusZone]) {
         self.focusZones = focusZones
+    }
+}
+
+// MARK: OGenderViewDelegate
+extension OnboardingCombineData: OGenderViewDelegate {
+    func genderViewDidSelect(gender: Gender) {
+        self.gender = gender
     }
 }

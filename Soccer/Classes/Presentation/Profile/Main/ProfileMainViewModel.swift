@@ -10,11 +10,18 @@ import RxSwift
 import RxCocoa
 
 final class ProfileMainViewModel {
+    
+    enum Route {
+        case details
+    }
+    
     var tryAgain: ((Error) -> (Observable<Void>))?
     
     lazy var activity = RxActivityIndicator()
     lazy var didTapPlanDay = PublishRelay<Date>()
+    lazy var didSelectCell = PublishRelay<ProfileMainTableElement>()
     lazy var elements = makeElements()
+    lazy var route = makeRoute()
     
     private lazy var homeKit = makeHomeKit()
     private lazy var skillLevels = makeSkillLevels()
@@ -28,6 +35,19 @@ final class ProfileMainViewModel {
 }
 
 private extension ProfileMainViewModel {
+    func makeRoute() -> Signal<Route> {
+        didSelectCell
+            .compactMap { element -> Route? in
+                switch element {
+                case .profile:
+                    return .details
+                default:
+                    return nil
+                }
+            }
+            .asSignal(onErrorSignalWith: .never())
+    }
+    
     func makeElements() -> Driver<[ProfileMainTableElement]> {
         Driver.combineLatest(homeKit, skillLevels, planDay, plan)
             .map { [weak self] homeKit, skillLevels, planDay, plan in
@@ -64,6 +84,7 @@ private extension ProfileMainViewModel {
                 
                 result.append(.offset(40.scale))
                 result.append(.stats(drill: "\(drillCompleted.count)", workout: "\(workoutCompleted.count)"))
+                result.append(.offset(40.scale))
                 
                 return result
             }

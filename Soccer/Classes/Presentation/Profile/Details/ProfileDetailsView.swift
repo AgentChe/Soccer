@@ -8,6 +8,8 @@
 import UIKit
 
 class ProfileDetailsView: UIView {
+    
+    lazy var tableView = makeTableView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,14 +33,19 @@ private extension ProfileDetailsView {
 // MARK: Make constraints
 private extension ProfileDetailsView {
     func makeConstraints() {
-        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16.scale),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }
 
 // MARK: Lazy initialization
 private extension ProfileDetailsView {
-    func makeTableView() -> ProfileMainTableView {
-        let view = ProfileMainTableView()
+    func makeTableView() -> ProfileDetailsTableView {
+        let view = ProfileDetailsTableView()
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never

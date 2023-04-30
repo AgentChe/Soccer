@@ -31,8 +31,11 @@ final class GetProfileResponse {
         
         let focusZonesIds = data["body_part_ids"] as? [Int]
         
+        let gender = (data["gender"] as? Int).flatMap { Gender(code: $0)}
+        
         return Profile(
             skillLevelId: skillLevelId,
+            gender: gender,
             weekSchedule: weekSchedule,
             drillsIds: drillsIds,
             focusZonesIds: focusZonesIds

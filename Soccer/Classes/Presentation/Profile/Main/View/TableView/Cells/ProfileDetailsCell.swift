@@ -40,8 +40,7 @@ private extension ProfileDetailsCell {
         NSLayoutConstraint.activate([
             iconView.heightAnchor.constraint(equalToConstant: 40.scale),
             iconView.widthAnchor.constraint(equalTo: iconView.heightAnchor),
-            iconView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            iconView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            iconView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             iconView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16.scale)
         ])
         

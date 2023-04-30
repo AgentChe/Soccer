@@ -10,6 +10,7 @@ import RxCocoa
 
 final class ProfileMainTableView: UITableView {
     lazy var didSelectDay = PublishRelay<Date>()
+    lazy var didSelectCell = PublishRelay<ProfileMainTableElement>()
     private var elements = [ProfileMainTableElement]()
 
     override init(frame: CGRect, style: UITableView.Style) {
@@ -91,6 +92,10 @@ extension ProfileMainTableView: UITableViewDelegate {
         case .stats:
             return 184.scale
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectCell.accept(elements[indexPath.row])
     }
 }
 
