@@ -31,12 +31,39 @@ extension AmplitudeManager: OtterScaleReceiptValidationDelegate {
     }
 }
 
+// MARK: AnalyticsDelegate
+extension AmplitudeManager: AnalyticsDelegate {
+    func analyticsDidReceive(attributionsModel: ADServiceAttributionsModel?) {
+        guard let attributionsModel = attributionsModel, attributionsModel.hasAttribution else {
+            return
+        }
+        
+        var properties = [String: Any]()
+        if let adgroup = attributionsModel.adgroup {
+            properties["adgroup"] = adgroup
+        }
+        if let channel = attributionsModel.channel {
+            properties["channel"] = channel
+        }
+        if let campaign = attributionsModel.campaign {
+            properties["campaign"] = campaign
+        }
+        if let feature = attributionsModel.feature {
+            properties["feature"] = feature
+        }
+        
+        Amplitude.instance().setUserProperties(properties)
+        logEvent(name: "Attribution Detected")
+    }
+}
+
 // MARK: Public
 extension AmplitudeManager {
     func initialize() {
         Amplitude.instance().initializeApiKey(GlobalDefinitions.amplitudeApiKey)
         
-        OtterScale.shared.add(delegate: self)
+        OtterScale.shared.addReceiptValidation(delegate: self)
+        OtterScale.shared.addAnalytics(delegate: self)
         
         installFirstLaunchIfNeeded()
     }
