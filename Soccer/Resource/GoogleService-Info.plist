@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>522029731906-161uufveffetscgsj4lmgn4auo0g64h6.apps.googleusercontent.com</string>
+	<string>756262953707-6fagbp1a0b8a9m192hj3njulb7tsb04k.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.522029731906-161uufveffetscgsj4lmgn4auo0g64h6</string>
+	<string>com.googleusercontent.apps.756262953707-6fagbp1a0b8a9m192hj3njulb7tsb04k</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBGYTEhPeHc33Nj7bYxT6fDbDG_AueSXb0</string>
+	<string>AIzaSyAI4wVF5387Xjq_QgUwx940-NCplnSFmF4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>522029731906</string>
+	<string>756262953707</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>mobile.manga</string>
+	<string>training.app.soccer</string>
 	<key>PROJECT_ID</key>
-	<string>manga-comics-610ad</string>
+	<string>soccer-ad8b1</string>
 	<key>STORAGE_BUCKET</key>
-	<string>manga-comics-610ad.appspot.com</string>
+	<string>soccer-ad8b1.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:522029731906:ios:e31c3d57f27b0ec92c9ddb</string>
+	<string>1:756262953707:ios:968abc9cf3ce5f27ce94ae</string>
 </dict>
 </plist>

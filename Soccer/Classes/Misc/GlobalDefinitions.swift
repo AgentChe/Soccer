@@ -5,17 +5,16 @@
 //  Created by Andrey Chernyshev on 16.01.2021.
 //
 
-// TODO: заменить все
 final class GlobalDefinitions {
     static let domain = "https://soccer.thinkaboutapps.com"
     static let apiKey = "4Mf7e1kE1sJHZraKrR8o"
     
     static let otterScaleHost = "https://api.korrekted.com"
-    static let otterScaleApiKey = "ZSrEBNnAvi4nvYPB"
+    static let otterScaleApiKey = "aCdEI1BBlcghnB5s"
     
-    static let appleAppID = "1072773871"
+    static let appleAppID = "6449255756"
     
-    static let applicationTag = "WICCA"
+    static let applicationTag = "SOCCER"
     static let amplitudeApiKey = "1336d08d429ceb343970fd360e3253f6"
     static let appsFlyerApiKey = "DCciCfYXjMQ8QnkdCg8qzk"
     
@@ -24,7 +23,7 @@ final class GlobalDefinitions {
     static let contactUsUrl = "https://thinkaboutapps.com/contact"
     
     enum Paygate {
-        static let defaultLifetime = "mobile.manga.4ever"
-        static let defaultMonthly = "mobile.manga.month"
+        static let defaultLifetime = "training.app.soccer.endless"
+        static let defaultMonthly = "training.app.soccer.monthly"
     }
 }
