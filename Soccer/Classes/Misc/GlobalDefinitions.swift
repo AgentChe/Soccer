@@ -6,7 +6,7 @@
 //
 
 final class GlobalDefinitions {
-    static let domain = "https://soccer.thinkaboutapps.com"
+    static let domain = "https://soccer.kyotosaka.com"
     static let apiKey = "4Mf7e1kE1sJHZraKrR8o"
     
     static let otterScaleHost = "https://api.korrekted.com"
