@@ -18,9 +18,9 @@ final class GlobalDefinitions {
     static let amplitudeApiKey = "1336d08d429ceb343970fd360e3253f6"
     static let appsFlyerApiKey = "DCciCfYXjMQ8QnkdCg8qzk"
     
-    static let termsOfServiceUrl = "https://thinkaboutapps.com/terms"
-    static let privacyPolicyUrl = "https://thinkaboutapps.com/policy"
-    static let contactUsUrl = "https://thinkaboutapps.com/contact"
+    static let termsOfServiceUrl = "https://kyotosaka.com/terms.html"
+    static let privacyPolicyUrl = "https://kyotosaka.com/policy.html"
+    static let contactUsUrl = "https://kyotosaka.com/index.html#careers"
     
     enum Paygate {
         static let defaultLifetime = "training.app.soccer.endless"
