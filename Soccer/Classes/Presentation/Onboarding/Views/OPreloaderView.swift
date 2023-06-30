@@ -47,6 +47,8 @@ final class OPreloaderView: OSlideView {
         
         calculatePercent()
         request()
+        
+        RequestReview.request()
     }
 }
 
@@ -187,6 +189,7 @@ private extension OPreloaderView {
     
     func makeLabel() -> UILabel {
         let view = UILabel()
+        view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

@@ -78,7 +78,7 @@ private extension OWhereTrainButton {
     
     func makeLabel() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(Appearance.white.withAlphaComponent(marked ? 1 : 0.7))
+            .textColor(Appearance.white)
             .font(Fonts.Inter.regular(size: 16.scale))
             .lineHeight(25.6.scale)
             .textAlignment(.center)

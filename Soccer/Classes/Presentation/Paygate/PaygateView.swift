@@ -185,7 +185,7 @@ private extension PaygateView {
         
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = "Paygate.Title".localized.attributed(with: attrs)
+        view.attributedText = "Paygate.Title".localized.uppercased().attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
