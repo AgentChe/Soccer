@@ -25,7 +25,7 @@ struct ScheduleWorkoutRequest: APIRequestBody {
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
             "template_workout_id": customerWorkoutId,
-            "schedule_date": Int(scheduleDate)
+            "schedule_date": scheduleDate
         ]
     }
 }

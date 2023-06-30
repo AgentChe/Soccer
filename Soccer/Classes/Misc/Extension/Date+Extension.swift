@@ -9,6 +9,7 @@ import Foundation
 
 extension Date {
     func isEqualByDays(with date: Date) -> Bool {
-        Calendar.current.component(.day, from: self) == Calendar.current.component(.day, from: date)
+        let calendar = Calendar.current
+        return calendar.dateComponents([.day, .weekday, .year, .month], from: self) == calendar.dateComponents([.day, .weekday, .year, .month], from: date)
     }
 }

@@ -25,7 +25,7 @@ struct ScheduleDrillRequest: APIRequestBody {
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken,
             "customer_drill_id": customerDrillId,
-            "schedule_date": Int(scheduleDate)
+            "schedule_date": scheduleDate
         ]
     }
 }

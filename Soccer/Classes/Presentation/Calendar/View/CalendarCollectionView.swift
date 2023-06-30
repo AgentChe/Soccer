@@ -64,9 +64,16 @@ extension CalendarCollectionView: JTACMonthViewDelegate {
     }
     
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
-        guard let cell = cell as? CalendarDateCell else { return }
+        guard let cell = cell as? CalendarDateCell else {
+            return
+        }
+        
         cell.setup(isSelected: cellState.isSelected)
-        selectedDateRelay.accept(date)
+        
+        let offset = TimeZone.current.secondsFromGMT(for: date)
+        let selectedDate = Calendar.current.date(byAdding: .second, value: offset, to: date)
+        
+        selectedDateRelay.accept(selectedDate)
     }
     
     func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {

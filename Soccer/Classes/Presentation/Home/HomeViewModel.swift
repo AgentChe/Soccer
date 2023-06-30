@@ -145,7 +145,7 @@ private extension HomeViewModel {
     
     func makePlanDay() -> Driver<Date> {
         didTapPlanDay
-            .startWith(Calendar.current.startOfDay(for: Date()))
+            .startWith(Date())
             .asDriver(onErrorDriveWith: .never())
     }
 }
@@ -215,7 +215,7 @@ private extension HomeViewModel {
         planDay: Date
     ) -> [HomeTableElement] {
         let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
+        let today = Date()
         let todayDayOfWeek = calendar.component(.weekday, from: today)
         
         guard
