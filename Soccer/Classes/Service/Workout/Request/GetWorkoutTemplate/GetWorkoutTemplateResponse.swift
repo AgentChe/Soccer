@@ -33,7 +33,7 @@ final class GetWorkoutTemplateResponse {
             
             let exercises = exercisesArray.compactMap { exerciseJSON -> WorkoutExercise? in
                 guard
-                    let id = exerciseJSON["excersise_id"] as? Int,
+                    let id = exerciseJSON["exercise_id"] as? Int,
                     let name = exerciseJSON["name"] as? String,
                     let subTitle = exerciseJSON["subtitle"] as? String,
                     let imagePath = exerciseJSON["image"] as? String,

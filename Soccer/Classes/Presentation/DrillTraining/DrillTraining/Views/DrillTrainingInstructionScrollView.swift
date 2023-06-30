@@ -34,8 +34,7 @@ final class DrillTrainingInstructionScrollView: UIView {
 // MARK: Public
 extension DrillTrainingInstructionScrollView {
     func setup(instruction: String) {
-        let r = instruction + instruction + instruction + instruction
-        instructionLabel.attributedText = r.attributed(with: attrs)
+        instructionLabel.attributedText = instruction.attributed(with: attrs)
     }
 }
 
