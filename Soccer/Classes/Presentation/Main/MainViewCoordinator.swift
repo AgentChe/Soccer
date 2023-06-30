@@ -12,13 +12,19 @@ final class MainViewCoordinator {
     
     lazy var homeVC = NavigationController(rootViewController: HomeViewController.make(seeAllDrills: { [weak self] in
         self?.change(tab: .train)
+        self?.trainController.select(filter: .drills)
     }, seeAllWorkouts: { [weak self] in
         self?.change(tab: .train)
+        self?.trainController.select(filter: .workouts)
+    }, addTrainings: { [weak self] in
+        self?.change(tab: .train)
     }))
-    lazy var trainVC = NavigationController(rootViewController: TrainViewController.make { [weak self] in
-        self?.change(tab: .profile)
-    })
+    lazy var trainVC = NavigationController(rootViewController: trainController)
     lazy var profileVC = NavigationController(rootViewController: ProfileMainViewController.make())
+    
+    private lazy var trainController = TrainViewController.make { [weak self] in
+        self?.change(tab: .profile)
+    }
     
     private var previousVC: UIViewController?
     

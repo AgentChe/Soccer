@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxRelay
 
 final class TrainViewController: UIViewController {
     lazy var mainView = TrainView()
@@ -14,6 +15,9 @@ final class TrainViewController: UIViewController {
     private lazy var viewModel = TrainViewModel()
     
     private lazy var disposeBag = DisposeBag()
+    
+    private lazy var externalSelectFilter = PublishRelay<TrainFilterView.Filter>()
+    private var selectFilter: TrainFilterView.Filter? // На случай, если переход на фильтр был совершен на другом экране до инициализации TrainViewController
     
     private let didOpenProfile: (() -> Void)
     
@@ -81,12 +85,17 @@ final class TrainViewController: UIViewController {
     }
 }
 
-// MARK: Make
+// MARK: Public
 extension TrainViewController {
     static func make(didOpenProfile: @escaping () -> Void) -> TrainViewController {
         let vc = TrainViewController(didOpenProfile: didOpenProfile)
         vc.navigationItem.backButtonTitle = " "
         return vc
+    }
+    
+    func select(filter: TrainFilterView.Filter) {
+        selectFilter = filter
+        externalSelectFilter.accept(filter)
     }
 }
 
@@ -158,9 +167,10 @@ private extension TrainViewController {
                 mainView.filterView.drillsButton.rx.tap
                     .map { TrainFilterView.Filter.drills },
                 mainView.filterView.workoutsButton.rx.tap
-                    .map { TrainFilterView.Filter.workouts }
+                    .map { TrainFilterView.Filter.workouts },
+                externalSelectFilter.asObservable()
             )
-            .startWith(.drills)
+            .startWith(selectFilter ?? .drills)
             .bind(to: Binder(self) { base, filter in
                 base.mainView.filterView.filter = filter
                 base.viewModel.didSelectFilter.accept(filter)

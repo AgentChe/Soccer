@@ -58,7 +58,7 @@ extension HomeDrillCoverCell {
     func setup(element: HomeDrillElement) {
         pictureView.kf.setImage(with: element.drill.image)
         
-        drillTypeLabel.attributedText = element.drillCategory.name.attributed(with: drillTypeAttrs)
+        drillTypeLabel.attributedText = element.drillCategory.name.uppercased().attributed(with: drillTypeAttrs)
         nameLabel.attributedText = element.drill.name.attributed(with: nameAttrs)
         skillLevelLabel.attributedText = element.skillLevel.name.attributed(with: skillLevelAttrs)
     }

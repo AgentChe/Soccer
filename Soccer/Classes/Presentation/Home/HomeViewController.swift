@@ -17,10 +17,12 @@ final class HomeViewController: UIViewController {
     
     private let seeAllDrills: (() -> Void)
     private let seeAllWorkouts: (() -> Void)
+    private let addTrainings: (() -> Void)
     
-    private init(seeAllDrills: @escaping (() -> Void), seeAllWorkouts: @escaping (() -> Void)) {
+    private init(seeAllDrills: @escaping (() -> Void), seeAllWorkouts: @escaping (() -> Void), addTrainings: @escaping (() -> Void)) {
         self.seeAllDrills = seeAllDrills
         self.seeAllWorkouts = seeAllWorkouts
+        self.addTrainings = addTrainings
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -78,8 +80,8 @@ final class HomeViewController: UIViewController {
 
 // MARK: Make
 extension HomeViewController {
-    static func make(seeAllDrills: @escaping (() -> Void), seeAllWorkouts: @escaping (() -> Void)) -> HomeViewController {
-        let vc = HomeViewController(seeAllDrills: seeAllDrills, seeAllWorkouts: seeAllWorkouts)
+    static func make(seeAllDrills: @escaping (() -> Void), seeAllWorkouts: @escaping (() -> Void), addTrainings: @escaping (() -> Void)) -> HomeViewController {
+        let vc = HomeViewController(seeAllDrills: seeAllDrills, seeAllWorkouts: seeAllWorkouts, addTrainings: addTrainings)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
@@ -131,8 +133,7 @@ extension HomeViewController: HomeTableViewDelegate {
     }
     
     func homeTableDidTapAddTraining() {
-        // TODO
-        print("homeTableDidTapAddTraining")
+        addTrainings()
     }
     
     func homeTableDidTap(drillCategory: DrillCategory) {

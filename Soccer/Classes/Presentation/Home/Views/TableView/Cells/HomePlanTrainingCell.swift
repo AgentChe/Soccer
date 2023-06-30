@@ -57,11 +57,11 @@ extension HomePlanTrainingCell {
         switch element.training {
         case .drill(let drill):
             pictureView.kf.setImage(with: drill.image)
-            typeLabel.attributedText = "Home.Drill".localized.attributed(with: typeAttrs)
+            typeLabel.attributedText = "Home.Drill".localized.uppercased().attributed(with: typeAttrs)
             nameLabel.attributedText = drill.name.attributed(with: nameAttrs)
         case .workout(let workout):
             pictureView.kf.setImage(with: workout.image)
-            typeLabel.attributedText = "Home.Training".localized.attributed(with: typeAttrs)
+            typeLabel.attributedText = "Home.Training".localized.uppercased().attributed(with: typeAttrs)
             nameLabel.attributedText = workout.name.attributed(with: nameAttrs)
         }
         
