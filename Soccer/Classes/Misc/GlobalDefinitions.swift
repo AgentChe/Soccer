@@ -15,7 +15,7 @@ final class GlobalDefinitions {
     static let appleAppID = "6449255756"
     
     static let applicationTag = "SOCCER"
-    static let amplitudeApiKey = "11f36fb9021dbfca4a1349a3b2284224"
+    static let amplitudeApiKey = "0d810afcbd45c0b58a5ed6cd272acfa"
     static let appsFlyerApiKey = "DCciCfYXjMQ8QnkdCg8qzk"
     
     static let termsOfServiceUrl = "https://kyotosaka.com/terms.html"
