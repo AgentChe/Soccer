@@ -116,8 +116,6 @@
 		DEA8FE7D298A7AE000868C0E /* PushNotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FDC5298A7AE000868C0E /* PushNotificationsModel.swift */; };
 		DEA8FE7E298A7AE000868C0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FDC6298A7AE000868C0E /* SceneDelegate.swift */; };
 		DEA8FE7F298A7AE000868C0E /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FDC7298A7AE000868C0E /* Appearance.swift */; };
-		DEA8FE80298A7AE000868C0E /* AppsFlyerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FDC9298A7AE000868C0E /* AppsFlyerManager.swift */; };
-		DEA8FE81298A7AE000868C0E /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FDCA298A7AE000868C0E /* BranchManager.swift */; };
 		DEA8FE82298A7AE000868C0E /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FDCB298A7AE000868C0E /* AmplitudeManager.swift */; };
 		DEA8FE83298A7AE000868C0E /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FDCC298A7AE000868C0E /* FirebaseManager.swift */; };
 		DEA8FE84298A7AE000868C0E /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8FDCD298A7AE000868C0E /* FacebookManager.swift */; };
@@ -467,8 +465,6 @@
 		DEA8FDC5298A7AE000868C0E /* PushNotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
 		DEA8FDC6298A7AE000868C0E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DEA8FDC7298A7AE000868C0E /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
-		DEA8FDC9298A7AE000868C0E /* AppsFlyerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsFlyerManager.swift; sourceTree = "<group>"; };
-		DEA8FDCA298A7AE000868C0E /* BranchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		DEA8FDCB298A7AE000868C0E /* AmplitudeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		DEA8FDCC298A7AE000868C0E /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DEA8FDCD298A7AE000868C0E /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
@@ -1192,8 +1188,6 @@
 		DEA8FDC8298A7AE000868C0E /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				DEA8FDC9298A7AE000868C0E /* AppsFlyerManager.swift */,
-				DEA8FDCA298A7AE000868C0E /* BranchManager.swift */,
 				DEA8FDCB298A7AE000868C0E /* AmplitudeManager.swift */,
 				DEA8FDCC298A7AE000868C0E /* FirebaseManager.swift */,
 				DEA8FDCD298A7AE000868C0E /* FacebookManager.swift */,
@@ -2467,7 +2461,6 @@
 				DECA727529BF1F5100F9667B /* TrainInfoViewController.swift in Sources */,
 				DECA726829BF13B800F9667B /* TrainViewController.swift in Sources */,
 				DECA727029BF152A00F9667B /* TrainFilterButton.swift in Sources */,
-				DEA8FE81298A7AE000868C0E /* BranchManager.swift in Sources */,
 				DED00C5429B0B8C100661F03 /* GetWorkoutStepsRequest.swift in Sources */,
 				DED00C2529AF6DDD00661F03 /* GetFocusZonesRequest.swift in Sources */,
 				DED00C4A29B0AF9400661F03 /* PaygateViewController.swift in Sources */,
@@ -2581,7 +2574,6 @@
 				DEBC2B49298D0BD7002C84E3 /* OFocusZoneButton.swift in Sources */,
 				DECA721929B8046F00F9667B /* GetWorkoutTemplateResponse.swift in Sources */,
 				DEA8FF15298A89D200868C0E /* MainViewCoordinator.swift in Sources */,
-				DEA8FE80298A7AE000868C0E /* AppsFlyerManager.swift in Sources */,
 				DECA721029B7639100F9667B /* LogDrillProgressResponse.swift in Sources */,
 				DEA8FE72298A7AE000868C0E /* NavigationController.swift in Sources */,
 				DED89CA1299155A300325104 /* HomeDrillCategoriesCollectionView.swift in Sources */,
@@ -2810,7 +2802,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2825,7 +2817,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = training.app.soccer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2847,7 +2839,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2862,7 +2854,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = training.app.soccer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
