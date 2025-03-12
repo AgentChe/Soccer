@@ -6,7 +6,7 @@
 //
 
 final class GlobalDefinitions {
-    static let domain = "https://soccer.kyotosaka.com"
+    static let domain = "https://soccer.thinkaboutapps.com"
     static let apiKey = "4Mf7e1kE1sJHZraKrR8o"
     
     static let otterScaleHost = "https://api.korrekted.com"
@@ -15,9 +15,9 @@ final class GlobalDefinitions {
     static let applicationTag = "SOCCER"
     static let amplitudeApiKey = "ad1acf62a1718340f0958c15b7b9dcfc"
     
-    static let termsOfServiceUrl = "https://kyotosaka.com/terms.html"
-    static let privacyPolicyUrl = "https://kyotosaka.com/policy.html"
-    static let contactUsUrl = "https://kyotosaka.com/index.html#careers"
+    static let termsOfServiceUrl = "https://thinkaboutapps.com/terms"
+    static let privacyPolicyUrl = "https://thinkaboutapps.com/policy"
+    static let contactUsUrl = "https://thinkaboutapps.com/contact"
     
     enum Paygate {
         static let defaultLifetime = "training.app.soccer.endless"
